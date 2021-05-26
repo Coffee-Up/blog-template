@@ -1,41 +1,49 @@
 import * as React from "react";
-import styled from "styled-components";
+import "../styles/Index.css";
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import { Layout } from "../components";
+import { Layout, Banner } from "../components";
 import { PostsFilterWidget } from "../elements";
 
 export default function IndexPage({ data }) {
+  const image = getImage(data.file.childImageSharp);
+
   return (
     <Layout>
-      <Div__Container>
-        <P__BoldText>Hi, i'm Axel. </P__BoldText>
-        <H1__Title>
-          You will find posts about all my interests : science, programming, art
-          & more.
-          <br />
-        </H1__Title>
+      <Banner>
+        <GatsbyImage draggable={false} image={image} alt="a changer" />
+      </Banner>
+      <div id="index-wrapper">
+        <div id="index-homescreen-container">
+          <span
+            id="index-homescreen-bold-text"
+            className="g-bold-text-primary-font"
+          >
+            Hi, i'm Axel.{" "}
+          </span>
+          <h1 id="index-title-banner">
+            You will find posts about all my interests : science, programming,
+            art & more.
+            <br />
+          </h1>
+        </div>
         <PostsFilterWidget width="50%" />
-      </Div__Container>
+      </div>
     </Layout>
   );
 }
 
-const Div__Container = styled.div`
-  padding: 0 1.2em;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.smallest_pc}) {
-    padding: 0 10em;
+export const pageQuery = graphql`
+  query IndexPageQuery {
+    file(relativePath: { eq: "homescreen-banner.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 1920
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
   }
-`;
-
-const H1__Title = styled.h1`
-  /* h1 est set dans Layout en fira code SemiBold (trop gras) */
-  font-family: "Montserrat Medium";
-  font-weight: 200;
-`;
-
-const P__BoldText = styled.p`
-  font-family: "Montserrat Bold";
-  font-size: 1.8rem;
-  font-weight: 600;
 `;

@@ -1,31 +1,11 @@
+import React from "react";
+import "../styles/PostTemplate.css";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
-import React from "react";
-import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import { Layout } from "../components";
+import { Layout, Banner } from "../components";
 
-const TitleFlexContainer = styled.div`
-  padding: 0 1em;
-  @media (min-width: 600px) {
-    padding: 2em 10em;
-  }
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-`;
-const TimeToRead = styled.p`
-  font-style: italic;
-  margin: 0 0 0 1em;
-`;
-const WrapperPostPage = styled.div`
-  padding: 1em 2em;
-  @media (min-width: 600px) {
-    padding: 6em 10em;
-  }
-  line-height: 1.7em;
-`;
 export default function PostTemplate({ data: { mdx: post } }) {
   const { body, timeToRead } = post;
   const { title, heading_picture_big } = post.frontmatter;
@@ -34,14 +14,21 @@ export default function PostTemplate({ data: { mdx: post } }) {
   return (
     <>
       <Layout>
-        <GatsbyImage image={image} alt="a changer" />
-        <TitleFlexContainer>
-          <h1>{title}</h1>
-          <TimeToRead>{timeToRead} minutes read</TimeToRead>
-        </TitleFlexContainer>
-        <WrapperPostPage>
+        <Banner>
+          <GatsbyImage
+            id="post-template-image-banner"
+            draggable={false}
+            image={image}
+            alt="a changer"
+          />
+        </Banner>
+        <div id="post-template-header-container">
+          <h1 id="post-template-title">{title}</h1>
+          <p id="post-template-time-to-read">{timeToRead} minutes read</p>
+        </div>
+        <div id="post-template-wrapper-body">
           <MDXRenderer>{body}</MDXRenderer>
-        </WrapperPostPage>
+        </div>
       </Layout>
     </>
   );

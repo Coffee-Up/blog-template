@@ -17,7 +17,7 @@ export default function PostsFilterWidget() {
               path
               title
               date
-              resume
+              summary
               heading_picture_squared {
                 childImageSharp {
                   gatsbyImageData(
@@ -37,23 +37,23 @@ export default function PostsFilterWidget() {
   const { edges: posts } = data.allMdx;
 
   return (
-    <div>
+    <div id="posts-filter-widget-container">
       <header>
-        <h3>Posts Filter</h3>
+        <h3 id="posts-filter-widget-title">Posts Filter</h3>
       </header>
-      <ul>
+      <ul id="post-filter-ul">
         {posts.map(({ node }) => {
-          const { title, resume, path, heading_picture_squared, id } =
+          const { title, summary, path, heading_picture_squared, id } =
             node.frontmatter;
 
           return (
-            <li key={node.id}>
+            <li className="g-hover-animation-item" id="post-li" key={node.id}>
               <PostCard
                 path={path}
                 id={id}
                 title={title}
-                resume={resume}
-                picture={heading_picture_squared}
+                summary={summary}
+                img={heading_picture_squared}
               />
             </li>
           );

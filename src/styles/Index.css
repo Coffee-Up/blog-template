@@ -1,0 +1,24 @@
+#index-wrapper {
+  padding: 0 15em;
+}
+
+#index-homescreen-bold-text {
+  font-size: 2.6rem;
+}
+
+#index-homescreen-container {
+  padding: 1em 10em;
+}
+
+#index-title-banner {
+  /* h1 est set dans Layout en fira code SemiBold (trop gras) */
+  font-family: "Montserrat Medium";
+  font-size: 2.5rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 600px) {
+  .index-wrapper {
+    padding: 0 1.2em;
+  }
+}

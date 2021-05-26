@@ -1,0 +1,16 @@
+#main-menu-header {
+  background-color: #ffcb50;
+  padding: 0.3em 2em;
+  height: 7vh;
+}
+#main-menu-nav {
+  height: 100%;
+}
+
+#main-menu-ul {
+  height: 100%;
+  display: inline-flex;
+}
+
+#main-menu-link {
+}
