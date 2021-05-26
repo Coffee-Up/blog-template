@@ -1,0 +1,31 @@
+.post-card-container:hover {
+  @keyframes mouseHoverAnimation {
+    from {
+      transform: scale(1);
+      border-bottom: 1px black;
+    }
+    to {
+      box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 16px,
+        rgba(71, 63, 79, 0.16) 0px 8px 24px;
+      position: relative;
+      transform: scale(1.03);
+    }
+  }
+  cursor: pointer;
+  animation: mouseHoverAnimation 0.2s ease-out forwards;
+}
+
+h2 {
+  color: #444;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+p {
+  color: #3e3b3b;
+  font-size: 0.9rem;
+}
+
+a {
+  display: flex;
+}
