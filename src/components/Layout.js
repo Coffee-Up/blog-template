@@ -1,7 +1,4 @@
-// Detiens le Banner
 import * as React from "react";
-
-import theme from "../../config/theme.js";
 
 import "../styles/_globalReset.css";
 import "../styles/_globalTags.css";

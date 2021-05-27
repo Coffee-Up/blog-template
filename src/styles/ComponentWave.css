@@ -19,7 +19,7 @@
 }
 
 #wave-svg-path {
-  fill: yellow;
+  fill: #ffcb50;
   width: 100%;
   animation: waveAnimation 25s linear infinite alternate;
 }

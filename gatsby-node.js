@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     query {
@@ -20,9 +22,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   pages.forEach((page) => {
     actions.createPage({
       path: page.frontmatter.path,
-
-      component: require.resolve("./src/templates/PostTemplate.jsx"),
-
+      component: path.resolve("./src/templates/PostTemplate.jsx"),
       context: {
         pathSlug: page.frontmatter.path,
       },
