@@ -14,12 +14,14 @@ import "@fontsource/mulish/400.css";
 import { Footer, MenuMain, Banner } from ".";
 
 export default function Layout({ children, bannerData }) {
+  const { imageFile } = bannerData;
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <MenuMain />
-        <Banner imageFile={bannerData.imageFile} />
+        <Banner imageFile={imageFile} />
         <main>{children}</main>
         <Footer />
       </ThemeProvider>
