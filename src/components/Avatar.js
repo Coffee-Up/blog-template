@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/Avatar.css";
+import "../styles/ComponentAvatar.css";
 import { Link } from "gatsby";
 
 import profileImage from "../assets/images/me.jpg";

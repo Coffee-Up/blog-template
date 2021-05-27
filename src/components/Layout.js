@@ -3,10 +3,10 @@ import * as React from "react";
 
 import theme from "../../config/theme.js";
 
-import "../styles/globals/globalReset.css";
-import "../styles/globals/globalClasses.css";
-import "../styles/globals/globalTags.css";
-import "../styles/globals/globalAnimations.css";
+import "../styles/_globalReset.css";
+import "../styles/_globalTags.css";
+import "../styles/_globalClasses.css";
+import "../styles/_globalAnimations.css";
 
 import { Footer, MenuMain, Banner } from ".";
 

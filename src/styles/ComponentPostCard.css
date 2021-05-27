@@ -1,0 +1,63 @@
+#post-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0.5em 0.5em;
+}
+
+#post-card-image {
+  /* Les images varie en fonction de la longueur des donnée de l'élément */
+  min-width: 15%;
+  max-width: 15%;
+}
+
+#post-card-overview-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#post-card-title {
+  color: #3c3730;
+  font-family: "Montserrat SemiBold";
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1em 0 0.2em 0;
+  border-bottom: 1px rgb(179, 177, 177) solid;
+}
+
+#post-card-summary {
+  /* En mettant 100% l'element se deplace sur la ligne suivante */
+  width: 100%;
+  text-align: center;
+  padding: 1em 1em 0 1em;
+  color: #3e3b3b;
+  font-size: 0.9rem;
+}
+
+#post-card-data-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#post-card-tag-symbol > svg {
+  width: 30px;
+  margin: 0 0 1em 0;
+}
+
+#post-card-date {
+  /* Unset global default span behaviour define in Layout */
+  font-family: unset;
+  font-size: 0.8rem;
+  /* Les élements du container sur une ligne chacuns */
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  #post-card-title {
+    font-size: 0.9rem;
+  }
+}

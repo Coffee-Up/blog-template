@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/pages/PageContact.css";
+import "../styles/PageContact.css";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 

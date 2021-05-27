@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/MenuMain.css";
+import "../styles/ComponentMenuMain.css";
 import { Link } from "gatsby";
 
 export default function Header() {

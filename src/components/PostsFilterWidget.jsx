@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/PostsFilterWidget.css";
+import "../styles/ComponentPostsFilterWidget.css";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { PostCard } from "../components";
@@ -14,15 +14,15 @@ export default function PostsFilterWidget() {
             slug
             timeToRead
             frontmatter {
+              creationDate
               path
               title
-              date
               summary
               heading_picture_squared {
                 childImageSharp {
                   gatsbyImageData(
                     width: 100
-                    placeholder: DOMINANT_COLOR
+                    placeholder: TRACED_SVG
                     formats: [AUTO, WEBP, AVIF]
                   )
                 }
@@ -43,8 +43,14 @@ export default function PostsFilterWidget() {
       </header>
       <ul id="post-filter-ul">
         {posts.map(({ node }) => {
-          const { title, summary, path, heading_picture_squared, id } =
-            node.frontmatter;
+          const {
+            title,
+            summary,
+            path,
+            heading_picture_squared,
+            id,
+            creationDate,
+          } = node.frontmatter;
 
           return (
             <li className="g-hover-animation-item" id="post-li" key={node.id}>
@@ -54,6 +60,7 @@ export default function PostsFilterWidget() {
                 title={title}
                 summary={summary}
                 img={heading_picture_squared}
+                date={creationDate.split("").slice(0, 10)}
               />
             </li>
           );

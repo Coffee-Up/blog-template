@@ -4,10 +4,10 @@ html {
 
 body {
   font-family: "Montserrat Regular";
+  font-size: 1rem;
 }
 
 a {
-  font-size: 1.1rem;
   text-decoration: none;
 }
 
@@ -15,9 +15,7 @@ h1 {
   font-family: "Fira Code SemiBold";
   font-weight: 500;
   font-size: 1rem;
-  @media (min-width: 600px) {
-    font-size: 1.4rem;
-  }
+
   padding: 1rem 0;
 }
 
@@ -37,7 +35,6 @@ h3 {
 
 p {
   color: black;
-  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -47,4 +44,20 @@ li {
 
 span {
   font-family: "Montserrat Bold";
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 0.8rem;
+  }
+
+  body {
+    font-size: 0.5rem;
+  }
 }

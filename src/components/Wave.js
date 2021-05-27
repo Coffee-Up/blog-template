@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/Wave.css";
+import "../styles/ComponentWave.css";
 
 export default function Wave() {
   return (

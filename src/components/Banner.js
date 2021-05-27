@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/Banner.css";
+import "../styles/ComponentBanner.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function Banner({ imageFile }) {

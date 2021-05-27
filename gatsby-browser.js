@@ -1,1 +1,1 @@
-import "./src/assets/fonts/index.css";
+import "./src/assets/fonts/fonts.css";

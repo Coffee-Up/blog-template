@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/pages/PageIndex.css";
+import "../styles/PageIndex.css";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
@@ -11,17 +11,19 @@ export default function IndexPage({ data }) {
   return (
     <Layout bannerData={{ imageFile: img }}>
       <div id="index-wrapper">
-        <div id="index-welcome-container">
+        <div id="index-welcome-title-container">
           <div id="index-welcome-avatar">
             <Avatar />
           </div>
-          <span id="index-homescreen-bold-text">Hi, i'm Axel. </span>
-          <h1 id="index-title-banner">
-            You will find posts about all my interests : <span>science</span>,{" "}
-            <span>programming</span>, <span>art</span> & more.
+          <h1 id="index-welcome-title-text">
+            <span>Hi, i'm Axel. </span>
             <br />
+            You will find posts about all my interests : <span>
+              Science
+            </span>, <span>Programmation</span>, <span>Art</span> & more.
           </h1>
         </div>
+        <br />
         <PostsFilterWidget width="50%" />
       </div>
     </Layout>
@@ -33,7 +35,7 @@ export const pageQuery = graphql`
     file(relativePath: { eq: "homescreen-banner.png" }) {
       childImageSharp {
         gatsbyImageData(
-          width: 1920
+          height: 300
           placeholder: TRACED_SVG
           formats: [AUTO, WEBP, AVIF]
         )
