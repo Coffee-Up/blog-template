@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/PostTemplate.css";
+import "../styles/PagePostTemplate.css";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";

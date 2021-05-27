@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/Index.css";
+import "../styles/PageIndex.css";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
@@ -12,7 +12,9 @@ export default function IndexPage({ data }) {
     <Layout bannerData={{ imageFile: img }}>
       <div id="index-wrapper">
         <div id="index-welcome-container">
-          <Avatar />
+          <div id="index-welcome-avatar">
+            <Avatar />
+          </div>
           <span
             id="index-homescreen-bold-text"
             className="g-bold-text-primary-font"
@@ -20,8 +22,10 @@ export default function IndexPage({ data }) {
             Hi, i'm Axel.{" "}
           </span>
           <h1 id="index-title-banner">
-            You will find posts about all my interests : science, programming,
-            art & more.
+            You will find posts about all my interests :{" "}
+            <span className="g-bold-text-primary-font">science</span>,{" "}
+            <span className="g-bold-text-primary-font">programming</span>,{" "}
+            <span className="g-bold-text-primary-font">art</span> & more.
             <br />
           </h1>
         </div>

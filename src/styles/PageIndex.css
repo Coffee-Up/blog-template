@@ -7,7 +7,13 @@
 }
 
 #index-welcome-container {
+  display: flex;
+  flex-wrap: wrap;
   padding: 1em 1em;
+}
+
+#index-welcome-avatar {
+  margin-right: 1em;
 }
 
 #index-title-banner {
