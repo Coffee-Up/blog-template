@@ -21,20 +21,6 @@
   padding: 1em 4em;
   line-height: 1.7em;
 }
-/* TO DO peut etre que l'on peut ajouter un id sur le mdx */
-#post-template-wrapper-body > h2 {
-  font-family: "Fira Code SemiBold";
-  font-size: 2rem;
-  color: black;
-  padding: 1em 0;
-}
-
-#post-template-wrapper-body > h3 {
-  font-size: 2rem;
-  font-family: "Fira Code SemiBold";
-  color: black;
-  padding: 1em 0;
-}
 
 /*  MEDIA QUERIES */
 @media (min-width: 600px) {

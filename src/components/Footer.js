@@ -1,10 +1,17 @@
 import * as React from "react";
 import "../styles/ComponentFooter.css";
 
+import { Wave } from "../components";
+
 export default function Footer() {
   return (
-    <footer>
-      <section>Section 1 footer</section>
+    <footer id="footer-container">
+      <Wave />
+      <div>
+        <section>
+          <h4>Section 1 footer</h4>
+        </section>
+      </div>
     </footer>
   );
 }

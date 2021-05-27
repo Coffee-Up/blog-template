@@ -5,11 +5,11 @@ import { getImage } from "gatsby-plugin-image";
 
 import { Layout, PostsFilterWidget, Avatar } from "../components";
 
-export default function IndexPage({ data }) {
+export default function IndexPage({ data, location }) {
   const img = getImage(data.file.childImageSharp);
 
   return (
-    <Layout bannerData={{ imageFile: img }}>
+    <Layout pathUrl={location.pathname} bannerData={{ imageFile: img }}>
       <div id="index-wrapper">
         <div id="index-welcome-title-container">
           <div id="index-welcome-avatar">

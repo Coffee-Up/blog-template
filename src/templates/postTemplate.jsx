@@ -1,19 +1,20 @@
 import React from "react";
 import "../styles/PagePostTemplate.css";
+import "../styles/PagePost.css";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import { Layout } from "../components";
 
-export default function PostTemplate({ data: { mdx: post } }) {
+export default function PostTemplate({ data: { mdx: post }, location }) {
   const { body, timeToRead } = post;
   const { title, heading_picture_big } = post.frontmatter;
   const img = getImage(heading_picture_big);
 
   return (
     <>
-      <Layout bannerData={{ imageFile: img }}>
+      <Layout path={location.pathname} bannerData={{ imageFile: img }}>
         <div id="post-template-header-container">
           <h1 id="post-template-title">{title}</h1>
           <p id="post-template-time-to-read">{timeToRead} minutes read</p>

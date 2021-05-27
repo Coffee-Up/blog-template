@@ -8,21 +8,8 @@
   height: 100%;
 }
 
-#main-menu-ul {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
 #main-menu-home-container {
   display: flex;
   align-items: center;
   margin: 0 1em;
-}
-
-#main-menu-link {
-}
-
-#main-menu-links-container {
-  display: flex;
 }

@@ -16,6 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 60%;
 }
 
 #post-card-title {
@@ -43,7 +44,7 @@
 }
 
 #post-card-tag-symbol > svg {
-  width: 30px;
+  width: 50px;
   margin: 0 0 1em 0;
 }
 
@@ -53,6 +54,7 @@
   font-size: 0.8rem;
   /* Les élements du container sur une ligne chacuns */
   width: 100%;
+  text-align: center;
 }
 
 /* MEDIA QUERIES */

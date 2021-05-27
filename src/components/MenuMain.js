@@ -2,21 +2,16 @@ import * as React from "react";
 import "../styles/ComponentMenuMain.css";
 import { Link } from "gatsby";
 
-export default function Header() {
+export default function Header({ hideHomeLink }) {
   return (
     <header id="main-menu-header">
       <nav id="main-menu-nav">
         <div id="main-menu-home-container">
-          <Link id="main-menu-link" to="/">
-            Home
-          </Link>
-        </div>
-        <div id="main-menu-links-container">
-          <ul id="main-menu-ul">
-            <li>link 2</li>
-            <li>link 1</li>
-            <li>link 3</li>
-          </ul>
+          {!hideHomeLink && (
+            <Link id="main-menu-link-home" to="/">
+              Home
+            </Link>
+          )}
         </div>
       </nav>
     </header>

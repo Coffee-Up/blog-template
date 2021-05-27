@@ -10,12 +10,13 @@ import "../styles/_globalAnimations.css";
 
 import { Footer, MenuMain, Banner } from ".";
 
-export default function Layout({ children, bannerData }) {
+export default function Layout({ children, bannerData, pathUrl }) {
   const { imageFile } = bannerData;
+  const isHomePage = pathUrl === "/" ? true : false;
 
   return (
     <>
-      <MenuMain />
+      <MenuMain hideHomeLink={isHomePage} />
       <Banner imageFile={imageFile} />
       <main>{children}</main>
       <Footer />
