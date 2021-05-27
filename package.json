@@ -15,34 +15,16 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@fontsource/farro": "^4.3.0",
-    "@fontsource/fira-sans": "^4.3.0",
-    "@fontsource/inter": "^4.3.0",
-    "@fontsource/josefin-sans": "^4.3.0",
-    "@fontsource/koho": "^4.3.0",
-    "@fontsource/libre-franklin": "^4.3.0",
-    "@fontsource/mulish": "^4.3.0",
-    "@fontsource/poppins": "^4.3.0",
-    "@fontsource/raleway": "^4.3.0",
-    "@fontsource/roboto-mono": "^4.3.0",
-    "@fontsource/roboto-slab": "^4.3.0",
-    "@fontsource/rubik": "^4.3.0",
-    "@fontsource/ubuntu": "^4.3.0",
-    "@fontsource/work-sans": "^4.3.0",
-    "@fontsource/zilla-slab": "^4.3.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.4.1",
     "gatsby-plugin-image": "^1.5.0",
     "gatsby-plugin-mdx": "^2.5.1",
     "gatsby-plugin-sharp": "^3.5.0",
-    "gatsby-plugin-styled-components": "^4.5.0",
     "gatsby-remark-vscode": "^3.2.1",
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-sharp": "^3.5.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "styled-components": "^5.3.0"
+    "react-dom": "^17.0.1"
   }
 }

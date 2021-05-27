@@ -23,7 +23,7 @@
 }
 
 /* MEDIA QUERIES */
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   .index-wrapper {
     padding: 0 1.2em;
   }
