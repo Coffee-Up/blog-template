@@ -1,3 +1,6 @@
+#post-template-image-banner {
+  height: 100%;
+}
 #post-template-header-container {
   padding: 0 1em;
   display: flex;

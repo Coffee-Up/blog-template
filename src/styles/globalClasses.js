@@ -30,6 +30,10 @@ const globalClasses = css`
     background-color: #f9f1df;
     animation: mouseHoverAnimation 0.2s ease-out forwards;
   }
+  // GATSBY
+  .gatsby-image-wrapper {
+    max-height: 100%;
+  }
 `;
 
 export default globalClasses;

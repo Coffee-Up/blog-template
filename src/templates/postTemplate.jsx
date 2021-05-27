@@ -2,26 +2,18 @@ import React from "react";
 import "../styles/PostTemplate.css";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 
-import { Layout, Banner } from "../components";
+import { Layout } from "../components";
 
 export default function PostTemplate({ data: { mdx: post } }) {
   const { body, timeToRead } = post;
   const { title, heading_picture_big } = post.frontmatter;
-  const image = getImage(heading_picture_big);
+  const img = getImage(heading_picture_big);
 
   return (
     <>
-      <Layout>
-        <Banner>
-          <GatsbyImage
-            id="post-template-image-banner"
-            draggable={false}
-            image={image}
-            alt="a changer"
-          />
-        </Banner>
+      <Layout bannerData={{ imageFile: img }}>
         <div id="post-template-header-container">
           <h1 id="post-template-title">{title}</h1>
           <p id="post-template-time-to-read">{timeToRead} minutes read</p>
@@ -44,7 +36,7 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData(
               width: 2000
-              placeholder: DOMINANT_COLOR
+              placeholder: TRACED_SVG
               formats: [AUTO, WEBP, AVIF]
             )
           }

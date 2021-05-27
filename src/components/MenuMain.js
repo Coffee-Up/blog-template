@@ -6,9 +6,18 @@ export default function Header() {
   return (
     <header id="main-menu-header">
       <nav id="main-menu-nav">
-        <ul id="main-menu-ul">
-          <Link to="/">Home</Link>
-        </ul>
+        <div id="main-menu-home-container">
+          <Link id="main-menu-link" to="/">
+            Home
+          </Link>
+        </div>
+        <div id="main-menu-links-container">
+          <ul id="main-menu-ul">
+            <li>link 2</li>
+            <li>link 1</li>
+            <li>link 3</li>
+          </ul>
+        </div>
       </nav>
     </header>
   );

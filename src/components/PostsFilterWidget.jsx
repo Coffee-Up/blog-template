@@ -2,7 +2,7 @@ import * as React from "react";
 import "../styles/PostsFilterWidget.css";
 import { graphql, useStaticQuery } from "gatsby";
 
-import { PostCard } from "../elements";
+import { PostCard } from "../components";
 
 export default function PostsFilterWidget() {
   const data = useStaticQuery(graphql`

@@ -1,21 +1,18 @@
 import * as React from "react";
 import "../styles/Index.css";
 import { graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 
-import { Layout, Banner } from "../components";
-import { PostsFilterWidget } from "../elements";
+import { Layout, PostsFilterWidget, Avatar } from "../components";
 
 export default function IndexPage({ data }) {
-  const image = getImage(data.file.childImageSharp);
+  const img = getImage(data.file.childImageSharp);
 
   return (
-    <Layout>
-      <Banner>
-        <GatsbyImage draggable={false} image={image} alt="a changer" />
-      </Banner>
+    <Layout bannerData={{ imageFile: img }}>
       <div id="index-wrapper">
-        <div id="index-homescreen-container">
+        <div id="index-welcome-container">
+          <Avatar />
           <span
             id="index-homescreen-bold-text"
             className="g-bold-text-primary-font"
@@ -40,7 +37,7 @@ export const pageQuery = graphql`
       childImageSharp {
         gatsbyImageData(
           width: 1920
-          placeholder: BLURRED
+          placeholder: TRACED_SVG
           formats: [AUTO, WEBP, AVIF]
         )
       }

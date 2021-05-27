@@ -4,13 +4,25 @@
   height: 7vh;
 }
 #main-menu-nav {
+  display: flex;
   height: 100%;
 }
 
 #main-menu-ul {
+  display: flex;
+  align-items: center;
   height: 100%;
-  display: inline-flex;
+}
+
+#main-menu-home-container {
+  display: flex;
+  align-items: center;
+  margin: 0 1em;
 }
 
 #main-menu-link {
+}
+
+#main-menu-links-container {
+  display: flex;
 }
