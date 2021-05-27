@@ -15,17 +15,10 @@ export default function IndexPage({ data }) {
           <div id="index-welcome-avatar">
             <Avatar />
           </div>
-          <span
-            id="index-homescreen-bold-text"
-            className="g-bold-text-primary-font"
-          >
-            Hi, i'm Axel.{" "}
-          </span>
+          <span id="index-homescreen-bold-text">Hi, i'm Axel. </span>
           <h1 id="index-title-banner">
-            You will find posts about all my interests :{" "}
-            <span className="g-bold-text-primary-font">science</span>,{" "}
-            <span className="g-bold-text-primary-font">programming</span>,{" "}
-            <span className="g-bold-text-primary-font">art</span> & more.
+            You will find posts about all my interests : <span>science</span>,{" "}
+            <span>programming</span>, <span>art</span> & more.
             <br />
           </h1>
         </div>

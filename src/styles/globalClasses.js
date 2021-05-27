@@ -21,8 +21,8 @@ const globalClasses = css`
     border-radius: 6%;
   }
 
-  .g-bold-text-primary-font {
-    font-family: "Montserrat Bold";
+  .g-unbold-text-secondary-font {
+    font-family: "Montserrat Regular";
   }
 
   .g-hover-animation-item:hover {
