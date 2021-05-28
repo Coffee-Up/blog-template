@@ -1,16 +1,19 @@
 import * as React from "react";
 import "../styles/ComponentWave.css";
 
-const Wave = ({ classWave }) => {
+const Wave = ({ orientation }) => {
+  const cssClass = orientation === "top" ? ".wave-top" : ".wave-bottom";
   return (
-    <div id="wave-container" className={classWave}>
+    <div className={cssClass}>
       <div id="wave-inner">
         <svg
           id="wave-svg"
+          height="70"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 54 14"
           aria-hidden="true"
           focusable="false"
+          preserveAspectRatio="none"
         >
           <path id="wave-svg-path">
             <animate

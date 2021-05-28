@@ -1,4 +1,10 @@
 #footer-container {
-  padding-top: 30em;
-  position: relative;
+  padding-top: 10rem;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+#footer-source-code-section {
+  background-color: #ffcb50;
 }

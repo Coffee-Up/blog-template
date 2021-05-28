@@ -6,7 +6,7 @@ import profileImage from "../assets/images/me.jpg";
 
 export default function Avatar() {
   return (
-    <div className="g-mask-image-circular" id="avatar-container">
+    <div className="g-mask-image-circular g-hover-animation-logo">
       <Link to="/contact">
         <img src={profileImage} alt="me thinking on the beach" />
       </Link>

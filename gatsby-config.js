@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    defaultTitlePage: `Axel's Blog`,
+    defaultTitlePage: `Axel | Blog`,
     defaultDescriptionPage: `Hi, i'm Axel. You will find posts about all my interests : Science, Programmation, Art & more.`,
   },
-  flags: { PRESERVE_WEBPACK_CACHE: true },
+  flags: { PRESERVE_WEBPACK_CACHE: true, FAST_DEV: true },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

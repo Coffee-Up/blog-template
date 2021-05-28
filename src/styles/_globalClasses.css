@@ -27,6 +27,10 @@
   background-color: #f9f1df;
   animation: mouseHoverAnimationCard 0.2s ease-out forwards;
 }
+
+.g-hover-animation-logo:hover {
+  animation: mouseHoverAnimationImage 0.2s ease-out forwards;
+}
 /* GATSBY */
 .gatsby-image-wrapper {
   max-height: 100%;
