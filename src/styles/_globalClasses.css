@@ -31,6 +31,10 @@
 .g-hover-animation-logo:hover {
   animation: mouseHoverAnimationImage 0.2s ease-out forwards;
 }
+
+.g-hover-logo-fill-grey:hover > .logo-path-to-fill {
+  fill: #2e1100;
+}
 /* GATSBY */
 .gatsby-image-wrapper {
   max-height: 100%;

@@ -64,3 +64,11 @@
   src: local("Montserrat Medium"),
     url("./Montserrat-Medium.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Montserrat Light";
+  font-style: normal;
+  font-display: swap;
+  src: local("Montserrat Light"),
+    url("./Montserrat-Light.woff2") format("woff2");
+}

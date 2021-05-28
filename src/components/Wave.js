@@ -3,6 +3,7 @@ import "../styles/ComponentWave.css";
 
 const Wave = ({ orientation }) => {
   const cssClass = orientation === "top" ? ".wave-top" : ".wave-bottom";
+
   return (
     <div className={cssClass}>
       <div id="wave-inner">

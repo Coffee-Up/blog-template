@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     defaultTitlePage: `Axel | Blog`,
     defaultDescriptionPage: `Hi, i'm Axel. You will find posts about all my interests : Science, Programmation, Art & more.`,
+    frontEndUrl: `https://github.com/Coffee-Up/blog`,
   },
   flags: { PRESERVE_WEBPACK_CACHE: true, FAST_DEV: true },
   plugins: [

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 // import { useLocation } from "@reach/router";
-//essai
+
 const Seo = () => {
   // const { pathname } = useLocation();
   const { site } = useStaticQuery(query);

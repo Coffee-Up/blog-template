@@ -1,10 +1,28 @@
 #footer-container {
-  padding-top: 10rem;
+  padding-top: 10em;
   position: absolute;
   width: 100%;
-  z-index: 10;
 }
 
-#footer-source-code-section {
+#footer-text-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Fira Code Light";
+  font-size: 0.9rem;
+  /* specific setting*/
+  word-spacing: -0.2em;
+  padding: 2em 2em;
   background-color: #ffcb50;
+}
+
+#footer-section-source-code {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#footer-github-logo {
+  width: 100%;
+  padding-top: 0.7em;
+  text-align: center;
 }
