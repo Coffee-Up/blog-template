@@ -3,10 +3,10 @@ import "../styles/ComponentFooter.css";
 
 import { Wave } from "../components";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer id="footer-container">
-      <Wave />
+      <Wave classWave="wave-bottom" id="wave-footer" />
       <div>
         <section>
           <h4>Section 1 footer</h4>
@@ -14,4 +14,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

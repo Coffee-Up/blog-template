@@ -7,6 +7,7 @@ import PostsFilterWidget from "../components/PostsFilterWidget";
 import PostCard from "../components/PostCard";
 import Avatar from "../components/Avatar";
 import TagSymbol from "../components/TagSymbol";
+import Seo from "../components/Seo";
 
 export {
   Layout,
@@ -18,4 +19,5 @@ export {
   PostCard,
   Avatar,
   TagSymbol,
+  Seo,
 };

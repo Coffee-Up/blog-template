@@ -5,7 +5,7 @@ import "../styles/_globalTags.css";
 import "../styles/_globalClasses.css";
 import "../styles/_globalAnimations.css";
 
-import { Footer, MenuMain, Banner } from ".";
+import { Footer, MenuMain, Banner, Seo } from ".";
 
 export default function Layout({ children, bannerData, pathUrl }) {
   const { imageFile } = bannerData;
@@ -13,6 +13,7 @@ export default function Layout({ children, bannerData, pathUrl }) {
 
   return (
     <>
+      <Seo />
       <MenuMain hideHomeLink={isHomePage} />
       <Banner imageFile={imageFile} />
       <main>{children}</main>

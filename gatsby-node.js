@@ -13,10 +13,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
-  if (result.errors) {
-    reporter.panic("failed to create posts ", result.errors);
-  }
-
   const pages = result.data.allMdx.nodes;
 
   pages.forEach((page) => {
@@ -28,4 +24,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  if (result.errors) {
+    reporter.panic("failed to create posts ", result.errors);
+  }
 };
