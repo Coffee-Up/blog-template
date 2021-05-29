@@ -1,7 +1,5 @@
 import * as React from "react";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-
-import theme from "../theme.js";
+import { createGlobalStyle } from "styled-components";
 
 import "../styles/_globalReset.css";
 import "../styles/_globalClasses.css";
@@ -21,14 +19,12 @@ export default function Layout({ children, bannerData, pathUrl }) {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Seo />
-        <MenuMain hideHomeLink={isHomePage} />
-        <Banner imageFile={imageFile} />
-        <main>{children}</main>
-        <Footer />
-      </ThemeProvider>
+      <GlobalStyle />
+      <Seo />
+      <MenuMain hideHomeLink={isHomePage} />
+      <Banner imageFile={imageFile} />
+      <main>{children}</main>
+      <Footer />
     </>
   );
 }
