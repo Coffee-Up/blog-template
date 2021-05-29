@@ -10,7 +10,14 @@ export default function ContactPage({ data }) {
 
   return (
     <Layout bannerData={{ imageFile: img }}>
-      <h1>contact page</h1>
+      <div id="contact-page-container">
+        <p id="contact-page-introduction">
+          Hi, I have built this website mainly to{" "}
+          <span>organize my thougths</span>, going
+          <span> deeper</span> in my learnings & <span>share</span> what I do if
+          it can helps someone in any way.
+        </p>
+      </div>
     </Layout>
   );
 }

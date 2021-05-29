@@ -3,37 +3,43 @@ html {
 }
 
 body {
-  font-family: "Montserrat Regular";
+  font-family: "Source Code Variable";
   font-size: 1rem;
 }
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 h1 {
-  font-family: "Fira Code SemiBold";
-  font-weight: 500;
+  font-family: "Source Code Variable";
+  font-weight: 900;
   font-size: 1rem;
 
   padding: 1rem 0;
 }
 
 h2 {
-  font-family: "Fira Code Regular";
+  font-family: "Source Code Variable";
   font-weight: 500;
   font-size: 1.3rem;
   padding: 1rem 0;
 }
 
 h3 {
-  font-family: "Fira Code Regular";
+  font-family: "Source Code Variable";
   font-weight: 500;
   font-size: 1.2rem;
   padding: 1rem 0;
 }
 
 p {
+  font-family: "Montserrat Regular";
   color: black;
   margin-bottom: 1rem;
 }

@@ -13,7 +13,7 @@ export default function IndexPage({ data, location }) {
       <div id="index-wrapper">
         <div id="index-welcome-title-container">
           <div id="index-welcome-avatar">
-            <Avatar />
+            <Avatar clickable uniquePreIdentifier="index-welcome" />
           </div>
           <h1 id="index-welcome-title-text">
             <span>Hi, i'm Axel. </span>

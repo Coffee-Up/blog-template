@@ -4,14 +4,12 @@
   width: 100%;
 }
 
-#footer-text-container {
+#footer-wrapper {
   display: flex;
   justify-content: space-between;
   font-family: "Fira Code Light";
   font-size: 0.9rem;
-  /* specific setting*/
-  word-spacing: -0.2em;
-  padding: 2em 2em;
+  padding: 3em 3em;
   background-color: #ffcb50;
 }
 
@@ -21,8 +19,34 @@
   justify-content: space-around;
 }
 
-#footer-github-logo {
+#footer-source-code-text {
+  /* p en global possède un margin */
+  margin: 0;
+}
+
+#footer-github-logo-container {
   width: 100%;
-  padding-top: 0.7em;
+  padding-top: 0.2em;
   text-align: center;
+}
+
+#footer-section-contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#footer-avatar {
+  width: 2.2em;
+  height: 2.2em;
+  margin: 0 auto;
+}
+
+#footer-section-fonts-repo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#footer-text-fonts-repo {
+  width: 100%;
 }

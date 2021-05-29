@@ -1,22 +1,26 @@
 #index-wrapper {
-  padding: 0 15em;
+  padding: 0 5em;
+  font-size: 2.5em;
 }
 
 #index-welcome-title-container {
   display: flex;
-  padding: 3em 0;
+  padding: 1em 0;
   /* h1 est set dans Layout en fira code SemiBold (trop gras) */
 }
 
 #index-welcome-title-text {
   font-family: "Montserrat Medium";
-  font-size: 2.5rem;
+  font-size: 0.8em;
   /* Pour etre aligné avec l'avatar */
   padding-top: 0;
 }
 
 #index-welcome-avatar {
-  margin-right: 1em;
+  margin-right: 0.8em;
+  width: 1.5em;
+  /* class avatar est en 100% et deforme le cercle */
+  height: unset;
 }
 
 /* MEDIA QUERIES */

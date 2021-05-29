@@ -72,3 +72,16 @@
   src: local("Montserrat Light"),
     url("./Montserrat-Light.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Source Code Variable";
+  font-optical-sizing: none;
+  src: url("./SourceCodeVariable-Roman.ttf.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Code Italic";
+  font-optical-sizing: none;
+  font-style: italic;
+  font-synthesis: none;
+  src: url("./SourceCodeVariable-Italic.ttf.woff2") format("woff2");
+}

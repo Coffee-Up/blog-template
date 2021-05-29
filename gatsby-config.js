@@ -2,7 +2,9 @@ module.exports = {
   siteMetadata: {
     defaultTitlePage: `Axel | Blog`,
     defaultDescriptionPage: `Hi, i'm Axel. You will find posts about all my interests : Science, Programmation, Art & more.`,
-    frontEndUrl: `https://github.com/Coffee-Up/blog`,
+    frontEndRepositoryUrl: `https://github.com/Coffee-Up/blog`,
+    fontUrl1: `https://github.com/adobe-fonts/source-code-pro`,
+    fontUrl2: `https://github.com/JulietaUla/Montserrat`,
   },
   flags: { PRESERVE_WEBPACK_CACHE: true, FAST_DEV: true },
   plugins: [

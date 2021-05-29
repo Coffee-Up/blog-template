@@ -20,9 +20,8 @@
 }
 
 #post-card-title {
-  color: #3c3730;
-  font-family: "Montserrat SemiBold";
-  font-size: 1.1rem;
+  font-family: "Source Code Variable";
+  font-size: 1.1em;
   font-weight: 600;
   padding: 1em 0 0.2em 0;
   border-bottom: 1px rgb(179, 177, 177) solid;
@@ -43,7 +42,7 @@
   justify-content: space-around;
 }
 
-#post-card-tag-symbol > svg {
+#post-card-tag-logo > svg {
   width: 50px;
   margin: 0 0 1em 0;
 }
