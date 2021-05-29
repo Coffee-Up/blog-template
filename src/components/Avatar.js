@@ -11,7 +11,7 @@ export default function Avatar({ small, big, clickable }) {
         big
           ? { width: "3.1rem", height: "3.1rem" }
           : small
-          ? { width: "2.7rem", height: "2.7r  em" }
+          ? { width: "2.7rem", height: "2.7rem" }
           : { width: "1rem", height: "1rem" }
       }
       className="avatar-div g-mask-image-circular g-hover-animation-logo"
