@@ -12,18 +12,15 @@ export default function IndexPage({ data, location }) {
     <Layout pathUrl={location.pathname} bannerData={{ imageFile: img }}>
       <div id="index-wrapper">
         <div id="index-welcome-title-container">
-          <div>
-            <Avatar clickable prefixId="index-welcome-" />
-            <p>Hi, I'm Axel.</p>
-          </div>
-
-          <h1 id="index-welcome-title-text">
+          <Avatar big clickable />
+          <p>Hi, I'm Axel.</p>
+          <h1>
             You will find posts about all my interests : <span>Science</span>,{" "}
-            <span>Programmation</span>, <span>Art</span> & <span>more</span>.
+            <span>Programmation</span>, <span>Art</span> & <span>More</span>.
           </h1>
         </div>
         <br />
-        <PostsFilterWidget width="50%" />
+        <PostsFilterWidget />
       </div>
     </Layout>
   );

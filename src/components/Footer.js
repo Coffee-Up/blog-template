@@ -7,37 +7,39 @@ import { IconGithub, IconFont } from "../assets/icons";
 
 const Footer = () => {
   const { site } = useStaticQuery(query);
-  const { frontEndRepositoryUrl, fontUrl1, fontUrl2 } = site.siteMetadata;
-
+  const { frontEndRepositoryUrl, fontUrl1, fontUrl2, fontUrl3 } =
+    site.siteMetadata;
+  // TO DO : trop jsx trop confus
   return (
     <footer id="footer-container">
       <Wave orientation="bottom" />
       <div id="footer-wrapper">
-        <section id="footer-section-source-code">
+        <section>
           <p id="footer-source-code-text">Website Source Code</p>
-          <div id="footer-github-logo-container">
-            <a
-              href={frontEndRepositoryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <IconGithub customTitle="Website Source Code" clickable />
-            </a>
-          </div>
+          <a
+            href={frontEndRepositoryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconGithub customTitle="Website Source Code" clickable />
+          </a>
         </section>
-        <section id="footer-section-contact">
+        <section>
           <p>Want to contact me ?</p>
-          <Avatar prefixId="footer-" />
+          <Avatar clickable small />
         </section>
-        <section id="footer-section-fonts-repo">
-          <p id="footer-text-fonts-repo">Like my website's fonts ?</p>
+        <section>
+          <p>Like my website's fonts ?</p>
           <a href={fontUrl1} target="_blank" rel="noopener noreferrer">
+            #1
             <IconFont customTitle="Source Code Pro Repository" clickable />
           </a>
           <a href={fontUrl2} target="_blank" rel="noopener noreferrer">
+            #2
             <IconFont customTitle="Montserrat Web Repository" clickable />
           </a>
           <a href={fontUrl3} target="_blank" rel="noopener noreferrer">
+            #3
             <IconFont customTitle="Cascadia Code Repository" clickable />
           </a>
         </section>

@@ -5,22 +5,19 @@
 
 #index-welcome-title-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   padding: 1em 0;
 }
 
-#index-welcome-title-text {
+#index-welcome-title-container h1 {
   font-family: "Montserrat Regular";
   font-size: 0.8em;
   /* Pour etre aligné avec l'avatar */
   padding-top: 0;
 }
 
-#index-welcome-avatar {
-  margin-right: 0.8em;
-  width: 1.5em;
-  /* class avatar est en 100% et deforme le cercle */
-  height: unset;
+#index-welcome-title-container .avatar-div {
+  margin-right: 0.7em;
 }
 
 /* MEDIA QUERIES */
