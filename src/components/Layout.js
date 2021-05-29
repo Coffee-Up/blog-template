@@ -13,15 +13,14 @@ const GlobalStyle = createGlobalStyle`
     ${globalAnimations}
   `;
 
-export default function Layout({ children, bannerData, pathUrl }) {
+export default function Layout({ children, bannerData, pathUrl, headerText }) {
   const { imageFile } = bannerData;
   const isHomePage = pathUrl === "/" ? true : false;
-
   return (
     <>
       <GlobalStyle />
       <Seo />
-      <MenuMain hideHomeLink={isHomePage} />
+      <MenuMain headerText={headerText} hideHomeLink={isHomePage} />
       <Banner imageFile={imageFile} />
       <main>{children}</main>
       <Footer />

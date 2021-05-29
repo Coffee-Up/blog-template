@@ -1,15 +1,12 @@
 #post-template-image-banner {
   height: 100%;
 }
-#post-template-header-container {
-  padding: 0 1em;
+
+#post-template-data-container {
   display: flex;
   justify-content: center;
   align-items: baseline;
-}
-
-#post-template-title {
-  font-size: 2rem;
+  padding: 0 1em;
 }
 
 #post-template-time-to-read {

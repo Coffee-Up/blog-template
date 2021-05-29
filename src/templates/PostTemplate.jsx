@@ -14,9 +14,12 @@ export default function PostTemplate({ data: { mdx: post }, location }) {
 
   return (
     <>
-      <Layout path={location.pathname} bannerData={{ imageFile: img }}>
-        <div id="post-template-header-container">
-          <h1 id="post-template-title">{title}</h1>
+      <Layout
+        headerText={title}
+        path={location.pathname}
+        bannerData={{ imageFile: img }}
+      >
+        <div id="post-template-data-container">
           <p id="post-template-time-to-read">{timeToRead} minutes read</p>
         </div>
         <div id="post-template-wrapper-body">
