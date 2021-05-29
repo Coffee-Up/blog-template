@@ -5,12 +5,12 @@
 
 #index-welcome-title-container {
   display: flex;
+  flex-direction: column;
   padding: 1em 0;
-  /* h1 est set dans Layout en fira code SemiBold (trop gras) */
 }
 
 #index-welcome-title-text {
-  font-family: "Montserrat Medium";
+  font-family: "Montserrat Regular";
   font-size: 0.8em;
   /* Pour etre aligné avec l'avatar */
   padding-top: 0;

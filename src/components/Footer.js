@@ -27,15 +27,18 @@ const Footer = () => {
         </section>
         <section id="footer-section-contact">
           <p>Want to contact me ?</p>
-          <Avatar uniquePreIdentifier="footer" />
+          <Avatar prefixId="footer-" />
         </section>
         <section id="footer-section-fonts-repo">
           <p id="footer-text-fonts-repo">Like my website's fonts ?</p>
           <a href={fontUrl1} target="_blank" rel="noopener noreferrer">
-            <IconFont customTitle="Source Code Pro" clickable />
+            <IconFont customTitle="Source Code Pro Repository" clickable />
           </a>
           <a href={fontUrl2} target="_blank" rel="noopener noreferrer">
-            <IconFont customTitle="Montserrat Web" clickable />
+            <IconFont customTitle="Montserrat Web Repository" clickable />
+          </a>
+          <a href={fontUrl3} target="_blank" rel="noopener noreferrer">
+            <IconFont customTitle="Cascadia Code Repository" clickable />
           </a>
         </section>
       </div>
@@ -50,6 +53,7 @@ const query = graphql`
         frontEndRepositoryUrl
         fontUrl1
         fontUrl2
+        fontUrl3
       }
     }
   }

@@ -4,10 +4,10 @@ import { Link } from "gatsby";
 
 import profileImage from "../assets/images/me.jpg";
 
-export default function Avatar({ uniquePreIdentifier, clickable }) {
+export default function Avatar({ prefixId }) {
   return (
     <div
-      id={`${uniquePreIdentifier}-avatar`}
+      id={`${prefixId}avatar`}
       className="g-mask-image-circular g-hover-animation-logo g-avatar"
     >
       <Link to="/contact">

@@ -5,6 +5,7 @@ module.exports = {
     frontEndRepositoryUrl: `https://github.com/Coffee-Up/blog`,
     fontUrl1: `https://github.com/adobe-fonts/source-code-pro`,
     fontUrl2: `https://github.com/JulietaUla/Montserrat`,
+    fontUrl3: `https://github.com/microsoft/cascadia-code`,
   },
   flags: { PRESERVE_WEBPACK_CACHE: true, FAST_DEV: true },
   plugins: [

@@ -1,18 +1,13 @@
 import React from "react";
 
-const IconFont = ({
-  clickable,
-  uniquePreIdentifier,
-  customClasses,
-  customTitle,
-}) => (
+const IconFont = ({ clickable, prefixId, customClasses, customTitle }) => (
   <svg
     className={
       clickable
         ? `g-hover-animation-logo g-hover-logo-fill-color ${customClasses}`
         : ""
     }
-    id={uniquePreIdentifier ? `${uniquePreIdentifier}-icon-font` : ""}
+    id={prefixId ? `${prefixId}icon-font` : ""}
     viewBox="0 0 512 512"
     role="link"
     aria-hidden="false"
