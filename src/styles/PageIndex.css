@@ -1,5 +1,4 @@
 #index-page-wrapper {
-  padding: 0 5em;
   font-size: 2.5em;
 }
 
@@ -26,10 +25,6 @@
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #index-page-wrapper {
-    padding: 0 1.2em;
-  }
-
   #index-page-avatar {
     /* JSX takes over CSS */
     width: 1.8em !important;

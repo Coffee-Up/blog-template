@@ -3,6 +3,10 @@ import { css } from "styled-components";
 import theme from "../theme";
 
 const globalClasses = css`
+  .g-wrapper-main {
+    padding: ${theme.paddings.main};
+  }
+
   .g-mask-image-circular {
     position: relative;
     height: 74.5px;
@@ -59,6 +63,11 @@ const globalClasses = css`
       cursor: pointer;
       background-color: #f9f1df;
       animation: cardMovingUp 0.2s ease-out forwards;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .g-wrapper-main {
+      padding: ${theme.paddings.mainXS};
     }
   }
 `;

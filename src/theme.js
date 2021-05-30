@@ -7,10 +7,9 @@ const theme = {
     links: "#b04fff",
     hoverSvgLinks: "#b04fff",
   },
-  animations: {
-    hover: {
-      animation: `cardMovingUp 0.2s ease-out forwards;`,
-    },
+  paddings: {
+    main: "0 8rem",
+    mainXS: "0 1.1rem",
   },
 };
 

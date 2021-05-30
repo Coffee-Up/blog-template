@@ -55,7 +55,7 @@ export default function Layout({
         defaultBanner={defaultBanner}
         binaryImageDefault={data.file.childImageSharp}
       />
-      <main>{children}</main>
+      <main className="g-wrapper-main">{children}</main>
       <Footer
         fillColorSVG={theme.colors.backgroundColor}
         backgroundColor={theme.colors.footer}
