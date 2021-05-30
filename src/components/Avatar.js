@@ -4,9 +4,10 @@ import { Link } from "gatsby";
 
 import profileImage from "../assets/images/me.jpg";
 
-export default function Avatar({ small, big, clickable }) {
+export default function Avatar({ small, big, clickable, customIdCSS }) {
   return (
     <div
+      id={customIdCSS}
       style={
         big
           ? { width: "3.1rem", height: "3.1rem" }

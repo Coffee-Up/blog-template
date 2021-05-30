@@ -1,32 +1,51 @@
-#index-wrapper {
+#index-page-wrapper {
   padding: 0 5em;
   font-size: 2.5em;
 }
 
-#index-welcome-title-container {
+#index-page-welcome-title-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   padding: 1em 0;
 }
 
-#index-welcome-title-container h1 {
+#index-page-welcome-title-container h1 {
+  font-size: 2rem;
+}
+
+#index-page-welcome-title-container p {
+  margin-bottom: 0.6em;
+}
+
+#index-page-welcome-title-container h1 {
   font-family: "Montserrat Regular";
-  font-size: 0.8em;
   /* Pour etre aligné avec l'avatar */
   padding-top: 0;
 }
 
-#index-welcome-title-container .avatar-div {
+#index-page-welcome-title-container .avatar-div {
   margin-right: 0.7em;
 }
 
+/*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #index-wrapper {
+  #index-page-wrapper {
     padding: 0 1.2em;
   }
 
   #index-welcome-title-text {
     font-size: 1.5rem;
+  }
+
+  #index-page-welcome-title-container p {
+    font-size: 1.9rem;
+  }
+
+  #index-avatar {
+    /* JSX takes over CSS */
+    width: 1.8em !important;
+    height: 1.8em !important;
   }
 }

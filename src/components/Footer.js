@@ -5,14 +5,14 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Wave, Avatar } from "../components";
 import { IconGithub, IconFont } from "../assets/icons";
 
-const Footer = () => {
+const Footer = ({ backgroundColor, fillColorSVG }) => {
   const { site } = useStaticQuery(query);
   const { frontEndRepositoryUrl, fontUrl1, fontUrl2, fontUrl3 } =
     site.siteMetadata;
-  // TO DO : trop jsx trop confus
+
   return (
-    <footer id="footer-container">
-      <Wave orientation="bottom" />
+    <footer id="footer-container" style={{ backgroundColor }}>
+      <Wave fillColorSVG={fillColorSVG} waveOrientation="bottom" />
       <div id="footer-wrapper">
         <section>
           <p>Website Source Code</p>
@@ -48,6 +48,9 @@ const Footer = () => {
             #3
             <IconFont customTitle="Cascadia Code Repository" clickable={true} />
           </a>
+        </section>
+        <section>
+          <p id="footer-copyright-text">Copyright © Axel Daguerre.</p>
         </section>
       </div>
     </footer>

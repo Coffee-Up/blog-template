@@ -1,14 +1,14 @@
 #main-menu-header {
-  background-color: #ffcb50;
   padding: 0.3em 2em;
-  height: 7vh;
+  height: 8vh;
 }
-#main-menu-nav {
+
+#main-menu-header nav {
   display: flex;
   height: 100%;
 }
 
-#main-menu-home-container {
+#main-menu-header div {
   display: flex;
   align-items: center;
   margin: 0 1em;

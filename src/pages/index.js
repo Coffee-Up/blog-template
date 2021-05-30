@@ -1,18 +1,14 @@
 import * as React from "react";
 import "../styles/PageIndex.css";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
 
 import { Layout, PostsFilterWidget, Avatar } from "../components";
 
-export default function IndexPage({ data, location }) {
-  const img = getImage(data.file.childImageSharp);
-
+export default function IndexPage({ location }) {
   return (
-    <Layout pathUrl={location.pathname} bannerData={{ imageFile: img }}>
-      <div id="index-wrapper">
-        <div id="index-welcome-title-container">
-          <Avatar big clickable />
+    <Layout pathUrl={location.pathname} defaultBanner={true}>
+      <div id="index-page-wrapper">
+        <div id="index-page-welcome-title-container">
+          <Avatar customIdCSS="index-avatar" big clickable />
           <p>Hi, I'm Axel.</p>
           <h1>
             You will find posts about all my interests : <span>Science</span>,{" "}
@@ -25,17 +21,3 @@ export default function IndexPage({ data, location }) {
     </Layout>
   );
 }
-
-export const pageQuery = graphql`
-  query IndexPageQuery {
-    file(relativePath: { eq: "homescreen-banner.png" }) {
-      childImageSharp {
-        gatsbyImageData(
-          height: 300
-          placeholder: TRACED_SVG
-          formats: [AUTO, WEBP, AVIF]
-        )
-      }
-    }
-  }
-`;

@@ -41,7 +41,7 @@ export default function PostsFilterWidget() {
       <header>
         <h3 id="posts-filter-widget-title">Posts Filter</h3>
       </header>
-      <ul id="post-filter-ul">
+      <ul>
         {posts.map(({ node }) => {
           const {
             title,
@@ -53,7 +53,7 @@ export default function PostsFilterWidget() {
           } = node.frontmatter;
 
           return (
-            <li className="g-hover-animation-item" id="post-li" key={node.id}>
+            <li className="g-hover-animation-item" key={node.id}>
               <PostCard
                 path={path}
                 id={id}

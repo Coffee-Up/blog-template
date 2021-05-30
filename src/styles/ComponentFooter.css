@@ -1,6 +1,5 @@
 #footer-container {
-  padding-top: 10em;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 
@@ -9,8 +8,7 @@
   justify-content: space-between;
   font-family: "Fira Code Light";
   font-size: 0.9rem;
-  padding: 3em 3em;
-  background-color: #ffcb50;
+  padding: 7em 3em;
 }
 
 #footer-wrapper section {
@@ -34,4 +32,17 @@
   margin: 0 0.5em;
   display: flex;
   align-items: baseline;
+}
+#footer-copyright-text {
+  margin-top: 2em;
+  color: #835a02;
+}
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  #footer-wrapper {
+    flex-direction: column;
+  }
+  #footer-wrapper section {
+    margin: 1em 0;
+  }
 }

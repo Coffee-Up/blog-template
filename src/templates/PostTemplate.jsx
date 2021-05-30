@@ -17,7 +17,7 @@ export default function PostTemplate({ data: { mdx: post }, location }) {
       <Layout
         headerText={title}
         path={location.pathname}
-        bannerData={{ imageFile: img }}
+        postData={{ imageBinary: img }}
       >
         <div id="post-template-data-container">
           <p id="post-template-time-to-read">{timeToRead} minutes read</p>
@@ -39,7 +39,7 @@ export const query = graphql`
         heading_picture_big {
           childImageSharp {
             gatsbyImageData(
-              width: 2000
+              height: 500
               placeholder: TRACED_SVG
               formats: [AUTO, WEBP, AVIF]
             )

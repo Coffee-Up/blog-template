@@ -2,15 +2,14 @@
   text-align: center;
 }
 
-#post-filter-widget-ul {
+#posts-filter-widget-title ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-/* le li d'un post est dans le widget pour donner la possibilité à CardPost  de ne pas etre dans une liste */
-#post-li {
+#posts-filter-widget-container ul li {
   flex-basis: 45%;
   margin-bottom: 2%;
   border-bottom: 1px solid #d7d7d7;

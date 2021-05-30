@@ -1,10 +1,9 @@
 // We need a js file to use variables theme in our css (css in js ), SASS is not good for debugging , light css in js  + css is better
 import { css } from "styled-components";
-import theme from "../theme";
 
 const globalThemeTags = css`
   html {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   body {
@@ -35,8 +34,11 @@ const globalThemeTags = css`
   }
 
   p {
+    font-size: 1rem;
     font-family: "Montserrat Regular";
+    line-height: 1.4em;
     color: black;
+    padding: 2rem;
   }
   /* Don't put <a> first because p is sometimes in a <a> */
   a {
@@ -69,6 +71,13 @@ const globalThemeTags = css`
 
     body {
       font-size: 0.5rem;
+    }
+  }
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 600px) {
+    html {
+      /* Gives me the power to adjust generaly the size of tags (less spaguetty code) */
+      font-size: 18px;
     }
   }
 `;

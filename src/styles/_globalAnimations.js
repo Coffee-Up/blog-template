@@ -1,9 +1,9 @@
-/* Hover sur une card */
 // We need a js file to use variables theme in our css (css in js ), SASS is not good for debugging , light css in js  + css is better
 import { css } from "styled-components";
 import theme from "../theme";
 
 const globalAnimations = css`
+  /* Hover sur une card */
   @keyframes cardMovingUp {
     from {
       transform: scale(1);

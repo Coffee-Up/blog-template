@@ -1,7 +1,11 @@
 const theme = {
   colors: {
-    links: `#b04fff`,
-    hoverSvgLinks: `#b04fff`,
+    menu: "#ffd760",
+    main: "#ffcb50",
+    footer: "#ffcb50",
+    backgroundColor: "white",
+    links: "#b04fff",
+    hoverSvgLinks: "#b04fff",
   },
   animations: {
     hover: {

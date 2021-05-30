@@ -1,0 +1,510 @@
+/* We need a js file to use variables theme in our css (css in js ), SASS is not good for debugging , light css in js  + css is better */
+import { css } from "styled-components";
+
+const globalReset = css`
+  html,
+  body,
+  body div,
+  span,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  abbr,
+  address,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  samp,
+  small,
+  strong,
+  sub,
+  sup,
+  var,
+  b,
+  i,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  figure,
+  footer,
+  header,
+  menu,
+  nav,
+  section,
+  time,
+  mark,
+  audio,
+  video,
+  details,
+  summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+
+  main,
+  article,
+  aside,
+  figure,
+  footer,
+  header,
+  nav,
+  section,
+  details,
+  summary {
+    display: block;
+  }
+
+  /* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  /* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+  /* Responsive images and other embedded objects */
+  img,
+  object,
+  embed {
+    max-width: 100%;
+  }
+  li {
+    list-style: none;
+  }
+  /*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+#map img {
+		max-width: none;
+}
+*/
+
+  /* force a vertical scrollbar to prevent a jumpy page */
+  html {
+    overflow-y: scroll;
+  }
+
+  /* we use a lot of ULs that aren't bulleted.
+	you'll have to restore the bullets within content,
+	which is fine because they're probably customized anyway */
+  ul {
+  }
+
+  blockquote,
+  q {
+    quotes: none;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+
+  a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+
+  del {
+    text-decoration: line-through;
+  }
+
+  abbr[title],
+  dfn[title] {
+    border-bottom: 1px dotted #000;
+    cursor: help;
+  }
+
+  /* tables still need cellspacing="0" in the markup */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  th {
+    font-weight: bold;
+    vertical-align: bottom;
+  }
+  td {
+    font-weight: normal;
+    vertical-align: top;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  input,
+  select {
+    vertical-align: middle;
+  }
+
+  pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+  }
+
+  input[type="radio"] {
+    vertical-align: text-bottom;
+  }
+  input[type="checkbox"] {
+    vertical-align: bottom;
+  }
+  .ie7 input[type="checkbox"] {
+    vertical-align: baseline;
+  }
+  .ie6 input {
+    vertical-align: text-bottom;
+  }
+
+  select,
+  input,
+  textarea {
+    font: 99% sans-serif;
+  }
+
+  table {
+    font-size: inherit;
+    font: 100%;
+  }
+
+  small {
+    font-size: 85%;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  td,
+  td img {
+    vertical-align: top;
+  }
+
+  /* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+  }
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+
+  /* standardize any monospaced elements */
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: monospace, sans-serif;
+  }
+
+  /* Webkit browsers add a 2px margin outside the chrome of form elements */
+  button,
+  input,
+  select,
+  textarea {
+    margin: 0;
+  }
+
+  /* make buttons play nice in IE */
+  button,
+  input[type="button"] {
+    width: auto;
+    overflow: visible;
+  }
+
+  /* scale images in IE7 more attractively */
+  .ie7 img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+  /* let's clear some floats */
+  .clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  html {
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: 100%;
+  }
+  a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:focus {
+    outline: 0;
+  }
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+  [tabindex="-1"]:focus {
+    outline: none !important;
+  }
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+  }
+  button,
+  input {
+    overflow: visible;
+  }
+  button,
+  select {
+    text-transform: none;
+  }
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  textarea {
+    overflow: auto;
+  }
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+  }
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+  }
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+  }
+  a {
+    background-color: transparent;
+  }
+  abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+  }
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+  figure {
+    margin: 0 0 1rem 0;
+  }
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  [role="button"] {
+    cursor: pointer;
+  }
+  a,
+  area,
+  button,
+  [role="button"],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  caption {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    caption-side: bottom;
+  }
+  th {
+    text-align: left;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+  input,
+  button,
+  select,
+  textarea {
+    line-height: inherit;
+  }
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    -webkit-appearance: listbox;
+  }
+  textarea {
+    resize: vertical;
+  }
+  fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: inherit;
+  }
+  input[type="search"] {
+    -webkit-appearance: none;
+  }
+  output {
+    display: inline-block;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  [hidden] {
+    display: none !important;
+  }
+`;
+
+export default globalReset;

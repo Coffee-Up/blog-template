@@ -19,15 +19,15 @@
   width: 60%;
 }
 
-#post-card-title {
+#post-card-overview-container h2 {
   font-family: "Cascadia Code";
-  font-size: 1.1em;
+  font-size: 1rem;
   font-weight: 600;
   padding: 1em 0 0.2em 0;
   border-bottom: 1px rgb(179, 177, 177) solid;
 }
 
-#post-card-summary {
+#post-card-overview-container p {
   /* En mettant 100% l'element se deplace sur la ligne suivante */
   width: 100%;
   text-align: center;
@@ -47,7 +47,7 @@
   margin: 0 0 1em 0;
 }
 
-#post-card-date {
+#post-card-data-container span {
   /* Unset global default span behaviour define in Layout */
   font-family: unset;
   font-size: 0.8rem;
@@ -58,7 +58,24 @@
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
+  #post-card-overview-container {
+    text-align: center;
+  }
+
   #post-card-title {
     font-size: 0.9rem;
+  }
+
+  #post-card-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #post-card-link div {
+    width: 100%;
+  }
+
+  #post-card-data-container {
+    text-align: center;
   }
 }

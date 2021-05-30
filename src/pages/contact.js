@@ -1,15 +1,11 @@
 import * as React from "react";
 import "../styles/PageContact.css";
-import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
 
 import { Layout } from "../components";
 
-export default function ContactPage({ data }) {
-  const img = getImage(data.file.childImageSharp);
-
+export default function ContactPage() {
   return (
-    <Layout bannerData={{ imageFile: img }}>
+    <Layout defaultBanner={true}>
       <div id="contact-page-container">
         <p id="contact-page-introduction">
           Hi, I have built this website mainly to{" "}
@@ -21,17 +17,3 @@ export default function ContactPage({ data }) {
     </Layout>
   );
 }
-
-export const pageQuery = graphql`
-  query ContactPageQuery {
-    file(relativePath: { eq: "homescreen-banner.png" }) {
-      childImageSharp {
-        gatsbyImageData(
-          width: 1920
-          placeholder: TRACED_SVG
-          formats: [AUTO, WEBP, AVIF]
-        )
-      }
-    }
-  }
-`;
