@@ -12,33 +12,30 @@ const globalThemeTags = css`
   }
 
   h1 {
-    font-family: "Source Code Variable";
+    font-family: "Montserrat Bold";
     font-weight: 900;
-    font-size: 1rem;
-
-    padding: 1rem 0;
+    font-size: 1.4rem;
+    margin-bottom: 1em;
   }
 
   h2 {
     font-family: "Source Code Variable";
     font-weight: 500;
-    font-size: 1.3rem;
-    padding: 1rem 0;
+    font-size: 1.2rem !important;
   }
 
   h3 {
     font-family: "Source Code Variable";
     font-weight: 500;
-    font-size: 1.2rem;
-    padding: 1rem 0;
+    font-size: 1.1rem;
   }
 
   p {
+    margin-bottom: 0.4em;
     font-size: 1rem;
     font-family: "Montserrat Regular";
     line-height: 1.4em;
     color: black;
-    padding: 2rem;
   }
   /* Don't put <a> first because p is sometimes in a <a> */
   a {
@@ -56,10 +53,11 @@ const globalThemeTags = css`
 
   span {
     font-family: "Montserrat Bold";
+    // need span to inherit size when in a h1, h2, p
+    font-size: inherit;
   }
-
+  /*---------------------------------------------------------------------------*/
   /* MEDIA QUERIES */
-
   @media screen and (max-width: 600px) {
     h1 {
       font-size: 1.4rem;

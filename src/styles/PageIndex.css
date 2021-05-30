@@ -10,22 +10,17 @@
   padding: 1em 0;
 }
 
-#index-page-welcome-title-container h1 {
-  font-size: 2rem;
-}
-
-#index-page-welcome-title-container p {
-  margin-bottom: 0.6em;
+#index-page-welcome-title-container div {
+  display: flex;
 }
 
 #index-page-welcome-title-container h1 {
   font-family: "Montserrat Regular";
-  /* Pour etre aligné avec l'avatar */
-  padding-top: 0;
+  margin-bottom: 0.3em;
 }
 
 #index-page-welcome-title-container .avatar-div {
-  margin-right: 0.7em;
+  margin-right: 0.4em;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -35,15 +30,7 @@
     padding: 0 1.2em;
   }
 
-  #index-welcome-title-text {
-    font-size: 1.5rem;
-  }
-
-  #index-page-welcome-title-container p {
-    font-size: 1.9rem;
-  }
-
-  #index-avatar {
+  #index-page-avatar {
     /* JSX takes over CSS */
     width: 1.8em !important;
     height: 1.8em !important;

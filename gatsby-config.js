@@ -7,7 +7,7 @@ module.exports = {
     fontUrl2: `https://github.com/JulietaUla/Montserrat`,
     fontUrl3: `https://github.com/microsoft/cascadia-code`,
   },
-  flags: { PRESERVE_WEBPACK_CACHE: true, FAST_DEV: true },
+  flags: { PRESERVE_WEBPACK_CACHE: true, DEV_SSR: false, FAST_DEV: true },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

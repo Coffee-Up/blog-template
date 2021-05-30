@@ -1,7 +1,7 @@
 #contact-page-container {
-  font-size: 2rem;
   padding: 1em 5em;
 }
 
-#contact-page-introduction {
+#contact-page-container h1 {
+  text-align: center;
 }

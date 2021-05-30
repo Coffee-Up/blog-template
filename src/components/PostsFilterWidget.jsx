@@ -22,7 +22,7 @@ export default function PostsFilterWidget() {
                 childImageSharp {
                   gatsbyImageData(
                     width: 100
-                    placeholder: TRACED_SVG
+                    placeholder: NONE
                     formats: [AUTO, WEBP, AVIF]
                   )
                 }

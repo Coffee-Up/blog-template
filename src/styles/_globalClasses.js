@@ -47,9 +47,11 @@ const globalClasses = css`
   .g-wave-svg-path-colored {
     fill: ${theme.colors.svgPathColored};
   }
+
   .g-wave-svg-path-transparent {
     fill: ${theme.colors.svgPathTransparent};
   }
+
   /*---------------------------------------------------------------------------*/
   /* MEDIA QUERIES */
   @media screen and (min-width: 900px) {

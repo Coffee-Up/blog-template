@@ -64,6 +64,15 @@ const globalAnimations = css`
       filter: brightness(1.1);
     }
   }
+  /* Transition Page */
+  @keyframes transitionOpacity {
+    from {
+      opacity: 100%;
+    }
+    to {
+      filter: 0%;
+    }
+  }
 `;
 
 export default globalAnimations;
