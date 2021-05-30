@@ -25,7 +25,8 @@ export default function ContactPage() {
           If you want to contact me to talk about anything, you can reach me
           from the <span>links below</span> or you can even use the comment
           section below each posts, you don't have to login anywhere as it is a
-          self-made commentary section.
+          self-made commentary section that preserve your entire privacy. In
+          fact there is no tracking service on my website.
         </p>
       </div>
     </Layout>
