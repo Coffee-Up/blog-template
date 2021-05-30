@@ -5,3 +5,10 @@
 #contact-page-container h1 {
   text-align: center;
 }
+/*---------------------------------------------------------------------------*/
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  #contact-page-container {
+    padding: 1em 2.6em;
+  }
+}

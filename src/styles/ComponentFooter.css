@@ -45,6 +45,7 @@
   margin-top: 2em;
   color: #835a02;
 }
+/*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   #footer-wrapper {
