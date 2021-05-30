@@ -50,7 +50,12 @@
   #footer-wrapper {
     flex-direction: column;
   }
+
   #footer-wrapper section {
     margin: 1em 0;
+  }
+
+  #footer-wrapper section:last-child {
+    text-align: center;
   }
 }
