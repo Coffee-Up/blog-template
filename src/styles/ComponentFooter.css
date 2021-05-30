@@ -6,6 +6,7 @@
 #footer-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   font-family: "Fira Code Light";
   font-size: 0.9rem;
   padding: 7em 3em;
@@ -23,6 +24,11 @@
   width: 100%;
 }
 
+#footer-wrapper section:last-child {
+  text-align: right;
+  width: 100%;
+}
+
 #footer-section-fonts-repo {
   justify-content: center;
   text-align: center;
@@ -33,7 +39,9 @@
   display: flex;
   align-items: baseline;
 }
+
 #footer-copyright-text {
+  width: 100;
   margin-top: 2em;
   color: #835a02;
 }
