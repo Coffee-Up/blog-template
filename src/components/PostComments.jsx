@@ -47,6 +47,8 @@ export default function PostComments({ comments, postId }) {
     setCommentJustSended(true);
     setCommentSendedData(data);
   }
+
+  useEffect(() => {});
   return (
     <div id="comments-container">
       {showLoader && (
@@ -97,32 +99,34 @@ export default function PostComments({ comments, postId }) {
       </div>
       <div id="comment-form-container">
         <form>
-          <p>Add a comment</p>
           <p>
             Commenting on my website don't require to login. <br />
             Because I think it should be simple & quick. Just write your comment
             & send it, it will be available in few minutes later. I am planning
             to able the use of markdown syntax in the future.
           </p>
+          <p>Add a comment</p>
           <div id="comment-form-inputs-container">
             <input
               placeholder="Add a title (optional)"
               onChange={(event) => setTitle(event.target.value)}
             />
             <input
+              id="comment-form-username"
               placeholder="Your Username (optional)"
               onChange={(event) => setFirstName(event.target.value)}
             />
           </div>
           <textarea
-            onChange={(event) => postTextChecker(event)}
-            placeholder="Type your comment here (required)"
             id="comment-form-body-text"
-            onChange={(event) => setTextComment(event.target.value)}
+            placeholder="Type your comment here (required)"
+            onChange={(event) => (
+              setTextComment(event.target.value), postTextChecker(event)
+            )}
           />
           {isTextBodyOk && <p>C'mon, Write a little bit more</p>}
         </form>
-        <button onClick={() => handleAddComment()}>Add Comment</button>
+        <button onClick={() => handleAddComment()}>Post</button>
       </div>
     </div>
   );

@@ -59,6 +59,7 @@ const globalClasses = css`
   .g-rotate {
     animation: rotate 2s normal infinite;
   }
+
   /* ---------------------------------------------------------------------------*/
   /* MEDIA QUERIES */
   @media screen and (min-width: 900px) {

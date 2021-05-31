@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   margin: 5rem 0 3em 0;
   width: 100%;
-  border: 1px black solid;
   max-width: 800px;
   margin: 5rem auto;
 }
@@ -20,7 +19,7 @@
 }
 
 #comments-container button {
-  margin-bottom: 1em;
+  margin: 1em 0 1em auto;
   background-color: white;
   border: 1px #fac20c solid;
   border-radius: 5px;
@@ -35,15 +34,16 @@
 /* ------------------------------------------------------------------------- */
 /* COMMENT LIST */
 #comments-list-ul li {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border-bottom: 1px grey solid;
-  padding: 2em 2em;
+  padding: 2em;
 }
 
 #comments-list-ul li h4 {
   margin-bottom: 2em;
   text-transform: capitalize;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  font-weight: 400;
 }
 
 #comments-list-ul li:nth-child(odd) {
@@ -53,11 +53,14 @@
 #comment-text-body {
   padding: 0 1em;
   text-align: left;
-  font-family: "Cascadia Code";
+  font-family: "Fira code regular";
+  font-size: 0.7rem;
   font-weight: 300;
+  color: #222020;
 }
 
 #comment-author {
+  font-size: 0.8em;
   text-align: right;
 }
 /* ------------------------------------------------------------------------- */
@@ -70,15 +73,28 @@
 }
 
 #comment-form-body-text {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   width: 100%;
   min-height: 200px;
+  font-size: 0.8rem;
+  line-height: 1.3em;
+  padding: 1em;
+}
+
+#comment-form-body-text textarea:focus {
+  outline: none;
 }
 
 #comment-form-inputs-container input {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   text-align: center;
-  width: 100%;
+  width: 70%;
   margin: 1em 0;
   padding: 0 1em;
+}
+
+#comment-form-inputs-container input:focus {
+  outline: none;
 }
 /* ------------------------------------------------------------------------- */
 /* MODALS */
