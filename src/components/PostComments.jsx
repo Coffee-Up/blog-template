@@ -51,24 +51,6 @@ export default function PostComments({ comments, postId }) {
   useEffect(() => {});
   return (
     <div id="comments-container">
-      {showLoader && (
-        <div id="modal-comment-container-sending">
-          <IconLoader id="loader-icon" />
-        </div>
-      )}
-      {commentJustSended && (
-        <>
-          <div id="modal-comment-sended-bg"></div>
-          <div id="modal-comment-sended-container">
-            <p>
-              You have sended your comment, it will be visible in few minutes.
-              <br />
-              Thank you !
-            </p>
-            <button onClick={() => setCommentJustSended(false)}>OK</button>
-          </div>
-        </>
-      )}
       <div id="comments-container-title">
         <h3>Comments Section</h3>
       </div>
@@ -99,12 +81,6 @@ export default function PostComments({ comments, postId }) {
       </div>
       <div id="comment-form-container">
         <form>
-          <p>
-            Commenting on my website don't require to login. <br />
-            Because I think it should be simple & quick. Just write your comment
-            & send it, it will be available in few minutes later. I am planning
-            to able the use of markdown syntax in the future.
-          </p>
           <p>Add a comment</p>
           <div id="comment-form-inputs-container">
             <input
@@ -126,7 +102,28 @@ export default function PostComments({ comments, postId }) {
           />
           {isTextBodyOk && <p>C'mon, Write a little bit more</p>}
         </form>
-        <button onClick={() => handleAddComment()}>Post</button>
+        <button id="send-post-button" onClick={() => handleAddComment()}>
+          Post
+        </button>
+
+        {showLoader && (
+          <div id="modal-comment-container-sending">
+            <IconLoader id="loader-icon" />
+          </div>
+        )}
+        {commentJustSended && (
+          <>
+            <div id="modal-comment-sended-bg"></div>
+            <div id="modal-comment-sended-container">
+              <p>
+                You have sended your comment, it will be visible in few minutes.
+                <br />
+                Thank you !
+              </p>
+              <button onClick={() => setCommentJustSended(false)}>OK</button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

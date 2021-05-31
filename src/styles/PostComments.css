@@ -17,9 +17,8 @@
   text-align: center;
   width: 100%;
 }
-
+/* TO DO: MAKE A THEME BUTTON */
 #comments-container button {
-  margin: 1em 0 1em auto;
   background-color: white;
   border: 1px #fac20c solid;
   border-radius: 5px;
@@ -34,20 +33,19 @@
 /* ------------------------------------------------------------------------- */
 /* COMMENT LIST */
 #comments-list-ul li {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: #faf9fd;
+  margin: 1em 0;
   font-size: 0.8rem;
-  border-bottom: 1px grey solid;
-  padding: 2em;
+  padding: 2em 3em;
 }
 
 #comments-list-ul li h4 {
   margin-bottom: 2em;
   text-transform: capitalize;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: 400;
-}
-
-#comments-list-ul li:nth-child(odd) {
-  background-color: #f9f7f4;
 }
 
 #comment-text-body {
@@ -60,8 +58,9 @@
 }
 
 #comment-author {
+  margin-top: 1em;
   font-size: 0.8em;
-  text-align: right;
+  text-align: left;
 }
 /* ------------------------------------------------------------------------- */
 /* COMMENT FORM */
@@ -96,6 +95,10 @@
 #comment-form-inputs-container input:focus {
   outline: none;
 }
+
+#send-post-button {
+  margin: 1em 0 1em auto;
+}
 /* ------------------------------------------------------------------------- */
 /* MODALS */
 #modal-comment-container-sending {
@@ -111,14 +114,22 @@
 }
 
 #modal-comment-sended-container {
-  opacity: 0.8;
   position: fixed;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  left: 0;
-  top: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+  top: 20%;
+  left: 10%;
+  padding: 6rem 3rem 6rem 3rem;
+  background: white;
+  /* comment-container div selector takes priority  */
+  width: 70vw !important;
+  height: 50vh;
+}
+
+#modal-comment-sended-container p {
+  width: 100%;
 }
 
 #modal-comment-sended-bg {
@@ -129,28 +140,6 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-}
-
-#modal-comment-sended-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  z-index: 1000;
-  top: 20%;
-  left: 10%;
-  padding: 6rem 3rem 6rem 3rem;
-  background: white;
-  opacity: 1;
-  /* comment-container div selector takes priority  */
-  width: 80vw !important;
-  height: 60vh;
-}
-
-#modal-comment-sended-container p {
-  font-family: "Cascadia Code";
-  line-height: 2em;
-  font-size: 1.4em;
 }
 
 #modal-comment-sended-container button {
