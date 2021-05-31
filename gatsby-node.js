@@ -7,6 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           frontmatter {
             path
+            postId
           }
         }
       }
@@ -21,6 +22,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: path.resolve("./src/templates/PostTemplate.jsx"),
       context: {
         pathSlug: page.frontmatter.path,
+        // GraphQl queries need String type or throw an error, of course if i write frontmatter's post in string its fine, but I can make mistakes
+        postId: `${page.frontmatter.postId}`,
       },
     });
   });

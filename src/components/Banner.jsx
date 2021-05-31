@@ -2,7 +2,7 @@ import * as React from "react";
 import "../styles/ComponentBanner.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import { Wave } from "../components";
+import { Wave } from ".";
 
 // TO DO: I have transfromed it to use as react component to make a transition behaviour, with some magic it works without the class
 class Banner extends React.Component {

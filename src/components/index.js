@@ -9,6 +9,7 @@ import Avatar from "../components/Avatar";
 import TagSymbol from "../components/TagSymbol";
 import Seo from "../components/Seo";
 import PopOver from "../components/PopOver";
+import PostComments from "../components/PostComments";
 
 export {
   Layout,
@@ -22,4 +23,5 @@ export {
   TagSymbol,
   Seo,
   PopOver,
+  PostComments,
 };

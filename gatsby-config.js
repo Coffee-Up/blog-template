@@ -9,6 +9,7 @@ module.exports = {
   },
   flags: { PRESERVE_WEBPACK_CACHE: true, DEV_SSR: false, FAST_DEV: true },
   plugins: [
+    require.resolve(`${__dirname}/plugins/back-blog-api`),
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
