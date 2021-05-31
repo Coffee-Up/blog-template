@@ -34,15 +34,12 @@ export default function PostComments({ comments, postId }) {
       requestOptions
     )
       .then((response) => response.json())
-      .then((res) => commentSendedData(res));
+      .then((res) => setCommentSendedData(res));
 
     setShowLoader(false);
     setCommentJustSended(true);
     setCommentJustSended(data);
   }
-  useEffect(() => {
-    console.log(commentJustSended);
-  });
   return (
     <div id="comments-container">
       {showLoader && (
