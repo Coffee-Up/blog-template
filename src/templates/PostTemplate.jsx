@@ -28,8 +28,8 @@ export default function PostTemplate({
           <p id="post-template-time-to-read">{timeToRead} minutes read</p>
         </div>
         <div id="post-template-wrapper-body">
-          <PostComments postId={postId} comments={comments} />
           <MDXRenderer>{body}</MDXRenderer>
+          <PostComments postId={postId} comments={comments} />
         </div>
       </Layout>
     </>
@@ -37,7 +37,7 @@ export default function PostTemplate({
 }
 
 export const query = graphql`
-  query ($pathSlug: String!) {
+  query ($pathSlug: String!, $postId: String!) {
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
       frontmatter {
         postId
@@ -56,7 +56,7 @@ export const query = graphql`
       body
       timeToRead
     }
-    allBlogPostComments(filter: { articleId: { eq: "2" } }) {
+    allBlogPostComments(filter: { articleId: { eq: $postId } }) {
       nodes {
         id
         title

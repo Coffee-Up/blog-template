@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import "../styles/Comments.css";
 
 export default function PostComments({ comments, postId }) {
-  const [text, setTextComment] = useState("empty");
-  const [articleId, setArticleId] = useState("empty");
-  const [firstname, setFirstName] = useState("empty");
-  const [lastname, setLastName] = useState("empty");
-  const [title, setTitle] = useState("empty");
-  const [contact, setContact] = useState("empty");
+  const [text, setTextComment] = useState("");
+  const [articleId, setArticleId] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [title, setTitle] = useState("");
+  const [contact, setContact] = useState("");
+
+  const [showComments, setShowComments] = useState(false);
 
   async function addComment() {
     const data = {
@@ -36,18 +39,26 @@ export default function PostComments({ comments, postId }) {
     setArticleId(postId);
   });
   return (
-    <>
-      <ul>
-        {comments.map((comment) => {
-          return (
-            <li key={comment.id}>
-              <h2>{comment.title}</h2>
-              <p>{comment.text}</p>
-            </li>
-          );
-        })}
-      </ul>
-      <div>
+    <div id="comments-container">
+      <h3>Comments Section</h3>
+      {comments.length > 0 && (
+        <button onClick={() => setShowComments(!showComments)}>
+          Show {comments.length} Comments
+        </button>
+      )}
+      {showComments && (
+        <ul>
+          {comments.map((comment) => {
+            return (
+              <li key={comment.id}>
+                <h4>{comment.title}</h4>
+                <p id="comment-text">{comment.text}</p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      <div id="comment-form-container">
         <form>
           <p>Add a comment</p>
           <p>
@@ -56,14 +67,22 @@ export default function PostComments({ comments, postId }) {
             be available in few minutes later. I am planning to able the use of
             markdown syntax in the future.
           </p>
-          <input onChange={(event) => setTitle(event.target.value)} />
-          <input onChange={(event) => setFirstName(event.target.value)} />
-          <input onChange={(event) => setContact(event.target.value)} />
-          <input onChange={(event) => setLastName(event.target.value)} />
+          <div>
+            <input onChange={(event) => setTitle(event.target.value)} />
+          </div>
+          <div>
+            <input onChange={(event) => setFirstName(event.target.value)} />
+          </div>
+          <div>
+            <input onChange={(event) => setContact(event.target.value)} />
+          </div>
+          <div>
+            <input onChange={(event) => setLastName(event.target.value)} />
+          </div>
           <textarea onChange={(event) => setTextComment(event.target.value)} />
         </form>
         <button onClick={() => addComment()}>Add Comment</button>
       </div>
-    </>
+    </div>
   );
 }
