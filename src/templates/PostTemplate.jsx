@@ -29,7 +29,7 @@ export default function PostTemplate({
         </div>
         <div id="post-template-wrapper-body">
           <MDXRenderer>{body}</MDXRenderer>
-          <PostComments postId={postId} comments={comments} />
+          <PostComments postId={postId} comments={comments || []} />
         </div>
       </Layout>
     </>

@@ -9,13 +9,20 @@ export default function PostComments({ comments, postId }) {
   const [title, setTitle] = useState("");
   const [commentJustSended, setCommentJustSended] = useState(false);
   const [commentSendedData, setCommentSendedData] = useState(undefined);
+  const [isTextBodyOk, setIsTextBodyOk] = useState(false);
 
   const [showComments, setShowComments] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
 
-  async function handleAddComment() {
-    setShowLoader(true);
+  function postTextChecker(event) {
+    console.log("oui");
+    console.log(event.target.value);
+  }
 
+  async function handleAddComment() {
+    // comment empty = exit
+    if (text === "") return;
+    setShowLoader(true);
     const data = {
       articleId: postId,
       firstname,
@@ -23,6 +30,7 @@ export default function PostComments({ comments, postId }) {
       title,
     };
 
+    // username and title is not required
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,13 +40,12 @@ export default function PostComments({ comments, postId }) {
     const commentValidated = await fetch(
       "https://ael-blog-backend.herokuapp.com/comment",
       requestOptions
-    )
-      .then((response) => response.json())
-      .then((res) => setCommentSendedData(res));
+    ).then((response) => response.json());
 
+    // setCommentSendedData(res)
     setShowLoader(false);
     setCommentJustSended(true);
-    setCommentJustSended(data);
+    setCommentSendedData(data);
   }
   return (
     <div id="comments-container">
@@ -60,22 +67,28 @@ export default function PostComments({ comments, postId }) {
           </div>
         </>
       )}
-      <div>
+      <div id="comments-container-title">
         <h3>Comments Section</h3>
       </div>
       <div>
         {comments.length > 0 && (
-          <button onClick={() => setShowComments(!showComments)}>
-            Show {comments.length} Comments
-          </button>
+          <>
+            <p>Comments already on this post !</p>
+            <button onClick={() => setShowComments(!showComments)}>
+              Show {comments.length} Comments
+            </button>
+          </>
         )}
         {showComments && (
-          <ul>
+          <ul id="comments-list-ul">
             {comments.map((comment) => {
               return (
                 <li key={comment.id}>
                   <h4>{comment.title}</h4>
-                  <p id="comment-text">{comment.text}</p>
+                  <p id="comment-text-body">{comment.text}</p>
+                  {comment.firstname !== "" && (
+                    <p id="comment-author">{comment.firstname}</p>
+                  )}
                 </li>
               );
             })}
@@ -86,25 +99,28 @@ export default function PostComments({ comments, postId }) {
         <form>
           <p>Add a comment</p>
           <p>
-            Commenting on my website don't ask to login. Because I think it
-            should be simple & quick. Just write your comment & send it, it will
-            be available in few minutes later. I am planning to able the use of
-            markdown syntax in the future.
+            Commenting on my website don't require to login. <br />
+            Because I think it should be simple & quick. Just write your comment
+            & send it, it will be available in few minutes later. I am planning
+            to able the use of markdown syntax in the future.
           </p>
           <div id="comment-form-inputs-container">
             <input
-              placeholder="Add a title"
+              placeholder="Add a title (optional)"
               onChange={(event) => setTitle(event.target.value)}
             />
             <input
-              placeholder="Your Username"
+              placeholder="Your Username (optional)"
               onChange={(event) => setFirstName(event.target.value)}
             />
           </div>
           <textarea
-            id="comment-body-text"
+            onChange={(event) => postTextChecker(event)}
+            placeholder="Type your comment here (required)"
+            id="comment-form-body-text"
             onChange={(event) => setTextComment(event.target.value)}
           />
+          {isTextBodyOk && <p>C'mon, Write a little bit more</p>}
         </form>
         <button onClick={() => handleAddComment()}>Add Comment</button>
       </div>

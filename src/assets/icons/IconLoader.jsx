@@ -9,7 +9,6 @@ const IconLoader = ({ id }) => (
     aria-hidden="false"
     focusable="true"
     preserveAspectRatio="xMidYMid meet"
-    height="4rem"
     width="4rem"
   >
     <circle cx="256" cy="256" fill="#172a7d" r="245" />

@@ -1,11 +1,17 @@
+/* COMMENT CONTAINER (PARENT) */
 #comments-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 5rem 0 3em 0;
-  padding: 3em 1em;
   width: 100%;
   border: 1px black solid;
+  max-width: 800px;
+  margin: 5rem auto;
+}
+
+#comments-container-title h3 {
+  margin-bottom: 1.5em;
 }
 
 #comments-container div {
@@ -13,18 +19,57 @@
   width: 100%;
 }
 
-#comment-text {
-  font-family: "Montserrat Light";
-  font-size: 0.9rem;
-  margin-top: 3em;
+#comments-container button {
+  margin-bottom: 1em;
+  background-color: white;
+  border: 1px #fac20c solid;
+  border-radius: 5px;
+  padding: 0.5em 1.4em;
 }
 
+#comments-container button:hover {
+  background-color: #fac20c;
+  border-color: #ffd752;
+  cursor: pointer;
+}
+/* ------------------------------------------------------------------------- */
+/* COMMENT LIST */
+#comments-list-ul li {
+  font-size: 0.9rem;
+  border-bottom: 1px grey solid;
+  padding: 2em 2em;
+}
+
+#comments-list-ul li h4 {
+  margin-bottom: 2em;
+  text-transform: capitalize;
+  font-size: 0.9em;
+}
+
+#comments-list-ul li:nth-child(odd) {
+  background-color: #f9f7f4;
+}
+
+#comment-text-body {
+  padding: 0 1em;
+  text-align: left;
+  font-family: "Cascadia Code";
+  font-weight: 300;
+}
+
+#comment-author {
+  text-align: right;
+}
+/* ------------------------------------------------------------------------- */
+/* COMMENT FORM */
 #comment-form-container {
+  padding: 0 1.5em;
   display: flex;
   flex-wrap: wrap;
+  margin: 2em 0;
 }
 
-#comment-body-text {
+#comment-form-body-text {
   width: 100%;
   min-height: 200px;
 }
@@ -35,7 +80,8 @@
   margin: 1em 0;
   padding: 0 1em;
 }
-
+/* ------------------------------------------------------------------------- */
+/* MODALS */
 #modal-comment-container-sending {
   background: grey;
   opacity: 0.8;
