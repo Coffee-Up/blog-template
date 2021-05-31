@@ -34,7 +34,7 @@ export default function PostComments({ comments, postId }) {
       requestOptions
     )
       .then((response) => response.json())
-      .then((res) => console.log(res));
+      .then((res) => commentSendedData(res));
 
     setShowLoader(false);
     setCommentJustSended(true);
