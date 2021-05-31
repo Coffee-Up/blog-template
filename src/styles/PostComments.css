@@ -48,8 +48,7 @@
   top: 0;
 }
 
-#modal-comment-container-sended {
-  background: grey;
+#modal-comment-sended-container {
   opacity: 0.8;
   position: fixed;
   z-index: 100;
@@ -60,9 +59,48 @@
   top: 0;
 }
 
-#modal-comment-container-sended p {
+#modal-comment-sended-bg {
+  position: fixed;
+  background-color: black;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#modal-comment-sended-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+  top: 20%;
+  left: 10%;
+  padding: 6rem 3rem 6rem 3rem;
   background: white;
   opacity: 1;
+  /* comment-container div selector takes priority  */
+  width: 80vw !important;
+  height: 60vh;
+}
+
+#modal-comment-sended-container p {
+  font-family: "Cascadia Code";
+  line-height: 2em;
+  font-size: 1.4em;
+}
+
+#modal-comment-sended-container button {
+  background-color: #fdf9eb;
+  border-radius: 0.3em;
+  width: 8em;
+  height: 3em;
+}
+
+#modal-comment-sended-container button:hover {
+  cursor: pointer;
+  background-color: #ffeba8;
 }
 
 #loader-icon {

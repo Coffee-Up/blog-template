@@ -51,13 +51,17 @@ export default function PostComments({ comments, postId }) {
         </div>
       )}
       {commentJustSended && (
-        <div id="modal-comment-container-sended">
-          <p>
-            You have sended your comment. It will be visible in few minutes.
-            Thank you !
-          </p>
-          <button onClick={() => setCommentJustSended(false)}>OK</button>
-        </div>
+        <>
+          <div id="modal-comment-sended-bg"></div>
+          <div id="modal-comment-sended-container">
+            <p>
+              You have sended your comment, it will be visible in few minutes.
+              <br />
+              Thank you !
+            </p>
+            <button onClick={() => setCommentJustSended(false)}>OK</button>
+          </div>
+        </>
       )}
       <div>
         <h3>Comments Section</h3>
