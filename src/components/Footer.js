@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/ComponentFooter.css";
+import "../styles/Footer.css";
 import { useStaticQuery, graphql } from "gatsby";
 
 import { Wave, Avatar } from "../components";

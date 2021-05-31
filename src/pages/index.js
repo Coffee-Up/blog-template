@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/PageIndex.css";
+import "../styles/IndexPage.css";
 
 import { Layout, PostsFilterWidget, Avatar } from "../components";
 

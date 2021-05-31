@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/ComponentPostCard.css";
+import "../styles/PostCard.css";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 
 export default function PostComments({ comments, postId }) {
-  const [textComment, setTextComment] = useState("empty");
+  const [text, setTextComment] = useState("empty");
   const [articleId, setArticleId] = useState("empty");
-  const [firstName, setFirstName] = useState("empty");
-  const [lastName, setLastName] = useState("empty");
+  const [firstname, setFirstName] = useState("empty");
+  const [lastname, setLastName] = useState("empty");
   const [title, setTitle] = useState("empty");
   const [contact, setContact] = useState("empty");
 
   async function addComment() {
     const data = {
       articleId,
-      firstName,
-      lastName,
-      textComment,
+      firstname,
+      lastname,
+      text,
       title,
       contact,
     };
@@ -30,7 +30,6 @@ export default function PostComments({ comments, postId }) {
     )
       .then((response) => response.json())
       .then((res) => console.log(res));
-    console.log(commentAdded);
   }
 
   useEffect(() => {
@@ -57,10 +56,10 @@ export default function PostComments({ comments, postId }) {
             be available in few minutes later. I am planning to able the use of
             markdown syntax in the future.
           </p>
-          <textarea onChange={(event) => setTitle(event.target.value)} />
-          <textarea onChange={(event) => setFirstName(event.target.value)} />
-          <textarea onChange={(event) => setContact(event.target.value)} />
-          <textarea onChange={(event) => setLastName(event.target.value)} />
+          <input onChange={(event) => setTitle(event.target.value)} />
+          <input onChange={(event) => setFirstName(event.target.value)} />
+          <input onChange={(event) => setContact(event.target.value)} />
+          <input onChange={(event) => setLastName(event.target.value)} />
           <textarea onChange={(event) => setTextComment(event.target.value)} />
         </form>
         <button onClick={() => addComment()}>Add Comment</button>

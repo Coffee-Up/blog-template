@@ -1,7 +1,6 @@
 // """ TO DO: Change on back en articleId by postId """
 import React from "react";
-import "../styles/PagePostTemplate.css";
-import "../styles/PagePost.css";
+import "../styles/PostTemplatePage.css";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";

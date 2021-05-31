@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/ComponentWave.css";
+import "../styles/Wave.css";
 
 const Wave = ({ orientation, fillColorSVG }) => {
   return (

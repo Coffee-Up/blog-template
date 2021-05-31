@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/PageContact.css";
+import "../styles/ContactPage.css";
 
 import { Layout } from "../components";
 

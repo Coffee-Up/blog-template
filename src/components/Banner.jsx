@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/ComponentBanner.css";
+import "../styles/Banner.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { Wave } from ".";

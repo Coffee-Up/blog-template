@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/ComponentMenuMain.css";
+import "../styles/MenuMain.css";
 import { Link } from "gatsby";
 
 import { IconWebsite } from "../assets/icons";

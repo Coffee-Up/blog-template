@@ -19,6 +19,10 @@
   line-height: 1.7em;
 }
 
+.post-text-intro {
+  background-color: #f7f4f1;
+  border-radius: 10px;
+}
 /*  MEDIA QUERIES */
 @media (max-width: 600px) {
   #post-template-wrapper-body {

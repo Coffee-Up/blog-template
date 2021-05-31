@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/ComponentPostsFilterWidget.css";
+import "../styles/PostsFilterWidget.css";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { PostCard } from "../components";

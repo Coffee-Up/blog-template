@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/ComponentTagSymbol.css";
+import "../styles/TagSymbol.css";
 import { IconLearning } from "../assets/icons";
 
 export default function TagSymbol({ id, tagName }) {
