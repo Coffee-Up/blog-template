@@ -56,7 +56,10 @@ const globalClasses = css`
     fill: ${theme.colors.svgPathTransparent};
   }
 
-  /*---------------------------------------------------------------------------*/
+  .g-rotate {
+    animation: rotate 2s normal infinite;
+  }
+  /* ---------------------------------------------------------------------------*/
   /* MEDIA QUERIES */
   @media screen and (min-width: 900px) {
     .g-hover-animation-item:hover {

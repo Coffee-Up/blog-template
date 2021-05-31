@@ -73,6 +73,14 @@ const globalAnimations = css`
       filter: 0%;
     }
   }
-`;
 
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+`;
 export default globalAnimations;

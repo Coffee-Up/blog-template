@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Comments.css";
+import "../styles/PostComments.css";
+
+import { IconLoader } from "../assets/icons";
 
 export default function PostComments({ comments, postId }) {
   const [text, setTextComment] = useState("");
-  const [articleId, setArticleId] = useState("");
   const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
   const [title, setTitle] = useState("");
-  const [contact, setContact] = useState("");
+  const [commentJustSended, setCommentJustSended] = useState(false);
+  const [commentSendedData, setCommentSendedData] = useState(undefined);
 
   const [showComments, setShowComments] = useState(false);
+  const [showLoader, setShowLoader] = useState(false);
 
-  async function addComment() {
+  async function handleAddComment() {
+    setShowLoader(true);
+
     const data = {
-      articleId,
+      articleId: postId,
       firstname,
-      lastname,
       text,
       title,
-      contact,
     };
 
     const requestOptions = {
@@ -27,37 +29,58 @@ export default function PostComments({ comments, postId }) {
       body: JSON.stringify(data),
     };
 
-    const commentAdded = await fetch(
+    const commentValidated = await fetch(
       "https://ael-blog-backend.herokuapp.com/comment",
       requestOptions
     )
       .then((response) => response.json())
       .then((res) => console.log(res));
-  }
 
+    setShowLoader(false);
+    setCommentJustSended(true);
+    setCommentJustSended(data);
+  }
   useEffect(() => {
-    setArticleId(postId);
+    console.log(commentJustSended);
   });
   return (
     <div id="comments-container">
-      <h3>Comments Section</h3>
-      {comments.length > 0 && (
-        <button onClick={() => setShowComments(!showComments)}>
-          Show {comments.length} Comments
-        </button>
+      {showLoader && (
+        <div id="modal-comment-container-sending">
+          <IconLoader id="loader-icon" />
+        </div>
       )}
-      {showComments && (
-        <ul>
-          {comments.map((comment) => {
-            return (
-              <li key={comment.id}>
-                <h4>{comment.title}</h4>
-                <p id="comment-text">{comment.text}</p>
-              </li>
-            );
-          })}
-        </ul>
+      {commentJustSended && (
+        <div id="modal-comment-container-sended">
+          <p>
+            You have sended your comment. It will be visible in few minutes.
+            Thank you !
+          </p>
+          <button onClick={() => setCommentJustSended(false)}>OK</button>
+        </div>
       )}
+      <div>
+        <h3>Comments Section</h3>
+      </div>
+      <div>
+        {comments.length > 0 && (
+          <button onClick={() => setShowComments(!showComments)}>
+            Show {comments.length} Comments
+          </button>
+        )}
+        {showComments && (
+          <ul>
+            {comments.map((comment) => {
+              return (
+                <li key={comment.id}>
+                  <h4>{comment.title}</h4>
+                  <p id="comment-text">{comment.text}</p>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
       <div id="comment-form-container">
         <form>
           <p>Add a comment</p>
@@ -67,21 +90,22 @@ export default function PostComments({ comments, postId }) {
             be available in few minutes later. I am planning to able the use of
             markdown syntax in the future.
           </p>
-          <div>
-            <input onChange={(event) => setTitle(event.target.value)} />
+          <div id="comment-form-inputs-container">
+            <input
+              placeholder="Add a title"
+              onChange={(event) => setTitle(event.target.value)}
+            />
+            <input
+              placeholder="Your Username"
+              onChange={(event) => setFirstName(event.target.value)}
+            />
           </div>
-          <div>
-            <input onChange={(event) => setFirstName(event.target.value)} />
-          </div>
-          <div>
-            <input onChange={(event) => setContact(event.target.value)} />
-          </div>
-          <div>
-            <input onChange={(event) => setLastName(event.target.value)} />
-          </div>
-          <textarea onChange={(event) => setTextComment(event.target.value)} />
+          <textarea
+            id="comment-body-text"
+            onChange={(event) => setTextComment(event.target.value)}
+          />
         </form>
-        <button onClick={() => addComment()}>Add Comment</button>
+        <button onClick={() => handleAddComment()}>Add Comment</button>
       </div>
     </div>
   );

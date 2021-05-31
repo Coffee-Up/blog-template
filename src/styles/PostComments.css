@@ -1,0 +1,72 @@
+#comments-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5rem 0 3em 0;
+  padding: 3em 1em;
+  width: 100%;
+  border: 1px black solid;
+}
+
+#comments-container div {
+  text-align: center;
+  width: 100%;
+}
+
+#comment-text {
+  font-family: "Montserrat Light";
+  font-size: 0.9rem;
+  margin-top: 3em;
+}
+
+#comment-form-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#comment-body-text {
+  width: 100%;
+  min-height: 200px;
+}
+
+#comment-form-inputs-container input {
+  text-align: center;
+  width: 100%;
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+#modal-comment-container-sending {
+  background: grey;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  left: 0;
+  top: 0;
+}
+
+#modal-comment-container-sended {
+  background: grey;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  left: 0;
+  top: 0;
+}
+
+#modal-comment-container-sended p {
+  background: white;
+  opacity: 1;
+}
+
+#loader-icon {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+}
