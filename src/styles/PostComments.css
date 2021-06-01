@@ -59,8 +59,13 @@
 
 #comment-author {
   margin-top: 1em;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-align: left;
+}
+
+#comment-created-at {
+  font-size: 0.8rem;
+  text-align: right;
 }
 /* ------------------------------------------------------------------------- */
 /* COMMENT FORM */

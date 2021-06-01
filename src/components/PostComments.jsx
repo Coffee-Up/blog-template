@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "../styles/PostComments.css";
+import { navigate } from "gatsby";
 
 import { IconLoader } from "../assets/icons";
+import { CommentForm } from "../components/forms";
 
-export default function PostComments({ comments, postId }) {
+export default function PostComments({ comments, postId, pathname }) {
   const [text, setTextComment] = useState("");
-  const [firstname, setFirstName] = useState("");
+  const [firstname, setFirstname] = useState("");
   const [title, setTitle] = useState("");
-  const [commentJustSended, setCommentJustSended] = useState(false);
-  const [commentSendedData, setCommentSendedData] = useState(undefined);
-  const [isTextBodyOk, setIsTextBodyOk] = useState(false);
-
+  //Modal of post created
+  const [showModalSended, setShowModalPosted] = useState(false);
+  // Show comments list
   const [showComments, setShowComments] = useState(false);
+  //Loader of post posting
   const [showLoader, setShowLoader] = useState(false);
 
-  function postTextChecker(event) {
-    console.log("oui");
-    console.log(event.target.value);
-  }
-
-  async function handleAddComment() {
+  async function postingComment(e) {
+    e.preventDefault();
     // comment empty = exit
     if (text === "") return;
     setShowLoader(true);
@@ -44,13 +42,13 @@ export default function PostComments({ comments, postId }) {
 
     // setCommentSendedData(res)
     setShowLoader(false);
-    setCommentJustSended(true);
-    setCommentSendedData(data);
+    setShowModalPosted(true);
   }
 
   useEffect(() => {});
   return (
     <div id="comments-container">
+      <CommentForm />
       <div id="comments-container-title">
         <h3>Comments Section</h3>
       </div>
@@ -73,6 +71,9 @@ export default function PostComments({ comments, postId }) {
                   {comment.firstname !== "" && (
                     <p id="comment-author">{comment.firstname}</p>
                   )}
+                  <p id="comment-created-at">
+                    {comment.createdAt.split("").slice(0, 10)}
+                  </p>
                 </li>
               );
             })}
@@ -89,20 +90,19 @@ export default function PostComments({ comments, postId }) {
             />
             <input
               id="comment-form-username"
+              value={firstname}
               placeholder="Your Username (optional)"
-              onChange={(event) => setFirstName(event.target.value)}
+              onChange={(event) => setFirstname(event.target.value)}
             />
           </div>
           <textarea
             id="comment-form-body-text"
+            value={text}
             placeholder="Type your comment here (required)"
-            onChange={(event) => (
-              setTextComment(event.target.value), postTextChecker(event)
-            )}
+            onChange={(event) => setTextComment(event.target.value)}
           />
-          {isTextBodyOk && <p>C'mon, Write a little bit more</p>}
         </form>
-        <button id="send-post-button" onClick={() => handleAddComment()}>
+        <button id="send-post-button" onClick={(e) => postingComment(e)}>
           Post
         </button>
 
@@ -111,7 +111,7 @@ export default function PostComments({ comments, postId }) {
             <IconLoader id="loader-icon" />
           </div>
         )}
-        {commentJustSended && (
+        {showModalSended && (
           <>
             <div id="modal-comment-sended-bg"></div>
             <div id="modal-comment-sended-container">
@@ -120,7 +120,14 @@ export default function PostComments({ comments, postId }) {
                 <br />
                 Thank you !
               </p>
-              <button onClick={() => setCommentJustSended(false)}>OK</button>
+              <button
+                onClick={() => (
+                  setShowModalPosted(false),
+                  navigate(pathname, { replace: true })
+                )}
+              >
+                OK
+              </button>
             </div>
           </>
         )}

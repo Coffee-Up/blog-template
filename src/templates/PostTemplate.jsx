@@ -29,7 +29,11 @@ export default function PostTemplate({
         </div>
         <div id="post-template-wrapper-body">
           <MDXRenderer>{body}</MDXRenderer>
-          <PostComments postId={postId} comments={comments || []} />
+          <PostComments
+            pathname={location.pathname}
+            postId={postId}
+            comments={comments || []}
+          />
         </div>
       </Layout>
     </>
@@ -61,8 +65,6 @@ export const query = graphql`
         id
         title
         text
-        updatedAt
-        lastname
         firstname
         contact
         articleId
