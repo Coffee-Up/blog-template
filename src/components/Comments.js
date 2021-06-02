@@ -1,19 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/PostComments.css";
-import { navigate } from "gatsby";
 
-import { IconLoader } from "../assets/icons";
-
-const Comments = ({ comments, postId, pathname }) => {
-  const [text, setTextComment] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [title, setTitle] = useState("");
-  //Modal of post created
-  const [showModalSended, setShowModalPosted] = useState(false);
-  // Show comments list
+const Comments = ({ comments }) => {
   const [showComments, setShowComments] = useState(false);
-  //Loader of post posting
-  const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {});
   return (
@@ -49,31 +38,6 @@ const Comments = ({ comments, postId, pathname }) => {
           </ul>
         )}
       </div>
-
-      {showLoader && (
-        <div id="modal-comment-sending-container">
-          <IconLoader id="loader-icon" />
-        </div>
-      )}
-      {showModalSended && (
-        <>
-          <div id="modal-comment-sended-bg"></div>
-          <div id="modal-comment-sended-container">
-            <p>
-              You have sended your comment, it will be visible in few minutes.
-              <br />
-              Thank you !
-            </p>
-            <button
-              onClick={() => (
-                setShowModalPosted(false), navigate(pathname, { replace: true })
-              )}
-            >
-              OK
-            </button>
-          </div>
-        </>
-      )}
     </div>
   );
 };

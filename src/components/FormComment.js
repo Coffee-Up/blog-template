@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import {
   FormInput,
-  Textarea,
+  FormTextarea,
   CommentModalSending,
   CommentModalSended,
 } from "./";
@@ -96,7 +96,7 @@ const FormComment = ({ postId }) => {
           value={formData.firstname}
           customOnChange={handleChange}
         />
-        <Textarea
+        <FormTextarea
           textareaName="text"
           textareaPlaceholder="Add your text"
           value={formData.text}
