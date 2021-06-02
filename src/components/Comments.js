@@ -3,9 +3,9 @@ import "../styles/PostComments.css";
 import { navigate } from "gatsby";
 
 import { IconLoader } from "../assets/icons";
-import { CommentForm } from "../components/forms";
+import { FormComment } from ".";
 
-export default function PostComments({ comments, postId, pathname }) {
+const Comments = ({ comments, postId, pathname }) => {
   const [text, setTextComment] = useState("");
   const [firstname, setFirstname] = useState("");
   const [title, setTitle] = useState("");
@@ -16,7 +16,7 @@ export default function PostComments({ comments, postId, pathname }) {
   //Loader of post posting
   const [showLoader, setShowLoader] = useState(false);
 
-  async function postingComment(e) {
+  const postingComment = async (e) => {
     e.preventDefault();
     // comment empty = exit
     if (text === "") return;
@@ -43,12 +43,16 @@ export default function PostComments({ comments, postId, pathname }) {
     // setCommentSendedData(res)
     setShowLoader(false);
     setShowModalPosted(true);
-  }
+  };
+
+  const handleInputChange = () => {
+    console.log("input change");
+  };
 
   useEffect(() => {});
   return (
     <div id="comments-container">
-      <CommentForm />
+      <FormComment handleInputChange={handleInputChange()} />
       <div id="comments-container-title">
         <h3>Comments Section</h3>
       </div>
@@ -80,58 +84,33 @@ export default function PostComments({ comments, postId, pathname }) {
           </ul>
         )}
       </div>
-      <div id="comment-form-container">
-        <form>
-          <p>Add a comment</p>
-          <div id="comment-form-inputs-container">
-            <input
-              placeholder="Add a title (optional)"
-              onChange={(event) => setTitle(event.target.value)}
-            />
-            <input
-              id="comment-form-username"
-              value={firstname}
-              placeholder="Your Username (optional)"
-              onChange={(event) => setFirstname(event.target.value)}
-            />
-          </div>
-          <textarea
-            id="comment-form-body-text"
-            value={text}
-            placeholder="Type your comment here (required)"
-            onChange={(event) => setTextComment(event.target.value)}
-          />
-        </form>
-        <button id="send-post-button" onClick={(e) => postingComment(e)}>
-          Post
-        </button>
 
-        {showLoader && (
-          <div id="modal-comment-container-sending">
-            <IconLoader id="loader-icon" />
+      {showLoader && (
+        <div id="modal-comment-container-sending">
+          <IconLoader id="loader-icon" />
+        </div>
+      )}
+      {showModalSended && (
+        <>
+          <div id="modal-comment-sended-bg"></div>
+          <div id="modal-comment-sended-container">
+            <p>
+              You have sended your comment, it will be visible in few minutes.
+              <br />
+              Thank you !
+            </p>
+            <button
+              onClick={() => (
+                setShowModalPosted(false), navigate(pathname, { replace: true })
+              )}
+            >
+              OK
+            </button>
           </div>
-        )}
-        {showModalSended && (
-          <>
-            <div id="modal-comment-sended-bg"></div>
-            <div id="modal-comment-sended-container">
-              <p>
-                You have sended your comment, it will be visible in few minutes.
-                <br />
-                Thank you !
-              </p>
-              <button
-                onClick={() => (
-                  setShowModalPosted(false),
-                  navigate(pathname, { replace: true })
-                )}
-              >
-                OK
-              </button>
-            </div>
-          </>
-        )}
-      </div>
+        </>
+      )}
     </div>
   );
-}
+};
+
+export default Comments;

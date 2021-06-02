@@ -1,54 +1,23 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
+<h1>Front-end repository of my Blog's website.</h1>
+<p>This is the entire front-end repository of my website for educational purpose. It contains my own philosophy to organize a project, it has no pretention to give guidelines, in fact many web developers could tell you that it is pretty bad !</p>
+<p>
+<h2>Project's structure explained</h2>
+	<ul>
+	<li> I have used a desktop first philosophy for my css, because it was more convenient for me
+	</li>
+		<li>
+			ALL component should have a clickable property then use a class inside the component itself to define if it is => <Component clickable />
+		</li>
+		<li>I prefer use the file extension in the imports</li>
+		<li>
+			This website has a folder plugins to create a gatsby-plugin that fetch data from back-end during the building. For things like comments (self-made).
+		</li>
+	</ul>
+	<ul>
+		<h2>Global classes for :</h2>
+		<li></li>
+		<li></li>
+	</ul>
+	<p>I hardly handle multiple files and folders in a project, but can easily handle long files, multiple files n a folder because I prefer having the global view quickly to understand it, that's the reason why everything is 	compacted, like only one folder for components, unstead having multiple folder inside it. <br/>
+	I use 
 </p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
-
-## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)

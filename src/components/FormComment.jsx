@@ -1,7 +1,6 @@
 import React from "react";
-import useForm from "./";
 
-import { Input } from "./Input";
+import { FormInput } from ".";
 
 const modelObject = {
   id: 0,
@@ -9,25 +8,26 @@ const modelObject = {
   title: "",
 };
 
-export default function CommentForm() {
-  const { values, setValues, handleInputChange, resetForm } =
-    useForm(modelObject);
+const FormComment = (props) => {
+  const { handleInputChange, resetForm } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
+    console.log("submit");
     resetForm();
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input
+      <FormInput
         name="fullName"
         label="Full Name"
-        value={values.fullName}
+        value="valeur de l'input"
         onChange={handleInputChange}
       />
       <button type="submit"></button>
     </form>
   );
-}
+};
+
+export default FormComment;

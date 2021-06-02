@@ -9,7 +9,9 @@ import Avatar from "./Avatar";
 import TagSymbol from "./TagSymbol";
 import Seo from "./Seo";
 import PopOver from "./PopOver";
-import PostComments from "./PostComments";
+import Comments from "./Comments";
+import FormComment from "./FormComment";
+import FormInput from "./FormInput";
 
 export {
   Layout,
@@ -23,5 +25,7 @@ export {
   TagSymbol,
   Seo,
   PopOver,
-  PostComments,
+  Comments,
+  FormComment,
+  FormInput,
 };
