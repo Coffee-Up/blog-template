@@ -10,8 +10,12 @@ import TagSymbol from "./TagSymbol";
 import Seo from "./Seo";
 import PopOver from "./PopOver";
 import Comments from "./Comments";
+import { CommentModalSending, CommentModalSended } from "./CommentModals";
+import { SubmitButton, CloseModalButton } from "./Buttons";
+// FORMS
 import FormComment from "./FormComment";
-import FormInput from "./FormInput";
+import { FormInput } from "./Inputs";
+import { FormTextarea } from "./Textareas";
 
 export {
   Layout,
@@ -26,6 +30,13 @@ export {
   Seo,
   PopOver,
   Comments,
+  CloseModalButton,
+  //FORMS
+  SubmitButton,
   FormComment,
   FormInput,
+  FormTextarea,
+  //MODALS
+  CommentModalSending,
+  CommentModalSended,
 };

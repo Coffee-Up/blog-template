@@ -5,7 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
-import { Layout, Comments, FormInput } from "../components";
+import { Layout, Comments, FormComment } from "../components";
 
 export default function PostTemplate({
   data: { mdx: post, allBlogPostComments: nodesComments },
@@ -36,7 +36,7 @@ export default function PostTemplate({
           />
         </div>
         <div>
-          <FormInput />
+          <FormComment postId={postId} />
         </div>
       </Layout>
     </>
