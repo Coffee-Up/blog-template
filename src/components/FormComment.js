@@ -1,7 +1,7 @@
 // TO DO: change firstname to username & txt to postTextby username back & front
 // TO DO: find a better way to update formData, I don't like the const updatedChange = {}
 // Local storage set is here onl to retrieve a post if something goes wrong
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "../styles/FormComment.css";
 
@@ -25,14 +25,16 @@ const error = {
 };
 
 const FormComment = ({ postId }) => {
-  const commentLocalStorage = JSON.parse(
-    localStorage.getItem("formCommentData")
-  );
   const [isSending, setIsSending] = useState(false);
   const [postedSucceffuly, setPostedSucceffuly] = useState(undefined);
-  const [formData, setFormData] = useState(
-    commentLocalStorage === null ? formDataEmpty : commentLocalStorage
-  );
+  const [formData, setFormData] = useState(formDataEmpty);
+  // run Once after initial rendering
+  useEffect(() => {
+    const commentLocalStorage = JSON.parse(
+      localStorage.getItem("formCommentData")
+    );
+    setFormData(commentLocalStorage);
+  }, []);
 
   const handleChange = (e) => {
     const name = e.target.name;
