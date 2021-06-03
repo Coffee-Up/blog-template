@@ -322,12 +322,17 @@ const globalReset = css`
     margin: 0;
   }
   button,
-  input {
+  input,
+  textarea {
+    border: none;
     overflow: visible;
   }
   button,
   select {
     text-transform: none;
+  }
+  button:hover {
+    cursor: pointer;
   }
   button,
   [type="button"],
@@ -504,6 +509,24 @@ const globalReset = css`
   }
   [hidden] {
     display: none !important;
+  }
+  // Placeholders
+  ::-webkit-input-placeholder {
+    text-align: center;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+  }
+
+  :-ms-input-placeholder {
+    text-align: center;
   }
 `;
 

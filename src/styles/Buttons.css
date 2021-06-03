@@ -1,0 +1,45 @@
+.button-submit {
+  margin: 1em 0;
+  padding: 0.2em 0.8em;
+  background-color: #ff5623;
+  height: 2.2em;
+  color: white;
+  font-size: 1rem;
+}
+
+.button-submit:hover {
+  background-color: #ff9c19;
+}
+/*----------------------------------------------------*/
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  .button-submit {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------------------- */
+.button-action {
+  margin: 1em 0;
+  padding: 0.2em 0.8em;
+  background-color: #fac20c;
+  height: 2.2em;
+  font-size: 1rem;
+}
+
+.button-action:hover {
+  background-color: #ffa904;
+  color: white;
+}
+
+.button-action-toggled {
+  background-color: #ff7519;
+  color: white;
+}
+/*----------------------------------------------------*/
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  .button-action {
+    width: 100%;
+  }
+}

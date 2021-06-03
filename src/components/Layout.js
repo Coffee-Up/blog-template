@@ -51,13 +51,13 @@ export default function Layout({
       <Banner
         postData={postData}
         backgroundColor={theme.colors.main}
-        fillColorSVG={theme.colors.backgroundColor}
+        fillColorSVG={theme.colors.background}
         defaultBanner={defaultBanner}
         binaryImageDefault={data.file.childImageSharp}
       />
       <main className="g-wrapper-main">{children}</main>
       <Footer
-        fillColorSVG={theme.colors.backgroundColor}
+        fillColorSVG={theme.colors.background}
         backgroundColor={theme.colors.footer}
       />
     </>

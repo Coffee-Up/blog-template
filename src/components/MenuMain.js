@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 import { IconWebsite } from "../assets/icons";
 
-export default function Header({ hideHomeLink, headerText, backgroundColor }) {
+export default function Header({ hideHomeLink, backgroundColor }) {
   return (
     <header
       id="main-menu-header"
@@ -17,7 +17,6 @@ export default function Header({ hideHomeLink, headerText, backgroundColor }) {
               <IconWebsite clickable={true} />
             </Link>
           )}
-          {headerText && <h1>{headerText}</h1>}
         </div>
       </nav>
     </header>

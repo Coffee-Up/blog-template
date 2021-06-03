@@ -1,5 +1,11 @@
 import React from "react";
+
 import "../styles/Textareas.css";
+import theme from "../theme.js";
+
+const textareaFormStyles = {
+  boxShadow: `${theme.boxShadows.formTextareas}`,
+};
 
 const FormTextarea = ({
   customOnChange,
@@ -7,10 +13,11 @@ const FormTextarea = ({
   textareaPlaceholder,
   value,
 }) => {
-  //The parent Form component pass a props called onChange
   return (
     <>
       <textarea
+        style={textareaFormStyles}
+        id="form-textarea"
         name={textareaName}
         placeholder={textareaPlaceholder}
         onChange={customOnChange}

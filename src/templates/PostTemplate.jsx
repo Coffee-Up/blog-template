@@ -19,11 +19,7 @@ export default function PostTemplate({
 
   return (
     <>
-      <Layout
-        headerText={title}
-        path={location.pathname}
-        postData={{ imageBinary: img }}
-      >
+      <Layout path={location.pathname} postData={{ imageBinary: img }}>
         <div id="post-template-data-container">
           <p id="post-template-time-to-read">{timeToRead} minutes read</p>
         </div>

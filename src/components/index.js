@@ -11,7 +11,7 @@ import Seo from "./Seo";
 import PopOver from "./PopOver";
 import Comments from "./Comments";
 import { CommentModalSending, CommentModalSended } from "./CommentModals";
-import { SubmitButton, CloseModalButton } from "./Buttons";
+import { SubmitButton, CloseModalButton, ActionButton } from "./Buttons";
 // FORMS
 import FormComment from "./FormComment";
 import { FormInput } from "./Inputs";
@@ -30,9 +30,11 @@ export {
   Seo,
   PopOver,
   Comments,
+  //BUTTONS
+  ActionButton,
   CloseModalButton,
-  //FORMS
   SubmitButton,
+  //FORMS
   FormComment,
   FormInput,
   FormTextarea,

@@ -1,0 +1,48 @@
+/* COMMENT CONTAINER (PARENT) */
+#comments-container {
+  margin-top: 3em;
+  border-top: 1px grey solid;
+  border-bottom: 1px grey solid;
+  text-align: center;
+}
+
+#comments-container ul li {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: #faf9fd;
+  margin: 1em 0;
+  font-size: 0.8rem;
+  padding: 2em 3em;
+}
+
+#comments-container ul li h4 {
+  margin-bottom: 2em;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+#comment-text-body {
+  padding: 0 1em;
+  text-align: left;
+  font-family: "Fira code regular";
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #222020;
+}
+
+#comment-author {
+  margin-top: 1em;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+#comment-created-at {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/*---------------------------------------------------------------------------*/
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+}

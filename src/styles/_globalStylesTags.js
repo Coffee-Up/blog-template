@@ -1,5 +1,6 @@
 // We need a js file to use variables theme in our css (css in js ), SASS is not good for debugging , light css in js  + css is better
 import { css } from "styled-components";
+import theme from "../theme";
 
 const globalThemeTags = css`
   html {
@@ -55,6 +56,10 @@ const globalThemeTags = css`
     font-family: "Montserrat Bold";
     // need span to inherit size when in a h1, h2, p
     font-size: inherit;
+  }
+
+  button {
+    border-radius: ${theme.borderRadius.buttons.xl};
   }
   /*---------------------------------------------------------------------------*/
   /* MEDIA QUERIES */

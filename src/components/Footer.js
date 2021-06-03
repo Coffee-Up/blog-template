@@ -1,7 +1,7 @@
 import * as React from "react";
-import "../styles/Footer.css";
 import { useStaticQuery, graphql } from "gatsby";
 
+import "../styles/Footer.css";
 import { Wave, Avatar } from "../components";
 import { IconGithub, IconFont } from "../assets/icons";
 

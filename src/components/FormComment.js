@@ -1,6 +1,9 @@
 // TO DO: change firstname to username & txt to postTextby username back & front
 // TO DO: find a better way to update formData, I don't like the const updatedChange = {}
+// Local storage set is here onl to retrieve a post if something goes wrong
 import React, { useState } from "react";
+
+import "../styles/FormComment.css";
 
 import {
   FormInput,
@@ -22,9 +25,14 @@ const error = {
 };
 
 const FormComment = ({ postId }) => {
+  const commentLocalStorage = JSON.parse(
+    localStorage.getItem("formCommentData")
+  );
   const [isSending, setIsSending] = useState(false);
   const [postedSucceffuly, setPostedSucceffuly] = useState(undefined);
-  const [formData, setFormData] = useState(formDataEmpty);
+  const [formData, setFormData] = useState(
+    commentLocalStorage === null ? formDataEmpty : commentLocalStorage
+  );
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -54,7 +62,9 @@ const FormComment = ({ postId }) => {
 
     formData.articleId = postId;
 
-    const requestOptions = {
+    localStorage.setItem("formCommentData", JSON.stringify(formData));
+
+    const requestOptionsPostCreation = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -62,11 +72,21 @@ const FormComment = ({ postId }) => {
 
     await fetch(
       "https://ael-blog-backend.herokuapp.com/comment",
-      requestOptions
+      requestOptionsPostCreation
+    ).then((response) => response.json());
+
+    // WebHook Netlify (rebuild website)
+    const requestOptionsWebHook = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+
+    await fetch(
+      "https://api.netlify.com/build_hooks/60b8ad87a18ed5f6c7d38360",
+      requestOptionsWebHook
     ).then((response) => response.json());
 
     const resetForm = formDataEmpty;
-
     await setFormData({
       ...formData,
       ...resetForm,
@@ -74,6 +94,8 @@ const FormComment = ({ postId }) => {
 
     setIsSending(false);
     setPostedSucceffuly(true);
+
+    localStorage.setItem("comment", "");
   };
 
   return (
@@ -83,26 +105,30 @@ const FormComment = ({ postId }) => {
         handleClose={() => setPostedSucceffuly(undefined)}
         opened={postedSucceffuly}
       />
-      <form onSubmit={handleSubmit}>
-        <FormInput
-          inputPlaceholder="Add a Title"
-          inputName="title"
-          value={formData.title}
-          customOnChange={handleChange}
-        />
-        <FormInput
-          inputPlaceholder="Username"
-          inputName="firstname"
-          value={formData.firstname}
-          customOnChange={handleChange}
-        />
-        <FormTextarea
-          textareaName="text"
-          textareaPlaceholder="Add your text"
-          value={formData.text}
-          customOnChange={handleChange}
-        />
-        <SubmitButton type="submit">Post It !</SubmitButton>
+      <h4>Do you have something to say ?</h4>
+      <p>Post without login in !</p>
+      <form id="form-comment-root" onSubmit={handleSubmit}>
+        <div>
+          <FormInput
+            inputPlaceholder="Title (Optional)"
+            inputName="title"
+            value={formData.title}
+            customOnChange={handleChange}
+          />
+          <FormInput
+            inputPlaceholder="Username"
+            inputName="firstname"
+            value={formData.firstname}
+            customOnChange={handleChange}
+          />
+          <FormTextarea
+            textareaName="text"
+            textareaPlaceholder="Add your text"
+            value={formData.text}
+            customOnChange={handleChange}
+          />
+          <SubmitButton type="submit">Post It !</SubmitButton>
+        </div>
       </form>
     </>
   );
