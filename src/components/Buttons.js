@@ -1,7 +1,6 @@
 import React from "react";
 
 import "../styles/Buttons.css";
-import theme from "../theme";
 
 const ActionButton = ({ onClickHerited, children, classNameHerited }) => {
   return (

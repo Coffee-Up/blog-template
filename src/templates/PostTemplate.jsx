@@ -12,7 +12,7 @@ export default function PostTemplate({
   location,
 }) {
   const { body, timeToRead } = post;
-  const { title, heading_picture_big, postId } = post.frontmatter;
+  const { heading_picture_big, postId } = post.frontmatter;
   // Its not possible to destructured because it's one deeper level than post
   const { nodes: comments } = nodesComments;
   const img = getImage(heading_picture_big);

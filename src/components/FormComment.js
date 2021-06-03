@@ -30,10 +30,13 @@ const FormComment = ({ postId }) => {
   const [formData, setFormData] = useState(formDataEmpty);
   // run Once after initial rendering
   useEffect(() => {
-    const commentLocalStorage = JSON.parse(
-      localStorage.getItem("formCommentData")
-    );
-    setFormData(commentLocalStorage);
+    //retrieve comment after fail, if exist
+    if (localStorage.hasOwnProperty("formCommentData")) {
+      const commentLocalStorage = JSON.parse(
+        localStorage.getItem("formCommentData")
+      );
+      setFormData(commentLocalStorage);
+    }
   }, []);
 
   const handleChange = (e) => {
@@ -97,7 +100,7 @@ const FormComment = ({ postId }) => {
     setIsSending(false);
     setPostedSucceffuly(true);
 
-    localStorage.setItem("comment", "");
+    localStorage.removeItem("formCommentData");
   };
 
   return (
