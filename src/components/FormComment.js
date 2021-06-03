@@ -82,7 +82,7 @@ const FormComment = ({ postId }) => {
 
     // WebHook Netlify (rebuild website)
     const requestOptionsWebHook = {
-      method: "GET",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
     };
 
