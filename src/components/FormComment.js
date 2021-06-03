@@ -110,9 +110,9 @@ const FormComment = ({ postId }) => {
         handleClose={() => setPostedSucceffuly(undefined)}
         opened={postedSucceffuly}
       />
-      <h4>Do you have something to say ?</h4>
-      <p>Post without login in !</p>
       <form id="form-comment-root" onSubmit={handleSubmit}>
+        <h4>Have something to say ?</h4>
+        <p>No log in , instant fun ! </p>
         <div>
           <FormInput
             inputPlaceholder="Title (Optional)"

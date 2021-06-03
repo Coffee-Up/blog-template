@@ -31,6 +31,12 @@ const globalThemeTags = css`
     font-size: 1.1rem;
   }
 
+  h4 {
+    font-family: "Source Code Variable";
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
   p {
     margin-bottom: 0.4em;
     font-size: 1rem;

@@ -8,6 +8,7 @@ const IconLearning = () => (
     focusable="false"
     preserveAspectRatio="xMidYMid meet"
   >
+    <title>Learning Tag</title>
     <circle fill="#FFE3E3" cx="256" cy="256" r="254" />
     <path
       fill="#F9F2F2"

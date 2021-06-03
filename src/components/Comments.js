@@ -36,6 +36,14 @@ const Comments = ({ comments }) => {
               </li>
             );
           })}
+          {showComments && (
+            <ActionButton
+              classNameHerited={showComments && "button-action-toggled"}
+              onClickHerited={() => setShowComments(!showComments)}
+            >
+              Hide Comments
+            </ActionButton>
+          )}
         </ul>
       )}
     </div>
