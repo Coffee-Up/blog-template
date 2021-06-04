@@ -57,7 +57,7 @@ export default function PostsFilterWidget() {
                 title={title}
                 summary={summary}
                 img={heading_picture_squared}
-                date={creationDate.split("").slice(0, 10)}
+                date={creationDate}
               />
             </li>
           );

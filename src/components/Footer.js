@@ -27,22 +27,22 @@ const Footer = ({ backgroundColor, fillColorSVG, urls }) => {
         </section>
         <section>
           <p>Like my website's fonts ?</p>
+          #1
           <a href={fontUrl1} target="_blank" rel="noopener noreferrer">
-            #1
             <IconFont
               customTitle="Source Code Pro Repository"
               clickable={true}
             />
           </a>
+          #2
           <a href={fontUrl2} target="_blank" rel="noopener noreferrer">
-            #2
             <IconFont
               customTitle="Montserrat Web Repository"
               clickable={true}
             />
           </a>
+          #3
           <a href={fontUrl3} target="_blank" rel="noopener noreferrer">
-            #3
             <IconFont customTitle="Cascadia Code Repository" clickable={true} />
           </a>
         </section>

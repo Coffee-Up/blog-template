@@ -1,0 +1,12 @@
+/* ROOT */
+.tag-symbol-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tag-symbol-container p {
+  font-family: "Montserrat Light";
+  text-transform: capitalize;
+  font-size: 0.7rem;
+}

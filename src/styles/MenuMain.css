@@ -15,9 +15,16 @@
   width: 100%;
 }
 
-#main-menu-home-container h1 {
-  font-family: "Montserrat Bold";
-  color: #482f09;
-  font-size: 2em;
-  margin: 0 auto;
+#main-menu-svg {
+  width: 6vh;
+  height: 6vh;
+}
+
+/*---------------------------------------------------------------------------*/
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  #main-menu-svg {
+    width: 7vh;
+    height: 7vh;
+  }
 }

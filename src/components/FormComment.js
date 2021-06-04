@@ -141,26 +141,30 @@ const FormComment = ({ postId }) => {
           {errorText && <p className="g-text-error">{errorText}</p>}
           <SubmitButton type="submit">Post It !</SubmitButton>
           {/*------------ BOT SPAM SIMPLE PROTECTION HIDDEN -----------*/}
-          <label className="ohnohoney" for="name"></label>
-          <input
-            className="ohnohoney"
-            autocomplete="off"
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name here"
-            onChange={() => handleBot()}
-          />
-          <label className="ohnohoney" for="email"></label>
-          <input
-            className="ohnohoney"
-            autocomplete="off"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your e-mail here"
-            onChange={() => handleBot()}
-          />
+          <label className="ohnohoney" for="name">
+            Username
+            <input
+              className="ohnohoney"
+              autocomplete="off"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name here"
+              onChange={() => handleBot()}
+            />
+          </label>
+          <label className="ohnohoney" for="email">
+            Email
+            <input
+              className="ohnohoney"
+              autocomplete="off"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your e-mail here"
+              onChange={() => handleBot()}
+            />
+          </label>
           {/*-----------------------*/}
         </div>
       </form>

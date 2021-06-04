@@ -51,7 +51,7 @@ const globalThemeTags = css`
   }
 
   a:hover,
-  a p:hover {
+  a {
     animation: mouseOnAnchorTag 0.2s ease-out forwards;
   }
 

@@ -14,7 +14,7 @@ export default function Header({ hideHomeLink, backgroundColor }) {
         <div id="main-menu-home-container">
           {!hideHomeLink && (
             <Link to="/">
-              <IconWebsite clickable={true} />
+              <IconWebsite idGived="main-menu-svg" clickable={true} />
             </Link>
           )}
         </div>
