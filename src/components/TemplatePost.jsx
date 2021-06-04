@@ -1,16 +1,16 @@
 // """ TO DO: Change on back en articleId by postId """
 import React from "react";
-import "../styles/PostTemplatePage.css";
+import "../styles/TemplatePostsPage.css";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
-import { Layout, Comments, FormComment } from ".";
+import { Layout, Comments, FormComment, Sidebar } from ".";
 
-export default function PostTemplate({
+const TemplatePostsPage = ({
   data: { mdx: post, allBlogPostComments: nodesComments },
   location,
-}) {
+}) => {
   const { body, timeToRead } = post;
   const { heading_picture_big, postId } = post.frontmatter;
   // Its not possible to destructured because it's one deeper level than post
@@ -20,27 +20,31 @@ export default function PostTemplate({
   return (
     <>
       <Layout path={location.pathname} postData={{ imageBinary: img }}>
-        <div id="post-template-data-container">
-          <p id="post-template-time-to-read">{timeToRead} minutes read</p>
-        </div>
-        <div id="post-template-wrapper-body">
-          <MDXRenderer>{body}</MDXRenderer>
-          <Comments
-            pathname={location.pathname}
-            postId={postId}
-            comments={comments || []}
-          />
-        </div>
+        <Sidebar side="left" />
         <div>
-          <FormComment postId={postId} />
+          <div id="post-template-data-container">
+            <p id="post-template-time-to-read">{timeToRead} minutes read</p>
+          </div>
+          <div id="post-template-wrapper-body">
+            <MDXRenderer>{body}</MDXRenderer>
+            <Comments
+              pathname={location.pathname}
+              postId={postId}
+              comments={comments || []}
+            />
+          </div>
+          <div>
+            <FormComment postId={postId} />
+          </div>
         </div>
+        <Sidebar side="right" />
       </Layout>
     </>
   );
-}
+};
 
 export const query = graphql`
-  query ($pathSlug: String!, $postId: String!) {
+  query querytemplatePostPage($pathSlug: String!, $postId: String!) {
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
       frontmatter {
         postId
@@ -72,3 +76,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default TemplatePostsPage;

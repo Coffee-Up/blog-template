@@ -14,26 +14,22 @@ const globalThemeTags = css`
 
   h1 {
     font-family: "Montserrat Bold";
-    font-weight: 900;
     font-size: 1.4rem;
     margin-bottom: 1em;
   }
 
   h2 {
     font-family: "Source Code Variable";
-    font-weight: 500;
     font-size: 1.2rem;
   }
 
   h3 {
-    font-family: "Source Code Variable";
-    font-weight: 500;
+    font-family: "Montserrat SemiBold";
     font-size: 1.1rem;
   }
 
   h4 {
     font-family: "Source Code Variable";
-    font-weight: 500;
     font-size: 1.1rem;
   }
 

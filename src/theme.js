@@ -11,16 +11,6 @@ const theme = {
       action: { bg: "#fac20c", bghover: "#ffa904" },
     },
   },
-  margins: {
-    main: "2rem 0",
-  },
-  paddings: {
-    main: "0 10rem",
-    mainXS: "0 1.1rem",
-    buttons: {
-      small: "0.3em 1em",
-    },
-  },
   borderRadius: {
     buttons: { xl: "5px" },
   },

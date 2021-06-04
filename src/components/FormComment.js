@@ -141,11 +141,11 @@ const FormComment = ({ postId }) => {
           {errorText && <p className="g-text-error">{errorText}</p>}
           <SubmitButton type="submit">Post It !</SubmitButton>
           {/*------------ BOT SPAM SIMPLE PROTECTION HIDDEN -----------*/}
-          <label className="ohnohoney" for="name">
+          <label className="ohnohoney" htmlFor="name">
             Username
             <input
               className="ohnohoney"
-              autocomplete="off"
+              autoComplete="off"
               type="text"
               id="name"
               name="name"
@@ -153,11 +153,11 @@ const FormComment = ({ postId }) => {
               onChange={() => handleBot()}
             />
           </label>
-          <label className="ohnohoney" for="email">
+          <label className="ohnohoney" htmlFor="email">
             Email
             <input
               className="ohnohoney"
-              autocomplete="off"
+              autoComplete="off"
               type="email"
               id="email"
               name="email"

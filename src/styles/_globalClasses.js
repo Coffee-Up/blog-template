@@ -3,12 +3,6 @@ import { css } from "styled-components";
 import theme from "../theme";
 
 const globalClasses = css`
-  .g-wrapper-main {
-    border-right: 1px grey solid;
-    padding: ${theme.paddings.main};
-    margin: ${theme.margins.main};
-  }
-
   .g-mask-image-circular {
     position: relative;
     height: 74.5px;
@@ -100,10 +94,16 @@ const globalClasses = css`
       background-color: #f9f1df;
       animation: cardMovingUp 0.2s ease-out forwards;
     }
+
+    .g-wrapper-main {
+      display: flex;
+    }
+    .g-wrapper-main > div {
+    }
   }
   @media screen and (max-width: 600px) {
-    .g-wrapper-main {
-      padding: ${theme.paddings.mainXS};
+    #root-layout {
+      padding: 0.3rem 0.3rem;
     }
   }
 `;

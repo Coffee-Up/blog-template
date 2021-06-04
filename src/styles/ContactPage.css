@@ -2,6 +2,7 @@
 /* TO DO: delete min-height when enought content*/
 /* ROOT  */
 #contact-page-container {
+  padding: 3rem 4rem;
   min-height: 100vh;
 }
 

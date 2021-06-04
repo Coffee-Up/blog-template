@@ -3,19 +3,20 @@ import { graphql } from "gatsby";
 
 import "../styles/ContactPage.css";
 
-import { Layout } from "../components";
+import { Layout, Sidebar } from "../components";
 import { IconTwitter, IconGithub, IconEmail } from "../assets/icons";
 
 export default function ContactPage({ data }) {
   const { github, twitter, email } = data.site.siteMetadata.urls;
   return (
     <Layout defaultBanner={true}>
+      <Sidebar side="left" />
       <div id="contact-page-container">
         <h1>Contact me</h1>
         <p>
-          I am a web developer but I'm not considering myself as one. In fact I
-          am more interested in <span>hardware,</span>
-          <span> space</span>,<span> art</span> and so much more as you will see
+          I am a web developer but I'm not considering myself as one. In fact
+          I'm more interested in <span>Hardware,</span>
+          <span> Space</span>,<span> Art</span> and so much more as you will see
           through my articles.
         </p>
 
@@ -52,6 +53,7 @@ export default function ContactPage({ data }) {
           </a>
         </div>
       </div>
+      <Sidebar side="right" />
     </Layout>
   );
 }

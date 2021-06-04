@@ -19,7 +19,7 @@ const Wave = ({ orientation, fillColorSVG }) => {
         style={
           orientation === "top"
             ? { transform: "matrix(1, 0, 0, -1.3, 0, 0)" }
-            : { bottom: 0 }
+            : { bottom: "19px" }
         }
       >
         <svg

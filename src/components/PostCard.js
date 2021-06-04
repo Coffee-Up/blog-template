@@ -4,9 +4,8 @@ import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { TagSymbol } from "../components";
-import { IconMinus } from "../assets/icons";
 
-export default function PostCard({ path, img, title, id, summary, date }) {
+export default function PostCard({ path, img, title, summary }) {
   // TO DO: find a more readable manipulation
   // Get something like "20210306"
   // ----------------------------------------------------
@@ -25,9 +24,9 @@ export default function PostCard({ path, img, title, id, summary, date }) {
   const image = getImage(img);
   // TO DO: I don't like that much of divs (readability)
   return (
-    <>
-      <Link key={id} id="post-card-link" to={path}>
-        <div id="post-card-overview-container">
+    <li className="g-hover-animation-item post-card-item-container">
+      <Link className="post-card-link" to={path}>
+        <div className="post-card-overview-container">
           <div>
             <GatsbyImage as="div" image={image} alt="TO DO" />
           </div>
@@ -37,6 +36,6 @@ export default function PostCard({ path, img, title, id, summary, date }) {
         </div>
         <TagSymbol tagName="learning" />
       </Link>
-    </>
+    </li>
   );
 }

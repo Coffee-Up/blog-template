@@ -20,6 +20,7 @@
 }
 
 .post-text-intro {
+  padding: 1em 1em;
   background-color: #f7f4f1;
   border-radius: 10px;
 }
@@ -27,7 +28,7 @@
 /*  MEDIA QUERIES */
 @media (max-width: 600px) {
   #post-template-wrapper-body {
-    padding: 1em 4.8vw;
+    padding: 1em 0;
     line-height: 1.7em;
   }
 }

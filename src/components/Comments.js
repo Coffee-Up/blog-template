@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import "../styles/Comments.css";
+
 import { ActionButton } from "./Buttons";
+
+import { simplifyDateObject } from "../utils/helpersDate";
 
 const Comments = ({ comments }) => {
   const [showComments, setShowComments] = useState(false);
@@ -23,15 +26,19 @@ const Comments = ({ comments }) => {
       {showComments && (
         <ul>
           {comments.map((comment) => {
+            const { createdAt, firstname, text, id, title } = comment;
+
+            const dateObject = simplifyDateObject(createdAt);
+
             return (
-              <li key={comment.id}>
-                <h4>{comment.title}</h4>
-                <p id="comment-text-body">{comment.text}</p>
-                {comment.firstname !== "" && (
-                  <p id="comment-author">{comment.firstname}</p>
-                )}
+              <li key={id}>
+                <h4>{title}</h4>
+                <p id="comment-text-body">{text}</p>
+                {firstname !== "" && <p id="comment-author">{firstname}</p>}
                 <p id="comment-created-at">
-                  {comment.createdAt.split("").slice(0, 10)}
+                  {dateObject.month}
+                  {dateObject.day}
+                  {dateObject.year}
                 </p>
               </li>
             );

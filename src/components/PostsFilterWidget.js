@@ -38,6 +38,7 @@ export default function PostsFilterWidget() {
 
   return (
     <div id="posts-filter-widget-container">
+      <h3>Here are some posts I have writed</h3>
       <ul>
         {posts.map(({ node }) => {
           const {
@@ -45,21 +46,19 @@ export default function PostsFilterWidget() {
             summary,
             path,
             heading_picture_squared,
-            id,
             creationDate,
           } = node.frontmatter;
 
           return (
-            <li className="g-hover-animation-item" key={node.id}>
+            <>
               <PostCard
+                key={node.id}
                 path={path}
-                id={id}
                 title={title}
                 summary={summary}
                 img={heading_picture_squared}
-                date={creationDate}
               />
-            </li>
+            </>
           );
         })}
       </ul>

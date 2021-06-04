@@ -1,12 +1,16 @@
 /* ROOT */
-#post-card-link {
+.post-card-item-container {
+  border-radius: 4px;
+}
+
+.post-card-link {
   display: flex;
   position: relative;
   padding: 0.5em 1em;
   justify-content: center;
 }
 /* OVERVIEW */
-#post-card-overview-container h2 {
+.post-card-overview-container h2 {
   margin-bottom: 0.5em;
   font-family: "Montserrat SemiBold";
   font-size: 1rem;
@@ -14,19 +18,19 @@
   color: black;
 }
 
-#post-card-overview-container {
+.post-card-overview-container {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-#post-card-overview-container > p {
+.post-card-overview-container > p {
   margin-top: 0.5em;
   color: #3e3b3b;
   font-size: 0.8rem;
 }
 
-#post-card-link > .tag-symbol-container {
+.post-card-link > .tag-symbol-container {
   /* We need the content in the middle of the card, we have to remove tag logo */
   position: absolute;
   right: 0.7rem;
@@ -34,11 +38,11 @@
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #post-card-link {
+  .post-card-link {
     display: flex;
   }
 
-  #post-card-overview-container h2 {
+  .post-card-overview-container h2 {
     text-align: center;
     font-size: 0.9rem;
     border-bottom: none;

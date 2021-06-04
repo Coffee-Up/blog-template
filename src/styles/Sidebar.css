@@ -1,0 +1,19 @@
+#sidebar-left-container {
+  padding: 1em;
+  border-right: 1px #ececec solid;
+  min-width: 15vw;
+}
+
+#sidebar-right-container {
+  padding: 1em;
+  border-left: 1px #ececec solid;
+  min-width: 15vw;
+}
+/*---------------------------------------------------------------------------*/
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  #sidebar-left-container,
+  #sidebar-right-container {
+    display: none;
+  }
+}

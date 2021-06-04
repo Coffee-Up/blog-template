@@ -1,8 +1,13 @@
+#index-page-container {
+  padding: 3rem 4rem;
+}
+
 #index-page-welcome-title-container {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  padding: 1em 0;
+  padding: 0 6rem;
+  margin-bottom: 6rem;
 }
 
 #index-page-welcome-title-container div {
@@ -21,6 +26,10 @@
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
+  #index-page-container {
+    padding: 1rem 1em;
+  }
+
   #index-page-avatar {
     /* JSX takes over CSS */
     width: 3rem !important;
