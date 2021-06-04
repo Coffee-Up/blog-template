@@ -7,6 +7,7 @@
   font-size: 1rem;
 }
 
+.button-submit:focus,
 .button-submit:hover {
   background-color: #ff9c19;
 }
@@ -17,7 +18,6 @@
     width: 100%;
   }
 }
-
 /* ------------------------------------------------------------------------- */
 .button-action {
   margin: 1em 0;

@@ -4,12 +4,13 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import { Wave } from ".";
 
-// TO DO: I have transfromed it to use as react component to make a transition behaviour, with some magic it works without the class
+// TO DO: I have transfromed it to use as react component to make a transition behaviour, with some magic it works without the class. If i can make it a HOOK function
 class Banner extends React.Component {
   constructor(props) {
     super(props);
     this.state = { animationTransition: "" };
   }
+
   componentDidMount() {
     this.setState({ animationTransition: "animation: transitionOpacity 1s" });
   }

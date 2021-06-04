@@ -2,6 +2,7 @@ import * as React from "react";
 
 const IconLearning = () => (
   <svg
+    className="g-icon-learning"
     viewBox="0 0 512 512"
     role="img"
     aria-hidden="true"

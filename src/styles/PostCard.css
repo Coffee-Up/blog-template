@@ -42,11 +42,6 @@
   justify-content: space-around;
 }
 
-#post-card-tag-logo > svg {
-  width: 50px;
-  margin: 0 0 1em 0;
-}
-
 #post-card-data-container span {
   /* Unset global default span behaviour define in Layout */
   font-family: unset;
@@ -58,22 +53,6 @@
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #post-card-overview-container {
-    text-align: center;
-  }
-
-  #post-card-data-container {
-    text-align: center;
-  }
-
-  #post-card-overview-container h2 {
-    border-bottom: none;
-  }
-
-  #post-card-title {
-    font-size: 0.9rem;
-  }
-
   #post-card-link {
     display: flex;
     flex-direction: column;
@@ -81,5 +60,21 @@
 
   #post-card-link div {
     width: 100%;
+  }
+
+  #post-card-overview-container {
+    text-align: center;
+  }
+
+  #post-card-overview-container h2 {
+    border-bottom: none;
+  }
+
+  #post-card-data-container {
+    text-align: center;
+  }
+
+  #post-card-title {
+    font-size: 0.9rem;
   }
 }

@@ -59,8 +59,18 @@ const globalClasses = css`
   .g-rotate {
     animation: rotate 2s normal infinite;
   }
-
+  /* ICONS */
   /* ---------------------------------------------------------------------------*/
+  .g-icon-learning {
+    width: 44px;
+  }
+
+  .g-text-error {
+    margin-top: 0.2em;
+    color: red;
+  }
+  /* 
+  ---------------------------------------------------------------------------*/
   /* MEDIA QUERIES */
   @media screen and (min-width: 900px) {
     .g-hover-animation-item:hover {

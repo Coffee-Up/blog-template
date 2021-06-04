@@ -5,7 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
-import { Layout, Comments, FormComment } from "../components";
+import { Layout, Comments, FormComment } from ".";
 
 export default function PostTemplate({
   data: { mdx: post, allBlogPostComments: nodesComments },

@@ -20,14 +20,17 @@ const formDataEmpty = {
   text: "",
 };
 // TO DO: find a way to incoporate in formDataModel
-const error = {
-  text: undefined,
-};
 
 const FormComment = ({ postId }) => {
   const [isSending, setIsSending] = useState(false);
   const [postedSucceffuly, setPostedSucceffuly] = useState(undefined);
-  const [formData, setFormData] = useState(formDataEmpty);
+  const [formData, updateFormData] = useState({
+    articleId: null,
+    firstname: "",
+    title: "",
+    text: "",
+  });
+  const [errorText, updateErrorText] = useState(undefined);
   // run Once after initial rendering
   useEffect(() => {
     //retrieve comment after fail, if exist
@@ -35,7 +38,8 @@ const FormComment = ({ postId }) => {
       const commentLocalStorage = JSON.parse(
         localStorage.getItem("formCommentData")
       );
-      setFormData(commentLocalStorage);
+
+      updateFormData(commentLocalStorage);
     }
   }, []);
 
@@ -46,24 +50,21 @@ const FormComment = ({ postId }) => {
     const updatedValue = {};
     updatedValue[name] = value;
 
-    setFormData({
+    updateFormData({
       ...formData,
       ...updatedValue,
     });
-
-    const isTextLong = name === "text" && formData.text.length > 20;
-
-    isTextLong
-      ? (error.text = undefined)
-      : (error.text = "You have to write a little bit more ! ");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const isTextLong = formData.text.length > 20;
+    if (!isTextLong) {
+      updateErrorText("You have to write a little bit more ! ");
+      return;
+    }
 
     setIsSending(true);
-
-    if (error.text !== undefined) return;
 
     formData.articleId = postId;
 
@@ -85,14 +86,13 @@ const FormComment = ({ postId }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     };
-
     await fetch(
       "https://api.netlify.com/build_hooks/60b8ad87a18ed5f6c7d38360",
       requestOptionsWebHook
-    ).then((response) => response.json());
+    );
 
     const resetForm = formDataEmpty;
-    await setFormData({
+    await updateFormData({
       ...formData,
       ...resetForm,
     });
@@ -112,7 +112,7 @@ const FormComment = ({ postId }) => {
       />
       <form id="form-comment-root" onSubmit={handleSubmit}>
         <h4>Have something to say ?</h4>
-        <p>No log in , instant fun ! </p>
+        <p>No log in needed, instant fun ! </p>
         <div>
           <FormInput
             inputPlaceholder="Title (Optional)"
@@ -132,6 +132,7 @@ const FormComment = ({ postId }) => {
             value={formData.text}
             customOnChange={handleChange}
           />
+          {errorText && <p className="g-text-error">{errorText}</p>}
           <SubmitButton type="submit">Post It !</SubmitButton>
         </div>
       </form>

@@ -19,7 +19,7 @@ export default function PostCard({ path, img, title, id, summary, date }) {
           <p>{summary}</p>
         </div>
         <div id="post-card-data-container">
-          <TagSymbol tagName="learning" id="post-card-tag-logo" />
+          <TagSymbol tagName="learning" />
           <span>{date}</span>
         </div>
       </Link>
