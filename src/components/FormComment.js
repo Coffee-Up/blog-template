@@ -2,6 +2,7 @@
 // TO DO: find a better way to update formData, I don't like the const updatedChange = {}
 // Local storage set is here onl to retrieve a post if something goes wrong
 import React, { useState, useEffect } from "react";
+import { navigate } from "gatsby";
 
 import "../styles/FormComment.css";
 
@@ -103,6 +104,11 @@ const FormComment = ({ postId }) => {
     localStorage.removeItem("formCommentData");
   };
 
+  const handleBot = () => {
+    // Hidden form is filled, it's a bot, GO HOME JERK !
+    navigate("/");
+  };
+
   return (
     <>
       <CommentModalSending opened={isSending} />
@@ -110,11 +116,7 @@ const FormComment = ({ postId }) => {
         handleClose={() => setPostedSucceffuly(undefined)}
         opened={postedSucceffuly}
       />
-      <form
-        data-netlify-recaptcha="true"
-        id="form-comment-root"
-        onSubmit={handleSubmit}
-      >
+      <form id="form-comment-root" onSubmit={handleSubmit}>
         <h4>Have something to say ?</h4>
         <p>No log in needed, instant fun ! </p>
         <div>
@@ -130,7 +132,6 @@ const FormComment = ({ postId }) => {
             value={formData.firstname}
             customOnChange={handleChange}
           />
-          <div data-netlify-recaptcha="true"></div>
           <FormTextarea
             textareaName="text"
             textareaPlaceholder="Add your text"
@@ -139,6 +140,28 @@ const FormComment = ({ postId }) => {
           />
           {errorText && <p className="g-text-error">{errorText}</p>}
           <SubmitButton type="submit">Post It !</SubmitButton>
+          {/*------------ BOT SPAM SIMPLE PROTECTION HIDDEN -----------*/}
+          <label className="ohnohoney" for="name"></label>
+          <input
+            className="ohnohoney"
+            autocomplete="off"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name here"
+            onChange={() => handleBot()}
+          />
+          <label className="ohnohoney" for="email"></label>
+          <input
+            className="ohnohoney"
+            autocomplete="off"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your e-mail here"
+            onChange={() => handleBot()}
+          />
+          {/*-----------------------*/}
         </div>
       </form>
     </>
