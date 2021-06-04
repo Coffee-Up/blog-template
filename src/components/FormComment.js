@@ -110,7 +110,11 @@ const FormComment = ({ postId }) => {
         handleClose={() => setPostedSucceffuly(undefined)}
         opened={postedSucceffuly}
       />
-      <form id="form-comment-root" onSubmit={handleSubmit}>
+      <form
+        data-netlify-recaptcha="true"
+        id="form-comment-root"
+        onSubmit={handleSubmit}
+      >
         <h4>Have something to say ?</h4>
         <p>No log in needed, instant fun ! </p>
         <div>
@@ -126,6 +130,7 @@ const FormComment = ({ postId }) => {
             value={formData.firstname}
             customOnChange={handleChange}
           />
+          <div data-netlify-recaptcha="true"></div>
           <FormTextarea
             textareaName="text"
             textareaPlaceholder="Add your text"
