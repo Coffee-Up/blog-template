@@ -38,9 +38,6 @@ export default function PostsFilterWidget() {
 
   return (
     <div id="posts-filter-widget-container">
-      <header>
-        <h3 id="posts-filter-widget-title">Posts Filter</h3>
-      </header>
       <ul>
         {posts.map(({ node }) => {
           const {

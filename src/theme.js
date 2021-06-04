@@ -12,7 +12,7 @@ const theme = {
     },
   },
   paddings: {
-    main: "0 8rem",
+    main: "0 15rem",
     mainXS: "0 1.1rem",
     buttons: {
       small: "0.3em 1em",

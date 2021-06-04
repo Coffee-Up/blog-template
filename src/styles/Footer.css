@@ -1,4 +1,6 @@
+/* ROOT */
 #footer-container {
+  margin-top: 2rem;
   position: relative;
   width: 100%;
 }
