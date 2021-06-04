@@ -29,7 +29,7 @@ export default function Layout({
       file(relativePath: { eq: "homescreen-banner.png" }) {
         childImageSharp {
           gatsbyImageData(
-            height: 500
+            height: 800
             placeholder: NONE
             formats: [AUTO, WEBP, AVIF]
           )

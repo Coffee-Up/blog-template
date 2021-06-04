@@ -1,57 +1,45 @@
+/* ROOT */
 #post-card-link {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  padding: 0.5em 0.5em;
+  position: relative;
+  padding: 0.5em 1em;
+  justify-content: center;
 }
-
-#post-card-image {
-  /* Les images varie en fonction de la longueur des donnée de l'élément */
-  min-width: 15%;
-  max-width: 15%;
+/* OVERVIEW */
+#post-card-overview-container h2 {
+  margin-bottom: 0.5em;
+  font-family: "Montserrat SemiBold";
+  font-size: 1rem;
+  /* TO DO: See why h2 is purple  so color:black needed*/
+  color: black;
 }
 
 #post-card-overview-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 60%;
+  flex-direction: column;
+  text-align: center;
 }
 
-#post-card-overview-container h2 {
-  font-family: "Montserrat Bold";
-  font-size: 1rem;
-  /* TO DO: See why h2 is purple  so color:black needed*/
-  color: black;
-  padding: 1em 0 0.2em 0;
-  border-bottom: 1px rgb(179, 177, 177) solid;
-}
-
-#post-card-overview-container p {
-  padding: 1em 1em 0 1em;
+#post-card-overview-container > p {
+  margin-top: 0.5em;
   color: #3e3b3b;
-  font-size: 0.9rem;
-}
-
-#post-card-data-container div {
-  display: flex;
-}
-
-#post-card-data-container div p {
-  /* Unset global default span behaviour define in Layout */
-  font-family: unset;
   font-size: 0.8rem;
-  margin: 0 0.2em;
+}
+
+#post-card-link > .tag-symbol-container {
+  /* We need the content in the middle of the card, we have to remove tag logo */
+  position: absolute;
+  right: 0.7rem;
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   #post-card-link {
     display: flex;
-    flex-direction: column;
   }
+
   #post-card-overview-container h2 {
+    text-align: center;
     font-size: 0.9rem;
     border-bottom: none;
   }

@@ -127,14 +127,14 @@ const FormComment = ({ postId }) => {
             customOnChange={handleChange}
           />
           <FormInput
-            inputPlaceholder="Username"
+            inputPlaceholder="Username (Optional)"
             inputName="firstname"
             value={formData.firstname}
             customOnChange={handleChange}
           />
           <FormTextarea
             textareaName="text"
-            textareaPlaceholder="Add your text"
+            textareaPlaceholder="Add your Text (Required)"
             value={formData.text}
             customOnChange={handleChange}
           />

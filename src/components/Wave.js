@@ -24,7 +24,7 @@ const Wave = ({ orientation, fillColorSVG }) => {
       >
         <svg
           id="wave-svg"
-          height="70"
+          height="100"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 54 14"
           aria-hidden="true"

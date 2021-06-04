@@ -22,3 +22,5 @@
 	<p>I hardly handle multiple files and folders in a project, but can easily handle long files, multiple files n a folder because I prefer having the global view quickly to understand it, that's the reason why everything is 	compacted, like only one folder for components, unstead having multiple folder inside it. <br/>
 	I use a prefix in file's names to being able to search them quickly with <code>SHIFT + F</code> in a code editor. For example for any form related component I use <code>FormComponentName</code>
 </p>
+<h2>CSS</h2>
+<p>All container (generaly div) have an id, it allows you to modify your html structure without the need to rewrite most of your CSS selectors, unless you remove an element inside a id's selector container. You divide the selectors in your CSS, this is the only way (as I'm aware) to do it in pure CSS.</p>

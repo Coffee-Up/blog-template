@@ -22,7 +22,7 @@ const globalThemeTags = css`
   h2 {
     font-family: "Source Code Variable";
     font-weight: 500;
-    font-size: 1.2rem !important;
+    font-size: 1.2rem;
   }
 
   h3 {
@@ -44,7 +44,7 @@ const globalThemeTags = css`
     line-height: 1.4em;
     color: black;
   }
-  /* Don't put <a> first because p is sometimes in a <a> */
+
   a {
     color: black;
     text-decoration: none;
@@ -68,9 +68,44 @@ const globalThemeTags = css`
   button {
     border-radius: ${theme.borderRadius.buttons.xl};
   }
+
+  hr {
+    margin: 0;
+  }
+  /*---------------------------------------------------------------------------*/
+  // Placeholders
+  ::-webkit-input-placeholder {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 1rem;
+
+    text-align: center;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 1rem;
+
+    text-align: center;
+  }
+
+  :-ms-input-placeholder {
+    font-size: 1rem;
+
+    text-align: center;
+  }
   /*---------------------------------------------------------------------------*/
   /* MEDIA QUERIES */
   @media screen and (max-width: 600px) {
+    html {
+      /* Gives me the power to adjust generaly the size of tags (less spaguetty code) */
+      font-size: 18px;
+    }
+
     h1 {
       font-size: 1.4rem;
     }
@@ -81,13 +116,6 @@ const globalThemeTags = css`
 
     body {
       font-size: 0.5rem;
-    }
-  }
-  /* MEDIA QUERIES */
-  @media screen and (max-width: 600px) {
-    html {
-      /* Gives me the power to adjust generaly the size of tags (less spaguetty code) */
-      font-size: 18px;
     }
   }
 `;

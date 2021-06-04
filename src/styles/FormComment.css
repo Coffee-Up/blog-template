@@ -4,6 +4,7 @@
   background-color: #f9f7f6;
   border-radius: 10px;
   width: 100%;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -43,6 +44,11 @@
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
+  #form-comment-root {
+    padding: 1em 0;
+    font-size: 1.5rem;
+  }
+
   #form-comment-root div {
     flex-direction: column;
   }

@@ -1,13 +1,14 @@
 #banner-container {
-  height: 400px;
+  height: 620px;
   position: relative;
 }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   #banner-container {
-    height: 160px;
+    height: 39vh;
   }
+
   #banner-container .gatsby-image-wrapper {
     height: 100%;
   }

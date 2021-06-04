@@ -4,7 +4,9 @@ import theme from "../theme";
 
 const globalClasses = css`
   .g-wrapper-main {
+    border-right: 1px grey solid;
     padding: ${theme.paddings.main};
+    margin: ${theme.margins.main};
   }
 
   .g-mask-image-circular {
