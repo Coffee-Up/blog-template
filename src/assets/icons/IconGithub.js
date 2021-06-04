@@ -3,15 +3,14 @@ import React from "react";
 const IconGitHub = ({ clickable, customTitle }) => (
   <svg
     className={
-      clickable ? "g-hover-animation-logo g-hover-logo-fill-color" : ""
+      clickable ? "g-hover-animation-logo g-logo-path-to-fill-black-github" : ""
     }
     viewBox="0 0 32.58 31.77"
     role="link"
     aria-hidden="false"
     focusable="true"
     preserveAspectRatio="xMidYMid meet"
-    height="2em"
-    width="2em"
+    width="2rem"
   >
     {customTitle && <title>{customTitle}</title>}
     <path

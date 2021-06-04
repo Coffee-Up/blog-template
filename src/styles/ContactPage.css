@@ -1,12 +1,46 @@
+/* TO DO: Find a way to use a theme variable for BG idem Form comment*/
+/* TO DO: delete min-height when enought content*/
+/* ROOT  */
 #contact-page-container {
+  min-height: 100vh;
 }
 
 #contact-page-container h1 {
   text-align: center;
 }
+
+#contact-page-container p {
+  margin: 1em 0;
+}
+/* SOCIAL */
+#contact-page-social-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 1.5rem 1.5rem;
+  background-color: #f9f7f6;
+  border-radius: 1em;
+}
+
+#contact-page-social-container a {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#contact-page-social-container p {
+  margin-left: 1em;
+}
+
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #contact-page-container {
+  #contact-page-social-container {
+    flex-direction: column;
+  }
+
+  #contact-page-social-container a {
+    width: 100%;
+    justify-content: space-between;
   }
 }

@@ -1,11 +1,16 @@
 module.exports = {
   siteMetadata: {
+    urls: {
+      frontEndRepositoryUrl: `https://github.com/Coffee-Up/blog`,
+      fontUrl1: `https://github.com/adobe-fonts/source-code-pro`,
+      fontUrl2: `https://github.com/JulietaUla/Montserrat`,
+      fontUrl3: `https://github.com/microsoft/cascadia-code`,
+      twitter: `https://twitter.com/ScienceHCL`,
+      github: `https://github.com/Coffee-Up`,
+      email: `hello@coffee-up.io`,
+    },
     defaultTitlePage: `Axel | Blog`,
     defaultDescriptionPage: `Hi, i'm Axel. You will find posts about all my interests : Science, Programmation, Art & more.`,
-    frontEndRepositoryUrl: `https://github.com/Coffee-Up/blog`,
-    fontUrl1: `https://github.com/adobe-fonts/source-code-pro`,
-    fontUrl2: `https://github.com/JulietaUla/Montserrat`,
-    fontUrl3: `https://github.com/microsoft/cascadia-code`,
   },
   flags: { PRESERVE_WEBPACK_CACHE: true, DEV_SSR: false, FAST_DEV: true },
   plugins: [

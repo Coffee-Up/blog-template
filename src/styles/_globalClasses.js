@@ -30,8 +30,28 @@ const globalClasses = css`
     animation: scaling 0.2s ease-out forwards;
   }
 
-  .g-hover-logo-fill-color:hover > .logo-path-to-fill {
-    animation: mouseOnLinkSVG 0.2s ease-out forwards;
+  .g-logo-path-to-fill-black-github {
+    path {
+      fill: #000;
+    }
+  }
+
+  .g-logo-path-to-fill-black-github:hover {
+    path {
+      fill: #2c2660;
+    }
+  }
+
+  .g-logo-path-to-fill-blue-twitter {
+    path {
+      fill: #1da1f2;
+    }
+  }
+
+  .g-logo-path-to-fill-blue-twitter:hover {
+    path {
+      fill: #56b8f4;
+    }
   }
   /* GATSBY */
   .gatsby-image-wrapper {

@@ -35,6 +35,16 @@ export default function Layout({
           )
         }
       }
+      site {
+        siteMetadata {
+          urls {
+            frontEndRepositoryUrl
+            fontUrl1
+            fontUrl2
+            fontUrl3
+          }
+        }
+      }
     }
   `);
   const isHomePage = pathUrl === "/" ? true : false;
@@ -57,6 +67,7 @@ export default function Layout({
       />
       <main className="g-wrapper-main">{children}</main>
       <Footer
+        urls={data.site.siteMetadata.urls}
         fillColorSVG={theme.colors.background}
         backgroundColor={theme.colors.footer}
       />

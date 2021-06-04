@@ -1,14 +1,11 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 
 import "../styles/Footer.css";
 import { Wave, Avatar } from "../components";
 import { IconGithub, IconFont } from "../assets/icons";
 
-const Footer = ({ backgroundColor, fillColorSVG }) => {
-  const { site } = useStaticQuery(query);
-  const { frontEndRepositoryUrl, fontUrl1, fontUrl2, fontUrl3 } =
-    site.siteMetadata;
+const Footer = ({ backgroundColor, fillColorSVG, urls }) => {
+  const { frontEndRepositoryUrl, fontUrl1, fontUrl2, fontUrl3 } = urls;
 
   return (
     <footer id="footer-container" style={{ backgroundColor }}>
@@ -56,18 +53,5 @@ const Footer = ({ backgroundColor, fillColorSVG }) => {
     </footer>
   );
 };
-
-const query = graphql`
-  query github {
-    site {
-      siteMetadata {
-        frontEndRepositoryUrl
-        fontUrl1
-        fontUrl2
-        fontUrl3
-      }
-    }
-  }
-`;
 
 export default Footer;
