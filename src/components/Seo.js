@@ -15,14 +15,14 @@ const Seo = () => {
       {/* FONTS */}
       <link
         rel="preload"
-        href="/fonts/inter-var.woff2"
+        href="/fonts/inter-var-latin.woff2"
         as="font"
         crossorigin="anonymous"
         type="font/woff2"
       />
       <link
         rel="preload"
-        href="/fonts/fira-code-var.woff2"
+        href="/fonts/fira-code-var-latin.woff2"
         as="font"
         crossorigin="anonymous"
         type="font/woff2"
