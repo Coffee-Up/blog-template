@@ -50,7 +50,7 @@ export default function Layout({
   const isHomePage = pathUrl === "/" ? true : false;
 
   return (
-    <div id="root-layout">
+    <>
       <GlobalStyle />
       <Seo />
       <MenuMain
@@ -71,6 +71,6 @@ export default function Layout({
         fillColorSVG={theme.colors.background}
         backgroundColor={theme.colors.footer}
       />
-    </div>
+    </>
   );
 }

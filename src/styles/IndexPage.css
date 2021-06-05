@@ -15,7 +15,7 @@
 }
 
 #index-page-welcome-title-container h1 {
-  font-family: "Montserrat Regular";
+  font-family: "Inter Variable";
   margin-bottom: 0.3em;
 }
 
@@ -34,5 +34,9 @@
     /* JSX takes over CSS */
     width: 3rem !important;
     height: 3rem !important;
+  }
+
+  #index-page-welcome-title-container {
+    padding: 0;
   }
 }

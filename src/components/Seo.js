@@ -12,6 +12,21 @@ const Seo = () => {
     <Helmet>
       <title>{defaultTitlePage}</title>
       <meta name="description" content={defaultDescriptionPage} />
+      {/* FONTS */}
+      <link
+        rel="preload"
+        href="/fonts/inter-var.woff2"
+        as="font"
+        crossorigin="anonymous"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/fonts/fira-code-var.woff2"
+        as="font"
+        crossorigin="anonymous"
+        type="font/woff2"
+      />
     </Helmet>
   );
 };

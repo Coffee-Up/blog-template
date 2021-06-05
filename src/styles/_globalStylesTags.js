@@ -9,34 +9,40 @@ const globalThemeTags = css`
 
   body {
     font-size: 1rem;
-    font-family: "Montserrat Regular";
+    font-family: "Inter Variable";
+    font-weight: 400;
   }
 
   h1 {
-    font-family: "Montserrat Bold";
+    font-family: "Inter Variable";
     font-size: 1.4rem;
     margin-bottom: 1em;
+    font-weight: 700;
   }
 
   h2 {
-    font-family: "Source Code Variable";
+    font-family: "Inter Variable";
     font-size: 1.2rem;
+    font-weight: 700;
   }
 
   h3 {
-    font-family: "Montserrat SemiBold";
+    font-family: "Inter Variable";
     font-size: 1.1rem;
+    font-weight: 700;
   }
 
   h4 {
-    font-family: "Source Code Variable";
+    font-family: "Inter Variable";
     font-size: 1.1rem;
+    font-weight: 700;
   }
 
   p {
     margin-bottom: 0.4em;
     font-size: 1rem;
-    font-family: "Montserrat Regular";
+    font-family: "Inter Variable";
+    font-weight: 400;
     line-height: 1.4em;
     color: black;
   }
@@ -56,9 +62,10 @@ const globalThemeTags = css`
   }
 
   span {
-    font-family: "Montserrat Bold";
+    font-family: "Inter Variable";
     // need span to inherit size when in a h1, h2, p
     font-size: inherit;
+    font-weight: 700;
   }
 
   button {

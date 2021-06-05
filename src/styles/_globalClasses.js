@@ -98,13 +98,10 @@ const globalClasses = css`
     .g-wrapper-main {
       display: flex;
     }
-    .g-wrapper-main > div {
-    }
   }
+
+  /* BIGGEST MOBILE */
   @media screen and (max-width: 600px) {
-    #root-layout {
-      padding: 0.3rem 0.3rem;
-    }
   }
 `;
 
