@@ -5,24 +5,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "../styles/PostCard.css";
 import { TagSymbol } from "../components";
 
-export default function PostCard({ path, img, title, summary }) {
-  // TO DO: find a more readable manipulation
-  // Get something like "20210306"
-  // ----------------------------------------------------
-  // const rawDatePart = date
-  //   .split("-")
-  //   .slice(0, 10)
-  //   .join("")
-  //   .split("T")
-  //   .slice(0, 1)
-  //   .join("");
-
-  // const yearCreation = rawDatePart.split("").slice(0, 4).join("");
-  // const monthCreation = rawDatePart.split("").slice(4, 6).join("");
-  // const dayCreation = rawDatePart.split("").slice(6, 8).join("");
-
+export default function PostCard({ path, img, title, summary, creationDate }) {
   const image = getImage(img);
-  // TO DO: I don't like that much of divs (readability)
+
   return (
     <li className="g-hover-animation-item post-card-item-container">
       <Link className="post-card-link" to={path}>
@@ -33,6 +18,9 @@ export default function PostCard({ path, img, title, summary }) {
           <h2>{title}</h2>
           <hr />
           <p>{summary}</p>
+          <p className="creation-date">
+            {creationDate.day}/{creationDate.month}/{creationDate.year}
+          </p>
         </div>
         <TagSymbol tagName="learning" />
       </Link>

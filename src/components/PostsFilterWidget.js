@@ -3,6 +3,7 @@ import "../styles/PostsFilterWidget.css";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { PostCard } from ".";
+import { simplifyDateObject } from "../utils/helpersDate";
 
 export default function PostsFilterWidget() {
   const data = useStaticQuery(graphql`
@@ -54,6 +55,7 @@ export default function PostsFilterWidget() {
               <PostCard
                 key={node.id}
                 path={path}
+                creationDate={simplifyDateObject(creationDate)}
                 title={title}
                 summary={summary}
                 img={heading_picture_squared}

@@ -10,6 +10,7 @@
   padding: 0.5em 1em;
   justify-content: center;
 }
+/*---------------------------------------------------------------------------*/
 /* OVERVIEW */
 .post-card-overview-container {
   display: flex;
@@ -33,11 +34,17 @@
   font-size: 0.8rem;
 }
 
+.post-card-overview-container > .creation-date {
+  font-family: "Fira Code Variable";
+  text-align: right;
+}
+
 .post-card-link > .tag-symbol-container {
   /* We need the content in the middle of the card, we have to remove tag logo */
   position: absolute;
   right: 0.7rem;
 }
+
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
