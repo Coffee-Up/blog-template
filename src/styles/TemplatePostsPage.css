@@ -1,19 +1,5 @@
-#post-template-image-banner {
-  height: 100%;
-}
-
-#post-template-data-container {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  padding-top: 5em;
-}
-
-#post-template-time-to-read {
-  font-style: italic;
-  margin: 0 0 0 1em;
-}
-
+/*---------------------------------------------------------------------------*/
+/* POST WRAPPER */
 #post-template-wrapper-body {
   padding: 1em 4em;
   line-height: 1.7em;
@@ -36,13 +22,11 @@
 
 /*---------------------------------------------------------------------------*/
 /* CUSTOM ID TAGS  */
-#post-template-h3-default {
-}
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media (max-width: 600px) {
   #post-template-wrapper-body {
-    padding: 1em 0.4em;
+    padding: 1em 0.9em;
     line-height: 1.7em;
   }
 }
