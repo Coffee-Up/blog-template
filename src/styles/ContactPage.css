@@ -31,6 +31,10 @@
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
+  #contact-page-container {
+    padding: 1em;
+  }
+
   #contact-page-social-container {
     flex-direction: column;
   }

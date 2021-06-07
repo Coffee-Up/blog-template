@@ -52,9 +52,9 @@ export default function ContactPage({ data }) {
           <p>{email}</p>
         </div>
         <p>
-          If you spot any bugs, bad english sentences (there are surely a lot)
-          please let me know, it will help me to have a better user experience &
-          improve my english.{" "}
+          If you spot any bugs, bad english sentences (English is not my native
+          language) please let me know, it will help me to have a better user
+          experience & improve my english.{" "}
         </p>
       </div>
       <Sidebar side="right" />
