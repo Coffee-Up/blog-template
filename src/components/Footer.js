@@ -2,17 +2,23 @@ import * as React from "react";
 
 import "../styles/Footer.css";
 import { Wave, Avatar } from "../components";
-import { IconGithub, IconFont } from "../assets/icons";
+import { IconGithub, IconTwitter } from "../assets/icons";
 
 const Footer = ({ backgroundColor, fillColorSVG, urls }) => {
-  const { frontEndRepositoryUrl, fontUrl1, fontUrl2, fontUrl3 } = urls;
+  const {
+    frontEndRepositoryUrl,
+    firaCodeUrl,
+    interUrl,
+    githubProfileUrl,
+    twitterProfileUrl,
+  } = urls;
 
   return (
-    <footer id="footer-container" style={{ backgroundColor }}>
+    <footer style={{ backgroundColor }}>
       <Wave fillColorSVG={fillColorSVG} waveOrientation="bottom" />
-      <div id="footer-wrapper">
+      <div>
         <section>
-          <p>Website Source Code</p>
+          <h5>Website Source Code</h5>
           <a
             href={frontEndRepositoryUrl}
             target="_blank"
@@ -22,34 +28,37 @@ const Footer = ({ backgroundColor, fillColorSVG, urls }) => {
           </a>
         </section>
         <section>
-          <p>Want to contact me ?</p>
-          <Avatar clickable small />
+          <h5>Want to contact me ?</h5>
+          <div>
+            <Avatar clickable small />
+            <a
+              href={githubProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconGithub customTitle="My Github Account" clickable={true} />
+            </a>
+            <a
+              href={twitterProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconTwitter customTitle="My Twitter Account" clickable={true} />
+            </a>
+          </div>
         </section>
-        <section>
-          <p>Like my website's fonts ?</p>
-          #1
-          <a href={fontUrl1} target="_blank" rel="noopener noreferrer">
-            <IconFont
-              customTitle="Source Code Pro Repository"
-              clickable={true}
-            />
+        <section id="footer-section-fonts-container">
+          <h5>Like my website's fonts ?</h5>
+          <a href={firaCodeUrl} target="_blank" rel="noopener noreferrer">
+            Fira Code
           </a>
-          #2
-          <a href={fontUrl2} target="_blank" rel="noopener noreferrer">
-            <IconFont
-              customTitle="Montserrat Web Repository"
-              clickable={true}
-            />
+          <span>===</span>
+          <a href={interUrl} target="_blank" rel="noopener noreferrer">
+            Inter
           </a>
-          #3
-          <a href={fontUrl3} target="_blank" rel="noopener noreferrer">
-            <IconFont customTitle="Cascadia Code Repository" clickable={true} />
-          </a>
-        </section>
-        <section>
-          <p id="footer-copyright-text">Copyright © Axel Daguerre.</p>
         </section>
       </div>
+      <p id="footer-copyright-text">Copyright © Axel Daguerre.</p>
     </footer>
   );
 };

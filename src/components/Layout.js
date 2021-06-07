@@ -2,17 +2,16 @@ import * as React from "react";
 import { createGlobalStyle } from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 
-import globalThemeTags from "../styles/_globalStylesTags.js";
+import "../styles/_globalReset.css";
+import globalStylesTags from "../styles/_globalStylesTags.js";
 import globalClasses from "../styles/_globalClasses.js";
-import globalReset from "../styles/_globalReset.js";
 import globalAnimations from "../styles/_globalAnimations.js";
 
 import theme from "../theme.js";
 import { Footer, MenuMain, Banner, Seo } from ".";
-
+// TO DO: Find a better way to implement reset and others globals CSSConditionRule.
 const GlobalStyle = createGlobalStyle`
-    ${globalReset}
-    ${globalThemeTags}
+    ${globalStylesTags}
     ${globalClasses}
     ${globalAnimations}
   `;
@@ -39,15 +38,17 @@ export default function Layout({
         siteMetadata {
           urls {
             frontEndRepositoryUrl
-            fontUrl1
-            fontUrl2
-            fontUrl3
+            twitterProfileUrl
+            githubProfileUrl
+            firaCodeUrl
+            interUrl
           }
         }
       }
     }
   `);
   const isHomePage = pathUrl === "/" ? true : false;
+  const { urls } = data.site.siteMetadata;
 
   return (
     <>
@@ -67,7 +68,7 @@ export default function Layout({
       />
       <main className="g-wrapper-main">{children}</main>
       <Footer
-        urls={data.site.siteMetadata.urls}
+        urls={urls}
         fillColorSVG={theme.colors.background}
         backgroundColor={theme.colors.footer}
       />

@@ -1,64 +1,56 @@
 /* ROOT */
-#footer-container {
-  margin-top: 2rem;
+footer {
   position: relative;
-  width: 100%;
+  margin-top: 2rem;
+  padding: 7em 2.2em 1em 2.2em;
 }
-
-#footer-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-family: "Fira Code Light";
-  font-size: 0.9rem;
-  padding: 7em 3em;
-}
-
-#footer-wrapper section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-}
-
-#footer-wrapper section > p {
-  margin-bottom: 1em;
-  width: 100%;
-}
-
-#footer-wrapper section:last-child {
+/*---------------------------------------------------------------------------*/
+/* COPYRIGHT TEXT*/
+footer > #footer-copyright-text {
+  margin-top: 3em;
   text-align: right;
-  width: 100%;
+  font-family: "Fira Code Variable";
+  font-weight: 200;
+  color: #835a02;
 }
-
-#footer-section-fonts-repo {
-  justify-content: center;
+/*---------------------------------------------------------------------------*/
+/* SECTIONS */
+footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   text-align: center;
 }
 
-#footer-section-fonts-repo > a {
-  margin: 0 0.5em;
+footer > div > section {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  font-family: "Fira Code Variable";
 }
 
-#footer-copyright-text {
-  width: 100;
-  margin-top: 2em;
-  color: #835a02;
+footer > div > section > a {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: black;
+}
+
+footer > div > section > h5 {
+  font-weight: 300;
+  margin-bottom: 1em;
+  border-bottom: 2px #ffda6a solid;
+}
+
+footer > div > section > div {
+  /* links Logo container Contact me*/
+  display: flex;
+  justify-content: space-around;
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #footer-wrapper {
+  footer > div {
     flex-direction: column;
-  }
-
-  #footer-wrapper section {
-    margin: 1em 0;
-  }
-
-  #footer-wrapper section:last-child {
-    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
   }
 }

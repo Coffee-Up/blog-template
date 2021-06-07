@@ -12,7 +12,7 @@ const TemplatePostsPage = ({
   location,
 }) => {
   const { body, timeToRead } = post;
-  const { heading_picture_big, postId } = post.frontmatter;
+  const { heading_picture_big, postId, title } = post.frontmatter;
   // Its not possible to destructured because it's one deeper level than post
   const { nodes: comments } = nodesComments;
   const img = getImage(heading_picture_big);
@@ -26,6 +26,7 @@ const TemplatePostsPage = ({
             <p id="post-template-time-to-read">{timeToRead} minutes read</p>
           </div>
           <div id="post-template-wrapper-body">
+            <h1>{title}</h1>
             <MDXRenderer>{body}</MDXRenderer>
             <Comments
               pathname={location.pathname}

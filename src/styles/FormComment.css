@@ -1,14 +1,14 @@
 #form-comment-root {
-  margin: 2rem 0;
+  margin: 2rem auto;
   padding: 1em 1em;
   background-color: #f9f7f6;
   border-radius: 10px;
-  width: 100%;
+  width: 90%;
   font-size: 1rem;
   text-align: center;
 }
 
-#form-comment-root div {
+#form-comment-root > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,17 +17,18 @@
   width: 80%;
 }
 
-#form-comment-root input {
+#form-comment-root > div > input {
   /* Title + Username on same line */
-  width: 30%;
+  width: 40%;
 }
 
-#form-comment-root textarea {
+#form-comment-root > div > textarea {
   height: 6em;
   width: 100%;
 }
 
-#form-comment-root button {
+#form-comment-root > div > button {
+  width: 30%;
   margin: 1em 0 0 auto;
 }
 /*---------------------------------------------------------------------------*/
@@ -45,15 +46,25 @@
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   #form-comment-root {
-    padding: 1em 0;
+    width: 100%;
+    padding: 1em 0em;
     font-size: 1.5rem;
   }
 
-  #form-comment-root div {
+  #form-comment-root > div {
     flex-direction: column;
+    width: 95%;
   }
 
-  #form-comment-root input {
+  #form-comment-root > p {
+    padding: 0 0.2em;
+  }
+
+  #form-comment-root > div > input {
+    width: 100%;
+  }
+
+  #form-comment-root > div > button {
     width: 100%;
   }
 }

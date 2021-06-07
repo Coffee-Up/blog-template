@@ -1,8 +1,8 @@
 import * as React from "react";
-import "../styles/PostCard.css";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
+import "../styles/PostCard.css";
 import { TagSymbol } from "../components";
 
 export default function PostCard({ path, img, title, summary }) {

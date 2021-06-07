@@ -1,49 +1,48 @@
-#wave-container {
+.wave-container {
   position: absolute;
   width: 100%;
-  height: 6rem;
+  left: 0;
 }
 
-#wave-inner {
+.wave-inner {
+  width: 100%;
   position: relative;
 }
 
-#wave-svg {
+.wave-svg {
+  width: 100%;
   display: block;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   bottom: -46px;
 }
 
-#wave-svg-path {
+.wave-svg-path {
   width: 100%;
   animation: waveAnimation 25s linear infinite alternate;
 }
+/*---------------------------------------------------------------------------*/
+/* TOP WAVE */
+.wave-top {
+  bottom: -8px;
+  transform: matrix(1, 0, 0, -1.3, 0, 0);
+}
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 600px) {
-  #wave-container {
-    /* JSX inline takes over css */
-    padding-top: 0 !important;
-    height: 4.9em;
-  }
+.wave-container-top {
+  bottom: 0;
+  left: 0;
+}
 
-  .wave-top-reshaper {
-    transform: matrix(1, 0, 0, -0.6, 0, 13) !important ;
-  }
+.wave-bottom {
+}
 
-  #wave-inner {
-    /* Reform the wave shape to fit mobile screen */
-    /*------*/
-    /* JSX inline takes over css */
-    height: 5.9em;
-    /*------*/
-  }
+.wave-container-bottom {
+  top: 0;
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #wave-container {
-    /* height: 7.9em; */
+  #wave-inner-top {
+    display: none;
   }
 }

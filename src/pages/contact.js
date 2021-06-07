@@ -52,6 +52,11 @@ export default function ContactPage({ data }) {
             <p>{email}</p>
           </a>
         </div>
+        <p>
+          If you spot any bugs, bad english sentences (there are surely a lot)
+          please let me know, it will help me to have a better user experience &
+          improve my english.{" "}
+        </p>
       </div>
       <Sidebar side="right" />
     </Layout>
@@ -63,8 +68,8 @@ export const query = graphql`
     site {
       siteMetadata {
         urls {
-          github
-          twitter
+          githubProfileUrl
+          twitterProfileUrl
           email
         }
       }

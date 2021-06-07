@@ -2,11 +2,10 @@ module.exports = {
   siteMetadata: {
     urls: {
       frontEndRepositoryUrl: `https://github.com/Coffee-Up/blog`,
-      fontUrl1: `https://github.com/adobe-fonts/source-code-pro`,
-      fontUrl2: `https://github.com/JulietaUla/Montserrat`,
-      fontUrl3: `https://github.com/microsoft/cascadia-code`,
-      twitter: `https://twitter.com/ScienceHCL`,
-      github: `https://github.com/Coffee-Up`,
+      firaCodeUrl: `https://github.com/tonsky/FiraCode`,
+      interUrl: `https://rsms.me/inter/`,
+      twitterProfileUrl: `https://twitter.com/ScienceHCL`,
+      githubProfileUrl: `https://github.com/Coffee-Up`,
       email: `hello@coffee-up.io`,
     },
     defaultTitlePage: `Axel | Blog`,

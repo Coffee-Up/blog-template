@@ -23,7 +23,7 @@ export default function Avatar({ small, big, clickable, customIdCSS }) {
             clickable ? `g-clickable-image g-avatar-image` : "g-avatar-image"
           }
           src={profileImage}
-          alt="me thinking on the beach"
+          alt="Contact page"
         />
       </Link>
     </div>

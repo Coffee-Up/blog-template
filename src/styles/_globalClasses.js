@@ -102,6 +102,13 @@ const globalClasses = css`
 
   /* BIGGEST MOBILE */
   @media screen and (max-width: 600px) {
+    .g-hover-animation-logo:hover {
+      animation: none;
+    }
+
+    .g-clickable-image:hover {
+      animation: none;
+    }
   }
 `;
 

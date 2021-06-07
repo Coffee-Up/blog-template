@@ -5,55 +5,34 @@ import theme from "../theme";
 const globalThemeTags = css`
   html {
     font-size: 22px;
+    font-family: "Inter Variable";
   }
 
   body {
     font-size: 1rem;
-    font-family: "Inter Variable";
-    font-weight: 400;
   }
 
   h1 {
-    font-family: "Inter Variable";
-    font-size: 1.4rem;
     margin-bottom: 1em;
-    font-weight: 700;
   }
 
   h2 {
-    font-family: "Inter Variable";
-    font-size: 1.2rem;
-    font-weight: 700;
   }
 
   h3 {
-    font-family: "Inter Variable";
-    font-size: 1.1rem;
-    font-weight: 700;
   }
 
   h4 {
-    font-family: "Inter Variable";
-    font-size: 1.1rem;
-    font-weight: 700;
   }
 
   p {
-    margin-bottom: 0.4em;
-    font-size: 1rem;
-    font-family: "Inter Variable";
-    font-weight: 400;
-    line-height: 1.4em;
-    color: black;
   }
 
   a {
-    color: black;
     text-decoration: none;
   }
 
-  a:hover,
-  a {
+  a:hover {
     animation: mouseOnAnchorTag 0.2s ease-out forwards;
   }
 
@@ -62,10 +41,7 @@ const globalThemeTags = css`
   }
 
   span {
-    font-family: "Inter Variable";
-    // need span to inherit size when in a h1, h2, p
-    font-size: inherit;
-    font-weight: 700;
+    font-weight: var(--font-weight-spans);
   }
 
   button {
@@ -75,6 +51,7 @@ const globalThemeTags = css`
   hr {
     margin: 0;
   }
+
   /*---------------------------------------------------------------------------*/
   // Placeholders
   ::-webkit-input-placeholder {
@@ -108,17 +85,8 @@ const globalThemeTags = css`
       /* Gives me the power to adjust generaly the size of tags (less spaguetty code) */
       font-size: 18px;
     }
-
-    h1 {
-      font-size: 1.4rem;
-    }
-
-    h2 {
-      font-size: 0.8rem;
-    }
-
-    body {
-      font-size: 0.5rem;
+    a:hover {
+      animation: none;
     }
   }
 `;

@@ -1,6 +1,7 @@
 /* ROOT */
 .post-card-item-container {
   border-radius: 4px;
+  list-style: none;
 }
 
 .post-card-link {
@@ -10,22 +11,24 @@
   justify-content: center;
 }
 /* OVERVIEW */
-.post-card-overview-container h2 {
-  margin-bottom: 0.5em;
-  font-family: "Montserrat SemiBold";
-  font-size: 1rem;
-  /* TO DO: See why h2 is purple  so color:black needed*/
-  color: black;
-}
-
 .post-card-overview-container {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
+.post-card-overview-container > * {
+  margin: 0;
+}
+
+.post-card-overview-container > h2 {
+  font-family: "Inter Variable";
+  font-size: 1rem;
+  /* TO DO: See why h2 is purple  so color:black needed*/
+  color: black;
+}
+
 .post-card-overview-container > p {
-  margin-top: 0.5em;
   color: #3e3b3b;
   font-size: 0.8rem;
 }
@@ -42,7 +45,7 @@
     display: flex;
   }
 
-  .post-card-overview-container h2 {
+  .post-card-overview-container > h2 {
     text-align: center;
     font-size: 0.9rem;
     border-bottom: none;

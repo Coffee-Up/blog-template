@@ -19,16 +19,30 @@
   line-height: 1.7em;
 }
 
-.post-text-intro {
-  padding: 1em 1em;
-  background-color: #f7f4f1;
-  border-radius: 10px;
+#post-template-wrapper-body > p > ul > li {
+  margin: 0.2em 0 0 1.5em;
 }
 
-/*  MEDIA QUERIES */
+#post-template-wrapper-body > p > ul {
+  margin-top: 1em;
+}
+
+.post-text-intro {
+  font-family: "Inter Variable";
+  /* font-style: italic; */
+  font-weight: 125;
+  line-height: 1.4em;
+}
+
+/*---------------------------------------------------------------------------*/
+/* CUSTOM ID TAGS  */
+#post-template-h3-default {
+}
+/*---------------------------------------------------------------------------*/
+/* MEDIA QUERIES */
 @media (max-width: 600px) {
   #post-template-wrapper-body {
-    padding: 1em 0;
+    padding: 1em 0.4em;
     line-height: 1.7em;
   }
 }

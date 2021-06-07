@@ -1,29 +1,26 @@
 import * as React from "react";
+
 import "../styles/Wave.css";
 
 const Wave = ({ orientation, fillColorSVG }) => {
   return (
     <div
-      style={
+      className={
         orientation === "top"
-          ? { paddingTop: "4.1em", bottom: 0 }
-          : { paddingTop: "3em", top: 0 }
+          ? "wave-container wave-container-top"
+          : "wave-container wave-container-bottom"
       }
-      id="wave-container"
     >
       <div
-        id="wave-inner"
+        id={orientation === "top" ? "wave-inner-top" : ""}
         className={
-          orientation === "top" ? "wave-top-reshaper" : "wave-bottom-reshaper"
-        }
-        style={
           orientation === "top"
-            ? { transform: "matrix(1, 0, 0, -1.3, 0, 0)" }
-            : { bottom: "19px" }
+            ? "wave-inner wave-top"
+            : "wave-inner wave-bottom"
         }
       >
         <svg
-          id="wave-svg"
+          className="wave-svg"
           height="100"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 54 14"
@@ -31,7 +28,7 @@ const Wave = ({ orientation, fillColorSVG }) => {
           focusable="false"
           preserveAspectRatio="none"
         >
-          <path fill={fillColorSVG} id="wave-svg-path">
+          <path fill={fillColorSVG} className="wave-svg-path">
             <animate
               attributeName="d"
               values="M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z;

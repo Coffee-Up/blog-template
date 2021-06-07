@@ -2,7 +2,7 @@
   height: 620px;
   position: relative;
 }
-
+/*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   #banner-container {
