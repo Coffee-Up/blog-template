@@ -19,14 +19,13 @@ const TemplatePostsPage = ({
 
   return (
     <>
-      <Layout path={location.pathname} postData={{ imageBinary: img }}>
+      <Layout path={location.pathname} postData={{ imageBinary: img, title }}>
         <Sidebar side="left" />
         <div>
           <div id="post-template-data-container">
             <p id="post-template-time-to-read">{timeToRead} minutes read</p>
           </div>
           <div id="post-template-wrapper-body">
-            <h1>{title}</h1>
             <MDXRenderer>{body}</MDXRenderer>
             <Comments
               pathname={location.pathname}

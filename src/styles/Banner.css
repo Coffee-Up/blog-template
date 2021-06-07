@@ -2,6 +2,13 @@
   height: 620px;
   position: relative;
 }
+
+#banner-container > h1 {
+  position: absolute;
+  z-index: 2000;
+  bottom: 120px;
+  left: 20%;
+}
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {

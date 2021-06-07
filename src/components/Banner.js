@@ -31,6 +31,7 @@ class Banner extends React.Component {
         style={{ backgroundColor: `${backgroundColor}` }}
         id="banner-container"
       >
+        {postData.title && <h1>{postData.title}</h1>}
         {defaultBanner && (
           <GatsbyImage
             style={{ animation: `${this.state.animationTransition}` }}
