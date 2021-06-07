@@ -9,10 +9,9 @@ import { IconTwitter, IconGithub, IconEmail } from "../assets/icons";
 export default function ContactPage({ data }) {
   const { github, twitter, email } = data.site.siteMetadata.urls;
   return (
-    <Layout defaultBanner={true}>
+    <Layout defaultBanner={true} bannerTitle="Connect">
       <Sidebar side="left" />
       <div id="contact-page-container">
-        <h1>Contact me</h1>
         <p>
           I am a web developer but I'm not considering myself as one. In fact
           I'm more interested in <span>Hardware,</span>
@@ -37,20 +36,20 @@ export default function ContactPage({ data }) {
         <div id="contact-page-social-container">
           <a href={twitter} target="_blank" rel="noopener noreferrer">
             <IconTwitter clickable />
-            <p>Twitter Profil</p>
           </a>
+          <p>Twitter Profile</p>
           <a href={github} target="_blank" rel="noopener noreferrer">
             <IconGithub customTitle="My Github Profil" clickable />
-            <p>Github Profil</p>
           </a>
+          <p>Github Profile</p>
           <a
             href={`mailto:${email}?Subject="Hello Axel, I am ..."`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <IconEmail clickable />
-            <p>{email}</p>
           </a>
+          <p>{email}</p>
         </div>
         <p>
           If you spot any bugs, bad english sentences (there are surely a lot)

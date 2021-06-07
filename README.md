@@ -24,3 +24,9 @@
 </p>
 <h2>CSS</h2>
 <p>All container (generaly div) have an id, it allows you to modify your html structure without the need to rewrite most of your CSS selectors, unless you remove an element inside a id's selector container. You divide the selectors in your CSS, this is the only way (as I'm aware) to do it in pure CSS.</p>
+<p>I really dislike react's inline style for readability so I try as much as I can to avoid it. I have some strategies to avoid it. I prefer give my CSS the power to decide for my style because it is the tool created for this : 
+<ul>
+<li>
+JSX give the name of the id or class like <code>id=`footer-container-${name}`</code> then in the CSS I specify the id selector in question to style it. In that way CSS when you need to make a change it's always in the CSS files and not between JSX & CSS. Quick & easy.
+</li>
+</ul>

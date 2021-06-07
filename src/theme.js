@@ -2,6 +2,7 @@ const theme = {
   colors: {
     menu: "#ffd760",
     main: "#ffcb50",
+    banner: "#ffcb50",
     background: "white",
     backgroundLighter: "#f9f7f6",
     footer: "#ffcb50",

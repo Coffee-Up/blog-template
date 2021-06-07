@@ -138,6 +138,10 @@ a {
   background: transparent;
 }
 
+a > svg:hover {
+  cursor: pointer;
+}
+
 del {
   text-decoration: line-through;
 }

@@ -1,4 +1,4 @@
-#banner-container {
+.banner-container {
   position: relative;
   height: 620px;
 }
@@ -12,9 +12,6 @@
   bottom: 20%;
   left: 20%;
 }
-#banner-text-container > h1 {
-  margin-bottom: 0.2em;
-}
 
 #banner-text-container > p {
   font-family: "Fira Code Variable";
@@ -22,9 +19,27 @@
 }
 
 /*---------------------------------------------------------------------------*/
+/* BACKGROUNF COLOR*/
+#banner-container-learning-color {
+  background-color: var(--color-learning);
+}
+#banner-container-main-color {
+  background-color: var(--color-main);
+}
+/*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #banner-container {
-    height: 79vh;
+  .banner-container {
+    height: 55vh;
+  }
+
+  #banner-text-container {
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+  }
+
+  #banner-text-container > h1 {
+    font-size: 1.7rem;
   }
 }

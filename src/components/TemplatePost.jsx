@@ -12,7 +12,7 @@ const TemplatePostsPage = ({
   location,
 }) => {
   const { body, timeToRead } = post;
-  const { heading_picture_big, postId, title } = post.frontmatter;
+  const { heading_picture_big, postId, title, main_tag } = post.frontmatter;
   // Its not possible to destructured because it's one deeper level than post
   const { nodes: comments } = nodesComments;
   const img = getImage(heading_picture_big);
@@ -21,7 +21,7 @@ const TemplatePostsPage = ({
     <>
       <Layout
         path={location.pathname}
-        postData={{ imageBinary: img, title, timeToRead }}
+        postData={{ imageBinary: img, title, timeToRead, main_tag }}
       >
         <Sidebar side="left" />
         <div>
@@ -47,6 +47,7 @@ export const query = graphql`
   query querytemplatePostPage($pathSlug: String!, $postId: String!) {
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
       frontmatter {
+        main_tag
         postId
         title
         path

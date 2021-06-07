@@ -20,23 +20,26 @@ class Banner extends React.Component {
       binaryImageDefault,
       postData,
       defaultBanner,
-      backgroundColor,
       fillColorSVG,
+      bannerTitle,
     } = this.props;
 
     const img = getImage(binaryImageDefault);
     // We can't destructure object from postData has it is undefined in normal pages
     return (
       <div
-        style={{ backgroundColor: `${backgroundColor}` }}
-        id="banner-container"
+        id={
+          postData?.main_tag
+            ? `banner-container-${postData.main_tag}-color`
+            : "banner-container-main-color"
+        }
+        className="banner-container"
       >
-        {postData?.title && postData?.timeToRead && (
-          <div id="banner-text-container">
-            <h1>{postData.title}</h1>
-            {postData.timeToRead && <p>{postData.timeToRead} minutes read</p>}
-          </div>
-        )}
+        <div id="banner-text-container">
+          {bannerTitle && <h1>{bannerTitle}</h1>}
+          {postData?.title && <h1>{postData.title}</h1>}
+          {postData?.timeToRead && <p>{postData.timeToRead} minutes read</p>}
+        </div>
         {defaultBanner && (
           <GatsbyImage
             style={{ animation: `${this.state.animationTransition}` }}
