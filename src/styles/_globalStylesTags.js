@@ -13,19 +13,27 @@ const globalThemeTags = css`
   }
 
   h1 {
-    margin-bottom: 1em;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   h2 {
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   h3 {
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   h4 {
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
-
   p {
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   a {
