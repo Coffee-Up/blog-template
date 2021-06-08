@@ -2,15 +2,19 @@
   position: relative;
   height: 620px;
 }
-
 /*---------------------------------------------------------------------------*/
 /*BANNER TEXTS */
 #banner-text-container {
   position: absolute;
   display: flex;
   flex-direction: column;
-  bottom: 20%;
-  left: 20%;
+  justify-content: end;
+  padding: 0 2rem;
+  /* It needs to be the same than banner-container's dimensions */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 150px;
 }
 
 #banner-text-container > p {
@@ -18,6 +22,10 @@
   margin: 0 0 0 auto;
 }
 
+#banner-text-container > h1 {
+  text-align: center;
+  text-transform: capitalize;
+}
 /*---------------------------------------------------------------------------*/
 /* BACKGROUNF COLOR*/
 #banner-container-learning-color {
@@ -35,13 +43,12 @@
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   .banner-container {
-    height: 55vh;
+    height: 40vh;
   }
 
   #banner-text-container {
-    bottom: 0;
-    left: 0;
-    padding: 1em;
+    bottom: 20px;
+    padding: 0.4rem;
   }
 
   #banner-text-container > h1 {
