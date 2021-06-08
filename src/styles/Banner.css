@@ -27,6 +27,11 @@
   background-color: var(--color-main);
 }
 /*---------------------------------------------------------------------------*/
+/* IMAGES*/
+.banner-container > .gatsby-image-wrapper {
+  animation: fadeInOpacity 0.7s;
+}
+/*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   .banner-container {

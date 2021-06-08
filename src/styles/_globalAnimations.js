@@ -65,12 +65,12 @@ const globalAnimations = css`
     }
   }
   /* Transition Page */
-  @keyframes transitionOpacity {
+  @keyframes fadeInOpacity {
     from {
-      opacity: 100%;
+      opacity: 0%;
     }
     to {
-      filter: 0%;
+      opacity: 100%;
     }
   }
 
