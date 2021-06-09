@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Banner.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -10,31 +10,38 @@ const Banner = ({
   defaultBanner,
   fillColorSVG,
   bannerTitle,
+  customAltImgBanner,
 }) => {
-  // this.setState({ animationTransition: "animation: fadeInOpacity 1s" });
-  const img = getImage(binaryImageDefault);
+  const fluidDefaultImg = getImage(binaryImageDefault);
+
   return (
     <div
       id={
         postData?.main_tag
           ? `banner-container-${postData.main_tag}-color`
-          : "banner-container-main-color"
+          : "banner-container-default-color"
       }
       className="banner-container"
     >
       <div id="banner-text-container">
+        {/* CUSTOM TITLE OR POST TITLE, NOT BOTH */}
         {bannerTitle && <h1>{bannerTitle}</h1>}
+        {/* ------------------------------------ */}
         {postData?.title && <h1>{postData.title}</h1>}
         {postData?.timeToRead && <p>{postData.timeToRead} minutes read</p>}
       </div>
       {defaultBanner && (
-        <GatsbyImage draggable={false} image={img} alt="a changer" />
+        <GatsbyImage
+          draggable={false}
+          image={fluidDefaultImg}
+          alt={customAltImgBanner}
+        />
       )}
       {postData && (
         <GatsbyImage
           draggable={false}
-          image={postData.imageBinary}
-          alt="a changer"
+          image={postData.fluidPostImg}
+          alt={customAltImgBanner}
         />
       )}
       <Wave fillColorSVG={fillColorSVG} orientation="top" />

@@ -31,8 +31,8 @@
 #banner-container-learning-color {
   background-color: var(--color-learning);
 }
-#banner-container-main-color {
-  background-color: var(--color-main);
+#banner-container-default-color {
+  background-color: var(--color-default-banner);
 }
 /*---------------------------------------------------------------------------*/
 /* IMAGES*/

@@ -9,7 +9,11 @@ import { IconTwitter, IconGithub, IconEmail } from "../assets/icons";
 export default function ContactPage({ data }) {
   const { github, twitter, email } = data.site.siteMetadata.urls;
   return (
-    <Layout defaultBanner={true} bannerTitle="Connect">
+    <Layout
+      customAltImgBanner="contact poster"
+      defaultBanner={true}
+      bannerTitle="Connect"
+    >
       <Sidebar side="left" />
       <div id="contact-page-container">
         <p>

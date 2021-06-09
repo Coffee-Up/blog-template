@@ -24,8 +24,8 @@
 /*---------------------------------------------------------------------------*/
 /* TOP WAVE */
 .wave-top {
-  bottom: -8px;
-  transform: matrix(1, 0, 0, -1.3, 0, 0);
+  bottom: -23.3px;
+  transform: matrix(1, 0, 0, -0.8, 0, 0);
 }
 
 .wave-container-top {

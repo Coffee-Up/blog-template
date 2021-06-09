@@ -23,6 +23,7 @@ export default function Layout({
   pathUrl,
   headerText,
   bannerTitle,
+  customAltImgBanner,
 }) {
   const data = useStaticQuery(graphql`
     query IndexPageQuery {
@@ -61,6 +62,7 @@ export default function Layout({
         hideHomeLink={isHomePage}
       />
       <Banner
+        customAltImgBanner={customAltImgBanner}
         bannerTitle={bannerTitle}
         postData={postData}
         fillColorSVG={theme.colors.background}
