@@ -11,25 +11,13 @@ module.exports = {
     defaultTitlePage: `Axel | Blog`,
     defaultDescriptionPage: `Hi, i'm Axel. You will find posts about all my interests : Science, Programmation, Art & more.`,
   },
-  flags: { PRESERVE_WEBPACK_CACHE: true, DEV_SSR: false, FAST_DEV: true },
+  flags: { PRESERVE_WEBPACK_CACHE: false, DEV_SSR: false, FAST_DEV: true },
   plugins: [
+    // SOURCING BACK END REST API
     require.resolve(`${__dirname}/plugins/back-blog-api`),
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-vscode`,
-            options: {
-              theme: "Quiet Light", // Or install your favorite theme from GitHub
-            },
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -44,7 +32,12 @@ module.exports = {
         path: `${__dirname}/src/assets/images/`,
       },
     },
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [],
+      },
+    },
     {
       resolve: "gatsby-plugin-netlify",
       options: {

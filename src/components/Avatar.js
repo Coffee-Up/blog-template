@@ -15,7 +15,7 @@ export default function Avatar({ size, clickable }) {
             clickable ? `g-clickable-image g-avatar-image` : "g-avatar-image"
           }
           src={profileImage}
-          alt="Picture of me"
+          alt="Me on the beach"
         />
       </Link>
     </div>
