@@ -3,6 +3,7 @@ footer {
   position: relative;
   margin-top: 2rem;
   padding: 7em 2.2em 1em 2.2em;
+  background-color: var(--color-footer);
 }
 /*---------------------------------------------------------------------------*/
 /* COPYRIGHT TEXT*/

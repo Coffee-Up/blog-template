@@ -4,12 +4,9 @@ import { Link } from "gatsby";
 
 import { IconWebsite } from "../assets/icons";
 
-export default function Header({ hideHomeLink, backgroundColor }) {
+export default function Header({ hideHomeLink }) {
   return (
-    <header
-      id="main-menu-header"
-      style={{ backgroundColor: `${backgroundColor}` }}
-    >
+    <header id="main-menu-header">
       <nav>
         <div id="main-menu-home-container">
           {!hideHomeLink && (

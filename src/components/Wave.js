@@ -2,22 +2,12 @@ import * as React from "react";
 
 import "../styles/Wave.css";
 
-const Wave = ({ orientation, fillColorSVG }) => {
+const Wave = ({ orientation }) => {
   return (
-    <div
-      className={
-        orientation === "top"
-          ? "wave-container wave-container-top"
-          : "wave-container wave-container-bottom"
-      }
-    >
+    <div className={`wave-container wave-container-${orientation}`}>
       <div
-        id={orientation === "top" ? "wave-inner-top" : ""}
-        className={
-          orientation === "top"
-            ? "wave-inner wave-top"
-            : "wave-inner wave-bottom"
-        }
+        id={`wave-inner-${orientation}`}
+        className={`wave-inner wave-${orientation}`}
       >
         <svg
           className="wave-svg"
@@ -28,7 +18,7 @@ const Wave = ({ orientation, fillColorSVG }) => {
           focusable="false"
           preserveAspectRatio="none"
         >
-          <path fill={fillColorSVG} className="wave-svg-path">
+          <path className="wave-svg-path">
             <animate
               attributeName="d"
               values="M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z;

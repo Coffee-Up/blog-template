@@ -16,8 +16,8 @@ const Comments = ({ comments }) => {
         <>
           <p>Comments already on this post !</p>
           <ActionButton
-            classNameHerited={showComments && "button-action-toggled"}
-            onClickHerited={() => setShowComments(!showComments)}
+            className={showComments && "button-action-toggled"}
+            onClick={() => setShowComments(!showComments)}
           >
             Show {comments.length} Comments
           </ActionButton>
@@ -27,8 +27,8 @@ const Comments = ({ comments }) => {
         <ul>
           {comments.map((comment) => {
             const { createdAt, firstname, text, id, title } = comment;
-
-            const dateObject = simplifyDateObject(createdAt);
+            // Check if it works (no comment atm)
+            const { month, day, year } = simplifyDateObject(createdAt);
 
             return (
               <li key={id}>
@@ -36,17 +36,17 @@ const Comments = ({ comments }) => {
                 <p id="comment-text-body">{text}</p>
                 {firstname !== "" && <p id="comment-author">{firstname}</p>}
                 <p id="comment-created-at">
-                  {dateObject.month}
-                  {dateObject.day}
-                  {dateObject.year}
+                  {month}
+                  {day}
+                  {year}
                 </p>
               </li>
             );
           })}
           {showComments && (
             <ActionButton
-              classNameHerited={showComments && "button-action-toggled"}
-              onClickHerited={() => setShowComments(!showComments)}
+              className={showComments && "button-action-toggled"}
+              onClick={() => setShowComments(!showComments)}
             >
               Hide Comments
             </ActionButton>

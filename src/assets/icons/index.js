@@ -4,8 +4,6 @@ import IconWebsite from "./IconWebsite";
 import IconLoader from "./IconLoader";
 import IconTwitter from "./IconTwitter";
 import IconEmail from "./IconEmail";
-import IconStar from "./IconStar";
-import IconCircle from "./IconCircle";
 
 export {
   IconLearning,
@@ -14,6 +12,4 @@ export {
   IconLoader,
   IconTwitter,
   IconEmail,
-  IconStar,
-  IconCircle,
 };

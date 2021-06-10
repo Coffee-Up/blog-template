@@ -1,0 +1,57 @@
+/* Hover sur une card */
+@keyframes cardMovingUp {
+  from {
+    transform: scale(1);
+    border-bottom: 1px black;
+  }
+  to {
+    box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 16px,
+      rgba(71, 63, 79, 0.16) 0px 8px 24px;
+    position: relative;
+    transform: scale(1.02);
+    color: #8d4cd8;
+  }
+}
+/* sur une image */
+@keyframes scaling {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes mouseOnAnchorTag {
+  from {
+  }
+  to {
+    color: var(--color-hover-links);
+  }
+}
+
+@keyframes mouseOnImage {
+  from {
+  }
+  to {
+    filter: brightness(1.1);
+  }
+}
+/* Transition Page */
+@keyframes fadeInOpacity {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -27,7 +27,7 @@ const CommentModalSended = ({ opened, handleClose }) => {
           <div id="modal-comment-sended-container">
             <p>You have succeffully sended your post !</p>
             <p>Your posts will be visible in few minutes.</p>
-            <CloseModalButton onClickHerited={handleClose}>OK</CloseModalButton>
+            <CloseModalButton onClick={handleClose}>OK</CloseModalButton>
           </div>
         </>
       )}

@@ -1,6 +1,7 @@
 #form-textarea {
   padding: 1em 1em;
   border-radius: 10px;
+  box-shadow: var(--box-shadow-inputs);
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */

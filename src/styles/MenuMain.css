@@ -1,6 +1,7 @@
 #main-menu-header {
   padding: 0.3em 2em;
   height: 8vh;
+  background-color: var(--color-main-menu);
 }
 
 #main-menu-header nav {

@@ -1,8 +1,8 @@
 import * as React from "react";
 
-const IconLearning = ({ classNameHerited }) => (
+const IconLearning = ({ className }) => (
   <svg
-    className={classNameHerited}
+    className={className}
     viewBox="0 0 512 512"
     role="img"
     aria-hidden="true"

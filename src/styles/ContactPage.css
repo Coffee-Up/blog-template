@@ -1,11 +1,10 @@
-/* TO DO: Find a way to use a theme variable for BG idem Form comment*/
-/* TO DO: delete min-height when enought content*/
+/*---------------------------------------------------------------------------*/
 /* ROOT  */
 #contact-page-container {
   padding: 3rem 4rem;
-  min-height: 100vh;
 }
-
+/*---------------------------------------------------------------------------*/
+/* TEXT */
 #contact-page-container > h1 {
   text-align: center;
 }

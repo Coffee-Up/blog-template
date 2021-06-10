@@ -20,6 +20,7 @@
 .wave-svg-path {
   width: 100%;
   animation: waveAnimation 25s linear infinite alternate;
+  fill: var(--color-background);
 }
 /*---------------------------------------------------------------------------*/
 /* TOP WAVE */
@@ -32,10 +33,8 @@
   bottom: 0;
   left: 0;
 }
-
-.wave-bottom {
-}
-
+/*---------------------------------------------------------------------------*/
+/* BOTTOM WAVE */
 .wave-container-bottom {
   top: 0;
 }

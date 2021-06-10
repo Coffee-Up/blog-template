@@ -1,29 +1,19 @@
 import * as React from "react";
-import { createGlobalStyle } from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 
 import "../styles/_globalReset.css";
-import globalStylesTags from "../styles/_globalStylesTags.js";
-import globalClasses from "../styles/_globalClasses.js";
-import globalAnimations from "../styles/_globalAnimations.js";
+import "../styles/_globalGenericTags.css";
+import "../styles/_globalAnimations.css";
+import "../styles/_globalClasses.css";
 
-import theme from "../theme.js";
 import { Footer, MenuMain, Banner, Seo } from ".";
-// TO DO: Find a better way to implement reset and others globals CSSConditionRule.
-const GlobalStyle = createGlobalStyle`
-    ${globalStylesTags}
-    ${globalClasses}
-    ${globalAnimations}
-  `;
 
 export default function Layout({
   children,
   defaultBanner,
   postData,
   pathUrl,
-  headerText,
   bannerTitle,
-  customAltImgBanner,
 }) {
   const data = useStaticQuery(graphql`
     query IndexPageQuery {
@@ -54,27 +44,17 @@ export default function Layout({
 
   return (
     <>
-      <GlobalStyle />
       <Seo />
-      <MenuMain
-        backgroundColor={theme.colors.menu}
-        headerText={headerText}
-        hideHomeLink={isHomePage}
-      />
+      {/* //TO DO: MENU should know if home */}
+      <MenuMain hideHomeLink={isHomePage} />
       <Banner
-        customAltImgBanner={customAltImgBanner}
         bannerTitle={bannerTitle}
         postData={postData}
-        fillColorSVG={theme.colors.background}
         defaultBanner={defaultBanner}
         binaryImageDefault={data.file.childImageSharp}
       />
       <main className="g-wrapper-main">{children}</main>
-      <Footer
-        urls={urls}
-        fillColorSVG={theme.colors.background}
-        backgroundColor={theme.colors.footer}
-      />
+      <Footer urls={urls} />
     </>
   );
 }

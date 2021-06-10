@@ -2,26 +2,23 @@ import React from "react";
 
 import "../styles/Buttons.css";
 
-const ActionButton = ({ onClickHerited, children, classNameHerited }) => {
+const ActionButton = ({ onClick, children, className }) => {
   return (
-    <button
-      className={`button-action ${classNameHerited}`}
-      onClick={onClickHerited}
-    >
+    <button className={`button-action ${className}`} onClick={onClick}>
       {children}
     </button>
   );
 };
 
-const SubmitButton = ({ onClickHerited, children }) => {
+const SubmitButton = ({ onClick, children }) => {
   return (
-    <button className="button-submit" onClick={onClickHerited}>
+    <button className="button-submit" onClick={onClick}>
       {children}
     </button>
   );
 };
 
-const CloseModalButton = ({ onClickHerited, children }) => {
-  return <button onClick={onClickHerited}>{children}</button>;
+const CloseModalButton = ({ onClick, children }) => {
+  return <button onClick={onClick}>{children}</button>;
 };
 export { SubmitButton, CloseModalButton, ActionButton };

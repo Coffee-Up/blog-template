@@ -1,10 +1,9 @@
-// TO DO: change firstname to username & txt to postTextby username back & front
-// TO DO: find a better way to update formData, I don't like the const updatedChange = {}
-// Local storage set is here onl to retrieve a post if something goes wrong
 import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 
 import "../styles/FormComment.css";
+// TO DO: change firstname to username & txt to postTextby username back & front
+// TO DO: find a better way to update formData, I don't like the const updatedChange = {}
 
 import {
   FormInput,
@@ -24,7 +23,7 @@ const formDataEmpty = {
 
 const FormComment = ({ postId }) => {
   const [isSending, setIsSending] = useState(false);
-  const [postedSucceffuly, setPostedSucceffuly] = useState(undefined);
+  const [postedSucceffuly, setPostedSucceffuly] = useState(null);
   const [formData, updateFormData] = useState({
     articleId: null,
     firstname: "",
