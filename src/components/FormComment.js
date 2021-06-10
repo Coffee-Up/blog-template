@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 
 import "../styles/FormComment.css";
-// TO DO: change firstname to username & txt to postTextby username back & front
 // TO DO: find a better way to update formData, I don't like the const updatedChange = {}
 
 import {
@@ -40,6 +39,9 @@ const FormComment = ({ postId }) => {
       );
 
       updateFormData(commentLocalStorage);
+      return () => {
+        console.log("Here, you can add clean up code - componentWillUnmount");
+      };
     }
   }, []);
 

@@ -4,7 +4,7 @@ import "../styles/Footer.css";
 import { Wave, Avatar } from "../components";
 import { IconGithub, IconTwitter } from "../assets/icons";
 
-const Footer = ({ backgroundColor, fillColorSVG, urls }) => {
+const Footer = ({ backgroundColor, urls }) => {
   const {
     frontEndRepositoryUrl,
     firaCodeUrl,
@@ -15,7 +15,7 @@ const Footer = ({ backgroundColor, fillColorSVG, urls }) => {
 
   return (
     <footer style={{ backgroundColor }}>
-      <Wave orientation="bottom" fillColorSVG={fillColorSVG} />
+      <Wave orientation="bottom" />
       <div>
         <section>
           <h5>Website Source Code</h5>

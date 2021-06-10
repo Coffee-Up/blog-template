@@ -32,9 +32,13 @@
   color: white;
 }
 
-.button-action-toggled {
+.button-action-toggled-true {
   background-color: #ff7519;
   color: white;
+}
+
+.button-action-toggled-false {
+  /* NO LOGIC YET */
 }
 /*----------------------------------------------------*/
 /* MEDIA QUERIES */

@@ -28,6 +28,7 @@ const Banner = ({
       <GatsbyImage
         draggable={false}
         image={defaultBanner ? fluidDefaultImg : postData.fluidPostImg}
+        alt=""
       />
       <Wave orientation="top" />
     </div>

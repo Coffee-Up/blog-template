@@ -8,11 +8,9 @@ const CommentModalSending = ({ opened }) => {
   return (
     <>
       {opened && (
-        <>
-          <div id="modal-comment-sending-container">
-            <IconLoader id="loader-icon" classNamae="g-rotate" />
-          </div>
-        </>
+        <div id="modal-comment-sending-container">
+          <IconLoader id="loader-icon" classNamae="g-rotate" />
+        </div>
       )}
     </>
   );

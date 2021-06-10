@@ -51,16 +51,16 @@ export default function PostsFilterWidget() {
           } = node.frontmatter;
 
           return (
-            <>
+            <div key={node.id + "random"}>
               <PostCard
-                key={node.id}
+                keyId={node.id}
                 path={path}
                 creationDate={simplifyDateObject(creationDate)}
                 title={title}
                 summary={summary}
                 img={heading_picture_squared}
               />
-            </>
+            </div>
           );
         })}
       </ul>

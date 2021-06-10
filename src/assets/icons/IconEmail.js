@@ -8,7 +8,6 @@ const IconEmail = ({ clickable }) => (
     aria-hidden="false"
     focusable="true"
     preserveAspectRatio="xMidYMid meet"
-    width="2rem"
   >
     <title>My Email Adress</title>
     <path

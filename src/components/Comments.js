@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import "../styles/Comments.css";
 
 import { ActionButton } from "./Buttons";
-
 import { simplifyDateObject } from "../utils/helpersDate";
 
 const Comments = ({ comments }) => {
@@ -16,7 +14,7 @@ const Comments = ({ comments }) => {
         <>
           <p>Comments already on this post !</p>
           <ActionButton
-            className={showComments && "button-action-toggled"}
+            className={`button-action-toggled-${showComments}`}
             onClick={() => setShowComments(!showComments)}
           >
             Show {comments.length} Comments
@@ -27,14 +25,13 @@ const Comments = ({ comments }) => {
         <ul>
           {comments.map((comment) => {
             const { createdAt, firstname, text, id, title } = comment;
-            // Check if it works (no comment atm)
             const { month, day, year } = simplifyDateObject(createdAt);
 
             return (
               <li key={id}>
                 <h4>{title}</h4>
                 <p id="comment-text-body">{text}</p>
-                {firstname !== "" && <p id="comment-author">{firstname}</p>}
+                <p id="comment-author">{firstname}</p>
                 <p id="comment-created-at">
                   {month}
                   {day}
@@ -45,7 +42,7 @@ const Comments = ({ comments }) => {
           })}
           {showComments && (
             <ActionButton
-              className={showComments && "button-action-toggled"}
+              className={`button-action-toggled-${showComments}`}
               onClick={() => setShowComments(!showComments)}
             >
               Hide Comments

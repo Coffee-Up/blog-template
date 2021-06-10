@@ -1,9 +1,9 @@
 // """ TO DO: Change on back en articleId by postId """
 import React from "react";
-import "../styles/TemplatePostsPage.css";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
+import "../styles/TemplatePostsPage.css";
 
 import { Layout, Comments, FormComment, Sidebar } from ".";
 
@@ -14,9 +14,9 @@ const TemplatePostsPage = ({
   const { body, timeToRead } = post;
   const { heading_picture_big, postId, title, main_tag, alt_img } =
     post.frontmatter;
-  // Its not possible to destructured because it's one deeper level than post
   const { nodes: comments } = nodesComments;
   const fluidPostImg = getImage(heading_picture_big);
+
   return (
     <>
       <Layout

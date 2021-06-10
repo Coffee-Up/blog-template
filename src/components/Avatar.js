@@ -1,6 +1,6 @@
 import * as React from "react";
-import "../styles/Avatar.css";
 import { Link } from "gatsby";
+import "../styles/Avatar.css";
 
 import profileImage from "../assets/images/me.jpg";
 
@@ -11,9 +11,7 @@ export default function Avatar({ size, clickable }) {
     >
       <Link to="/contact">
         <img
-          className={
-            clickable ? `g-clickable-image g-avatar-image` : "g-avatar-image"
-          }
+          className={`g-image-clickable-${clickable} g-avatar-image`}
           src={profileImage}
           alt="Me on the beach"
         />

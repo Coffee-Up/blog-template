@@ -15,9 +15,17 @@
   overflow: hidden;
   border-radius: 6%;
 }
-
-.g-hover-animation-logo:hover {
+/* 
+  ---------------------------------------------------------------------------*/
+/* LOGOS */
+.g-logo-clickable-true:hover {
   animation: scaling 0.2s ease-out forwards;
+}
+/* 
+  ---------------------------------------------------------------------------*/
+/* GITHUB */
+.g-logo-github {
+  width: 2rem;
 }
 
 .g-logo-path-to-fill-black-github {
@@ -28,6 +36,12 @@
   fill: #2c2660;
 }
 
+/* 
+  ---------------------------------------------------------------------------*/
+/* TWITTER */
+.g-logo-twitter {
+  width: 2rem;
+}
 .g-logo-path-to-fill-blue-twitter {
   fill: #1da1f2;
 }
@@ -46,7 +60,7 @@
   margin-bottom: 1.6rem;
 }
 
-.g-clickable-image:hover {
+.g-image-clickable-true:hover {
   animation: mouseOnImage 0.2s ease-out forwards;
 }
 
@@ -84,7 +98,7 @@
     animation: none;
   }
 
-  .g-clickable-image:hover {
+  .g-image-clickable:hover {
     animation: none;
   }
 }

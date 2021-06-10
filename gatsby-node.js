@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   pages.forEach((page) => {
     actions.createPage({
       path: page.frontmatter.path,
-      component: path.resolve("./src/components/TemplatePost.jsx"),
+      component: path.resolve("./src/components/_TemplatePost.jsx"),
       context: {
         pathSlug: page.frontmatter.path,
         // GraphQl queries need String type or throw an error, of course if i write frontmatter's post in string its fine, but I can make mistakes

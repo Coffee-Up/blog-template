@@ -8,7 +8,6 @@ export default function IndexPage({ location }) {
 
   return (
     <Layout
-      customAltImgBanner="science poster"
       isHome={isHomePage}
       pathUrl={location.pathname}
       defaultBanner={true}

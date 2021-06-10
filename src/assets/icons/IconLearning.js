@@ -8,7 +8,6 @@ const IconLearning = ({ className }) => (
     aria-hidden="true"
     focusable="false"
     preserveAspectRatio="xMidYMid meet"
-    width="2rem"
   >
     <title>Learning Tag</title>
     <circle fill="#FFE3E3" cx="256" cy="256" r="254" />

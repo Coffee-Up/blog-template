@@ -5,11 +5,18 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "../styles/PostCard.css";
 import { TagSymbol } from "../components";
 
-export default function PostCard({ path, img, title, summary, creationDate }) {
+export default function PostCard({
+  keyId,
+  path,
+  img,
+  title,
+  summary,
+  creationDate,
+}) {
   const image = getImage(img);
 
   return (
-    <li className="g-hover-animation-item post-card-item-container">
+    <li key={keyId} className="g-hover-animation-item post-card-item-container">
       <Link className="post-card-link" to={path}>
         <div className="post-card-overview-container">
           <div>
