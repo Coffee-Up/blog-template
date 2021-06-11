@@ -3,7 +3,7 @@ import "../styles/PostsFilterWidget.css";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { PostCard } from ".";
-import { mainTagFromUrl } from "../utils/helpersFunctions";
+import { GetRootFolderName } from "../utils/helpersFunctions";
 
 export default function PostsFilterWidget() {
   const data = useStaticQuery(graphql`
@@ -55,7 +55,7 @@ export default function PostsFilterWidget() {
           return (
             <div key={id + "random"}>
               <PostCard
-                mainTag={mainTagFromUrl(slug, "/")}
+                mainTag={GetRootFolderName(slug)}
                 keyId={id}
                 path={path}
                 creationDate={creationDate}

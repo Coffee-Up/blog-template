@@ -13,8 +13,11 @@
 //   return { day, month, year };
 // };
 
-const mainTagFromUrl = (pathUrlString, delimiterString) => {
-  const arrayStrings = pathUrlString.split(delimiterString);
+const GetRootFolderName = (pathUrlString) => {
+  // You pass the relative path (internal) to determine the root folder it comes from.
+  //
+  const arrayStrings = pathUrlString.split("/");
   return arrayStrings[0];
 };
-export { mainTagFromUrl };
+
+export { GetRootFolderName };

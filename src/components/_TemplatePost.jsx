@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import "../styles/TemplatePostsPage.css";
 
-import { mainTagFromUrl } from "../utils/helpersFunctions";
+import { GetRootFolderName } from "../utils/helpersFunctions";
 import { Layout, Comments, FormComment, Sidebar } from ".";
 
 const TemplatePostsPage = ({
@@ -17,7 +17,7 @@ const TemplatePostsPage = ({
   const { nodes: comments } = nodesComments;
 
   const fluidPostImg = getImage(heading_picture_big);
-  const mainTag = mainTagFromUrl(slug, "/");
+  const mainTag = GetRootFolderName(slug);
 
   return (
     <>

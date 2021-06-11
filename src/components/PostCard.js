@@ -21,7 +21,7 @@ export default function PostCard({
       <Link className="post-card-link" to={`post/${path}`}>
         <div className="post-card-overview-container">
           <div>
-            <GatsbyImage as="div" image={image} alt="TO DO" />
+            <GatsbyImage as="div" image={image} alt="Overview Post" />
           </div>
           <h2>{title}</h2>
           <hr />
