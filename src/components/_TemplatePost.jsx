@@ -16,7 +16,6 @@ const TemplatePostsPage = ({
   const { nodes: comments } = nodesComments;
 
   const fluidPostImg = getImage(heading_picture_big);
-  const mainTag = slug.split("/")[0];
 
   return (
     <>
@@ -28,7 +27,7 @@ const TemplatePostsPage = ({
           title,
           timeToRead,
           alt_img,
-          mainTag,
+          mainTag: slug.split("/")[0],
         }}
       >
         <Sidebar side="left" />

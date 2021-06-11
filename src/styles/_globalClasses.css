@@ -61,7 +61,8 @@
 }
 /*AVATAR */
 .g-avatar-image {
-  /* Img is not center on with the mask (not rounded mask) */
+  /* LIGHTHOUSE PERF */
+  width: 100%;
   margin-bottom: 1.6rem;
 }
 
