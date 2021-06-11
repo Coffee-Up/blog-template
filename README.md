@@ -1,3 +1,4 @@
+<h1>🚧 This site is still in his early form & still under active constuction</h1>
 <h1>Front-end repository of my Blog's website.</h1>
 <p>This is the entire front-end repository of my website for educational purpose. It contains my own philosophy to organize a project, it has no pretention to give guidelines, in fact many web developers could tell you that it is pretty bad !</p>
 <p>

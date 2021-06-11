@@ -8,7 +8,6 @@ import PostCard from "./PostCard";
 import Avatar from "./Avatar";
 import TagSymbol from "./TagSymbol";
 import Seo from "./Seo";
-import PopOver from "./PopOver";
 import Comments from "./Comments";
 import Sidebar from "./Sidebar";
 import { CommentModalSending, CommentModalSended } from "./CommentModals";
@@ -29,7 +28,6 @@ export {
   Avatar,
   TagSymbol,
   Seo,
-  PopOver,
   Comments,
   Sidebar,
   //BUTTONS

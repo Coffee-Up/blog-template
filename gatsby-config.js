@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     urls: {
@@ -6,7 +10,7 @@ module.exports = {
       interUrl: `https://rsms.me/inter/`,
       twitterProfileUrl: `https://twitter.com/ScienceHCL`,
       githubProfileUrl: `https://github.com/Coffee-Up`,
-      email: `hello@coffee-up.io`,
+      email: `${process.env.PERSONAL_EMAIL}`,
     },
     defaultTitlePage: `Axel | Blog`,
     defaultDescriptionPage: `Hi, i'm Axel. You will find posts about all my interests : Science, Programmation, Art & more.`,

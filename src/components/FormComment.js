@@ -79,7 +79,7 @@ const FormComment = ({ postId }) => {
     };
 
     await fetch(
-      "https://ael-blog-backend.herokuapp.com/comment",
+      `${process.env.BACK_END_API}/comment`,
       requestOptionsPostCreation
     ).then((response) => response.json());
 
@@ -88,10 +88,7 @@ const FormComment = ({ postId }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     };
-    await fetch(
-      "https://api.netlify.com/build_hooks/60b8ad87a18ed5f6c7d38360",
-      requestOptionsWebHook
-    );
+    await fetch(`${process.env.NETLIFY_API_HOOK}`, requestOptionsWebHook);
 
     const resetForm = formDataEmpty;
     await updateFormData({
