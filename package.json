@@ -1,11 +1,16 @@
 {
   "name": "axel-blog",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "Axel Blog",
   "author": "Coffee-Up",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "website",
+    "blog",
+    "gatsbyjs",
+    "gatsby js",
+    "static website"
   ],
   "scripts": {
     "develop": "gatsby develop",
