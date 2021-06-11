@@ -3,7 +3,7 @@
 const fetch = require("node-fetch");
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `../../.env.${process.env.NODE_ENV}`,
 });
 
 exports.sourceNodes = async ({

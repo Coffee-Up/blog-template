@@ -12,7 +12,7 @@ const TemplatePostsPage = ({
   data: { mdx: post, allBlogPostComments: nodesComments },
   location,
 }) => {
-  const { body, timeToRead, slug } = post;
+  const { body, timeToRead, slug, id } = post;
   const { heading_picture_big, postId, title, alt_img } = post.frontmatter;
   const { nodes: comments } = nodesComments;
 
@@ -24,6 +24,7 @@ const TemplatePostsPage = ({
       <Layout
         path={location.pathname}
         postData={{
+          id,
           fluidPostImg,
           title,
           timeToRead,
@@ -35,11 +36,7 @@ const TemplatePostsPage = ({
         <div>
           <div id="post-template-wrapper-body">
             <MDXRenderer>{body}</MDXRenderer>
-            <Comments
-              pathname={location.pathname}
-              postId={postId}
-              comments={comments || []}
-            />
+            <Comments comments={comments || []} />
           </div>
           <div>
             <FormComment postId={postId} />
