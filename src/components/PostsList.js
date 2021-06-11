@@ -3,7 +3,11 @@ import { graphql, useStaticQuery } from "gatsby";
 import "../styles/PostsList.css";
 
 import { PostCard } from ".";
-import { GetRootFolderName } from "../utils/helpersFunctions";
+
+const GetRootFolderName = (pathUrlString) => {
+  const arrayStrings = pathUrlString.split("/");
+  return arrayStrings[0];
+};
 
 const PostsList = () => {
   const data = useStaticQuery(graphql`
