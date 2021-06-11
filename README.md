@@ -6,19 +6,11 @@
 	<ul>
 	<li> I have used a desktop first philosophy for my css, because it was more convenient for me. Smartphone first is good too thought, but being able to preview it on pc is convenient when you start coding. Browsers are good to emulate mobiles BUT not infallible.
 	</li>
-	<p>
-			Components should have a clickable property then use a class inside the component itself to define if it is 
-     < Component clickable />
-		</p>
+	<p>Components should have a clickable property then use a class inside the component itself to define if it is < Component clickable /></p>
 		<li>I prefer use the file extension in the imports</li>
 		<li>
 			This website has a folder plugins to create a gatsby-plugin that fetch data from back-end during the building. For things like comments (self-made).
 		</li>
-	</ul>
-	<ul>
-		<h2>Global classes for :</h2>
-		<li></li>
-		<li></li>
 	</ul>
 	<p>I hardly handle multiple files and folders in a project, but can easily handle long files, multiple files n a folder because I prefer having the global view quickly to understand it, that's the reason why everything is 	compacted, like only one folder for components, unstead having multiple folder inside it. <br/>
 	I use a prefix in file's names to being able to search them quickly with <code>SHIFT + F</code> in a code editor. For example for any form related component I use <code>FormComponentName</code>
