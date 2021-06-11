@@ -59,10 +59,13 @@
 .g-logo-email {
   width: 2rem;
 }
+/* 
+  ---------------------------------------------------------------------------*/
 /*AVATAR */
 .g-avatar-image {
   /* LIGHTHOUSE PERF */
   width: 100%;
+  height: 100%;
   margin-bottom: 1.6rem;
 }
 
@@ -97,8 +100,9 @@
     display: flex;
   }
 }
-
-/* BIGGEST MOBILE */
+/* 
+  ---------------------------------------------------------------------------*/
+/* MEDIA QUERIES*/
 @media screen and (max-width: 600px) {
   .g-hover-animation-logo:hover {
     animation: none;
