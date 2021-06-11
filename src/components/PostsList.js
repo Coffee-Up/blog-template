@@ -4,11 +4,6 @@ import "../styles/PostsList.css";
 
 import { PostCard } from ".";
 
-const GetRootFolderName = (pathUrlString) => {
-  const arrayStrings = pathUrlString.split("/");
-  return arrayStrings[0];
-};
-
 const PostsList = () => {
   const data = useStaticQuery(graphql`
     query NonPageQuery {
@@ -59,7 +54,7 @@ const PostsList = () => {
           return (
             <li key={id + "random"}>
               <PostCard
-                mainTag={GetRootFolderName(slug)}
+                mainTag={slug.split("/")[0]}
                 keyId={id}
                 path={path}
                 creationDate={creationDate}

@@ -16,7 +16,7 @@ const TemplatePostsPage = ({
   const { nodes: comments } = nodesComments;
 
   const fluidPostImg = getImage(heading_picture_big);
-  const mainTag = GetRootFolderName(slug);
+  const mainTag = slug.split("/")[0];
 
   return (
     <>
