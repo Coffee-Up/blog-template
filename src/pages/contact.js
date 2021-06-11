@@ -75,11 +75,7 @@ export const query = graphql`
     }
     file(relativePath: { eq: "banner-home.png" }) {
       childImageSharp {
-        gatsbyImageData(
-          height: 800
-          placeholder: NONE
-          formats: [AUTO, WEBP, AVIF]
-        )
+        gatsbyImageData(height: 800, placeholder: NONE, formats: [PNG])
       }
     }
   }
