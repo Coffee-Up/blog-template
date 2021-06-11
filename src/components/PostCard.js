@@ -17,7 +17,10 @@ const PostCard = ({
   const image = getImage(img);
 
   return (
-    <li key={keyId} className="g-hover-animation-item post-card-item-container">
+    <div
+      key={keyId}
+      className="g-hover-animation-item post-card-item-container"
+    >
       <Link className="post-card-link" to={`post/${path}`}>
         <div className="post-card-overview-container">
           <div>
@@ -30,7 +33,7 @@ const PostCard = ({
         </div>
         <TagSymbol tagName={mainTag} />
       </Link>
-    </li>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@
 <p>
 <h2>Project's structure explained</h2>
 	<ul>
-	<li> I have used a desktop first philosophy for my css, because it was more convenient for me
+	<li> I have used a desktop first philosophy for my css, because it was more convenient for me. Smartphone first is good too thought, but being able to preview it on pc is convenient when you start coding. Browsers are good to emulate mobiles BUT not infallible.
 	</li>
 	<p>
 			Components should have a clickable property then use a class inside the component itself to define if it is 

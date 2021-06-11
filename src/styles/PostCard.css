@@ -11,7 +11,7 @@
   justify-content: center;
 }
 /*---------------------------------------------------------------------------*/
-/* OVERVIEW */
+/* OVERVIEWS*/
 .post-card-overview-container {
   display: flex;
   flex-direction: column;
@@ -38,9 +38,11 @@
   font-family: "Fira Code Variable";
   text-align: right;
 }
-
+/*---------------------------------------------------------------------------*/
+/* TAG SYMBOLS */
 .post-card-link > .tag-symbol-container {
-  /* We need the content in the middle of the card, we have to remove tag logo */
+  /* Place the tag is simpler with absolute position */
+  /* We select the container of the tag (in <TagSymbol/> */
   position: absolute;
   right: 0.7rem;
 }

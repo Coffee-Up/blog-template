@@ -1,16 +1,16 @@
 /* ROOT */
-#posts-filter-widget-container {
+#posts-list-container {
   margin: 0 auto;
   width: 40vw;
 }
 
-#posts-filter-widget-container h3 {
+#posts-list-container > h3 {
   margin-bottom: 2rem;
   font-size: 1.6rem;
   text-align: center;
 }
-/* ITEMS */
-#posts-filter-widget-title ul {
+
+#posts-list-container > ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -18,16 +18,10 @@
   list-style: none;
 }
 
-#posts-filter-widget-container ul li {
-  /* Has I don't have LI tag in PostCard component, better to margin here */
-  margin-bottom: 2em;
-  border-bottom: 1px solid #d7d7d7;
-  background-color: #f9fcff;
-}
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #posts-filter-widget-container {
+  #posts-list-container {
     width: 100%;
   }
 }

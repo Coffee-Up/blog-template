@@ -38,7 +38,7 @@ const PostsList = () => {
   const { edges: posts } = data.allMdx;
 
   return (
-    <div id="posts-filter-widget-container">
+    <div id="posts-list-container">
       <h3>Here are some posts I have writed</h3>
       <ul>
         {posts.map(({ node }) => {
@@ -53,7 +53,7 @@ const PostsList = () => {
           const { slug, id } = node;
 
           return (
-            <div key={id + "random"}>
+            <li key={id + "random"}>
               <PostCard
                 mainTag={GetRootFolderName(slug)}
                 keyId={id}
@@ -63,7 +63,7 @@ const PostsList = () => {
                 summary={summary}
                 img={heading_picture_squared}
               />
-            </div>
+            </li>
           );
         })}
       </ul>
