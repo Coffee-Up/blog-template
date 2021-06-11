@@ -1,17 +1,12 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 import "../styles/IndexPage.css";
 
 import { Layout, PostsFilterWidget, Avatar, Sidebar } from "../components";
 
-export default function IndexPage({ location }) {
-  const isHomePage = location.pathName === "/" ? true : false;
-
+const IndexPage = ({ data }) => {
   return (
-    <Layout
-      isHome={isHomePage}
-      pathUrl={location.pathname}
-      defaultBanner={true}
-    >
+    <Layout bannerImage={data.file.childImageSharp}>
       <Sidebar side="left" />
       <div id="index-page-container">
         <div id="index-page-welcome-title-container">
@@ -27,4 +22,20 @@ export default function IndexPage({ location }) {
       <Sidebar side="right" />
     </Layout>
   );
-}
+};
+
+export const query = graphql`
+  query queryIndexPage {
+    file(relativePath: { eq: "banner-home.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          height: 800
+          placeholder: NONE
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
+    }
+  }
+`;
+
+export default IndexPage;

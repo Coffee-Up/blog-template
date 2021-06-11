@@ -17,7 +17,7 @@ export default function PostCard({
 
   return (
     <li key={keyId} className="g-hover-animation-item post-card-item-container">
-      <Link className="post-card-link" to={path}>
+      <Link className="post-card-link" to={`post/${path}`}>
         <div className="post-card-overview-container">
           <div>
             <GatsbyImage as="div" image={image} alt="TO DO" />

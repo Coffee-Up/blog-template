@@ -2,7 +2,7 @@ import React from "react";
 
 const IconEmail = ({ clickable }) => (
   <svg
-    className={clickable ? "g-hover-animation-logo " : ""}
+    className={`g-logo-clickable-${clickable} g-logo-email`}
     viewBox="0 0 64 64"
     role="link"
     aria-hidden="false"

@@ -14,11 +14,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
-  const pages = result.data.allMdx.nodes;
+  const mdxPages = result.data.allMdx.nodes;
 
-  pages.forEach((page) => {
+  mdxPages.forEach((page) => {
     actions.createPage({
-      path: page.frontmatter.path,
+      path: `post/${page.frontmatter.path}`,
       component: path.resolve("./src/components/_TemplatePost.jsx"),
       context: {
         pathSlug: page.frontmatter.path,

@@ -10,22 +10,12 @@ import { Footer, MenuMain, Banner, Seo } from ".";
 
 export default function Layout({
   children,
-  defaultBanner,
   postData,
-  pathUrl,
   bannerTitle,
+  bannerImage,
 }) {
   const data = useStaticQuery(graphql`
     query IndexPageQuery {
-      file(relativePath: { eq: "homescreen-banner.png" }) {
-        childImageSharp {
-          gatsbyImageData(
-            height: 800
-            placeholder: NONE
-            formats: [AUTO, WEBP, AVIF]
-          )
-        }
-      }
       site {
         siteMetadata {
           urls {
@@ -39,22 +29,14 @@ export default function Layout({
       }
     }
   `);
-  const isHomePage = pathUrl === "/" ? true : false;
-  const { urls } = data.site.siteMetadata;
 
   return (
     <>
       <Seo />
-      {/* //TO DO: MENU should know if home */}
-      <MenuMain hideHomeLink={isHomePage} />
-      <Banner
-        bannerTitle={bannerTitle}
-        postData={postData}
-        defaultBanner={defaultBanner}
-        binaryImageDefault={data.file.childImageSharp}
-      />
+      <MenuMain />
+      <Banner title={bannerTitle} postData={postData} imageFile={bannerImage} />
       <main className="g-wrapper-main">{children}</main>
-      <Footer urls={urls} />
+      <Footer urls={data.site.siteMetadata.urls} />
     </>
   );
 }

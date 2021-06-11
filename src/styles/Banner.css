@@ -27,11 +27,12 @@
   text-transform: capitalize;
 }
 /*---------------------------------------------------------------------------*/
-/* BACKGROUNF COLOR*/
-#banner-container-learning-color {
+/* BACKGROUND COLOR*/
+#banner-container-color-learning {
   background-color: var(--color-learning);
 }
-#banner-container-default-color {
+
+#banner-container-color-undefined {
   background-color: var(--color-default-banner);
 }
 /*---------------------------------------------------------------------------*/

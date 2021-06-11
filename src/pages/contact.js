@@ -1,6 +1,5 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-
 import "../styles/ContactPage.css";
 
 import { Layout, Sidebar } from "../components";
@@ -8,12 +7,9 @@ import { IconTwitter, IconGithub, IconEmail } from "../assets/icons";
 
 export default function ContactPage({ data }) {
   const { github, twitter, email } = data.site.siteMetadata.urls;
+
   return (
-    <Layout
-      customAltImgBanner="contact poster"
-      defaultBanner={true}
-      bannerTitle="Connect"
-    >
+    <Layout bannerImage={data.file.childImageSharp} bannerTitle="Connect">
       <Sidebar side="left" />
       <div id="contact-page-container">
         <p>
@@ -75,6 +71,15 @@ export const query = graphql`
           twitterProfileUrl
           email
         }
+      }
+    }
+    file(relativePath: { eq: "banner-home.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          height: 800
+          placeholder: NONE
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }
