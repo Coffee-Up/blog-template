@@ -3,7 +3,7 @@ import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
-import "../styles/TemplatePostsPage.css";
+import "../styles/_TemplatePostsPage.css";
 
 import { GetRootFolderName } from "../utils/helpersFunctions";
 import { Layout, Comments, FormComment, Sidebar } from ".";

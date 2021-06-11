@@ -1,11 +1,11 @@
 import * as React from "react";
-import "../styles/PostsFilterWidget.css";
+import "../styles/PostsList.css";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { PostCard } from ".";
 import { GetRootFolderName } from "../utils/helpersFunctions";
 
-export default function PostsFilterWidget() {
+export default function PostsList() {
   const data = useStaticQuery(graphql`
     query NonPageQuery {
       allMdx {

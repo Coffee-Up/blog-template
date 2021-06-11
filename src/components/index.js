@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import MenuMain from "./MenuMain";
 import Banner from "./Banner";
 import Wave from "./Wave";
-import PostsFilterWidget from "./PostsFilterWidget";
+import PostsList from "./PostsList";
 import PostCard from "./PostCard";
 import Avatar from "./Avatar";
 import TagSymbol from "./TagSymbol";
@@ -23,7 +23,7 @@ export {
   MenuMain,
   Banner,
   Wave,
-  PostsFilterWidget,
+  PostsList,
   PostCard,
   Avatar,
   TagSymbol,

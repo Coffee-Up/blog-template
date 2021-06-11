@@ -6,7 +6,11 @@
   text-align: center;
 }
 
-#comments-container ul li {
+#comments-container > ul {
+  list-style: none;
+}
+
+#comments-container > ul > li {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   background-color: #faf9fd;
@@ -14,16 +18,19 @@
   padding: 2em 3em;
 }
 
-#comments-container ul li h4 {
+#comments-container > ul > li > h4 {
   font-family: "Fira code regular";
   margin-bottom: 2em;
   text-transform: capitalize;
   font-size: 0.8rem;
 }
 
+#comments-container > ul > li > p {
+  font-family: "Fira Code Variable";
+}
+
 #comment-text-body {
   text-align: left;
-  font-family: "Fira code regular";
   font-size: 0.7rem;
   color: #222020;
 }

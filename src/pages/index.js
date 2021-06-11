@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import "../styles/IndexPage.css";
 
-import { Layout, PostsFilterWidget, Avatar, Sidebar } from "../components";
+import { Layout, PostsList, Avatar, Sidebar } from "../components";
 
 const IndexPage = ({ data }) => {
   return (
@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
             <span>Programmation</span>, <span>Art</span> & <span>More</span>.
           </h1>
         </div>
-        <PostsFilterWidget />
+        <PostsList />
       </div>
       <Sidebar side="right" />
     </Layout>

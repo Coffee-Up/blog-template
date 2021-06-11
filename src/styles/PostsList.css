@@ -15,6 +15,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  list-style: none;
 }
 
 #posts-filter-widget-container ul li {

@@ -39,7 +39,7 @@ const FormComment = ({ postId }) => {
 
       updateFormData(commentLocalStorage);
       return () => {
-        console.log("Here, you can add clean up code - componentWillUnmount");
+        // console.log("Here, you can add clean up code - componentWillUnmount");
       };
     }
   }, []);
@@ -68,9 +68,9 @@ const FormComment = ({ postId }) => {
     setIsSending(true);
 
     formData.articleId = postId;
-    // Let backend pu default Unknown value if username not specified
-    // Title is null by default in back end because it's not displayed if not present
+    // Let back-end handle the default value of username & title
     if (formData.username === "") delete formData.username;
+    if (formData.title === "") delete formData.title;
 
     localStorage.setItem("formCommentData", JSON.stringify(formData));
 
