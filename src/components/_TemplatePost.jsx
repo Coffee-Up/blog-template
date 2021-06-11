@@ -5,7 +5,6 @@ import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import "../styles/_TemplatePostsPage.css";
 
-import { GetRootFolderName } from "../utils/helpersFunctions";
 import { Layout, Comments, FormComment, Sidebar } from ".";
 
 const TemplatePostsPage = ({
