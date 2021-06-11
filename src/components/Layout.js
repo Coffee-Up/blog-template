@@ -8,12 +8,7 @@ import "../styles/_globalClasses.css";
 
 import { Footer, MenuMain, Banner, Seo } from ".";
 
-export default function Layout({
-  children,
-  postData,
-  bannerTitle,
-  bannerImage,
-}) {
+const Layout = ({ children, postData, bannerTitle, bannerImage }) => {
   const data = useStaticQuery(graphql`
     query IndexPageQuery {
       site {
@@ -39,4 +34,6 @@ export default function Layout({
       <Footer urls={data.site.siteMetadata.urls} />
     </>
   );
-}
+};
+
+export default Layout;

@@ -5,17 +5,19 @@ import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import "../styles/TemplatePostsPage.css";
 
+import { mainTagFromUrl } from "../utils/helpersFunctions";
 import { Layout, Comments, FormComment, Sidebar } from ".";
 
 const TemplatePostsPage = ({
   data: { mdx: post, allBlogPostComments: nodesComments },
   location,
 }) => {
-  const { body, timeToRead } = post;
-  const { heading_picture_big, postId, title, main_tag, alt_img } =
-    post.frontmatter;
+  const { body, timeToRead, slug } = post;
+  const { heading_picture_big, postId, title, alt_img } = post.frontmatter;
   const { nodes: comments } = nodesComments;
+
   const fluidPostImg = getImage(heading_picture_big);
+  const mainTag = mainTagFromUrl(slug, "/");
 
   return (
     <>
@@ -25,8 +27,8 @@ const TemplatePostsPage = ({
           fluidPostImg,
           title,
           timeToRead,
-          main_tag,
           alt_img,
+          mainTag,
         }}
       >
         <Sidebar side="left" />
@@ -52,9 +54,11 @@ const TemplatePostsPage = ({
 export const query = graphql`
   query querytemplatePostPage($pathSlug: String!, $postId: String!) {
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
+      body
+      timeToRead
+      slug
       frontmatter {
         alt_img
-        main_tag
         postId
         title
         path
@@ -68,18 +72,15 @@ export const query = graphql`
           }
         }
       }
-      body
-      timeToRead
     }
     allBlogPostComments(filter: { articleId: { eq: $postId } }) {
       nodes {
         id
         title
         text
-        firstname
-        contact
+        username
         articleId
-        createdAt
+        createdAt(formatString: "MMMM, Do, YYYY")
       }
     }
   }

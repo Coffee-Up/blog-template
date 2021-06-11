@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
 import "../styles/PostCard.css";
+
 import { TagSymbol } from "../components";
 
 export default function PostCard({
@@ -12,6 +12,7 @@ export default function PostCard({
   title,
   summary,
   creationDate,
+  mainTag,
 }) {
   const image = getImage(img);
 
@@ -25,11 +26,9 @@ export default function PostCard({
           <h2>{title}</h2>
           <hr />
           <p>{summary}</p>
-          <p className="creation-date">
-            {creationDate.day}/{creationDate.month}/{creationDate.year}
-          </p>
+          <p className="creation-date">{creationDate}</p>
         </div>
-        <TagSymbol tagName="learning" />
+        <TagSymbol tagName={mainTag} />
       </Link>
     </li>
   );

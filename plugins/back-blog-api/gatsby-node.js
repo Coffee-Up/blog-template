@@ -1,7 +1,10 @@
 //Use Personal External API to source website with data
 // TO DO: Add reject if sourcing fail
 const fetch = require("node-fetch");
-// require("dotenv");
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 exports.sourceNodes = async ({
   actions,
@@ -11,7 +14,7 @@ exports.sourceNodes = async ({
   const NODE_TYPE = "blogPostComments";
 
   const response = await fetch(
-    "https://ael-blog-backend.herokuapp.com/comments"
+    `${process.env.BACK_END_API}/comments`
     // {
     //   headers: {
     //     Authorization: `Token token=${}`

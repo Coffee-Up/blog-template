@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../styles/Comments.css";
 
 import { ActionButton } from "./Buttons";
-import { simplifyDateObject } from "../utils/helpersDate";
 
 const Comments = ({ comments }) => {
   const [showComments, setShowComments] = useState(false);
@@ -25,18 +24,13 @@ const Comments = ({ comments }) => {
         <ul>
           {comments.map((comment) => {
             const { createdAt, firstname, text, id, title } = comment;
-            const { month, day, year } = simplifyDateObject(createdAt);
 
             return (
               <li key={id}>
                 <h4>{title}</h4>
                 <p id="comment-text-body">{text}</p>
                 <p id="comment-author">{firstname}</p>
-                <p id="comment-created-at">
-                  {month}
-                  {day}
-                  {year}
-                </p>
+                <p id="comment-created-at">{createdAt}</p>
               </li>
             );
           })}

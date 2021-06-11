@@ -14,18 +14,17 @@ import { SubmitButton } from "./Buttons";
 
 const formDataEmpty = {
   articleId: null,
-  firstname: "",
+  username: "",
   title: "",
   text: "",
 };
-// TO DO: find a way to incoporate in formDataModel
 
 const FormComment = ({ postId }) => {
   const [isSending, setIsSending] = useState(false);
   const [postedSucceffuly, setPostedSucceffuly] = useState(null);
   const [formData, updateFormData] = useState({
     articleId: null,
-    firstname: "",
+    username: "",
     title: "",
     text: "",
   });
@@ -69,6 +68,9 @@ const FormComment = ({ postId }) => {
     setIsSending(true);
 
     formData.articleId = postId;
+    // Let backend pu default Unknown value if username not specified
+    // Title is null by default in back end because it's not displayed if not present
+    if (formData.username === "") delete formData.username;
 
     localStorage.setItem("formCommentData", JSON.stringify(formData));
 
@@ -126,8 +128,8 @@ const FormComment = ({ postId }) => {
           />
           <FormInput
             inputPlaceholder="Username (Optional)"
-            inputName="firstname"
-            value={formData.firstname}
+            inputName="username"
+            value={formData.username}
             customOnChange={handleChange}
           />
           <FormTextarea

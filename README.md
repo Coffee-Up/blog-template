@@ -31,3 +31,7 @@
 JSX give the name of the id or class like <code>id=`footer-container-${name}`</code> then in the CSS I specify the id selector in question to style it. In that way CSS when you need to make a change it's always in the CSS files and not between JSX & CSS. Quick & easy.
 </li>
 </ul>
+<p>last child component are usually neutral. I prefer giving the power of data manipulation from the parent. For Example Postcard must just need title, date & other retrieve from parent PostList. PostList then make the call with graphql query and pass the properties needed. It allows me to have customizable "generic" component.
+<p>
+Of course to avoid any security issues, I use environments variables in my project. There is one in the plugin that fetch all the comments of my back end server, and one in the root. If you want make working the project you will need to build your own back end server, and change a little bit of code for that. In the future I will make a fork of this source code and you will be easily able to build it without tweaking. If you have any questions regarding this aspect you can contact me.
+</p>

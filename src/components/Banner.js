@@ -8,7 +8,7 @@ const Banner = ({ postData, staticTitle, imageFile }) => {
 
   return (
     <div
-      id={`banner-container-color-${postData?.main_tag}`}
+      id={`banner-container-color-${postData?.mainTag}`}
       className="banner-container"
     >
       <div id="banner-text-container">

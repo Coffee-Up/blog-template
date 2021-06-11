@@ -3,7 +3,7 @@ import "../styles/PostsFilterWidget.css";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { PostCard } from ".";
-import { simplifyDateObject } from "../utils/helpersDate";
+import { mainTagFromUrl } from "../utils/helpersFunctions";
 
 export default function PostsFilterWidget() {
   const data = useStaticQuery(graphql`
@@ -15,7 +15,7 @@ export default function PostsFilterWidget() {
             slug
             timeToRead
             frontmatter {
-              creationDate
+              creationDate(formatString: "MMMM, Do, YYYY")
               path
               title
               summary
@@ -50,12 +50,15 @@ export default function PostsFilterWidget() {
             creationDate,
           } = node.frontmatter;
 
+          const { slug, id } = node;
+
           return (
-            <div key={node.id + "random"}>
+            <div key={id + "random"}>
               <PostCard
-                keyId={node.id}
+                mainTag={mainTagFromUrl(slug, "/")}
+                keyId={id}
                 path={path}
-                creationDate={simplifyDateObject(creationDate)}
+                creationDate={creationDate}
                 title={title}
                 summary={summary}
                 img={heading_picture_squared}
