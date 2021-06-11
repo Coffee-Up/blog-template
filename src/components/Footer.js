@@ -1,6 +1,6 @@
 import * as React from "react";
-
 import "../styles/Footer.css";
+
 import { Wave, Avatar } from "../components";
 import { IconGithub, IconTwitter } from "../assets/icons";
 

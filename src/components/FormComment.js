@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
-
 import "../styles/FormComment.css";
-// TO DO: find a better way to update formData, I don't like the const updatedChange = {}
 
 import {
   FormInput,
@@ -124,19 +122,19 @@ const FormComment = ({ postId }) => {
             inputPlaceholder="Title (Optional)"
             inputName="title"
             value={formData.title}
-            customOnChange={handleChange}
+            onChange={handleChange}
           />
           <FormInput
             inputPlaceholder="Username (Optional)"
             inputName="username"
             value={formData.username}
-            customOnChange={handleChange}
+            onChange={handleChange}
           />
           <FormTextarea
             textareaName="text"
             textareaPlaceholder="Add your Text (Required)"
             value={formData.text}
-            customOnChange={handleChange}
+            onChange={handleChange}
           />
           {errorText && <p className="g-text-error">{errorText}</p>}
           <SubmitButton type="submit">Post It !</SubmitButton>

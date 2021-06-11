@@ -5,7 +5,7 @@ import "../styles/PostCard.css";
 
 import { TagSymbol } from "../components";
 
-export default function PostCard({
+const PostCard = ({
   keyId,
   path,
   img,
@@ -13,7 +13,7 @@ export default function PostCard({
   summary,
   creationDate,
   mainTag,
-}) {
+}) => {
   const image = getImage(img);
 
   return (
@@ -32,4 +32,6 @@ export default function PostCard({
       </Link>
     </li>
   );
-}
+};
+
+export default PostCard;

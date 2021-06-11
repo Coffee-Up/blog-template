@@ -13,6 +13,10 @@
 #post-template-wrapper-body > p > ul {
   margin-top: 1em;
 }
+/*---------------------------------------------------------------------------*/
+/* MIDDLE DIV */
+#post-template-middle-container {
+}
 
 .post-text-intro {
   font-family: "Inter Variable";
@@ -23,9 +27,6 @@
   font-weight: 125;
   line-height: 1.4em;
 }
-
-/*---------------------------------------------------------------------------*/
-/* CUSTOM ID TAGS  */
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media (max-width: 600px) {

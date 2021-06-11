@@ -1,11 +1,11 @@
 import * as React from "react";
-import "../styles/PostsList.css";
 import { graphql, useStaticQuery } from "gatsby";
+import "../styles/PostsList.css";
 
 import { PostCard } from ".";
 import { GetRootFolderName } from "../utils/helpersFunctions";
 
-export default function PostsList() {
+const PostsList = () => {
   const data = useStaticQuery(graphql`
     query NonPageQuery {
       allMdx {
@@ -69,4 +69,6 @@ export default function PostsList() {
       </ul>
     </div>
   );
-}
+};
+
+export default PostsList;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/Comments.css";
 
 import { ActionButton } from "./Buttons";
@@ -6,7 +6,6 @@ import { ActionButton } from "./Buttons";
 const Comments = ({ comments }) => {
   const [showComments, setShowComments] = useState(false);
 
-  useEffect(() => {});
   return (
     <div id="comments-container">
       {comments.length > 0 && (

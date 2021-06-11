@@ -3,6 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "../styles/Banner.css";
 
 import { Wave } from ".";
+
 const Banner = ({ postData, staticTitle, imageFile }) => {
   const imageFileGatsby = getImage(imageFile) || undefined;
 

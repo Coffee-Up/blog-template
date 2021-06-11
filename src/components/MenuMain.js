@@ -5,7 +5,7 @@ import "../styles/MenuMain.css";
 
 import { IconWebsite } from "../assets/icons";
 
-export default function Header() {
+const Header = () => {
   const hideHomeLink = globalHistory.location.pathname === "/" ? true : false;
 
   return (
@@ -21,4 +21,6 @@ export default function Header() {
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

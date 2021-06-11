@@ -1,15 +1,14 @@
 import React from "react";
 import "../styles/Inputs.css";
 
-const FormInput = ({ inputName, customOnChange, inputPlaceholder, value }) => {
-  //The parent Form component pass a props called onChange
+const FormInput = ({ inputName, onChange, inputPlaceholder, value }) => {
   return (
     <>
       <input
         className="form-input"
         name={inputName}
         placeholder={inputPlaceholder}
-        onChange={customOnChange}
+        onChange={onChange}
         value={value}
       />
     </>

@@ -4,7 +4,7 @@ import "../styles/Avatar.css";
 
 import profileImage from "../assets/images/me.jpg";
 
-export default function Avatar({ size, clickable }) {
+const Avatar = ({ size, clickable }) => {
   return (
     <div
       className={`avatar-${size} avatar-div g-mask-image-circular g-hover-animation-logo`}
@@ -18,4 +18,6 @@ export default function Avatar({ size, clickable }) {
       </Link>
     </div>
   );
-}
+};
+
+export default Avatar;

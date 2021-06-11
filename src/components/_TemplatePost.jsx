@@ -33,7 +33,7 @@ const TemplatePostsPage = ({
         }}
       >
         <Sidebar side="left" />
-        <div>
+        <div id="post-template-middle-container">
           <div id="post-template-wrapper-body">
             <MDXRenderer>{body}</MDXRenderer>
             <Comments comments={comments || []} />

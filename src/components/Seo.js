@@ -1,10 +1,8 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-// import { useLocation } from "@reach/router";
 
 const Seo = () => {
-  // const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
   const { defaultTitlePage, defaultDescriptionPage } = site.siteMetadata;
 
@@ -12,8 +10,7 @@ const Seo = () => {
     <Helmet>
       <title>{defaultTitlePage}</title>
       <meta name="description" content={defaultDescriptionPage} />
-      {/* FONTS */}
-      <link
+      {/* <link
         rel="preload"
         href="/fonts/inter-var-latin.woff2"
         as="font"
@@ -26,7 +23,7 @@ const Seo = () => {
         as="font"
         crossorigin="anonymous"
         type="font/woff2"
-      />
+      /> */}
     </Helmet>
   );
 };

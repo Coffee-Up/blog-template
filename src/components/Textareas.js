@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/Textareas.css";
 
 const FormTextarea = ({
-  customOnChange,
+  onChange,
   textareaName,
   textareaPlaceholder,
   value,
@@ -14,7 +14,7 @@ const FormTextarea = ({
         id="form-textarea"
         name={textareaName}
         placeholder={textareaPlaceholder}
-        onChange={customOnChange}
+        onChange={onChange}
         value={value}
       />
     </>
