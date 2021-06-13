@@ -10,6 +10,7 @@ import TagSymbol from "./TagSymbol";
 import Seo from "./Seo";
 import Comments from "./Comments";
 import Sidebar from "./Sidebar";
+import Toc from "./Toc";
 import { CommentModalSending, CommentModalSended } from "./CommentModals";
 import { SubmitButton, CloseModalButton, ActionButton } from "./Buttons";
 // FORMS
@@ -30,6 +31,7 @@ export {
   Seo,
   Comments,
   Sidebar,
+  Toc,
   //BUTTONS
   ActionButton,
   CloseModalButton,

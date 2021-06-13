@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import "../styles/_TemplatePostsPage.css";
 
-import { Layout, Comments, FormComment, Sidebar } from ".";
+import { Layout, Comments, FormComment, Sidebar, Toc } from ".";
 
 const TemplatePostsPage = ({
   data: { mdx: post, allBlogPostComments: nodesComments },
@@ -30,7 +30,9 @@ const TemplatePostsPage = ({
           mainTag: slug.split("/")[0],
         }}
       >
-        <Sidebar side="left" />
+        <Sidebar side="left">
+          <Toc />
+        </Sidebar>
         <div id="post-template-middle-container">
           <div id="post-template-wrapper-body">
             <MDXRenderer>{body}</MDXRenderer>

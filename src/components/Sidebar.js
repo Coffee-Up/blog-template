@@ -1,12 +1,10 @@
 import React from "react";
 import "../styles/Sidebar.css";
 
-const Sidebar = ({ customData, side }) => {
+const Sidebar = ({ side, children }) => {
   return (
     <>
-      <div id={`sidebar-container-${side}`}>
-        {customData && <p>{customData}</p>}
-      </div>
+      <div id={`sidebar-container-${side}`}>{children}</div>
     </>
   );
 };
