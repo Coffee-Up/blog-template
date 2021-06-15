@@ -3,7 +3,7 @@ import "../styles/Comments.css";
 
 import { ActionButton, FormComment } from "./";
 
-const Comments = ({ comments }) => {
+const Comments = ({ comments, postId }) => {
   const [showComments, setShowComments] = useState(false);
 
   return (
@@ -43,7 +43,7 @@ const Comments = ({ comments }) => {
           )}
         </ul>
       )}
-      <FormComment />
+      <FormComment postId={postId} />
     </div>
   );
 };

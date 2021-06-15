@@ -17,7 +17,6 @@ const PostsList = () => {
               creationDate(formatString: "MMMM, Do, YYYY")
               path
               title
-              summary
               heading_picture_squared {
                 childImageSharp {
                   gatsbyImageData(
@@ -38,16 +37,11 @@ const PostsList = () => {
 
   return (
     <div id="posts-list-container">
-      <h3>Here are some posts I have writed</h3>
+      <h3>Here are some posts I have written</h3>
       <ul>
         {posts.map(({ node }) => {
-          const {
-            title,
-            summary,
-            path,
-            heading_picture_squared,
-            creationDate,
-          } = node.frontmatter;
+          const { title, path, heading_picture_squared, creationDate } =
+            node.frontmatter;
 
           const { slug, id } = node;
 
@@ -59,8 +53,6 @@ const PostsList = () => {
                 path={path}
                 creationDate={creationDate}
                 title={title}
-                summary={summary}
-                img={heading_picture_squared}
               />
             </li>
           );

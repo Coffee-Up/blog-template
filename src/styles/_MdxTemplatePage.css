@@ -17,6 +17,11 @@
 #post-template-wrapper-body > p > em {
   font-weight: 600;
 }
+
+/* From gatsby-remark-autolink-headers  */
+.post-anchor-headings {
+  margin-left: 0.6em;
+}
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media (max-width: 600px) {

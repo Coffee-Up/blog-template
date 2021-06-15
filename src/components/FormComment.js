@@ -18,6 +18,7 @@ const formDataEmpty = {
 };
 
 const FormComment = ({ postId }) => {
+  console.log(postId);
   const [isSending, setIsSending] = useState(false);
   const [postedSucceffuly, setPostedSucceffuly] = useState(null);
   const [formData, updateFormData] = useState({

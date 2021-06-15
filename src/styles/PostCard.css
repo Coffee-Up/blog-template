@@ -1,62 +1,53 @@
 /* ROOT */
 .post-card-item-container {
   border-radius: 4px;
-  list-style: none;
+  border-bottom: 1px #f7f1f1 solid;
 }
 
 .post-card-link {
   display: flex;
-  position: relative;
-  padding: 0.5em 1em;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0.5em;
 }
-/*---------------------------------------------------------------------------*/
-/* OVERVIEWS*/
-.post-card-overview-container {
-  display: flex;
-  flex-direction: column;
+
+.post-card-link > h2 {
+  margin-left: 1em;
+  /* font-family: "Fira Code Variable"; */
   text-align: center;
-}
-
-.post-card-overview-container > * {
-  margin: 0;
-}
-
-.post-card-overview-container > h2 {
-  font-family: "Inter Variable";
-  font-size: 1rem;
-  /* TO DO: See why h2 is purple  so color:black needed*/
+  font-size: 0.8rem;
+  font-weight: 450;
   color: black;
 }
 
-.post-card-overview-container > p {
-  color: #3e3b3b;
-  font-size: 0.8rem;
+.post-card-link > .creation-date {
+  color: grey;
+  font-size: 0.7rem;
 }
 
-.post-card-overview-container > .creation-date {
-  font-family: "Fira Code Variable";
-  text-align: right;
-}
 /*---------------------------------------------------------------------------*/
 /* TAG SYMBOLS */
 .post-card-link > .tag-symbol-container {
-  /* Place the tag is simpler with absolute position */
-  /* We select the container of the tag (in <TagSymbol/> */
-  position: absolute;
-  right: 0.7rem;
+  margin-left: 1em;
 }
 
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
   .post-card-link {
-    display: flex;
+    flex-direction: column;
   }
 
-  .post-card-overview-container > h2 {
-    text-align: center;
-    font-size: 0.9rem;
-    border-bottom: none;
+  .post-card-link > * {
+    margin: 0;
+  }
+
+  .post-card-link > h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5em;
+  }
+
+  .post-card-link > .creation-date {
+    margin-bottom: 0.5em;
   }
 }

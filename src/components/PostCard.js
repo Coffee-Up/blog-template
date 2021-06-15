@@ -1,36 +1,18 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "../styles/PostCard.css";
 
 import { TagSymbol } from "../components";
 
-const PostCard = ({
-  keyId,
-  path,
-  img,
-  title,
-  summary,
-  creationDate,
-  mainTag,
-}) => {
-  const image = getImage(img);
-
+const PostCard = ({ keyId, path, title, creationDate, mainTag }) => {
   return (
     <div
       key={keyId}
       className="g-hover-animation-item post-card-item-container"
     >
       <Link className="post-card-link" to={`post/${path}`}>
-        <div className="post-card-overview-container">
-          <div>
-            <GatsbyImage as="div" image={image} alt="Overview Post" />
-          </div>
-          <h2>{title}</h2>
-          <hr />
-          <p>{summary}</p>
-          <p className="creation-date">{creationDate}</p>
-        </div>
+        <h2>{title}</h2>
+        <p className="creation-date">{creationDate}</p>
         <TagSymbol tagName={mainTag} />
       </Link>
     </div>

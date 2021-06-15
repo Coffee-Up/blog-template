@@ -9,7 +9,6 @@ heading_picture_squared: ./preview.png
 alt_img: I don't know yet
 ---
 
-class="post-text-intro">
 During our life we want to learn new subjects that was unknown for us before.
 It's not always easy to know how to tackle it and nailed it, sometimes because
 we are not doing it the right way (spoiler: OUR way) or the subject is complex
