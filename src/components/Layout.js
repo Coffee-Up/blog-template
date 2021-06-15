@@ -29,7 +29,8 @@ const Layout = ({ children, postData, bannerTitle, bannerImage }) => {
     <>
       <Seo />
       <MenuMain />
-      <Banner title={bannerTitle} postData={postData} imageFile={bannerImage} />
+      {/* postData OR title & imageFile not both (postdata have them) */}
+      <Banner title={bannerTitle} imageFile={bannerImage} postData={postData} />
       <main className="g-wrapper-main">{children}</main>
       <Footer urls={data.site.siteMetadata.urls} />
     </>

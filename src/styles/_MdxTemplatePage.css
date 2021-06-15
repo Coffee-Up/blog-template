@@ -13,19 +13,9 @@
 #post-template-wrapper-body > p > ul {
   margin-top: 1em;
 }
-/*---------------------------------------------------------------------------*/
-/* MIDDLE DIV */
-#post-template-middle-container {
-}
 
-.post-text-intro {
-  font-family: "Inter Variable";
-  background-color: #fffbf3;
-  border-radius: 0.8rem;
-  padding: 1em;
-  /* font-style: italic; */
-  font-weight: 125;
-  line-height: 1.4em;
+#post-template-wrapper-body > p > em {
+  font-weight: 600;
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */

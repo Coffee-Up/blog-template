@@ -15,7 +15,7 @@ module.exports = {
     defaultTitlePage: `Axel | Blog`,
     defaultDescriptionPage: `Hi, i'm Axel. You will find posts about all my interests : Science, Programmation, Art & more.`,
   },
-  flags: { PRESERVE_WEBPACK_CACHE: false, DEV_SSR: false, FAST_DEV: true },
+  flags: { PRESERVE_WEBPACK_CACHE: true, DEV_SSR: false, FAST_DEV: true },
   plugins: [
     // Source gatsby website with my personal Back-End API
     require.resolve(`${__dirname}/plugins/back-blog-api`),
@@ -37,7 +37,7 @@ module.exports = {
               maintainCase: false,
               removeAccents: true,
               isIconAfterHeader: true,
-              elements: [`h1`, `h4`],
+              elements: [`h1`, `h2`],
             },
           },
         ],

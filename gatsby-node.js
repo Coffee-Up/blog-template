@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     query {
       allMdx {
         nodes {
+          id
           frontmatter {
             path
             postId
@@ -19,11 +20,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   mdxPages.forEach((page) => {
     actions.createPage({
       path: `post/${page.frontmatter.path}`,
-      component: path.resolve("./src/components/_TemplatePost.jsx"),
+      component: path.resolve("./src/components/_MdxTemplatePage.js"),
       context: {
         pathSlug: page.frontmatter.path,
         // GraphQl queries need String type or throw an error, of course if i write frontmatter's post in string its fine, but I can make mistakes
-        postId: `${page.frontmatter.postId}`,
+        postId: `${page.id}`,
       },
     });
   });

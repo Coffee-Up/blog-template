@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Comments.css";
 
-import { ActionButton } from "./Buttons";
+import { ActionButton, FormComment } from "./";
 
 const Comments = ({ comments }) => {
   const [showComments, setShowComments] = useState(false);
@@ -43,6 +43,7 @@ const Comments = ({ comments }) => {
           )}
         </ul>
       )}
+      <FormComment />
     </div>
   );
 };
