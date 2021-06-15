@@ -32,7 +32,7 @@ footer > div > section {
 footer > div > section > a {
   font-size: 0.8rem;
   font-weight: 300;
-  color: black;
+  color: var(--color-links);
 }
 
 footer > div > section > h5 {
