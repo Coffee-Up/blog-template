@@ -1,14 +1,21 @@
 :root {
   --color-learning: #ffa047;
-  --color-main: #ffcb50;
-  --color-main-menu: #ffcb50;
-  --color-footer: #ffcb50;
-  --color-default-banner: #0f0b1e;
+  --color-main: #002348;
+  --color-secondary: #ffc916;
+  --color-main-menu: #023062b6;
+  --color-footer: #002348;
+  --color-default-banner: #00234800;
   --color-background: white;
   /* FONTS COLORS */
-  --color-hover-links: #b04fff;
+  --color-hover-links-menu: white;
+  --color-hover-links-menu-section: #0459b4b6;
+
+  --color-hover-links: #d3391e;
   --color-links: #8f10f7;
-  --color-bg-post-card-hover: #f6f2ff;
+  /* FONTS SIZE */
+  --font-size-links: 0.7rem;
+  /* FONTS WEIGHT */
+  --font-weight-links: 600;
 
   --box-shadow-inputs: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;

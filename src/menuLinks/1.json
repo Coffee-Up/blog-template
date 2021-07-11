@@ -1,0 +1,33 @@
+{
+  "label": "Le Club",
+  "url": "le-club",
+  "subSections": [
+    {
+      "label": "Nouveautés",
+      "links": [
+        {
+          "label": "News",
+          "url": "/le-club/news/"
+        }
+      ]
+    },
+
+    {
+      "label": "Organisation",
+      "links": [
+        {
+          "label": "Présentation",
+          "url": "/le-club/presentation"
+        },
+        {
+          "label": "Organigramme",
+          "url": "/le-club/organigramme"
+        },
+        {
+          "label": "Commission Nationale",
+          "url": "/le-club/role-social"
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 /* ROOT */
 footer {
   position: relative;
-  margin-top: 2rem;
   padding: 7em 2.2em 1em 2.2em;
   background-color: var(--color-footer);
 }
@@ -12,7 +11,7 @@ footer > #footer-copyright-text {
   text-align: right;
   font-family: "Fira Code Variable";
   font-weight: 200;
-  color: #835a02;
+  color: #d8d6f7;
 }
 /*---------------------------------------------------------------------------*/
 /* SECTIONS */
@@ -29,29 +28,14 @@ footer > div > section {
   font-family: "Fira Code Variable";
 }
 
-footer > div > section > a {
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: var(--color-links);
-}
-
-footer > div > section > h5 {
+footer > div > section > h2 {
+  color: white;
+  font-size: 1rem;
+  font-family: "Inter Variable";
   font-weight: 400;
-  margin-bottom: 1em;
-  border-bottom: 2px #ffda6a solid;
 }
 
-footer > div > section > div {
-  /* links Logo container Contact me*/
-  display: flex;
-  justify-content: space-around;
-}
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  footer > div {
-    flex-direction: column;
-    padding-right: 0;
-    padding-left: 0;
-  }
 }

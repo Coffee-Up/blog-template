@@ -1,15 +1,19 @@
 import IconLearning from "./IconLearning";
-import IconGithub from "./IconGithub";
-import IconWebsite from "./IconWebsite";
+import IconCHR from "./IconCHR";
 import IconLoader from "./IconLoader";
 import IconTwitter from "./IconTwitter";
 import IconEmail from "./IconEmail";
+import IconHome from "./IconHome";
+import IconArrow from "./IconArrow";
+import IconFacebook from "./IconFacebook";
 
 export {
   IconLearning,
-  IconGithub,
-  IconWebsite,
+  IconCHR,
   IconLoader,
   IconTwitter,
+  IconFacebook,
   IconEmail,
+  IconHome,
+  IconArrow,
 };

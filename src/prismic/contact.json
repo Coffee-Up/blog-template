@@ -1,0 +1,75 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "Texte Unique"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {
+          "banner": {
+            "type": "Slice",
+            "fieldset": "Banner",
+            "description": "Le contenu du Banner de la page",
+            "icon": "aspect_ratio",
+            "display": "list",
+            "non-repeat": {
+              "titre1": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "Titre",
+                  "placeholder": "Le Titre du Banner"
+                }
+              },
+              "paragrah": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "paragrah",
+                  "placeholder": "Le Texte du Banner"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1920,
+                    "height": 1080
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "text": {
+            "type": "Slice",
+            "fieldset": "Section Texte",
+            "description": "Ajoute du Texte éditable",
+            "icon": "border_color",
+            "display": "list",
+            "non-repeat": {
+              "texte": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Texte",
+                  "placeholder": "Ecrire votre texte, ajout d'image, de liens"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

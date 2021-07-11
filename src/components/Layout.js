@@ -6,9 +6,9 @@ import "../styles/_globalGenericTags.css";
 import "../styles/_globalAnimations.css";
 import "../styles/_globalClasses.css";
 
-import { Footer, MenuMain, Banner, Seo } from ".";
+import { Footer, Banner, Seo, MainMenu } from ".";
 
-const Layout = ({ children, postData, bannerTitle, bannerImage }) => {
+const Layout = ({ children, bannerTitle, bannerImage }) => {
   const data = useStaticQuery(graphql`
     query IndexPageQuery {
       site {
@@ -28,9 +28,8 @@ const Layout = ({ children, postData, bannerTitle, bannerImage }) => {
   return (
     <>
       <Seo />
-      <MenuMain />
-      {/* postData OR title & imageFile not both (postdata have them) */}
-      <Banner title={bannerTitle} imageFile={bannerImage} postData={postData} />
+      <MainMenu />
+      <Banner title={bannerTitle} imageFile={bannerImage} />
       <main className="g-wrapper-main">{children}</main>
       <Footer urls={data.site.siteMetadata.urls} />
     </>

@@ -19,29 +19,28 @@
   ---------------------------------------------------------------------------*/
 /* LOGOS */
 .g-logo-clickable-true:hover {
+  cursor: pointer;
   animation: scaling 0.2s ease-out forwards;
 }
-/* 
-  ---------------------------------------------------------------------------*/
-/* GITHUB */
-.g-logo-github {
-  width: 2rem;
-}
 
-.g-logo-path-to-fill-black-github {
-  fill: #000;
+.g-logo-path-to-fill-white {
+  fill: white;
 }
-
-.g-logo-path-to-fill-black-github:hover {
-  fill: #2c2660;
-}
-
 /* 
   ---------------------------------------------------------------------------*/
 /* TWITTER */
 .g-logo-twitter {
   width: 2rem;
 }
+
+.g-logo-path-to-fill-white {
+  fill: white;
+}
+
+.g-logo-path-to-fill-grey {
+  fill: grey;
+}
+
 .g-logo-path-to-fill-blue-twitter {
   fill: #1da1f2;
 }
@@ -55,19 +54,33 @@
 }
 /* 
   ---------------------------------------------------------------------------*/
+/* Others */
+.g-hidden {
+  display: none;
+}
+
+#g-show-menu-link {
+  display: unset;
+  animation: fadeInOpacity 0.5s ease-out forwards;
+}
+
+.g-border-bottom {
+  border-bottom: blue 2px solid;
+}
+/* 
+  ---------------------------------------------------------------------------*/
+/* Hover */
+.g-hover-animation-color-svg-arrow {
+  animation: mouseOnAnchorTagMenuFillSVG 0.2s ease-out forwards;
+}
+/* 
+  ---------------------------------------------------------------------------*/
 /* EMAIL */
 .g-logo-email {
   width: 2rem;
 }
 /* 
   ---------------------------------------------------------------------------*/
-/*AVATAR */
-.g-avatar-image {
-  /* LIGHTHOUSE PERF */
-  width: 100%;
-  height: 100%;
-  margin-bottom: 1.6rem;
-}
 
 .g-image-clickable-true:hover {
   animation: mouseOnImage 0.2s ease-out forwards;
@@ -78,13 +91,19 @@
 }
 /* ICONS */
 /* ---------------------------------------------------------------------------*/
-.g-icon-learning {
-  width: 44px;
-}
-
 .g-text-error {
   margin-top: 0.2em;
   color: red;
+}
+/* 
+  ---------------------------------------------------------------------------*/
+/* COLORS */
+.g-color-grey {
+  color: grey;
+}
+
+.g-color-white {
+  color: white;
 }
 /* 
   ---------------------------------------------------------------------------*/
@@ -97,6 +116,7 @@
   }
 
   .g-wrapper-main {
+    background-color: var(--color-background);
     display: flex;
   }
 }
@@ -104,10 +124,6 @@
   ---------------------------------------------------------------------------*/
 /* MEDIA QUERIES*/
 @media screen and (max-width: 600px) {
-  .g-hover-animation-logo:hover {
-    animation: none;
-  }
-
   .g-image-clickable:hover {
     animation: none;
   }

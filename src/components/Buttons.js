@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Buttons.css";
+import { IconArrow } from "../assets/icons";
 
 const ActionButton = ({ onClick, children, className }) => {
   return (
@@ -20,4 +21,5 @@ const SubmitButton = ({ onClick, children }) => {
 const CloseModalButton = ({ onClick, children }) => {
   return <button onClick={onClick}>{children}</button>;
 };
+
 export { SubmitButton, CloseModalButton, ActionButton };

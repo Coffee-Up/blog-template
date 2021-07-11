@@ -37,8 +37,11 @@
   color: white;
 }
 
-.button-action-toggled-false {
-  /* NO LOGIC YET */
+.button-link {
+  font-size: var(--font-size-links);
+  font-weight: var(--font-weight-links);
+  background: none;
+  border: none;
 }
 /*----------------------------------------------------*/
 /* MEDIA QUERIES */

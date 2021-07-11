@@ -1,0 +1,52 @@
+#news-container {
+  font-size: 0.6rem;
+}
+
+#news-container > h2 {
+  margin: 0.7em 0 1em 0.5em;
+}
+
+#news-container > a {
+  display: inline-block;
+  color: white;
+}
+
+#news-container > a:hover {
+  animation: unset;
+}
+/*---------------------------------------------------------------------------*/
+/* NEWS PANEL ARTICLE */
+.news-panel-article-container {
+  padding: 1em 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-panel-article-container:hover {
+  cursor: pointer;
+  background-color: var(--color-hover-links-menu-section);
+}
+
+.news-panel-article-container > div > .news-panel-text {
+  display: flex;
+}
+/*---------------------------------------------------------------------------*/
+/* NEWS PANEL DATE*/
+.news-panel-text > .news-panel-date {
+  color: #bebebe;
+}
+/*---------------------------------------------------------------------------*/
+/* NEWS PANEL IMAGE*/
+.news-panel-image {
+  height: 100%;
+  max-width: 25%;
+}
+/*---------------------------------------------------------------------------*/
+/* NEWS PANEL TAG */
+.news-panel-text > .news-panel-tag {
+  margin-right: 1em;
+  color: #d42323;
+  font-size: 0.8em;
+  font-weight: 800;
+  text-transform: uppercase;
+}

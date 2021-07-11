@@ -1,23 +1,19 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import { RichText } from "prismic-reactjs";
 import "../styles/IndexPage.css";
 
-import { Layout, PostsList, Avatar, Sidebar } from "../components";
+import { Layout, Sidebar } from "../components";
 
 const IndexPage = ({ data }) => {
+  const firstSlice = data.prismicHomepage.data.body[0].primary;
+
   return (
-    <Layout bannerImage={data.file.childImageSharp}>
+    <Layout bannerImage={firstSlice.image.gatsbyImageData}>
       <Sidebar side="left" />
       <div id="index-page-container">
-        <div id="index-page-welcome-title-container">
-          <Avatar size="big" clickable />
-          <h1>Hi, I'm Axel.</h1>
-          <h1>
-            You will find posts about all my interests : <span>Science</span>,{" "}
-            <span>Programmation</span>, <span>Art</span> & <span>More</span>.
-          </h1>
-        </div>
-        <PostsList />
+        <RichText render={firstSlice.titre.raw} />
+        <RichText render={firstSlice.paragraph.raw} />
       </div>
       <Sidebar side="right" />
     </Layout>
@@ -26,9 +22,23 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query queryIndexPage {
-    file(relativePath: { eq: "banner-home.png" }) {
-      childImageSharp {
-        gatsbyImageData(height: 800, placeholder: NONE, formats: [PNG])
+    prismicHomepage {
+      data {
+        body {
+          ... on PrismicHomepageDataBodyBanner {
+            primary {
+              titre {
+                raw
+              }
+              image {
+                gatsbyImageData(width: 1920, placeholder: NONE)
+              }
+              paragraph {
+                raw
+              }
+            }
+          }
+        }
       }
     }
   }

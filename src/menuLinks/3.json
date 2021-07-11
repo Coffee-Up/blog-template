@@ -1,0 +1,29 @@
+{
+  "label": "Jeunes",
+  "url": "jeunes",
+  "subSections": [
+    {
+      "label": "Nouveautés",
+      "links": [
+        {
+          "label": "News",
+          "url": "/jeunes-rcsl/news"
+        }
+      ]
+    },
+
+    {
+      "label": "Catégories",
+      "links": [
+        {
+          "label": "Juniors (-19)",
+          "url": "/jeunes-rcsl/u19"
+        },
+        {
+          "label": "Cadets (-16)",
+          "url": "/jeunes-rcsl/u16"
+        }
+      ]
+    }
+  ]
+}

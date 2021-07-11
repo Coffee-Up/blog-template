@@ -1,44 +1,43 @@
 .banner-container {
   position: relative;
-  height: 620px;
+  height: 82vh;
 }
 /*---------------------------------------------------------------------------*/
-/*BANNER TEXTS */
-#banner-text-container {
+/* NEWS PANEL */
+div > #news-container {
+  color: white;
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 0 2rem;
-  /* It needs to be the same than banner-container's dimensions */
-  left: 0;
+  z-index: 4000;
+  bottom: 0;
   right: 0;
-  top: 0;
-  bottom: 150px;
+  transform-origin: right;
+  /* 11vh is MainMenu height */
+  height: calc(100% - 11vh);
+  width: 26%;
+  background-color: var(--color-main-menu);
 }
 
-#banner-text-container > p {
-  font-family: "Fira Code Variable";
-  margin: 0 0 0 auto;
-}
-
-#banner-text-container > h1 {
-  text-align: center;
-  text-transform: capitalize;
-}
-/*---------------------------------------------------------------------------*/
-/* BACKGROUND COLOR*/
-#banner-container-color-learning {
-  background-color: var(--color-learning);
-}
-
-#banner-container-color-undefined {
-  background-color: var(--color-default-banner);
-}
 /*---------------------------------------------------------------------------*/
 /* IMAGES*/
-.banner-container > .gatsby-image-wrapper {
+/* .banner-container > .gatsby-image-wrapper {
   animation: fadeInOpacity 0.7s;
+} */
+
+.banner-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--color-main-menu);
+  z-index: 999;
+}
+
+#news-container {
+  position: absolute;
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */

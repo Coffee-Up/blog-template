@@ -1,0 +1,62 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "Ajouter un nom unique (pour url)"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": null,
+        "choices": {
+          "titre___liens_": {
+            "type": "Slice",
+            "fieldset": "Titre + Liens ",
+            "description": "Un titre de section avec des liens internet",
+            "icon": "insert_link",
+            "display": "list",
+            "non-repeat": {
+              "titre": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "Titre",
+                  "placeholder": "Ajoutez le Titre de la Section"
+                }
+              },
+              "paragraph": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "paragraph",
+                  "placeholder": "Ajouter un paragraphe"
+                }
+              }
+            },
+            "repeat": {
+              "texte_du_lien": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5,heading6",
+                  "label": "Texte Du lien"
+                }
+              },
+              "lien": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien internet",
+                  "placeholder": "Lien avec URL",
+                  "select": null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

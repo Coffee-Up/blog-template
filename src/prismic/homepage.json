@@ -1,0 +1,57 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "Ajouter un nom unique (pour url)"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {
+          "banner": {
+            "type": "Slice",
+            "fieldset": "Banner",
+            "description": "Le contenu du Banner de la page",
+            "icon": "aspect_ratio",
+            "display": "list",
+            "non-repeat": {
+              "titre": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "Titre",
+                  "placeholder": "Le Titre du Banner"
+                }
+              },
+              "paragraph": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "paragraph",
+                  "placeholder": "Le Texte du Banner"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1920,
+                    "height": 1080
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

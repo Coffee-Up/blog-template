@@ -18,6 +18,22 @@
   }
 }
 
+@keyframes mouseOnAnchorTagMenu {
+  from {
+  }
+  to {
+    color: var(--color-hover-links-menu);
+  }
+}
+
+@keyframes mouseOnAnchorTagMenuFillSVG {
+  from {
+  }
+  to {
+    fill: var(--color-hover-links-menu);
+  }
+}
+
 @keyframes mouseOnAnchorTag {
   from {
   }

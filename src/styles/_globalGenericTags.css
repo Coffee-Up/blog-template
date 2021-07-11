@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  background-color: transparent;
   font-size: 1rem;
 }
 
@@ -37,6 +38,10 @@ a {
 
 a:hover {
   animation: mouseOnAnchorTag 0.2s ease-out forwards;
+}
+
+ul {
+  list-style: none;
 }
 
 li {
