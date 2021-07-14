@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const NotFoundPage = ({ data }) => {
+const NotFoundPage = () => {
   return <div></div>;
 };
 
