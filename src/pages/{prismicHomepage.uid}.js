@@ -11,8 +11,6 @@ const PageTemplate = ({ data }) => {
   )[0];
 
   const dataPage = data.prismicHomepage.data.body;
-  console.log(banner.primary.paragraphe.raw);
-  console.log("ESSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
   return (
     <Layout
       indexPage="Capbreton Hossegor Rugby"
