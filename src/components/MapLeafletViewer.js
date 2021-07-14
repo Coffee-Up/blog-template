@@ -3,15 +3,21 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 export default class MyMap extends Component {
   render() {
-    const position = [51.505, -0.09];
+    const { coordinate } = this.props;
+    console.log(coordinate);
     if (typeof window !== "undefined") {
       return (
-        <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+        <MapContainer
+          className="map-container"
+          center={coordinate}
+          zoom={14}
+          scrollWheelZoom={false}
+        >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={position}>
+          <Marker position={coordinate}>
             <Popup>
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
@@ -19,6 +25,7 @@ export default class MyMap extends Component {
         </MapContainer>
       );
     }
+    console.log("nnnnoooo");
     return null;
   }
 }
