@@ -9,7 +9,12 @@ import NewsPanel from "./NewsPanel";
 import TemplateArticle from "./TemplateArticle";
 import Sidebar from "./Sidebar";
 import Tag from "./Tag";
-import { SubmitButton, CloseModalButton, ActionButton } from "./Buttons";
+import {
+  SubmitButton,
+  CloseModalButton,
+  ActionButton,
+  DropDownButton,
+} from "./Buttons";
 import { OneImageOneTexte } from "./PrismicComponents";
 import RankingTeamTable from "./RankingTeamTable";
 
@@ -28,6 +33,7 @@ export {
   //BUTTONS
   ActionButton,
   CloseModalButton,
+  DropDownButton,
   SubmitButton,
   //Prismic Components
   OneImageOneTexte,

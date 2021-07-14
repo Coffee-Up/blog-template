@@ -1,16 +1,18 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import "../styles/IndexPage.css";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
 import { Layout, Sidebar, OneImageOneTexte } from "../components";
+import { linkResolver } from "../linkResolver";
 
-const IndexPage = ({ data }) => {
+const PageTemplate = ({ data }) => {
   const banner = data.prismicHomepage.data.body.filter(
     (el) => el.slice_type === "banner"
   )[0];
 
   const dataPage = data.prismicHomepage.data.body;
-
+  console.log(banner.primary.paragraphe.raw);
+  console.log("ESSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
   return (
     <Layout
       indexPage="Capbreton Hossegor Rugby"
@@ -43,8 +45,15 @@ const IndexPage = ({ data }) => {
   );
 };
 
+export default withPrismicPreview(PageTemplate, [
+  {
+    repositoryName: "chr-rugby",
+    linkResolver,
+  },
+]);
+
 export const query = graphql`
-  query queryIndexPage {
+  query PageTemplate {
     prismicHomepage {
       data {
         body {
@@ -87,5 +96,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default IndexPage;

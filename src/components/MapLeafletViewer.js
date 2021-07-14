@@ -1,36 +1,24 @@
-import React from "react";
-import L from "leaflet";
-import "../styles/MapViewer.css";
-import markerLogo from "../assets/images/chr-logo.svg";
+import React, { Component } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-export default class MapLeafletViewer extends React.Component {
-  componentDidMount() {
-    this.map = L.map("map", {
-      center: this.props.coordinate,
-      zoom: 16,
-      scrollWheelZoom: false,
-      layers: [
-        L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-          attribution:
-            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-        }),
-      ],
-    });
-
-    var myIcon = L.icon({
-      iconUrl: markerLogo,
-      iconSize: [50, 50],
-      //   iconAnchor: [0, 0],
-      popupAnchor: [-3, -76],
-      //   shadowUrl: "./assets/images/chr-logo.png",
-      shadowSize: [68, 95],
-      shadowAnchor: [22, 94],
-    });
-
-    L.marker(this.props.coordinate, { icon: myIcon }).addTo(this.map);
-  }
-
+export default class MyMap extends Component {
   render() {
-    return <div id="map"></div>;
+    const position = [51.505, -0.09];
+    if (typeof window !== "undefined") {
+      return (
+        <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={position}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer>
+      );
+    }
+    return null;
   }
 }

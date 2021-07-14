@@ -68,13 +68,13 @@
                   "placeholder": "Le texte accompagnant l'image"
                 }
               },
-              "taille": {
+              "taille_texte": {
                 "type": "Select",
                 "config": {
                   "options": ["S", "M", "L", "XL"],
                   "default_value": "S",
-                  "label": "taille",
-                  "placeholder": "Hauteur du Texte + Image"
+                  "label": "Taille Texte",
+                  "placeholder": "Taille du tete"
                 }
               },
               "texte_orientation": {
@@ -84,6 +84,15 @@
                   "default_value": "Droite",
                   "label": "Texte Orientation",
                   "placeholder": "L'endroit où se situe le texte par rapport à l'image"
+                }
+              },
+              "texte_alignement_vertical": {
+                "type": "Select",
+                "config": {
+                  "options": ["Milieu", "Haut", "Bas"],
+                  "default_value": "Milieu",
+                  "label": "Texte Alignement Vertical",
+                  "placeholder": "L'alignement vertical du texte"
                 }
               },
               "logo": {

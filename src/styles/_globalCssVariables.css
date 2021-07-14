@@ -15,7 +15,10 @@
   /* FONTS SIZE */
   --font-size-links: 0.7rem;
   --font-size-xl: 1.2rem;
+  --font-size-m: 0.9rem;
+  --font-size-s: 0.6rem;
   /* FONTS WEIGHT */
+  --font-weight-m: 400;
   --font-weight-links: 600;
 
   --box-shadow-inputs: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,

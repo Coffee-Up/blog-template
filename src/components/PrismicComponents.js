@@ -9,27 +9,32 @@ const OneImageOneTexte = ({
   prismicDataImage,
   textePosition,
   alt,
-  size,
+  textSize,
+  imgWidth,
   logo,
 }) => {
   return (
     <div
-      className={`prismic-one-image-one-texte-${textePosition.toLowerCase()} prismic-one-image-one-texte-${size}`}
+      className={`prismic-one-image-one-texte prismic-one-image-one-texte-${textePosition.toLowerCase()}`}
     >
-      <div>
-        <GatsbyImage
-          className={`g-image-box-shadow logo-${logo}`}
-          alt={alt}
-          draggable={false}
-          image={getImage(prismicDataImage)}
-          alt={alt}
-        />
+      <div className={`prismic-one-image-one-texte-image-container `}>
+        <div style={{ width: imgWidth }}>
+          <GatsbyImage
+            className={` g-image-box-shadow logo-${logo}`}
+            alt={alt}
+            draggable={false}
+            image={getImage(prismicDataImage)}
+          />
+        </div>
         {logo && (
-          <IconCHR style={{ position: "absolute,bottom: '0', righ:'0'" }} />
+          <IconCHR
+            width="50"
+            style={{ position: "absolute,bottom: '0', righ:'0'" }}
+          />
         )}
       </div>
       <div
-        className={`prismic-one-image-one-texte-${textePosition.toLowerCase()}-texte`}
+        className={`prismic-one-image-one-texte-texte-${textSize.toLowerCase()} prismic-one-image-one-texte-${textePosition.toLowerCase()}-texte`}
       >
         <RichText render={prismicDataTexte} />
       </div>

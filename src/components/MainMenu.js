@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import "../styles/MainMenu.css";
 
-import menuLinks from "../menuLinks";
+import menuLinks from "../json/menuLinks";
 import { IconCHR, IconArrow, IconFacebook } from "../assets/icons";
 
 const MainMenu = () => {

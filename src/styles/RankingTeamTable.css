@@ -9,12 +9,76 @@
 }
 /*---------------------------------------------------------------------------*/
 /* TITLE*/
-#ranking-table-title-container {
+.ranking-table-title-container {
   display: flex;
 }
 /*---------------------------------------------------------------------------*/
-/* SCORECO WIDGET*/
+/* DESCRIPTION*/
+.ranking-table-description-container {
+  padding: 1em 1em;
+}
+.ranking-table-description-container > h2 {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-m);
+  margin: 0;
+}
+/* ------------------------------------------------------------------------- */
+/* DROP DOWN */
+.drop-down-container {
+  margin-top: 2rem;
+  height: 40px;
+  position: relative;
+  display: flex;
+  font-size: var(--font-size-s);
+  max-width: 250px;
+  background-color: #f3c034;
+}
+.drop-down-container:hover {
+  cursor: pointer;
+  background-color: #ffbd07;
+}
+.drop-down-container > button {
+  background: none;
+}
+.drop-down-container > ul {
+  position: absolute;
+  top: 40px;
+  background-color: #d4dde7;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+/* ------------------------------------------------------------------------- */
+/* ITEMS */
+.button-drop-down-item-options {
+  font-size: var(--font-size-s);
+  width: 100%;
+  height: 100%;
+}
+.button-drop-down-item-options:hover {
+  cursor: pointer;
+  background-color: #e6c281;
+}
+.button-drop-down-item-options > button {
+  padding: 1em 1em;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: none;
+  border: none;
+}
+.button-drop-down-item-options > button:hover {
+  background: none;
+}
 
-iframe td .c-ranking__column--team-name {
-  height: 5em !important;
+.drop-down-button {
+  margin: 0;
+  width: 100%;
+}
+.button-drop-down-open-true {
+  display: unset;
+}
+.button-drop-down-open-false {
+  display: none !important;
 }

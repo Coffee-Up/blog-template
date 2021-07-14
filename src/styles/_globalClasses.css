@@ -7,7 +7,6 @@
   width: 100%;
   height: auto;
 }
-
 .g-mask-image-rectangular {
   position: relative;
   width: 50px;
@@ -22,7 +21,6 @@
   cursor: pointer;
   animation: scaling 0.2s ease-out forwards;
 }
-
 .g-logo-path-to-fill-white {
   fill: white;
 }
@@ -32,19 +30,15 @@
 .g-logo-twitter {
   width: 2rem;
 }
-
 .g-logo-path-to-fill-white {
   fill: white;
 }
-
 .g-logo-path-to-fill-grey {
   fill: grey;
 }
-
 .g-logo-path-to-fill-blue-twitter {
   fill: #1da1f2;
 }
-
 .g-logo-path-to-fill-blue-twitter:hover {
   fill: #56b8f4;
 }
@@ -58,16 +52,19 @@
 .g-hidden {
   display: none;
 }
-
+.g-show-true {
+  display: unset;
+}
+.g-show-false {
+  display: none;
+}
 #g-show-menu-link {
   display: unset;
   animation: fadeInOpacity 0.5s ease-out forwards;
 }
-
 .g-border-bottom {
   border-bottom: blue 2px solid;
 }
-
 .g-image-box-shadow {
   box-shadow: var(--box-shadow-image);
 }

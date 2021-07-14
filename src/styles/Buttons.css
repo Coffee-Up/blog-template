@@ -6,11 +6,11 @@
   color: white;
   font-size: 1rem;
 }
-
 .button-submit:focus,
 .button-submit:hover {
   background-color: #ff9c19;
 }
+
 /*----------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
@@ -26,17 +26,14 @@
   height: 2.2em;
   font-size: 1rem;
 }
-
 .button-action:hover {
   background-color: #ffa904;
   color: white;
 }
-
 .button-action-toggled-true {
   background-color: #ff7519;
   color: white;
 }
-
 .button-link {
   font-size: var(--font-size-links);
   font-weight: var(--font-weight-links);

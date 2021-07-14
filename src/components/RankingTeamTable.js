@@ -1,83 +1,62 @@
+// Load Table is long, we don't have control on it because it is from scorenco, we load all table then decide to show it or not depends on the use selection
 import React, { useState } from "react";
 import "../styles/RankingTeamTable.css";
 
-import { IconCHR } from "../assets/icons";
-import { ActionButton } from ".";
+import { IconArrow, IconCHR } from "../assets/icons";
+import scorencoLinks from "../json/scorenco-links.json";
 
-const RankingTeamTable = ({ team }) => {
-  const [currentTeam, updateCurrentTeam] = useState(team);
+const RankingTeamTable = () => {
+  const [isOpen, updateIsOpen] = useState(false);
+  const [currentOption, updateCurrentOption] = useState(null);
 
-  const seniorsM1Url = "https://scorenco.com/widget/5f8c2fb7318adf3e99df3d6d";
-  const seniorsM2Url = "https://scorenco.com/widget/5f8c62fc0450a43f9689ff65";
+  const onClickDropDown = () => {
+    updateIsOpen(!isOpen);
+  };
 
-  const juniorsF1Url = "https://scorenco.com/widget/5f8c6fefe7b69a3d12a34bd9";
-  const seniorsF1Url = "https://scorenco.com/widget/5f8c6f720450a43ce12e5db6/";
+  const onSelectOption = ($event) => {
+    updateCurrentOption($event.target.innerHTML);
+    updateIsOpen(false);
+  };
 
-  const cadetsM1Url = "https://scorenco.com/widget/5f8c6d48cab48d3da5886b8e";
-  const cadetsM2Url = "https://scorenco.com/widget/5f8c6e44a748730a207269a3";
-
-  const juniorsM11Url = "https://scorenco.com/widget/5f8c65cee7b69a3c3ee4f3e2";
-  const juniorsM2Url = "https://scorenco.com/widget/5f8c6626cab48d3bf94f0851";
   return (
     <>
-      {currentTeam === "juniors 1" && (
-        <div className="ranking-team-table-container">
-          <div id="ranking-table-title-container">
+      <div>
+        <div className="drop-down-container">
+          <button className="drop-down-button" onClick={onClickDropDown}>
+            {currentOption ? currentOption : "Choisissez Une Equipe"}
+          </button>
+          <IconArrow size="30" />
+          <ul className={`button-drop-down-open-${isOpen}`}>
+            {scorencoLinks.map((el) => (
+              <li className={`button-drop-down-item-options`}>
+                <button onClick={($event) => onSelectOption($event)}>
+                  {el.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {scorencoLinks.map((el) => (
+        <div
+          className={`ranking-team-table-container g-show-${
+            currentOption === el.label ? "true" : "false"
+          }`}
+        >
+          <div className="ranking-table-title-container">
             <IconCHR width="80" />
-            <h1>Classement Juniors Equipe 1</h1>
+            <h1>{el.label}</h1>
+          </div>
+          <div className="ranking-table-description-container">
+            <h2>{el.description}</h2>
           </div>
           <iframe
             id="5f8c6fefe7b69a3d12a34bd9"
             className="ranking-team-table-widget"
-            src={juniorsF1Url}
+            src={`https://scorenco.com/widget/${el.url}`}
           ></iframe>
         </div>
-      )}
-      {currentTeam === "feminines 1" && (
-        <div className="ranking-team-table-container">
-          <div id="ranking-table-title-container">
-            <IconCHR width="80" />
-            <h1>Classement Féminines Equipe 1</h1>
-          </div>
-          <iframe
-            id="5f8c6fefe7b69a3d12a34bd9"
-            className="ranking-team-table-widget"
-            src={seniorsF1Url}
-          ></iframe>
-        </div>
-      )}
-      {currentTeam === "seniors 1" && (
-        <div className="ranking-team-table-container">
-          <div id="ranking-table-title-container">
-            <IconCHR width="80" />
-            <h1>Classement Seniors Equipe 1</h1>
-            <ActionButton onClick={() => updateCurrentTeam("seniors 2")}>
-              Equipe 2 Seniors
-            </ActionButton>
-          </div>
-          <iframe
-            id="5f8c6fefe7b69a3d12a34bd9"
-            className="ranking-team-table-widget"
-            src={seniorsM1Url}
-          ></iframe>
-        </div>
-      )}
-      {currentTeam === "seniors 2" && (
-        <div className="ranking-team-table-container">
-          <div id="ranking-table-title-container">
-            <IconCHR width="80" />
-            <h1>Classement Seniors Equipe 2</h1>
-            <ActionButton onClick={() => updateCurrentTeam("seniors 1")}>
-              Equipe 1 Seniors
-            </ActionButton>
-          </div>
-          <iframe
-            id="5f8c6fefe7b69a3d12a34bd9"
-            className="ranking-team-table-widget"
-            src={seniorsM2Url}
-          ></iframe>
-        </div>
-      )}
+      ))}
     </>
   );
 };

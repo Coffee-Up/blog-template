@@ -6,6 +6,7 @@ import section5 from "./5.json";
 import section6 from "./6.json";
 import section7 from "./7.json";
 import section8 from "./8.json";
+import section9 from "./9.json";
 
 const menuLinks = [
   section1,
@@ -16,6 +17,7 @@ const menuLinks = [
   section6,
   section7,
   section8,
+  section9,
 ];
 
 export default menuLinks;

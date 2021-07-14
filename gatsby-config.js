@@ -27,6 +27,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-prismic-previews",
+      options: {
+        repositoryName: "chr-rugby",
+        toolbar: "new",
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -36,6 +43,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-leaflet",
+      options: {
+        linkStyles: true,
       },
     },
     {
