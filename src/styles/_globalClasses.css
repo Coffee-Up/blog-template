@@ -67,6 +67,10 @@
 .g-border-bottom {
   border-bottom: blue 2px solid;
 }
+
+.g-image-box-shadow {
+  box-shadow: var(--box-shadow-image);
+}
 /* 
   ---------------------------------------------------------------------------*/
 /* Hover */

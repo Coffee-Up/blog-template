@@ -1,29 +1,16 @@
-.banner-container {
+#banner-container {
   position: relative;
   height: 82vh;
+  overflow: clip;
 }
-/*---------------------------------------------------------------------------*/
-/* NEWS PANEL */
-div > #news-container {
-  color: white;
-  position: absolute;
-  z-index: 4000;
-  bottom: 0;
-  right: 0;
-  transform-origin: right;
-  /* 11vh is MainMenu height */
-  height: calc(100% - 11vh);
-  width: 26%;
-  background-color: var(--color-main-menu);
-}
-
 /*---------------------------------------------------------------------------*/
 /* IMAGES*/
-/* .banner-container > .gatsby-image-wrapper {
+
+/* #banner-container > .gatsby-image-wrapper {
   animation: fadeInOpacity 0.7s;
 } */
 
-.banner-container:before {
+#banner-container:before {
   content: "";
   position: absolute;
   top: 0;
@@ -36,13 +23,49 @@ div > #news-container {
   z-index: 999;
 }
 
-#news-container {
+#banner-front-container {
+  display: flex;
+  color: white;
   position: absolute;
+  z-index: 4000;
+  bottom: 0;
+  height: calc(100% - 11vh);
+  background-color: var(--color-main-menu);
+}
+/*---------------------------------------------------------------------------*/
+/* NEWS PANEL */
+#news-container {
+  width: 64%;
+}
+/*---------------------------------------------------------------------------*/
+/* TEXTE CONTAINER */
+#banner-front-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+}
+/*---------------------------------------------------------------------------*/
+/* FROM INDEX PAGE */
+#banner-front-container > div > h1 > span:nth-child(n + 2) {
+  margin-left: 0.3em;
+}
+
+#index-page-c {
+  color: #f76859;
+}
+
+#index-page-h {
+  color: #ffa700;
+}
+
+#index-page-r {
+  color: #7e7eff;
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  .banner-container {
+  #banner-container {
     height: 40vh;
   }
 

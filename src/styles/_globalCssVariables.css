@@ -14,11 +14,13 @@
   --color-links: #8f10f7;
   /* FONTS SIZE */
   --font-size-links: 0.7rem;
+  --font-size-xl: 1.2rem;
   /* FONTS WEIGHT */
   --font-weight-links: 600;
 
   --box-shadow-inputs: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-
+  --box-shadow-image: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   --border-radius-button: 5px;
 }

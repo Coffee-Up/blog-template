@@ -1,19 +1,25 @@
 #news-container {
   font-size: 0.6rem;
+  max-height: 100%;
 }
 
 #news-container > h2 {
   margin: 0.7em 0 1em 0.5em;
 }
 
-#news-container > a {
+#news-container > div {
+  border-bottom: var(--color-hover-links-menu-section) 1px solid;
+}
+
+#news-container > div > a {
   display: inline-block;
   color: white;
 }
 
-#news-container > a:hover {
+#news-container > div > a:hover {
   animation: unset;
 }
+
 /*---------------------------------------------------------------------------*/
 /* NEWS PANEL ARTICLE */
 .news-panel-article-container {

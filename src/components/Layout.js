@@ -8,7 +8,14 @@ import "../styles/_globalClasses.css";
 
 import { Footer, Banner, Seo, MainMenu } from ".";
 
-const Layout = ({ children, bannerTitle, bannerImage }) => {
+const Layout = ({
+  children,
+  bannerTitle,
+  bannerImage,
+  displayNewsPanel,
+  bannerTexte,
+  indexPage,
+}) => {
   const data = useStaticQuery(graphql`
     query IndexPageQuery {
       site {
@@ -29,7 +36,13 @@ const Layout = ({ children, bannerTitle, bannerImage }) => {
     <>
       <Seo />
       <MainMenu />
-      <Banner title={bannerTitle} imageFile={bannerImage} />
+      <Banner
+        indexPage={indexPage}
+        displayNewsPanel={displayNewsPanel}
+        title={bannerTitle}
+        texte={bannerTexte}
+        imageFile={bannerImage}
+      />
       <main className="g-wrapper-main">{children}</main>
       <Footer urls={data.site.siteMetadata.urls} />
     </>

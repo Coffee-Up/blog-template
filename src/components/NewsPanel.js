@@ -7,7 +7,7 @@ import "../styles/NewsPanel.css";
 const NewsPanel = ({}) => {
   const data = useStaticQuery(graphql`
     query NewsPanelQuery {
-      allPrismicArticle(limit: 5) {
+      allPrismicArticle(limit: 4) {
         edges {
           node {
             uid
@@ -41,7 +41,6 @@ const NewsPanel = ({}) => {
     <div id="news-container">
       <h2>News</h2>
       {articlesData.map(({ node: articleData }) => {
-        console.log(articleData);
         const titre = articleData.data.body[0].primary.titre;
         const resume = articleData.data.body[0].primary.resume;
         const tags = articleData.tags;
@@ -51,30 +50,32 @@ const NewsPanel = ({}) => {
         );
 
         return (
-          <Link to={`post/${articleData.uid}`}>
-            <section>
-              <article className="news-panel-article-container">
-                <div>
-                  <header>
-                    <RichText render={titre.raw} />
-                    <RichText render={resume.raw} />
-                  </header>
-                  <div className="news-panel-text">
-                    {tags.map((tag) => (
-                      <span className="news-panel-tag">{tag}</span>
-                    ))}
-                    <p>{lastPublicationDate}</p>
+          <div>
+            <Link to={`post/${articleData.uid}`}>
+              <section>
+                <article className="news-panel-article-container">
+                  <div>
+                    <header>
+                      <RichText render={titre.raw} />
+                      <RichText render={resume.raw} />
+                    </header>
+                    <div className="news-panel-text">
+                      {tags.map((tag) => (
+                        <span className="news-panel-tag">{tag}</span>
+                      ))}
+                      <p>{lastPublicationDate}</p>
+                    </div>
                   </div>
-                </div>
-                <GatsbyImage
-                  className="news-panel-image"
-                  draggable={false}
-                  image={articleBannerImage}
-                  alt=""
-                />
-              </article>
-            </section>
-          </Link>
+                  <GatsbyImage
+                    className="news-panel-image"
+                    draggable={false}
+                    image={articleBannerImage}
+                    alt=""
+                  />
+                </article>
+              </section>
+            </Link>
+          </div>
         );
       })}
     </div>

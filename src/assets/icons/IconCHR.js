@@ -1,11 +1,13 @@
 import React from "react";
 
-const IconCHR = ({ id, clickable }) => (
+const IconCHR = ({ id, clickable, style, width }) => (
   <svg
+    style={style}
     id={id}
     className={clickable ? "g-hover-animation-logomain-menu-logo" : ""}
     viewBox="0 0 50 50"
     role="link"
+    width={width}
     aria-hidden="false"
     focusable="true"
     preserveAspectRatio="xMidYMid meet"
@@ -14,8 +16,8 @@ const IconCHR = ({ id, clickable }) => (
     <path
       fill="#939393"
       stroke="#5B5B5B"
-      stroke-width="0.25"
-      stroke-miterlimit="10"
+      strokeWidth="0.25"
+      strokeMiterlimit="10"
       d="M40.5,37.7c0,0-4,5-4.9,5.6
 	c-0.9,0.6-5.1,2.6-6.1,2.9c-1,0.3-3.8,1.6-4.5,2c-0.7,0.4,0,1.7,0,1.7s1.9-1.2,3-1.7c1.1-0.6,5.4-2,7.3-3.5c1.9-1.4,3.3-3.4,3.3-3.4
 	l1.9,1.2V37.7z"
@@ -23,8 +25,8 @@ const IconCHR = ({ id, clickable }) => (
     <path
       fill="#939393"
       stroke="#5B5B5B"
-      stroke-width="0.25"
-      stroke-miterlimit="10"
+      strokeWidth="0.25"
+      strokeMiterlimit="10"
       d="M9.2,37.6c0,0,4,5,4.9,5.6
 	c0.9,0.6,5.1,2.6,6.1,2.9c1,0.3,3.8,1.6,4.5,2S25,50,25,50s-2.3-1.3-3.3-1.9c-1.1-0.6-5.4-2-7.3-3.5c-1.9-1.4-3.3-3.4-3.3-3.4
 	l-1.9,1.2V37.6z"
@@ -32,8 +34,8 @@ const IconCHR = ({ id, clickable }) => (
     <path
       fill="#B6B6B7"
       stroke="#757575"
-      stroke-width="0.25"
-      stroke-miterlimit="10"
+      strokeWidth="0.25"
+      strokeMiterlimit="10"
       d="M22.1,43.7l2.5,1.4c0,0-3.3,1.6-4.5,1.4
 	c-1.3-0.2-3-1.3-3-1.3s-2.3-1.2-3.1-1.8c-0.8-0.6-4.8-5.8-4.8-5.8l4.7,2.1l-1.6,0.8c0,0,2,2.2,2.8,2.7c0.8,0.5,2.6,1.5,3.5,1.6
 	c0.9,0.1,2.3,0.1,2.7,0C22.2,44.3,22.1,43.7,22.1,43.7z"
@@ -41,8 +43,8 @@ const IconCHR = ({ id, clickable }) => (
     <path
       fill="#B6B6B7"
       stroke="#757575"
-      stroke-width="0.25"
-      stroke-miterlimit="10"
+      strokeWidth="0.25"
+      strokeMiterlimit="10"
       d="M27.6,43.8L25,45.2c0,0,3.3,1.6,4.5,1.4
 	c1.3-0.2,3-1.3,3-1.3s2.3-1.2,3.1-1.8c0.8-0.6,4.8-5.8,4.8-5.8l-4.7,2.1l1.6,0.8c0,0-2,2.2-2.8,2.7c-0.8,0.5-2.6,1.5-3.5,1.6
 	c-0.9,0.1-2.3,0.1-2.7,0C27.5,44.5,27.6,43.8,27.6,43.8z"
@@ -51,40 +53,40 @@ const IconCHR = ({ id, clickable }) => (
       <path
         fill="#D6D6D6"
         stroke="#737373"
-        stroke-width="0.25"
-        stroke-miterlimit="10"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
         d="M25.4,13.7h-1c-0.2,0-0.4-0.2-0.4-0.4v-2.8
 		c0-0.2,0.2-0.4,0.4-0.4h1c0.2,0,0.4,0.2,0.4,0.4v2.8C25.7,13.5,25.6,13.7,25.4,13.7z"
       />
       <path
         fill="#B6B6B7"
         stroke="#757575"
-        stroke-width="0.25"
-        stroke-miterlimit="10"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
         d="M17.8,9.2v1.3c1.8,0.9,6.9,0.9,6.9,0.9
 		s6,0,6.9-0.8V9.1c-0.7-0.5-6.9-0.4-6.9-0.4S18.4,8.8,17.8,9.2z"
       />
       <path
         fill="#828282"
         stroke="#5B5B5B"
-        stroke-width="0.25"
-        stroke-miterlimit="10"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
         d="M23.3,11.3h-0.7c-0.1,0-0.2-0.1-0.2-0.2V9
 		c0-0.1,0.1-0.2,0.2-0.2h0.7c0.1,0,0.2,0.1,0.2,0.2v2.1C23.5,11.2,23.4,11.3,23.3,11.3z"
       />
       <path
         fill="#828282"
         stroke="#5B5B5B"
-        stroke-width="0.25"
-        stroke-miterlimit="10"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
         d="M26.9,11.3h-0.7c-0.1,0-0.2-0.1-0.2-0.2V9
 		c0-0.1,0.1-0.2,0.2-0.2h0.7c0.1,0,0.2,0.1,0.2,0.2V11C27.1,11.2,27,11.3,26.9,11.3z"
       />
       <path
         fill="#D6D6D6"
         stroke="#737373"
-        stroke-width="0.25"
-        stroke-miterlimit="10"
+        strokeWidth="0.25"
+        strokeMiterlimit="10"
         d="M24.7,0.3c-2.2,0-4.1,1.7-4.1,3.8
 		c0,2.1,1.8,3.8,4.1,3.8c2.2,0,4.1-1.7,4.1-3.8C28.8,2,27,0.3,24.7,0.3z M24.7,6.5c-1.4,0-2.5-1-2.5-2.3c0-1.3,1.1-2.3,2.5-2.3
 		s2.5,1,2.5,2.3C27.2,5.4,26.1,6.5,24.7,6.5z"
@@ -92,8 +94,8 @@ const IconCHR = ({ id, clickable }) => (
       <path
         fill="#B4B4B5"
         stroke="#686868"
-        stroke-width="0.1"
-        stroke-miterlimit="10"
+        strokeWidth="0.1"
+        strokeMiterlimit="10"
         d="M25,8.8h-0.7c-0.1,0-0.2-0.1-0.2-0.2v-2
 		c0-0.1,0.1-0.2,0.2-0.2H25c0.1,0,0.2,0.1,0.2,0.2v2C25.3,8.6,25.2,8.8,25,8.8z"
       />

@@ -24,6 +24,19 @@
           "url": "/seniors/equipe-reserve"
         }
       ]
+    },
+    {
+      "label": "Classements / Résultats",
+      "links": [
+        {
+          "label": "Équipe 1",
+          "url": "/seniors/equipe-1"
+        },
+        {
+          "label": "Équipe Réserve",
+          "url": "/seniors/equipe-reserve"
+        }
+      ]
     }
   ]
 }

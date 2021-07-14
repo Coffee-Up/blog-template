@@ -17,11 +17,11 @@ header > nav {
   width: 80%;
 }
 
-header > nav > ul {
+header > nav > div {
   height: 100%;
 }
 
-header > nav > ul > div {
+header > nav > div > ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -29,21 +29,22 @@ header > nav > ul > div {
 }
 /*---------------------------------------------------------------------------*/
 /*Logo */
-header > nav > ul > div > a {
+header > nav > div > ul > li > a {
   display: flex;
   padding: 0 2em;
   flex-direction: column;
   justify-content: center;
-  margin-right: 1em;
   height: 100%;
+  font-size: var(--font-size-links);
+  font-weight: var(--font-weight-links);
 }
 
-header > nav > ul > div > a:hover {
+header > nav > div > ul > li > a:hover {
   background-color: var(--color-hover-links-menu-section);
   border-bottom: var(--color-secondary) 4px solid;
 }
 
-header > nav > ul > div > a > h2 {
+header > nav > div > ul > li > a > h2 {
   margin: 0;
   text-align: center;
   color: white;
@@ -63,18 +64,28 @@ header > nav > ul > div > a > h2 {
 }
 /*---------------------------------------------------------------------------*/
 /*MENU SECTION NO SUBLINKS */
-header > nav > ul > div > div > a {
+header > nav > div > ul > div > li > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+header > nav > div > ul > div > li > a:hover {
+  animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
+}
+
+header > nav > div > ul > div > li > a > h3 {
   font-size: var(--font-size-links);
   font-weight: var(--font-weight-links);
-}
-header > nav > ul > div > div > a:hover {
-  animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
 }
 
 /*---------------------------------------------------------------------------*/
 /*MENU SECTION WITH SUBLINKS */
 /* Container */
-header > nav > ul > div > div {
+header > nav > div > ul > li {
+  height: 100%;
+}
+
+header > nav > div > ul > li > div {
   position: relative;
   display: flex;
   align-items: center;
@@ -82,31 +93,38 @@ header > nav > ul > div > div {
   padding: 0 0.5em;
 }
 
-header > nav > ul > div > div:hover {
+header > nav > div > ul > li > div:hover {
   cursor: pointer;
   animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
   background-color: var(--color-hover-links-menu-section);
   border-bottom: var(--color-secondary) 4px solid;
 }
 /* Main Link  */
-header > nav > ul > div > div > a {
-  font-size: var(--font-size-links);
-  font-weight: var(--font-weight-links);
+header > nav > div > ul > li > div > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-header > nav > ul > div > div > a:hover {
+header > nav > div > ul > li > div > a:hover {
   animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
 }
+
+header > nav > div > ul > li > div > a > h3 {
+  font-weight: var(--font-weight-links);
+  font-size: var(--font-size-links);
+  margin: 0;
+}
 /* Arrow SVG */
-header > nav > ul > div > div > a > svg {
+header > nav > div > ul > li > div > a > svg {
   width: 30px;
 }
 
-header > nav > ul > div > div > a > svg > path {
+header > nav > div > ul > li > div > a > svg > path {
   fill: #999;
 }
 
-header > nav > ul > div > div > ul {
+header > nav > div > ul > li > div > ul {
   position: absolute;
   background-color: white;
   z-index: 30000;
@@ -118,12 +136,12 @@ header > nav > ul > div > div > ul {
   border-bottom: var(--color-secondary) 4px solid;
 }
 
-header > nav > ul > div > div > ul > div > li {
+header > nav > div > ul > li > div > ul > div > li {
   width: max-content;
   padding: 0.5em 0.8em;
 }
 
-header > nav > ul > div > div > ul > div {
+header > nav > div > ul > li > div > ul > div {
   display: flex;
 }
 /*---------------------------------------------------------------------------*/
@@ -145,6 +163,12 @@ header > nav > ul > div > div > ul > div {
   font-weight: 500;
   font-size: 0.7em;
   color: black;
+}
+/*---------------------------------------------------------------------------*/
+/* FACEBOOK */
+#facebook-link > a:hover {
+  background-color: unset;
+  border: none;
 }
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */

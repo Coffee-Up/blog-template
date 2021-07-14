@@ -3,25 +3,36 @@
   "url": "jeunes",
   "subSections": [
     {
-      "label": "Nouveautés",
+      "label": "Juniors (-19)",
       "links": [
         {
-          "label": "News",
-          "url": "/jeunes-rcsl/news"
+          "label": "Classements",
+          "url": "/jeunes-rcsl/u19/classement"
+        },
+        {
+          "label": "Résultats",
+          "url": "/jeunes-rcsl/u19/classement"
+        },
+        {
+          "label": "Actualité",
+          "url": "/jeunes-rcsl/u19/actu"
         }
       ]
     },
-
     {
-      "label": "Catégories",
+      "label": "Juniors (-16)",
       "links": [
         {
-          "label": "Juniors (-19)",
-          "url": "/jeunes-rcsl/u19"
+          "label": "Classements",
+          "url": "/jeunes-rcsl/u16/classement"
         },
         {
-          "label": "Cadets (-16)",
-          "url": "/jeunes-rcsl/u16"
+          "label": "Résultats",
+          "url": "/jeunes-rcsl/u16/classement"
+        },
+        {
+          "label": "Actualité",
+          "url": "/jeunes-rcsl/u16/actu"
         }
       ]
     }

@@ -20,31 +20,79 @@
             "icon": "aspect_ratio",
             "display": "list",
             "non-repeat": {
-              "titre": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading1",
-                  "label": "Titre",
-                  "placeholder": "Le Titre du Banner"
-                }
-              },
-              "paragraph": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph",
-                  "label": "paragraph",
-                  "placeholder": "Le Texte du Banner"
-                }
-              },
               "image": {
                 "type": "Image",
                 "config": {
-                  "constraint": {
-                    "width": 1920,
-                    "height": 1080
-                  },
+                  "constraint": {},
                   "thumbnails": [],
-                  "label": "Image"
+                  "label": "image"
+                }
+              },
+              "titre": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "titre"
+                }
+              },
+              "paragraphe": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,list-item,o-list-item,rtl",
+                  "label": "paragraphe"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_et_texte": {
+            "type": "Slice",
+            "fieldset": "Image Et Texte",
+            "description": "UNE Image & UN Texte",
+            "icon": "art_track",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "texte": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
+                  "label": "texte",
+                  "placeholder": "Le texte accompagnant l'image"
+                }
+              },
+              "taille": {
+                "type": "Select",
+                "config": {
+                  "options": ["S", "M", "L", "XL"],
+                  "default_value": "S",
+                  "label": "taille",
+                  "placeholder": "Hauteur du Texte + Image"
+                }
+              },
+              "texte_orientation": {
+                "type": "Select",
+                "config": {
+                  "options": ["Droite", "Gauche", "Haut", "Bas"],
+                  "default_value": "Droite",
+                  "label": "Texte Orientation",
+                  "placeholder": "L'endroit où se situe le texte par rapport à l'image"
+                }
+              },
+              "logo": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "Photos Sans Logo CHR",
+                  "placeholder_true": "Logo CHR Sur la photos",
+                  "default_value": false,
+                  "label": "Logo"
                 }
               }
             },

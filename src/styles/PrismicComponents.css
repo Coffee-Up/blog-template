@@ -1,0 +1,46 @@
+/*---------------------------------------------------------------------------*/
+/* PRISMIC ONE IMAGE ONE TEXTE  */
+.prismic-one-image-one-texte-XL {
+  font-size: var(--font-size-xl);
+  height: 50vh;
+}
+
+.prismic-one-image-one-texte-M {
+  height: 30vh;
+  font-size: var(--font-size-xl);
+}
+
+/*---------------------------------------------------------------------------*/
+/* PRISMIC ONE IMAGE ONE TEXTE DROITE */
+.prismic-one-image-one-texte-droite {
+  display: flex;
+  margin: 2em 0;
+}
+
+.prismic-one-image-one-texte-droite > div > .gatsby-image-wrapper {
+  border-radius: 3px;
+}
+
+.prismic-one-image-one-texte-droite > div > .gatsby-image-wrapper .logo-true {
+  position: relative;
+}
+
+.prismic-one-image-one-texte-droite-texte {
+  margin-left: 1em;
+}
+
+/*---------------------------------------------------------------------------*/
+/* PRISMIC ONE IMAGE ONE TEXTE GAUCHE */
+.prismic-one-image-one-texte-gauche {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 2em 0;
+}
+
+.prismic-one-image-one-texte-gauche > div > .gatsby-image-wrapper {
+  border-radius: 3px;
+}
+
+.prismic-one-image-one-texte-gauche-texte {
+  margin-right: 1em;
+}

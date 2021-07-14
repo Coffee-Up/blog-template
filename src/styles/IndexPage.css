@@ -2,8 +2,9 @@
   padding: 3rem 4rem;
 }
 /*---------------------------------------------------------------------------*/
-/* TITLE CONTAINER */
-
+/* IMAGE + TEXTE RIGHT */
+#index-page-image-texte-right {
+}
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {

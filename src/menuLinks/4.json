@@ -1,4 +1,40 @@
 {
   "label": "Féminines",
-  "url": "/jeunes-rcsl/feminines"
+  "url": "/jeunes-rcsl/feminines",
+  "subSections": [
+    {
+      "label": "Juniors (-19)",
+      "links": [
+        {
+          "label": "Classements",
+          "url": "/jeunes-rcsl/u19/classement"
+        },
+        {
+          "label": "Résultats",
+          "url": "/jeunes-rcsl/u19/classement"
+        },
+        {
+          "label": "Actualité",
+          "url": "/jeunes-rcsl/u19/actu"
+        }
+      ]
+    },
+    {
+      "label": "Juniors (-16)",
+      "links": [
+        {
+          "label": "Classements",
+          "url": "/jeunes-rcsl/u16/classement"
+        },
+        {
+          "label": "Résultats",
+          "url": "/jeunes-rcsl/u16/classement"
+        },
+        {
+          "label": "Actualité",
+          "url": "/jeunes-rcsl/u16/actu"
+        }
+      ]
+    }
+  ]
 }

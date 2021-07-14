@@ -7,11 +7,25 @@
         "placeholder": "Texte Unique"
       }
     },
+    "stade_capbreton": {
+      "type": "GeoPoint",
+      "config": {
+        "label": "Stade Capbreton"
+      }
+    },
+    "stade_capbreton_adresse": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl",
+        "label": "Stade Capbreton Adresse",
+        "placeholder": "L'adresse exacte du stade de Capbreton"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "banner": {
             "type": "Slice",
@@ -20,7 +34,7 @@
             "icon": "aspect_ratio",
             "display": "list",
             "non-repeat": {
-              "titre1": {
+              "titre": {
                 "type": "StructuredText",
                 "config": {
                   "single": "heading1",
@@ -28,11 +42,11 @@
                   "placeholder": "Le Titre du Banner"
                 }
               },
-              "paragrah": {
+              "paragraph": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph",
-                  "label": "paragrah",
+                  "multi": "paragraph,preformatted,strong,em,hyperlink,image,list-item,o-list-item,rtl",
+                  "label": "paragraphe",
                   "placeholder": "Le Texte du Banner"
                 }
               },
@@ -62,7 +76,32 @@
                 "config": {
                   "multi": "paragraph,preformatted,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                   "label": "Texte",
-                  "placeholder": "Ecrire votre texte, ajout d'image, de liens"
+                  "placeholder": "Ecrire votre texte"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_and_texte": {
+            "type": "Slice",
+            "fieldset": "Image And Texte",
+            "description": "Image et un Texte à Droite",
+            "icon": "art_track",
+            "display": "grid",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "texte": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
+                  "label": "texte"
                 }
               }
             },
