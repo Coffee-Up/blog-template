@@ -25,7 +25,6 @@ export default class MyMap extends Component {
         </MapContainer>
       );
     }
-    console.log("nnnnoooo");
     return null;
   }
 }
