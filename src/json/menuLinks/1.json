@@ -1,11 +1,14 @@
 {
+  "uid": "beb279c1-fe45-45c9-b2f4-4c1e4abf7f2e",
   "label": "Le Club",
   "url": "le-club",
   "subSections": [
     {
+      "uid": "45eb07b0-d3fc-487c-bf16-096da22ec13b",
       "label": "Nouveautés",
       "links": [
         {
+          "uid": "be737886-f2f3-45d4-8b74-36a2d19feda0",
           "label": "News",
           "url": "/le-club/news/"
         }
@@ -14,16 +17,20 @@
 
     {
       "label": "Organisation",
+      "uid": "89ca0c4b-cb40-4cfc-9930-9e1911b07af4",
       "links": [
         {
+          "uid": "ca23ebf5-6515-4b9e-9c42-20070ff4a5bc",
           "label": "Présentation",
           "url": "/le-club/presentation"
         },
         {
+          "uid": "bdb26575-fb86-44ae-bf28-796f61b260c2",
           "label": "Organigramme",
           "url": "/le-club/organigramme"
         },
         {
+          "uid": "ea8514f7-0c67-4d67-8b5f-47612d225e08",
           "label": "Commission Nationale",
           "url": "/le-club/role-social"
         }

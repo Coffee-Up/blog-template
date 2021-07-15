@@ -5,7 +5,14 @@ import "../styles/Banner.css";
 
 import { NewsPanel } from ".";
 
-const Banner = ({ imageFile, displayNewsPanel, title, texte, indexPage }) => {
+const Banner = ({
+  imageFile,
+  displayNewsPanel,
+  title,
+  texte,
+  indexPage,
+  alt,
+}) => {
   const imageFileGatsby = getImage(imageFile);
 
   return (
@@ -20,12 +27,12 @@ const Banner = ({ imageFile, displayNewsPanel, title, texte, indexPage }) => {
                 <span id="index-page-r">Rugby</span>
               </h1>
             )}
-            <RichText render={title} />
-            <RichText render={texte} />
+            {title && <RichText render={title} />}
+            {texte && <RichText render={texte} />}
           </div>
           {displayNewsPanel && <NewsPanel />}
         </div>
-        <GatsbyImage draggable={false} image={imageFileGatsby} alt="" />
+        <GatsbyImage draggable={false} image={imageFileGatsby} alt={alt} />
       </div>
     </>
   );

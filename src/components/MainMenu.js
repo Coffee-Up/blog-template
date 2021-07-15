@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import "../styles/MainMenu.css";
+import { v4 as uuidv4 } from "uuid";
 
 import menuLinks from "../json/menuLinks";
 import { IconCHR, IconArrow, IconFacebook } from "../assets/icons";
@@ -27,9 +28,13 @@ const MainMenu = () => {
     updateMouseOnMenu(false);
   };
   return (
-    <header id="header-main-menu" onMouseLeave={onMenuLeave}>
+    <header aria-hidden="true" id="header-main-menu" onMouseLeave={onMenuLeave}>
       <nav>
-        <div onMouseEnter={onMenuEnter} onMouseLeave={onMenuLeave}>
+        <div
+          aria-hidden="true"
+          onMouseEnter={onMenuEnter}
+          onMouseLeave={onMenuLeave}
+        >
           <ul>
             <li>
               <Link to="/">
@@ -39,10 +44,11 @@ const MainMenu = () => {
             </li>
             {menuLinks.map((menuSection) => {
               return (
-                <>
+                <React.Fragment key={uuidv4()}>
                   {menuSection.subSections && (
-                    <li>
+                    <li key={uuidv4()}>
                       <div
+                        aria-hidden="true"
                         onMouseEnter={($event) => onMouseEnterLink($event)}
                         onMouseLeave={onMouseLeaveLink}
                       >
@@ -87,11 +93,13 @@ const MainMenu = () => {
                           <div>
                             {menuSection.subSections.map((subSection) => {
                               return (
-                                <li>
+                                <li key={uuidv4()}>
                                   <div className="main-menu-subsection-category-container">
                                     <p>{subSection.label}</p>
                                     {subSection.links.map((link) => (
-                                      <Link to={link.url}>{link.label}</Link>
+                                      <Link key={uuidv4()} to={link.url}>
+                                        {link.label}
+                                      </Link>
                                     ))}
                                   </div>
                                 </li>
@@ -103,8 +111,11 @@ const MainMenu = () => {
                     </li>
                   )}
                   {!menuSection.subSections && (
-                    <li>
-                      <div onMouseEnter={($event) => onMouseEnterLink($event)}>
+                    <li key={uuidv4()}>
+                      <div
+                        aria-hidden="true"
+                        onMouseEnter={($event) => onMouseEnterLink($event)}
+                      >
                         <Link
                           className={
                             mouseOnMenu &&
@@ -123,7 +134,7 @@ const MainMenu = () => {
                       </div>
                     </li>
                   )}
-                </>
+                </React.Fragment>
               );
             })}
             <li id="facebook-link">

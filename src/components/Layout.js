@@ -14,12 +14,14 @@ const Layout = ({
   displayNewsPanel,
   bannerTexte,
   indexPage,
+  bannerAlt,
 }) => {
   return (
     <>
       <Seo />
       <MainMenu />
       <Banner
+        alt={bannerAlt}
         indexPage={indexPage}
         displayNewsPanel={displayNewsPanel}
         title={bannerTitle}

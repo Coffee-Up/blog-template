@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import "../styles/IndexPage.css";
+import { v4 as uuidv4 } from "uuid";
 
 import { Layout, Sidebar, OneImageOneTexte } from "../components";
 
@@ -13,29 +14,32 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout
-      indexPage="Capbreton Hossegor Rugby"
-      bannerTexte={banner.primary.paragraphe.raw}
+      indexPage
       displayNewsPanel
+      bannerTexte={banner.primary.paragraphe.raw}
       bannerImage={banner.primary.image.gatsbyImageData}
+      bannerAlt={banner.primary.image.alt}
     >
       <Sidebar side="left" />
       <div id="index-page-container">
         {dataPage.map((el) => {
           if (el.slice_type === "image_et_texte") {
             return (
-              <OneImageOneTexte
-                prismicDataTexte={el.primary.texte.raw}
-                prismicDataImage={el.primary.image.gatsbyImageData}
-                textePosition={el.primary.texte_orientation}
-                textSize={el.primary.taille_texte}
-                imgWidth={el.primary.image.dimensions.width}
-                textVerticalAlign={el.primary.texte_alignement_vertical}
-                alt={el.primary.image.alt}
-                logo={el.primary.logo}
-              />
+              <div key={uuidv4()}>
+                <OneImageOneTexte
+                  prismicDataTexte={el.primary.texte.raw}
+                  prismicDataImage={el.primary.image.gatsbyImageData}
+                  textePosition={el.primary.texte_orientation}
+                  textSize={el.primary.taille_texte}
+                  imgWidth={el.primary.image.dimensions.width}
+                  textVerticalAlign={el.primary.texte_alignement_vertical}
+                  alt={el.primary.image.alt}
+                  logo={el.primary.logo}
+                />
+              </div>
             );
           }
-          return;
+          return <React.Fragment key={uuidv4()}></React.Fragment>;
         })}
       </div>
       <Sidebar side="right" />
@@ -64,6 +68,7 @@ export const query = graphql`
             }
           }
           ... on PrismicHomepageDataBodyImageEtTexte {
+            id
             slice_type
             primary {
               logo

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import "../styles/ContactPage.css";
@@ -8,10 +8,10 @@ import { Layout, Sidebar } from "../components";
 const ContactPage = ({ data }) => {
   const contactPageData = data.prismicContact.data;
   const firstSlice = contactPageData.body[0].primary;
-  const coordinate = [
-    contactPageData.stade_capbreton.latitude,
-    contactPageData.stade_capbreton.longitude,
-  ];
+  //   const coordinate = [
+  //     contactPageData.stade_capbreton.latitude,
+  //     contactPageData.stade_capbreton.longitude,
+  //   ];
 
   return (
     <Layout bannerImage={firstSlice.image.gatsbyImageData}>

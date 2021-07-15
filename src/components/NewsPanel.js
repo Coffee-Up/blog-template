@@ -2,15 +2,16 @@ import * as React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { RichText } from "prismic-reactjs";
+import { v4 as uuidv4 } from "uuid";
 import "../styles/NewsPanel.css";
 
-const NewsPanel = ({}) => {
+const NewsPanel = () => {
   const data = useStaticQuery(graphql`
     query NewsPanelQuery {
       allPrismicArticle(limit: 4) {
         edges {
           node {
-            uid
+            id
             last_publication_date(formatString: "DD/MM/YYYY")
             tags
             data {
@@ -24,6 +25,7 @@ const NewsPanel = ({}) => {
                       raw
                     }
                     image {
+                      alt
                       gatsbyImageData(srcSetMaxWidth: 100)
                     }
                   }
@@ -48,9 +50,10 @@ const NewsPanel = ({}) => {
         const articleBannerImage = getImage(
           articleData.data.body[0].primary.image.gatsbyImageData
         );
+        const alt = articleData.data.body[0].primary.image.alt;
 
         return (
-          <div>
+          <div key={uuidv4()}>
             <Link to={`post/${articleData.uid}`}>
               <section>
                 <article className="news-panel-article-container">
@@ -61,7 +64,9 @@ const NewsPanel = ({}) => {
                     </header>
                     <div className="news-panel-text">
                       {tags.map((tag) => (
-                        <span className="news-panel-tag">{tag}</span>
+                        <span key={uuidv4()} className="news-panel-tag">
+                          {tag}
+                        </span>
                       ))}
                       <p>{lastPublicationDate}</p>
                     </div>
@@ -70,7 +75,7 @@ const NewsPanel = ({}) => {
                     className="news-panel-image"
                     draggable={false}
                     image={articleBannerImage}
-                    alt=""
+                    alt={alt}
                   />
                 </article>
               </section>
