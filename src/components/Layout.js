@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 
 import "../styles/_globalReset.css";
 import "../styles/_globalGenericTags.css";
@@ -16,22 +15,6 @@ const Layout = ({
   bannerTexte,
   indexPage,
 }) => {
-  const data = useStaticQuery(graphql`
-    query IndexPageQuery {
-      site {
-        siteMetadata {
-          urls {
-            frontEndRepositoryUrl
-            twitterProfileUrl
-            githubProfileUrl
-            firaCodeUrl
-            interUrl
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <Seo />
@@ -44,7 +27,7 @@ const Layout = ({
         imageFile={bannerImage}
       />
       <main className="g-wrapper-main">{children}</main>
-      <Footer urls={data.site.siteMetadata.urls} />
+      <Footer />
     </>
   );
 };

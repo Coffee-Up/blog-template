@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import "../styles/ContactPage.css";
 
-import { Layout, Sidebar, MapLeafletViewer } from "../components";
+import { Layout, Sidebar } from "../components";
 
 const ContactPage = ({ data }) => {
   const contactPageData = data.prismicContact.data;
@@ -19,7 +19,6 @@ const ContactPage = ({ data }) => {
       <div id="contact-page-container">
         <RichText render={firstSlice.titre.raw} />
         <RichText render={firstSlice.paragraph.raw} />
-        <MapLeafletViewer coordinate={coordinate} />
       </div>
       <Sidebar side="right" />
     </Layout>
@@ -36,7 +35,6 @@ export const query = graphql`
         }
         body {
           ... on PrismicContactDataBodyBanner {
-            id
             primary {
               titre {
                 raw

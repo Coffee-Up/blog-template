@@ -8,7 +8,7 @@ const Seo = () => {
 
   return (
     <Helmet>
-      <html lang="en-US" />
+      <html lang="fr-FR" />
       <title>{defaultTitlePage}</title>
       <meta name="description" content={defaultDescriptionPage} />
     </Helmet>
