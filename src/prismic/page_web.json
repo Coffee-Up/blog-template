@@ -1,0 +1,228 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "uid",
+        "placeholder": "Unique ID, automatiquement généré"
+      }
+    },
+    "afficher_news": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Oui",
+        "placeholder_true": "Non",
+        "default_value": true,
+        "label": "Afficher Actualité Sur Banner"
+      }
+    },
+    "banner_titre": {
+      "type": "Text",
+      "config": {
+        "label": "Titre Banner",
+        "placeholder": "Le titre du Banner (Optionnel)"
+      }
+    },
+    "banner_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Image Banner"
+      }
+    },
+    "banner_texte": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "Texte Sur le Banner",
+        "placeholder": "Le texte présent sur le banneur"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {
+          "section_texte": {
+            "type": "Slice",
+            "fieldset": "Section Texte",
+            "description": "Ajoute du Texte éditable",
+            "icon": "border_color",
+            "display": "list",
+            "non-repeat": {
+              "texte": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Texte",
+                  "placeholder": "Ecrire votre texte, ajout d'image, de liens"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "lieu": {
+            "type": "Slice",
+            "fieldset": "Lieu",
+            "description": "Un lieu avec une carte interactive ",
+            "icon": "add_location",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "lieu_coordination": {
+                "type": "GeoPoint",
+                "config": {
+                  "label": "lieu_coordination"
+                }
+              },
+              "adresse_entiere": {
+                "type": "Text",
+                "config": {
+                  "label": "Adresse entière",
+                  "placeholder": "L'adresse exacte du lieu"
+                }
+              }
+            }
+          },
+          "titre___liens_": {
+            "type": "Slice",
+            "fieldset": "Titre + Liens ",
+            "description": "Un titre de section avec des liens internet",
+            "icon": "insert_link",
+            "display": "list",
+            "non-repeat": {
+              "titre": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5",
+                  "label": "Titre",
+                  "placeholder": "Ajoutez le Titre de la Section"
+                }
+              },
+              "paragraph": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "paragraph",
+                  "placeholder": "Ajouter un paragraphe"
+                }
+              }
+            },
+            "repeat": {
+              "texte_du_lien": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading5,heading6",
+                  "label": "Texte Du lien"
+                }
+              },
+              "lien": {
+                "type": "Link",
+                "config": {
+                  "label": "Lien internet",
+                  "placeholder": "Lien avec URL",
+                  "select": null
+                }
+              }
+            }
+          },
+          "2_images_": {
+            "type": "Slice",
+            "fieldset": "2 images ",
+            "description": "2 images côte à côte.",
+            "icon": "image",
+            "non-repeat": {
+              "image_gauche": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 960,
+                    "height": 500
+                  },
+                  "thumbnails": [],
+                  "label": "Image Gauche"
+                }
+              },
+              "image_droite": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 960,
+                    "height": 500
+                  },
+                  "thumbnails": [],
+                  "label": "Image Droite"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_et_texte": {
+            "type": "Slice",
+            "fieldset": "Image Et Texte",
+            "description": "UNE Image & UN Texte",
+            "icon": "art_track",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "texte": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
+                  "label": "texte",
+                  "placeholder": "Le texte accompagnant l'image"
+                }
+              },
+              "taille_texte": {
+                "type": "Select",
+                "config": {
+                  "options": ["S", "M", "L", "XL"],
+                  "default_value": "S",
+                  "label": "Taille Texte",
+                  "placeholder": "Taille du tete"
+                }
+              },
+              "texte_orientation": {
+                "type": "Select",
+                "config": {
+                  "options": ["Droite", "Gauche", "Haut", "Bas"],
+                  "default_value": "Droite",
+                  "label": "Texte Orientation",
+                  "placeholder": "L'endroit où se situe le texte par rapport à l'image"
+                }
+              },
+              "texte_alignement_vertical": {
+                "type": "Select",
+                "config": {
+                  "options": ["Milieu", "Haut", "Bas"],
+                  "default_value": "Milieu",
+                  "label": "Texte Alignement Vertical",
+                  "placeholder": "L'alignement vertical du texte"
+                }
+              },
+              "logo": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "Photos Sans Logo CHR",
+                  "placeholder_true": "Logo CHR Sur la photos",
+                  "default_value": false,
+                  "label": "Logo"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

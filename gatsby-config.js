@@ -24,6 +24,7 @@ module.exports = {
           homepage: require("./src/prismic/homepage.json"),
           sponsors: require("./src/prismic/sponsors.json"),
           footer: require("./src/prismic/footer.json"),
+          page_web: require("./src/prismic/page_web.json"),
         },
       },
     },

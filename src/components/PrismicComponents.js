@@ -10,7 +10,6 @@ const OneImageOneTexte = ({
   textePosition,
   alt,
   textSize,
-  imgWidth,
   logo,
 }) => {
   return (
@@ -18,7 +17,7 @@ const OneImageOneTexte = ({
       className={`prismic-one-image-one-texte prismic-one-image-one-texte-${textePosition.toLowerCase()}`}
     >
       <div className={`prismic-one-image-one-texte-image-container `}>
-        <div style={{ width: imgWidth }}>
+        <div>
           <GatsbyImage
             className={` g-image-box-shadow logo-${logo}`}
             alt={alt}
