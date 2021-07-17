@@ -13,7 +13,7 @@ const PreviewPage = () => {
 
 export default withPrismicPreviewResolver(PreviewPage, [
   {
-    repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
+    repositoryName: "chr-rugby",
     linkResolver,
   },
 ]);
