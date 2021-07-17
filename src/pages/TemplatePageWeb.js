@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Layout, Sidebar, OneImageOneTexte } from "../components";
 
 const TemplatePageWeb = ({ data }) => {
-  console.log(data);
   return (
     <Layout
       displayCHR={data.prismicPageWeb.data.banner_afficher_chr}
@@ -42,7 +41,7 @@ const TemplatePageWeb = ({ data }) => {
 };
 
 export const query = graphql`
-  query queryTemplatePageWeb($uid: String!) {
+  query queryTemplatePageWeb($uid: String) {
     prismicPageWeb(uid: { eq: $uid }) {
       data {
         banner_titre
