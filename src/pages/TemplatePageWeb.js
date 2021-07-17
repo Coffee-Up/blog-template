@@ -4,12 +4,12 @@ import "../styles/IndexPage.css";
 import { v4 as uuidv4 } from "uuid";
 import { Layout, Sidebar, OneImageOneTexte } from "../components";
 
-const TemplatePageWeb = ({ data, pageContext }) => {
+const TemplatePageWeb = ({ data }) => {
   console.log(data);
   return (
     <Layout
-      indexPage
-      displayNewsPanel
+      displayCHR={data.prismicPageWeb.data.banner_afficher_chr}
+      displayNewsPanel={data.prismicPageWeb.data.banner_afficher_news}
       bannerTitle={data.prismicPageWeb.data.banner_titre}
       bannerTexte={data.prismicPageWeb.data.banner_texte.raw}
       bannerImage={data.prismicPageWeb.data.banner_image.gatsbyImageData}
@@ -44,9 +44,10 @@ const TemplatePageWeb = ({ data, pageContext }) => {
 export const query = graphql`
   query queryTemplatePageWeb($uid: String!) {
     prismicPageWeb(uid: { eq: $uid }) {
-      uid
       data {
         banner_titre
+        banner_afficher_chr
+        banner_afficher_news
         banner_image {
           gatsbyImageData
           alt
@@ -56,7 +57,6 @@ export const query = graphql`
         }
         body {
           ... on PrismicPageWebDataBodyLieu {
-            id
             items {
               adresse_entiere
               lieu_coordination {
@@ -74,7 +74,6 @@ export const query = graphql`
             slice_type
           }
           ... on PrismicPageWebDataBodyImageEtTexte {
-            id
             primary {
               taille_texte
               logo
@@ -91,7 +90,6 @@ export const query = graphql`
             slice_type
           }
           ... on PrismicPageWebDataBody2Images {
-            id
             slice_type
             primary {
               image_droite {
@@ -105,7 +103,7 @@ export const query = graphql`
             }
           }
           ... on PrismicPageWebDataBodyTitreLiens {
-            id
+            slice_type
             primary {
               paragraph {
                 raw
@@ -119,7 +117,6 @@ export const query = graphql`
                 raw
               }
             }
-            slice_type
           }
         }
       }

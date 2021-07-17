@@ -9,6 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allPrismicPageWeb {
         edges {
           node {
+            url
             uid
           }
         }
@@ -19,8 +20,11 @@ exports.createPages = async ({ graphql, actions }) => {
   prismicHomepage = result.data.allPrismicPageWeb.edges.filter(
     ({ node }) => node.uid === "homepage"
   );
-
   result.data.allPrismicPageWeb.edges.forEach(({ node }) => {
+    if (!node.uid || node.uid === "homepage") return;
+    console.log("UID: [", node.uid);
+    console.log(" -> ", node.url);
+    console.log("]");
     createPage({
       path: `/${node.uid}`,
       component: path.resolve(`./src/pages/TemplatePageWeb.js`),
@@ -37,7 +41,7 @@ exports.onCreatePage = ({ page, actions }) => {
   if (page.path === "/") {
     deletePage(page);
     createPage({
-      ...page,
+      path: "/",
       component: path.resolve(`./src/pages/TemplatePageWeb.js`),
       context: {
         uid: "homepage",

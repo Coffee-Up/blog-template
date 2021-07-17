@@ -7,11 +7,20 @@
         "placeholder": "Unique ID, automatiquement généré"
       }
     },
-    "afficher_news": {
+    "banner_afficher_chr": {
       "type": "Boolean",
       "config": {
-        "placeholder_false": "Oui",
-        "placeholder_true": "Non",
+        "placeholder_false": "Non",
+        "placeholder_true": "Oui",
+        "default_value": true,
+        "label": "Afficher Capbreton Hossegor Rugby Sur Banner"
+      }
+    },
+    "banner_afficher_news": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Non",
+        "placeholder_true": "Oui",
         "default_value": true,
         "label": "Afficher Actualité Sur Banner"
       }

@@ -13,7 +13,7 @@ const Layout = ({
   bannerImage,
   displayNewsPanel,
   bannerTexte,
-  indexPage,
+  displayCHR,
   bannerAlt,
 }) => {
   return (
@@ -22,7 +22,7 @@ const Layout = ({
       <MainMenu />
       <Banner
         alt={bannerAlt}
-        indexPage={indexPage}
+        displayCHR={displayCHR}
         displayNewsPanel={displayNewsPanel}
         title={bannerTitle}
         texte={bannerTexte}

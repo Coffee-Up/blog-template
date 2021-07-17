@@ -10,7 +10,7 @@ const Banner = ({
   displayNewsPanel,
   title,
   texte,
-  indexPage,
+  displayCHR,
   alt,
 }) => {
   const imageFileGatsby = getImage(imageFile);
@@ -20,7 +20,7 @@ const Banner = ({
       <div id="banner-container">
         <div id="banner-front-container">
           <div>
-            {indexPage && (
+            {displayCHR && (
               <h1>
                 <span id="index-page-c">Capbreton</span>
                 <span id="index-page-h">Hossegor</span>
