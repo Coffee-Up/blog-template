@@ -2,6 +2,9 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import "../styles/IndexPage.css";
 import { v4 as uuidv4 } from "uuid";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
+
+import { linkResolver } from "../linkResolver";
 import { Layout, Sidebar, OneImageOneTexte } from "../components";
 
 const TemplatePageWeb = ({ data }) => {
@@ -43,6 +46,7 @@ const TemplatePageWeb = ({ data }) => {
 export const query = graphql`
   query queryTemplatePageWeb($uid: String) {
     prismicPageWeb(uid: { eq: $uid }) {
+      _previewable
       data {
         banner_titre
         banner_afficher_chr
@@ -123,4 +127,9 @@ export const query = graphql`
   }
 `;
 
-export default TemplatePageWeb;
+export default withPrismicPreview(TemplatePageWeb, [
+  {
+    repositoryName: "chr-rugby",
+    linkResolver,
+  },
+]);
