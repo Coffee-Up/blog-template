@@ -27,7 +27,7 @@ const Banner = ({
                 <span id="index-page-r">Rugby</span>
               </h1>
             )}
-            {title && <RichText render={title} />}
+            {title && <h1>{title}</h1>}
             {texte && <RichText render={texte} />}
           </div>
           {displayNewsPanel && <NewsPanel />}
