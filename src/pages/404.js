@@ -11,7 +11,7 @@ import { linkResolver } from "../linkResolver";
 import TemplatePageWeb from "./TemplatePageWeb";
 
 const ErrorPage = ({ data }) => {
-  const page = data.prismicPage;
+  const page = data.prismicPageWeb;
 
   return (
     <div>
