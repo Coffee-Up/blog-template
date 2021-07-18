@@ -1,5 +1,44 @@
-import React from "react";
+import * as React from "react";
+import { graphql } from "gatsby";
+import { RichText } from "prismic-reactjs";
+import {
+  withPrismicUnpublishedPreview,
+  componentResolverFromMap,
+} from "gatsby-plugin-prismic-previews";
 
-const ErrorPage = () => <div>HELLO</div>;
+import { linkResolver } from "../linkResolver";
 
-export default ErrorPage;
+import TemplatePageWeb from "./TemplatePageWeb";
+
+const ErrorPage = ({ data }) => {
+  const page = data.prismicPage;
+
+  return (
+    <div>
+      <RichText render={page.data.banner_texte.raw} />
+    </div>
+  );
+};
+
+export default withPrismicUnpublishedPreview(TemplatePageWeb, [
+  {
+    repositoryName: "chr-rugby",
+    linkResolver,
+    componentResolver: componentResolverFromMap({
+      page: TemplatePageWeb,
+    }),
+  },
+]);
+
+export const query = graphql`
+  query NotFoundPage {
+    prismicPageWeb(id: { eq: "404" }) {
+      _previewable
+      data {
+        banner_texte {
+          raw
+        }
+      }
+    }
+  }
+`;

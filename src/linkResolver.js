@@ -6,10 +6,6 @@ export const linkResolver = (doc) => {
     case "page":
       return `/${doc.uid}`;
 
-    // URL for a Blog Post document
-    case "blog_post":
-      return `/blog/${doc.uid}`;
-
     // Fallback for all other documents
     default:
       return "/";
