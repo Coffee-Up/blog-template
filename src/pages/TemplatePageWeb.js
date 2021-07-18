@@ -43,6 +43,13 @@ const TemplatePageWeb = ({ data }) => {
   );
 };
 
+export default withPrismicPreview(TemplatePageWeb, [
+  {
+    repositoryName: "chr-rugby",
+    linkResolver,
+  },
+]);
+
 export const query = graphql`
   query queryTemplatePageWeb($uid: String) {
     prismicPageWeb(uid: { eq: $uid }) {
@@ -126,10 +133,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default withPrismicPreview(TemplatePageWeb, [
-  {
-    repositoryName: "chr-rugby",
-    linkResolver,
-  },
-]);

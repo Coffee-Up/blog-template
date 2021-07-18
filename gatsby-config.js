@@ -28,13 +28,13 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-prismic-previews",
-    //   options: {
-    //     repositoryName: "chr-rugby",
-    //     toolbar: "new",
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-prismic-previews",
+      options: {
+        repositoryName: "chr-rugby",
+        toolbar: "new",
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
