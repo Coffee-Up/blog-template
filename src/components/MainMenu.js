@@ -159,7 +159,7 @@ const MainMenu = () => {
                                       {subLinks.items.map((sublink) => (
                                         <Link
                                           key={uuidv4()}
-                                          to={`/${sublink.sous_lien_url}`}
+                                          to={`/${sublink.sous_lien_url.uid}`}
                                         >
                                           {sublink.sous_lien_texte}
                                         </Link>
