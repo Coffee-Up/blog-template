@@ -22,6 +22,7 @@ module.exports = {
           page_accueil: require("./src/prismic/page_accueil.json"),
           page_acceuil: require("./src/prismic/page_acceuil.json"),
           homepage: require("./src/prismic/homepage.json"),
+          menu_principal: require("./src/prismic/menu_principal.json"),
           sponsors: require("./src/prismic/sponsors.json"),
           footer: require("./src/prismic/footer.json"),
           page_web: require("./src/prismic/page_web.json"),

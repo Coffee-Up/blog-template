@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import "../styles/_globalReset.css";
 import "../styles/_globalGenericTags.css";
 import "../styles/_globalAnimations.css";
