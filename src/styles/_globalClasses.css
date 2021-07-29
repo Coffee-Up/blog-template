@@ -98,16 +98,6 @@
 }
 /* 
   ---------------------------------------------------------------------------*/
-/* COLORS */
-.g-color-grey {
-  color: grey;
-}
-
-.g-color-white {
-  color: white;
-}
-/* 
-  ---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (min-width: 900px) {
   .g-hover-animation-item:hover {

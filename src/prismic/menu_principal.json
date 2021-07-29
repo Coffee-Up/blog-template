@@ -42,6 +42,12 @@
         "label": "Couleur Border Souris Sur Lien"
       }
     },
+    "couleur_liens_sous_menu_hover": {
+      "type": "Color",
+      "config": {
+        "label": "couleur_liens_sous_menu_hover"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",

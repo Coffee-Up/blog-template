@@ -10,17 +10,14 @@
   background-color: var(--color-main-menu);
   border-bottom: #4d6f96 solid 1px;
 }
-
 header > nav {
   position: relative;
   height: 100%;
   width: 80%;
 }
-
 header > nav > div {
   height: 100%;
 }
-
 header > nav > div > ul {
   display: flex;
   justify-content: flex-start;
@@ -38,25 +35,21 @@ header > nav > div > ul > li > a {
   font-size: var(--font-size-links);
   font-weight: var(--font-weight-links);
 }
-
 header > nav > div > ul > li > a:hover {
   background-color: var(--color-hover-links-menu-section);
-  border-bottom: var(--color-secondary) 4px solid;
+  animation: unset;
+  /* border-bottom: var(--color-secondary) 4px solid; */
 }
-
 header > nav > div > ul > li > a > h2 {
   margin: 0;
   text-align: center;
-  color: white;
   font-size: 0.7rem;
   font-weight: 600;
 }
-
 #main-menu-logo {
   width: 65px;
   height: 65px;
 }
-
 #main-menu-logo-facebook {
   margin-left: 3em;
   width: 30px;
@@ -72,19 +65,16 @@ header > nav > div > ul > div > li > a {
 header > nav > div > ul > div > li > a:hover {
   animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
 }
-
 header > nav > div > ul > div > li > a > h3 {
   font-size: var(--font-size-links);
   font-weight: var(--font-weight-links);
 }
-
 /*---------------------------------------------------------------------------*/
 /*MENU SECTION WITH SUBLINKS */
 /* Container */
 header > nav > div > ul > li {
   height: 100%;
 }
-
 header > nav > div > ul > li > div {
   position: relative;
   display: flex;
@@ -92,12 +82,11 @@ header > nav > div > ul > li > div {
   height: 100%;
   padding: 0 0.5em;
 }
-
 header > nav > div > ul > li > div:hover {
   cursor: pointer;
   animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
   background-color: var(--color-hover-links-menu-section);
-  border-bottom: var(--color-secondary) 4px solid;
+  /* border-bottom: var(--color-secondary) 4px solid; */
 }
 /* Main Link  */
 header > nav > div > ul > li > div > a {
@@ -105,11 +94,9 @@ header > nav > div > ul > li > div > a {
   align-items: center;
   height: 100%;
 }
-
 header > nav > div > ul > li > div > a:hover {
   animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
 }
-
 header > nav > div > ul > li > div > a > h3 {
   font-weight: var(--font-weight-links);
   font-size: var(--font-size-links);
@@ -119,11 +106,9 @@ header > nav > div > ul > li > div > a > h3 {
 header > nav > div > ul > li > div > a > svg {
   width: 30px;
 }
-
 header > nav > div > ul > li > div > a > svg > path {
   fill: #999;
 }
-
 header > nav > div > ul > li > div > ul {
   position: absolute;
   background-color: white;
@@ -132,15 +117,12 @@ header > nav > div > ul > li > div > ul {
   top: 4.6em;
   left: 0;
   padding: 1em 1em;
-  color: black;
-  border-bottom: var(--color-secondary) 4px solid;
+  /* border-bottom: var(--color-secondary) 4px solid; */
 }
-
 header > nav > div > ul > li > div > ul > div > li {
   width: max-content;
   padding: 0.5em 0.8em;
 }
-
 header > nav > div > ul > li > div > ul > div {
   display: flex;
 }
@@ -150,19 +132,15 @@ header > nav > div > ul > li > div > ul > div {
   display: flex;
   flex-direction: column;
 }
-
 .main-menu-subsection-category-container > p {
   font-size: 0.7em;
-  color: #999;
   font-weight: 670;
 }
-
 .main-menu-subsection-category-container > a {
   padding: 0.8em 0;
   font-family: "Inter Variable";
   font-weight: 500;
   font-size: 0.7em;
-  color: black;
 }
 /*---------------------------------------------------------------------------*/
 /* FACEBOOK */

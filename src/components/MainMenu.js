@@ -55,9 +55,7 @@ const MainMenu = () => {
   `);
 
   let page = data.prismicMenuPrincipal.data;
-
   console.log(page);
-
   const onMouseEnterLink = ($event) => {
     if ($event.target.nodeName === "svg") return;
     updateCurrentLabelMenu($event.target.innerText);
@@ -86,7 +84,7 @@ const MainMenu = () => {
           >
             <ul>
               <li>
-                <Link to="/">
+                <Link to="/" style={{ color: page.couleur_liens_principaux }}>
                   <IconCHR id="main-menu-logo" clickable />
                   <h2>CHR</h2>
                 </Link>
@@ -106,16 +104,17 @@ const MainMenu = () => {
                         <Link
                           onMouseEnter={($event) => onMouseEnterLink($event)}
                           to={`/${lienTwoLevels.lien_url.uid}`}
-                          className={
-                            mouseOnMenu &&
-                            currentLabelMenu === lienTwoLevels.lien_url.uid
-                              ? "g-color-white"
-                              : mouseOnMenu
-                              ? "g-color-grey"
-                              : !mouseOnMenu
-                              ? "g-color-white"
-                              : "g-color-grey"
-                          }
+                          style={{
+                            color:
+                              mouseOnMenu &&
+                              currentLabelMenu === lienTwoLevels.lien_url.uid
+                                ? `${page.couleur_liens_principaux}`
+                                : mouseOnMenu
+                                ? "grey"
+                                : !mouseOnMenu
+                                ? `${page.couleur_liens_principaux}`
+                                : "grey",
+                          }}
                         >
                           <h3>{lienTwoLevels.lien_texte}</h3>
                         </Link>
@@ -153,11 +152,20 @@ const MainMenu = () => {
                                 return (
                                   <li key={uuidv4()}>
                                     <div className="main-menu-subsection-category-container">
-                                      <p>
+                                      <p
+                                        style={{
+                                          color:
+                                            page.couleur_sections_sous_menus,
+                                        }}
+                                      >
                                         {subLinks.primary.sous_lien_categorie}
                                       </p>
                                       {subLinks.items.map((sublink) => (
                                         <Link
+                                          style={{
+                                            color:
+                                              page.couleur_liens_sous_menus,
+                                          }}
                                           key={uuidv4()}
                                           to={`/${sublink.sous_lien_url.uid}`}
                                         >
@@ -186,16 +194,17 @@ const MainMenu = () => {
                         onMouseEnter={($event) => onMouseEnterLink($event)}
                       >
                         <Link
-                          className={
-                            mouseOnMenu &&
-                            currentLabelMenu === linkOneLevelOnly.lien_texte
-                              ? "g-color-white"
-                              : mouseOnMenu
-                              ? "g-color-grey"
-                              : !mouseOnMenu
-                              ? "g-color-white"
-                              : "g-color-grey"
-                          }
+                          style={{
+                            color:
+                              mouseOnMenu &&
+                              currentLabelMenu === linkOneLevelOnly.lien_texte
+                                ? `${page.couleur_liens_principaux}`
+                                : mouseOnMenu
+                                ? "grey"
+                                : !mouseOnMenu
+                                ? `${page.couleur_liens_principaux}`
+                                : "grey",
+                          }}
                           to={`/${linkOneLevelOnly.lien_url.uid}`}
                         >
                           <h3>{linkOneLevelOnly.lien_texte}</h3>
