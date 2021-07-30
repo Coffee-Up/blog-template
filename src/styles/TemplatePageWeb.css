@@ -1,14 +1,11 @@
-#index-page-container {
+.template-page-web-container {
   padding: 3rem 4rem;
 }
-/*---------------------------------------------------------------------------*/
-/* IMAGE + TEXTE RIGHT */
-#index-page-image-texte-right {
-}
+
 /*---------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 @media screen and (max-width: 600px) {
-  #index-page-container {
+  .template-page-web-container {
     padding: 1rem 1em;
   }
 }

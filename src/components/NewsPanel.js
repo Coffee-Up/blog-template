@@ -11,50 +11,42 @@ const NewsPanel = () => {
       allPrismicArticle(limit: 4) {
         edges {
           node {
-            id
-            last_publication_date(formatString: "DD/MM/YYYY")
-            tags
             data {
-              body {
-                ... on PrismicArticleDataBodyBanner {
-                  primary {
-                    titre {
-                      raw
-                    }
-                    resume {
-                      raw
-                    }
-                    image {
-                      alt
-                      gatsbyImageData(srcSetMaxWidth: 100)
-                    }
-                  }
-                }
+              date_evenement(formatString: "DD  MMMM, YYYY", locale: "fr")
+              resume {
+                raw
+              }
+              titre_principal_article
+              image_principale {
+                alt
+                gatsbyImageData(width: 500)
               }
             }
+            tags
           }
         }
       }
     }
   `);
   const articlesData = data.allPrismicArticle.edges;
+  console.log(articlesData);
 
   return (
     <div id="news-container">
-      <h2>News</h2>
-      {articlesData.map(({ node: articleData }) => {
-        const titre = articleData.data.body[0].primary.titre;
-        const resume = articleData.data.body[0].primary.resume;
-        const tags = articleData.tags;
-        const lastPublicationDate = articleData.last_publication_date;
+      <h2>Actualité</h2>
+      {articlesData.map(({ node: article }) => {
+        const titre = article.data.titre_principal_article;
+        const resume = article.data.resume;
+        const tags = article.tags;
+        const dateEvent = article.data.date_evenement;
         const articleBannerImage = getImage(
-          articleData.data.body[0].primary.image.gatsbyImageData
+          article.data.image_principale.gatsbyImageData
         );
-        const alt = articleData.data.body[0].primary.image.alt;
+        const alt = article.data.image_principale.alt;
 
         return (
           <div key={uuidv4()}>
-            <Link to={`post/${articleData.uid}`}>
+            <Link to={`post/${article.uid}`}>
               <section>
                 <article className="news-panel-article-container">
                   <div>
@@ -68,7 +60,7 @@ const NewsPanel = () => {
                           {tag}
                         </span>
                       ))}
-                      <p>{lastPublicationDate}</p>
+                      <p>{dateEvent}</p>
                     </div>
                   </div>
                   <GatsbyImage

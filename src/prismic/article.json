@@ -7,41 +7,106 @@
         "placeholder": "Ajouter un nom unique (pour url)"
       }
     },
+    "titre_principal_article": {
+      "type": "Text",
+      "config": {
+        "label": "Titre Principal Article",
+        "placeholder": "Le Texte du Titre Principal De l'Article"
+      }
+    },
+    "date_evenement": {
+      "type": "Date",
+      "config": {
+        "label": "Date Evenement",
+        "placeholder": "Selectionnez La Date de l'évenement"
+      }
+    },
+    "image_principale": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Image Principale"
+      }
+    },
+    "resume": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
+        "label": "Résumé",
+        "placeholder": "Ajoutez un court résumé de l'article"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
-          "banner": {
+          "url_video_youtube": {
             "type": "Slice",
-            "fieldset": "Banner",
-            "description": "Le contenu du Banner de la page",
-            "icon": "aspect_ratio",
+            "fieldset": "URL Vidéo Youtube",
+            "description": "L'URL d'une Vidéo Youtube",
+            "icon": "movie",
+            "display": "list",
             "non-repeat": {
-              "titre": {
+              "url_video_youtube": {
+                "type": "Embed",
+                "config": {
+                  "label": "Url Vidéo Youtube",
+                  "placeholder": "L'URL de la vidéo Youtube"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "paragraphe": {
+            "type": "Slice",
+            "fieldset": "Paragraphe",
+            "description": "Un Paragraphe avec du Texte Riche",
+            "icon": "format_color_text",
+            "display": "list",
+            "non-repeat": {
+              "paragraphe": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading1",
-                  "label": "Titre",
-                  "placeholder": "Le Titre du Banner"
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
+                  "allowTargetBlank": true,
+                  "label": "Paragraphe",
+                  "placeholder": "Le texte Du Paragraphe"
                 }
-              },
-              "resume": {
-                "type": "StructuredText",
+              }
+            },
+            "repeat": {}
+          },
+          "titre_paragaphe": {
+            "type": "Slice",
+            "fieldset": "Titre Paragaphe",
+            "description": "Le titre d'un Paragraphe",
+            "icon": "title",
+            "display": "list",
+            "non-repeat": {
+              "titre_paragraphe": {
+                "type": "Text",
                 "config": {
-                  "multi": "paragraph",
-                  "label": "resume",
-                  "placeholder": "Un bref résumé de l'article"
+                  "label": "Titre Paragraphe",
+                  "placeholder": "Titre d'un Paragraphe"
                 }
-              },
+              }
+            },
+            "repeat": {}
+          },
+          "une_image_": {
+            "type": "Slice",
+            "fieldset": "Une Image",
+            "description": "Une Image prenant la largeur de la page",
+            "icon": "image",
+            "display": "list",
+            "non-repeat": {
               "image": {
                 "type": "Image",
                 "config": {
-                  "constraint": {
-                    "width": 1920,
-                    "height": 1080
-                  },
+                  "constraint": {},
                   "thumbnails": [],
                   "label": "Image"
                 }
@@ -49,69 +114,27 @@
             },
             "repeat": {}
           },
-          "text": {
+          "deux_image": {
             "type": "Slice",
-            "fieldset": "Section Texte",
-            "description": "Ajoute du Texte éditable",
-            "icon": "border_color",
+            "fieldset": "Deux Image",
+            "description": "Deux Image Côte à Côte",
+            "icon": "view_carousel",
+            "display": "grid",
             "non-repeat": {
-              "texte": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph,preformatted,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                  "label": "Texte",
-                  "placeholder": "Ecrire votre texte, ajout d'image, de liens"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "2_images_": {
-            "type": "Slice",
-            "fieldset": "2 images ",
-            "description": "2 images côte à côte.",
-            "icon": "image",
-            "non-repeat": {
-              "image_gauche": {
+              "image_1": {
                 "type": "Image",
                 "config": {
-                  "constraint": {
-                    "width": 960,
-                    "height": 500
-                  },
+                  "constraint": {},
                   "thumbnails": [],
-                  "label": "Image Gauche"
+                  "label": "Image 1"
                 }
               },
-              "image_droite": {
+              "image_2": {
                 "type": "Image",
                 "config": {
-                  "constraint": {
-                    "width": 960,
-                    "height": 500
-                  },
+                  "constraint": {},
                   "thumbnails": [],
-                  "label": "Image Droite"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "1_images": {
-            "type": "Slice",
-            "fieldset": "1 images",
-            "description": "1 image prenant la largeur totale",
-            "icon": "image",
-            "non-repeat": {
-              "single_image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 1920,
-                    "height": 1080
-                  },
-                  "thumbnails": [],
-                  "label": "Single Image"
+                  "label": "Image 2"
                 }
               }
             },

@@ -4,13 +4,11 @@ import { v4 as uuidv4 } from "uuid";
 import "../styles/MainMenu.css";
 
 import { IconCHR, IconArrow, IconFacebook } from "../assets/icons";
-import { retrieveUniqueKeys } from "../utils/arrayHelper";
 
 const MainMenu = () => {
   const [currentLabelMenu, updateCurrentLabelMenu] = useState("");
   const [mouseOnMenu, updateMouseOnMenu] = useState(false);
-  const [links, updateLinks] = useState([]);
-
+  //TODO: (Perf) Better Perf please, it's awfull!
   const data = useStaticQuery(graphql`
     query LayoutPage {
       prismicMenuPrincipal {
@@ -55,7 +53,7 @@ const MainMenu = () => {
   `);
 
   let page = data.prismicMenuPrincipal.data;
-  console.log(page);
+
   const onMouseEnterLink = ($event) => {
     if ($event.target.nodeName === "svg") return;
     updateCurrentLabelMenu($event.target.innerText);

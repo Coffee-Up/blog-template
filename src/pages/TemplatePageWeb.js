@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import "../styles/IndexPage.css";
+import "../styles/TemplatePageWeb.css";
 import { v4 as uuidv4 } from "uuid";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
@@ -18,7 +18,7 @@ const TemplatePageWeb = ({ data }) => {
       bannerAlt={data.prismicPageWeb.data.banner_image.alt}
     >
       <Sidebar side="left" />
-      <div id="index-page-container">
+      <div className="template-page-web-container">
         {data.prismicPageWeb.data.body.map((el) => {
           if (el.slice_type === "image_et_texte") {
             return (
