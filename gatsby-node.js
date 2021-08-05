@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
   );
 
   result.data.allPrismicPageWeb.edges.forEach(({ node }) => {
-    if (!node.uid || node.uid === "homepage" || node.uid === "/404") return;
+    if (!node.uid || node.uid === "homepage" || node.uid === "404") return;
     createPage({
       path: `/${node.uid}`,
       component: path.resolve(`./src/pages/TemplatePageWeb.js`),
