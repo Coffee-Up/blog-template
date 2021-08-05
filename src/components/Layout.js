@@ -14,19 +14,23 @@ const Layout = ({
   bannerTexte,
   displayCHR,
   bannerAlt,
+  displayBanner,
 }) => {
   return (
     <>
       <Seo />
       <MainMenu />
-      <Banner
-        alt={bannerAlt}
-        displayCHR={displayCHR}
-        displayNewsPanel={displayNewsPanel}
-        title={bannerTitle}
-        texte={bannerTexte}
-        imageFile={bannerImage}
-      />
+      {displayBanner && (
+        <Banner
+          displayBanner={displayBanner}
+          alt={bannerAlt}
+          displayCHR={displayCHR}
+          displayNewsPanel={displayNewsPanel}
+          title={bannerTitle}
+          texte={bannerTexte}
+          imageFile={bannerImage}
+        />
+      )}
       <main className="g-wrapper-main">{children}</main>
       <Footer />
     </>

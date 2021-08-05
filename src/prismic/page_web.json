@@ -7,6 +7,15 @@
         "placeholder": "Unique ID, automatiquement généré"
       }
     },
+    "afficher_banner": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Non",
+        "placeholder_true": "Oui",
+        "default_value": true,
+        "label": "Afficher Banner"
+      }
+    },
     "banner_afficher_chr": {
       "type": "Boolean",
       "config": {

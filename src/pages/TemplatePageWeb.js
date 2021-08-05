@@ -10,6 +10,7 @@ import { Layout, Sidebar, OneImageOneTexte, MapViewer } from "../components";
 const TemplatePageWeb = ({ data }) => {
   return (
     <Layout
+      displayBanner={data.prismicPageWeb.data.afficher_banner}
       displayCHR={data.prismicPageWeb.data.banner_afficher_chr}
       displayNewsPanel={data.prismicPageWeb.data.banner_afficher_news}
       bannerTitle={data.prismicPageWeb.data.banner_titre}
@@ -70,6 +71,7 @@ export const query = graphql`
     prismicPageWeb(uid: { eq: $uid }) {
       _previewable
       data {
+        afficher_banner
         banner_titre
         banner_afficher_chr
         banner_afficher_news
