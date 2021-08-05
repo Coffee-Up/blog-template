@@ -9,6 +9,7 @@ import Sidebar from "./Sidebar";
 import Tag from "./Tag";
 import { ActionButton } from "./Buttons";
 import { OneImageOneTexte } from "./PrismicComponents";
+import MapViewer from "./MapViewer";
 
 export {
   Layout,
@@ -24,4 +25,5 @@ export {
   //Prismic Components
   OneImageOneTexte,
   Tag,
+  MapViewer,
 };

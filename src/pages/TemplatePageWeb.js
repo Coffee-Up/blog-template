@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
 import { linkResolver } from "../linkResolver";
-import { Layout, Sidebar, OneImageOneTexte } from "../components";
+import { Layout, Sidebar, OneImageOneTexte, MapViewer } from "../components";
 
 const TemplatePageWeb = ({ data }) => {
   return (
@@ -34,8 +34,23 @@ const TemplatePageWeb = ({ data }) => {
                 />
               </div>
             );
+          } else if (el.slice_type === "carte_interactive") {
+            // TODO: Readability => It would be better to have everything in the
+            // component for better isolability (css etc)
+            return (
+              <div
+                className="template-page-carte-interactive-container"
+                key={uuidv4()}
+                style={{
+                  width: el.primary.largeur_carte_interactive_pixels,
+                  height: el.primary.hauteur_carte_interactive_pixels,
+                }}
+              >
+                <h1>{el.primary.titre_carte_interactive}</h1>
+                <MapViewer mapsData={el.items} />
+              </div>
+            );
           }
-          return <React.Fragment key={uuidv4()}></React.Fragment>;
         })}
       </div>
       <Sidebar side="right" />
@@ -66,15 +81,6 @@ export const query = graphql`
           raw
         }
         body {
-          ... on PrismicPageWebDataBodyLieu {
-            items {
-              adresse_entiere
-              lieu_coordination {
-                latitude
-                longitude
-              }
-            }
-          }
           ... on PrismicPageWebDataBodySectionTexte {
             primary {
               texte {
@@ -109,6 +115,24 @@ export const query = graphql`
               image_gauche {
                 gatsbyImageData
                 alt
+              }
+            }
+          }
+          ... on PrismicPageWebDataBodyCarteInteractive {
+            slice_type
+            primary {
+              titre_carte_interactive
+              deux_par_deux
+              hauteur_carte_interactive_pixels
+              largeur_carte_interactive_pixels
+            }
+            items {
+              coordonnees {
+                latitude
+                longitude
+              }
+              nom_lieu {
+                raw
               }
             }
           }

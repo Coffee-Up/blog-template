@@ -86,7 +86,7 @@ header > nav > div > ul > li > div:hover {
   cursor: pointer;
   animation: mouseOnAnchorTagMenu 0.2s ease-out forwards;
   background-color: var(--color-hover-links-menu-section);
-  /* border-bottom: var(--color-secondary) 4px solid; */
+  border-bottom: var(--color-secondary) 4px solid;
 }
 /* Main Link  */
 header > nav > div > ul > li > div > a {

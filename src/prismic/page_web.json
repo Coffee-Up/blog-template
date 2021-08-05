@@ -52,7 +52,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "section_texte": {
             "type": "Slice",
@@ -229,6 +229,61 @@
               }
             },
             "repeat": {}
+          },
+          "carte_interactive": {
+            "type": "Slice",
+            "fieldset": "Carte Intéractive",
+            "description": "Une Carte Intéractive d'un Lieu",
+            "icon": "map",
+            "display": "list",
+            "non-repeat": {
+              "deux_par_deux": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "Cartes L'une Sous L'autre",
+                  "placeholder_true": "Cartes Côte à Côte",
+                  "default_value": true,
+                  "label": "Deux Par Deux"
+                }
+              },
+              "titre_carte_interactive": {
+                "type": "Text",
+                "config": {
+                  "label": "Titre Carte Intéractive",
+                  "placeholder": "Le titre de la carte Intéractive"
+                }
+              },
+              "largeur_carte_interactive_pixels": {
+                "type": "Number",
+                "config": {
+                  "label": "Largeur Carte Interactive Pixels",
+                  "placeholder": "Exemple : 800, 100%, 200"
+                }
+              },
+              "hauteur_carte_interactive_pixels": {
+                "type": "Number",
+                "config": {
+                  "label": "Hauteur Carte Interactive Pixels",
+                  "placeholder": "Exemple : 800, 100%, 200"
+                }
+              }
+            },
+            "repeat": {
+              "nom_lieu": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+                  "label": "Nom Lieu",
+                  "placeholder": "Ecrivez Le nom du Lieu"
+                }
+              },
+              "coordonnees": {
+                "type": "GeoPoint",
+                "config": {
+                  "label": "Coordonnées"
+                }
+              }
+            }
           }
         }
       }

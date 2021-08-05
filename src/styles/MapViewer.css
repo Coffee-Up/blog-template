@@ -1,0 +1,12 @@
+#map-viewer-leaflet {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+/*---------------------------------------------------------------------------*/
+/* Marker Icons*/
+/* Leaflet put the marker in a img tag and has already width & height set with high selector levels */
+.leaflet-pane .leaflet-marker-pane > img {
+  width: 70px !important;
+  height: 70px !important;
+}
