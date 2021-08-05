@@ -1,6 +1,7 @@
 const path = require(`path`);
 // Ugly but I need It outside of createPages
-let prismicHomepage = "";
+let prismicHomepage;
+let prismic404;
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -25,6 +26,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   prismicHomepage = result.data.allPrismicPageWeb.edges.filter(
     ({ node }) => node.uid === "homepage"
+  );
+
+  prismic404 = result.data.allPrismicPageWeb.edges.filter(
+    ({ node }) => node.uid === "404"
   );
 
   result.data.allPrismicPageWeb.edges.forEach(({ node }) => {
@@ -59,6 +64,17 @@ exports.onCreatePage = ({ page, actions }) => {
       component: path.resolve(`./src/pages/TemplatePageWeb.js`),
       context: {
         uid: "homepage",
+        homepageData: prismicHomepage,
+      },
+    });
+  }
+  if (page.path === "/404") {
+    deletePage(page);
+    createPage({
+      path: "/404",
+      component: path.resolve(`./src/pages/TemplatePageWeb.js`),
+      context: {
+        uid: "404",
         homepageData: prismicHomepage,
       },
     });
