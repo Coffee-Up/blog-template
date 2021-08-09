@@ -31,6 +31,7 @@ const TemplatePageWeb = ({ data }) => {
                   textSize={el.primary.taille_texte}
                   textVerticalAlign={el.primary.texte_alignement_vertical}
                   alt={el.primary.image.alt}
+                  // TODO: Readability change variable by displayLogo
                   logo={el.primary.logo}
                 />
               </div>

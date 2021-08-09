@@ -29,7 +29,6 @@ const NewsPanel = () => {
     }
   `);
   const articlesData = data.allPrismicArticle.edges;
-  console.log(articlesData);
 
   return (
     <div id="news-container">
@@ -51,7 +50,7 @@ const NewsPanel = () => {
                 <article className="news-panel-article-container">
                   <div>
                     <header>
-                      <RichText render={titre.raw} />
+                      <h1>{titre}</h1>
                       <RichText render={resume.raw} />
                     </header>
                     <div className="news-panel-text">
