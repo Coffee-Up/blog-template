@@ -1,12 +1,18 @@
 const path = require(`path`);
-// Ugly but I need It outside of createPages
-let prismicHomepage;
-let prismic404;
+
+let prismicTheme;
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query {
+      allPrismicArticle {
+       edges {
+        node {
+         uid
+        }
+       }
+      }
       allPrismicPageWeb {
         edges {
           node {
@@ -14,70 +20,61 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allPrismicArticle {
-        edges {
-          node {
-            uid
-          }
-        }
+      prismicDarkTheme {
+       data {
+        main_color
+        secondary_color
+        background_color
+       }
+      }
+      prismicLightTheme {
+       data {
+        main_color
+        secondary_color
+        background_color
+       }
       }
     }
   `);
 
-  prismicHomepage = result.data.allPrismicPageWeb.edges.filter(
-    ({ node }) => node.uid === "homepage"
-  );
+ prismicThemes  = {
+  dark: result.data.prismicDarkTheme.data,
+  light: result.data.prismicLightTheme.data
+ }
 
-  prismic404 = result.data.allPrismicPageWeb.edges.filter(
-    ({ node }) => node.uid === "404"
-  );
+  result.data.allPrismicArticle.edges.forEach(({ node }) => {
+   createPage({
+    path: `/post/${node.uid}`,
+    component: path.resolve(`./src/pages/templates/ArticleTemplate.js`),
+    context: {
+     uid: node.uid,
+     themes: prismicThemes
+    }
+   });
+  });
 
   result.data.allPrismicPageWeb.edges.forEach(({ node }) => {
     if (!node.uid || node.uid === "homepage" || node.uid === "404") return;
     createPage({
       path: `/${node.uid}`,
-      component: path.resolve(`./src/pages/TemplatePageWeb.js`),
+      component: path.resolve(`./src/pages/templates/PageWebTemplate.js`),
       context: {
-        uid: node.uid,
-      },
-    });
-  });
-
-  result.data.allPrismicArticle.edges.forEach(({ node }) => {
-    createPage({
-      path: `/article/${node.uid}`,
-      component: path.resolve(`./src/pages/TemplateArticle.js`),
-      context: {
-        uid: node.uid,
-      },
+       uid: node.uid,
+       themes: prismicThemes
+      }
     });
   });
 };
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
+  const { createPage, deletePage } = actions
 
-  if (page.path === "/") {
-    deletePage(page);
-    createPage({
-      path: "/",
-      component: path.resolve(`./src/pages/TemplatePageWeb.js`),
-      context: {
-        uid: "homepage",
-        homepageData: prismicHomepage,
-      },
-    });
-  }
-  if (page.path === "/404") {
-    console.log("WHAAATTTTT");
-    deletePage(page);
-    createPage({
-      path: "/404",
-      component: path.resolve(`./src/pages/TemplatePageWeb.js`),
-      context: {
-        uid: "404",
-        homepageData: prismicHomepage,
-      },
-    });
-  }
-};
+  deletePage(page)
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      themes: prismicThemes,
+    },
+  })
+}

@@ -13,7 +13,7 @@ const PreviewPage = () => {
 
 export default withPrismicPreviewResolver(PreviewPage, [
   {
-    repositoryName: "chr-rugby",
+    repositoryName: "axel-blog",
     linkResolver,
   },
 ]);

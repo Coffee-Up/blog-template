@@ -1,5 +1,3 @@
-// src/linkResolver.js
-
 export const linkResolver = (doc) => {
   if (doc.uid === "homepage") return `/`;
   switch (doc.type) {

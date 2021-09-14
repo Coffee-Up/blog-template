@@ -1,7 +1,16 @@
-import * as React from "react";
-// This page is removed in gatbsy-node.js and recreate with prismic data & TemplatePageWeb
-const DumbPageHomepage = () => {
-  return <>It's dumb I know, what I can say, it's Web Development ! Hum ....</>;
+import React from "react";
+
+import { Layout } from "../components"
+
+const IndexPage = ({ pageContext }) => {
+
+ return (
+  <>
+   <Layout pageContext={pageContext}>
+    <h1>index</h1>
+   </Layout>
+  </>
+  );
 };
 
-export default DumbPageHomepage;
+export default IndexPage;

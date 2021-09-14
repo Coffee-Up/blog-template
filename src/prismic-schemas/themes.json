@@ -1,0 +1,68 @@
+{
+  "Main": {
+    "hover_behaviour_on_elements": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Move Up",
+          "Scale Up",
+          "Darken Color",
+          "Lighten Color"
+        ],
+        "label": "Hover Behaviour On elements",
+        "placeholder": "The behaviour when a user hover on clickable elements"
+      }
+    },
+    "logo_loader": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 50,
+          "height": 50
+        },
+        "thumbnails": [],
+        "label": "Logo Loader"
+      }
+    }
+  },
+  "Light Theme": {
+    "light_background_color": {
+      "type": "Color",
+      "config": {
+        "label": "Background Color Light Theme"
+      }
+    },
+    "ligth_main_color": {
+      "type": "Color",
+      "config": {
+        "label": "Main Color Light Theme"
+      }
+    },
+    "ligth_secondary_color": {
+      "type": "Color",
+      "config": {
+        "label": "Secondary Color Light Theme"
+      }
+    }
+  },
+  "Dark Theme": {
+    "dark_background_color": {
+      "type": "Color",
+      "config": {
+        "label": "Background Color Dark Theme"
+      }
+    },
+    "dark_main_color": {
+      "type": "Color",
+      "config": {
+        "label": "Main Color Dark Theme"
+      }
+    },
+    "dark_secondary_color": {
+      "type": "Color",
+      "config": {
+        "label": "Secondary Color Dark Theme"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Unique URL",
+        "placeholder": "Url of the page, must be unique (required)"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "heading1,strong,em",
+        "label": "Title",
+        "placeholder": "Title of the article (required)"
+      }
+    },
+    "header_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Header Image"
+      }
+    }
+  }
+}

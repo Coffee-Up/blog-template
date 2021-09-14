@@ -1,12 +1,16 @@
-import "./src/styles/_globalCssVariables.css";
-import "./src/styles/_globalFonts.css";
 import * as React from "react";
-import { PrismicPreviewProvider } from "gatsby-plugin-prismic-previews";
 
-// Styling for the preview modals.
+import "./src/styles/core/variables.css";
+import "./src/styles/core/fonts.css";
+
 import "gatsby-plugin-prismic-previews/dist/styles.css";
 
-// Adds a shared React Context for Prismic preview sessions.
+import { PrismicPreviewProvider } from "gatsby-plugin-prismic-previews";
+
 export const wrapRootElement = ({ element }) => (
-  <PrismicPreviewProvider>{element}</PrismicPreviewProvider>
+   <PrismicPreviewProvider>
+     {element}
+   </PrismicPreviewProvider>
 );
+
+
