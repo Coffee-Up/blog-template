@@ -1,47 +1,44 @@
 const path = require(`path`);
 
-let prismicTheme;
+let prismicThemes;
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+
   const result = await graphql(`
     query {
-      allPrismicArticle {
-       edges {
-        node {
-         uid
-        }
+     allPrismicArticle {
+      edges {
+       node {
+        uid
        }
       }
-      allPrismicPageWeb {
-        edges {
-          node {
-            uid
-          }
-        }
+     }
+     
+     prismicThemes {
+      data {
+       footer_nocssrule_transition
+
+       menu_container_height
+       menu_container_border__style
+
+       dark_background_color
+       dark_main_color
+       dark_secondary_color
+       dark_menu_color
+
+       light_background_color
+       light_cards_color
+       light_main_color
+       light_secondary_color
+       light_menu_color
       }
-      prismicDarkTheme {
-       data {
-        main_color
-        secondary_color
-        background_color
-       }
-      }
-      prismicLightTheme {
-       data {
-        main_color
-        secondary_color
-        background_color
-       }
-      }
+     }    
     }
   `);
 
- prismicThemes  = {
-  dark: result.data.prismicDarkTheme.data,
-  light: result.data.prismicLightTheme.data
- }
-
+  prismicThemes  = result.data.prismicThemes.data; 
+ 
   result.data.allPrismicArticle.edges.forEach(({ node }) => {
    createPage({
     path: `/post/${node.uid}`,
@@ -53,17 +50,6 @@ exports.createPages = async ({ graphql, actions }) => {
    });
   });
 
-  result.data.allPrismicPageWeb.edges.forEach(({ node }) => {
-    if (!node.uid || node.uid === "homepage" || node.uid === "404") return;
-    createPage({
-      path: `/${node.uid}`,
-      component: path.resolve(`./src/pages/templates/PageWebTemplate.js`),
-      context: {
-       uid: node.uid,
-       themes: prismicThemes
-      }
-    });
-  });
 };
 
 exports.onCreatePage = ({ page, actions }) => {
@@ -74,7 +60,7 @@ exports.onCreatePage = ({ page, actions }) => {
     ...page,
     context: {
       ...page.context,
-      themes: prismicThemes,
+      themes: prismicThemes
     },
   })
 }

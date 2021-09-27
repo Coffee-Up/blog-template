@@ -6,14 +6,14 @@ import { RichText } from 'prismic-reactjs'
 import { linkResolver } from "../../linkResolver";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
-import { Layout } from "../../components";
+import Layout from "../../components/Layout.js";
 
 const ArticleTemplate = ({ data, pageContext }) => {
  const headerImage    = getImage(data.prismicArticle.data.header_image.gatsbyImageData);
  const altHeaderImage = getImage(data.prismicArticle.data.header_image.alt); 
 
  return (
-  <Layout pageContext={pageContext}>
+  <Layout themes={pageContext.themes}>
    <GatsbyImage image={headerImage} alt={altHeaderImage}/>
    <RichText render={data.prismicArticle.data.title.raw} />
   </Layout>

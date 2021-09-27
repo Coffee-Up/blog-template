@@ -1,17 +1,16 @@
 import * as React from "react";
 import "../styles/Footer.css";
 
-import { Wave } from "../components";
+import Wave  from "../components/Wave";
 
-const Footer = ({ backgroundColor, urls }) => {
+const Footer = () => {
   return (
-    <footer style={{ backgroundColor }}>
+    <footer>
       <Wave orientation="bottom" />
       <div>
         <section>
           <h2>Merci à Nos Partenaires</h2>
         </section>
-        <section></section>
         <section id="footer-section-fonts-container"></section>
       </div>
       <p id="footer-copyright-text">Copyright © Axel Daguerre.</p>

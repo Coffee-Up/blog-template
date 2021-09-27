@@ -13,6 +13,10 @@ module.exports = {
         schemas: {
           article: require("./src/prismic-schemas/article.json"),
           themes: require("./src/prismic-schemas/themes.json"),
+          light_theme: {},
+          dark_theme: {},
+          menu_principal: {}
+
         },
       },
     },

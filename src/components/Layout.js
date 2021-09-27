@@ -1,9 +1,11 @@
 import React from "react";
 
-import "../styles/core/reset.css";
-import "../styles/core/animations.css";
+import "../styles/globals/reset.css";
 
-import { Footer,  Menu1 } from ".";
+import Footer from "./Footer.js";
+import Menu1 from "./Menu1";
+
+import { prismicToCssRules } from "../utils/helpers"
 
 const ThemeContext = React.createContext({
    currentTheme: 'light',
@@ -27,28 +29,37 @@ class Layout extends React.Component {
  };
 
  componentDidMount() {
+
   const lsCurrentTheme = JSON.parse(localStorage.getItem("currentTheme"))
 
   if (lsCurrentTheme === 'dark') {
    this.setState({ currentTheme: 'dark' })
+  } else if(lsCurrentTheme === 'light') {
+    this.setState({ currentTheme : 'light'});
   } else if (supportsDarkMode()) {
-   this.setState({ currentTheme: 'dark' })
-  }
+   this.setState({ currentTheme: 'dark' });
+  } 
  };
 
  render() {
   const { children } = this.props;
-  const { themes } = this.props.pageContext;
+  const { themes } = this.props;
   const { currentTheme } = this.state;
   const toggleDark = this.toggleDark;
+
+  const mainMenuStyles = prismicToCssRules(themes, "menu");
+  
+  const currentThemeStyles = { 
+    backgroundColor: themes[`${currentTheme}_background_color`], 
+  }
  
 
   return (
    <ThemeContext.Provider 
     value={{ currentTheme, themes, toggleDark }}
    >
-    <div style={{backgroundColor: themes[currentTheme].background_color}}>
-     <Menu1 />
+    <div style={currentThemeStyles}>
+     <Menu1 menuPrismicStyles={mainMenuStyles} />
      <main> {children} </main>
      <Footer />
     </div>
