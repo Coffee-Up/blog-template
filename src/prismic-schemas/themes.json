@@ -1,98 +1,98 @@
 {
-  "Main": {},
-  "Light Theme": {
-    "light_background_color": {
-      "type": "Color",
-      "config": {
-        "label": "Background Color Light Theme"
+  "Main" : { },
+  "Light Theme" : {
+    "light_background_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Background Color Light Theme"
       }
     },
-    "light_main_color": {
-      "type": "Color",
-      "config": {
-        "label": "Main Color Light Theme"
+    "light_main_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Main Color Light Theme"
       }
     },
-    "light_secondary_color": {
-      "type": "Color",
-      "config": {
-        "label": "Secondary Color Light Theme"
+    "light_secondary_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Secondary Color Light Theme"
       }
     },
-    "light_cards_color": {
-      "type": "Color",
-      "config": {
-        "label": "Cards Color Light Theme"
+    "light_cards_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Cards Color Light Theme"
       }
     },
-    "light_menu_color": {
-      "type": "Color",
-      "config": {
-        "label": "light_menu_color"
+    "light_menu_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "light_menu_color"
       }
     }
   },
-  "Dark Theme": {
-    "dark_background_color": {
-      "type": "Color",
-      "config": {
-        "label": "Background Color Dark Theme"
+  "Dark Theme" : {
+    "dark_background_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Background Color Dark Theme"
       }
     },
-    "dark_main_color": {
-      "type": "Color",
-      "config": {
-        "label": "Main Color Dark Theme"
+    "dark_main_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Main Color Dark Theme"
       }
     },
-    "dark_secondary_color": {
-      "type": "Color",
-      "config": {
-        "label": "Secondary Color Dark Theme"
+    "dark_secondary_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Secondary Color Dark Theme"
       }
     },
-    "dark_cards_color": {
-      "type": "Color",
-      "config": {
-        "label": "Cards Color Dark Theme"
+    "dark_cards_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "Cards Color Dark Theme"
       }
     },
-    "dark_menu_color": {
-      "type": "Color",
-      "config": {
-        "label": "dark_menu color"
+    "dark_menu_color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "dark_menu color"
       }
     }
   },
-  "Menu Principal": {
-    "menu_container_height": {
-      "type": "Number",
-      "config": {
-        "label": "Menu Principal Hauteur Totale (Pixels)",
-        "placeholder": "La Hauteur Totale du Menu Principal"
+  "Menu Principal" : {
+    "menu_container_height" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Menu Principal Hauteur Totale (Pixels)",
+        "placeholder" : "La Hauteur Totale du Menu Principal"
       }
     },
-    "menu_container_border__style": {
-      "type": "Select",
-      "config": {
-        "options": [
-          "pointille",
-          "continue"
-        ],
-        "label": "Menu Principal Type de Bordure"
+    "menu_container_border__style" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "dashed", "solid", "hidden" ],
+        "label" : "Menu Principal Type de Bordure"
+      }
+    },
+    "menu_container_border__width" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "menu_container_border__width"
       }
     }
   },
-  "Footer": {
-    "footer_nocssrule_transition": {
-      "type": "Select",
-      "config": {
-        "options": [
-          "Wave Line",
-          "Straight Line"
-        ],
-        "label": "Footer Transition Type",
-        "placeholder": "How is display the transition from body to footer"
+  "Footer" : {
+    "footer_nocssrule_transition" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "Wave Line", "Straight Line" ],
+        "label" : "Footer Transition Type",
+        "placeholder" : "How is display the transition from body to footer"
       }
     }
   }

@@ -21,6 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
        menu_container_height
        menu_container_border__style
+       menu_container_border__width
 
        dark_background_color
        dark_main_color

@@ -6,9 +6,13 @@ import Footer from "./Footer.js";
 import Menu1 from "./Menu1";
 
 import { prismicToCssRules } from "../utils/helpers"
+import { ThemesListName, ThemesPrismicStyles } from "../models/Theme";
 
+type LayoutStates = {
+ currentTheme: ThemesListName
+}
 const ThemeContext = React.createContext({
-   currentTheme: 'light',
+   currentTheme: ThemesListName.light,
    toggleDark: () => {} 
  });
 
@@ -17,13 +21,13 @@ const supportsDarkMode = () => {
 };
 
 
-class Layout extends React.Component { 
- state = {
-  currentTheme: 'light',
+class Layout extends React.Component<{ themesStyles: ThemesPrismicStyles },{ currentTheme: ThemesListName}> { 
+ state: LayoutStates = {
+  currentTheme: ThemesListName.light,
  };
  
  toggleDark = () => {
-  const nextTheme = this.state.currentTheme === 'light' ? 'dark' : 'light'
+  const nextTheme = this.state.currentTheme === ThemesListName.light ? ThemesListName.dark : ThemesListName.light
   localStorage.setItem("currentTheme", JSON.stringify(nextTheme));
   this.setState({currentTheme: nextTheme});
  };
@@ -33,33 +37,33 @@ class Layout extends React.Component {
   const lsCurrentTheme = JSON.parse(localStorage.getItem("currentTheme"))
 
   if (lsCurrentTheme === 'dark') {
-   this.setState({ currentTheme: 'dark' })
-  } else if(lsCurrentTheme === 'light') {
-    this.setState({ currentTheme : 'light'});
+   this.setState({ currentTheme: ThemesListName.dark })
+  } else if(lsCurrentTheme === ThemesListName.light) {
+    this.setState({ currentTheme : ThemesListName.light});
   } else if (supportsDarkMode()) {
-   this.setState({ currentTheme: 'dark' });
+   this.setState({ currentTheme: ThemesListName.dark });
   } 
  };
 
  render() {
   const { children } = this.props;
-  const { themes } = this.props;
+  const { themesStyles } = this.props;
   const { currentTheme } = this.state;
   const toggleDark = this.toggleDark;
 
-  const mainMenuStyles = prismicToCssRules(themes, "menu");
+  const mainMenuStyles = prismicToCssRules(themesStyles, "menu");
   
   const currentThemeStyles = { 
-    backgroundColor: themes[`${currentTheme}_background_color`], 
+    backgroundColor: themesStyles[`${currentTheme}_background_color`], 
   }
  
 
   return (
    <ThemeContext.Provider 
-    value={{ currentTheme, themes, toggleDark }}
+    value={{ currentTheme, themesStyles, toggleDark }}
    >
     <div style={currentThemeStyles}>
-     <Menu1 menuPrismicStyles={mainMenuStyles} />
+     <Menu1 mainMenuPrismicStyles={mainMenuStyles} />
      <main> {children} </main>
      <Footer />
     </div>
