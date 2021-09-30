@@ -1,0 +1,30 @@
+{
+ "Main": {
+   "body": {
+     "type": "Slices",
+     "fieldset": "Slice zone",
+     "config": {
+       "labels": null,
+       "choices": {
+         "question": {
+           "type": "Slice",
+           "fieldset": "Question",
+           "description": "Une simple Question",
+           "icon": "data_usage",
+           "display": "list",
+           "non-repeat": {
+             "question": {
+               "type": "Text",
+               "config": {
+                 "label": "Votre Question",
+                 "placeholder": "Ecrivez la Question du Formulaire"
+               }
+             }
+           },
+           "repeat": {}
+         }
+       }
+     }
+   }
+ }
+}

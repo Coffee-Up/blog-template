@@ -1,69 +1,64 @@
 import React from "react";
-
 import "../styles/globals/reset.css";
 
-import Footer from "./Footer.js";
+import Footer from "./Footer";
 import Menu1 from "./Menu1";
 
-import { prismicToCssRules } from "../utils/helpers"
-import { ThemesListName, ThemesPrismicStyles } from "../models/Theme";
+import { GlobalSettingsPrismic, MainMenuUIPrismic, ThemeNames } from "../models/UI";
 
-type LayoutStates = {
- currentTheme: ThemesListName
-}
+interface IProps {
+ mainMenuFromNode: MainMenuUIPrismic,
+ globalSettingsFromNode: GlobalSettingsPrismic
+};
+
+interface IState {
+ currentTheme: ThemeNames
+};
+
 const ThemeContext = React.createContext({
-   currentTheme: ThemesListName.light,
-   toggleDark: () => {} 
- });
+ currentTheme: ThemeNames.Light,
+ toggleDark: () => {},
+ mainMenuFromNode: {},
+});
 
 const supportsDarkMode = () => {
  return window.matchMedia("(prefers-color-scheme: dark)").matches === true;
 };
 
-
-class Layout extends React.Component<{ themesStyles: ThemesPrismicStyles },{ currentTheme: ThemesListName}> { 
- state: LayoutStates = {
-  currentTheme: ThemesListName.light,
+class Layout extends React.Component<IProps, IState> {
+ state = {
+  currentTheme: ThemeNames.Light,
  };
  
- toggleDark = () => {
-  const nextTheme = this.state.currentTheme === ThemesListName.light ? ThemesListName.dark : ThemesListName.light
+ toggleDark = (): void => {
+  const nextTheme = this.state.currentTheme === ThemeNames.Light ? ThemeNames.Dark : ThemeNames.Light
   localStorage.setItem("currentTheme", JSON.stringify(nextTheme));
   this.setState({currentTheme: nextTheme});
  };
 
  componentDidMount() {
 
-  const lsCurrentTheme = JSON.parse(localStorage.getItem("currentTheme"))
+  const lsCurrentTheme: ThemeNames = JSON.parse(localStorage.getItem("currentTheme") || "")
 
   if (lsCurrentTheme === 'dark') {
-   this.setState({ currentTheme: ThemesListName.dark })
-  } else if(lsCurrentTheme === ThemesListName.light) {
-    this.setState({ currentTheme : ThemesListName.light});
+   this.setState({ currentTheme: ThemeNames.Dark })
+  } else if(lsCurrentTheme === ThemeNames.Light) {
+    this.setState({ currentTheme : ThemeNames.Light});
   } else if (supportsDarkMode()) {
-   this.setState({ currentTheme: ThemesListName.dark });
+   this.setState({ currentTheme: ThemeNames.Dark });
   } 
  };
 
  render() {
-  const { children } = this.props;
-  const { themesStyles } = this.props;
+  const { children, mainMenuFromNode, globalSettingsFromNode } = this.props;
   const { currentTheme } = this.state;
-  const toggleDark = this.toggleDark;
-
-  const mainMenuStyles = prismicToCssRules(themesStyles, "menu");
-  
-  const currentThemeStyles = { 
-    backgroundColor: themesStyles[`${currentTheme}_background_color`], 
-  }
- 
 
   return (
    <ThemeContext.Provider 
-    value={{ currentTheme, themesStyles, toggleDark }}
+    value={{ currentTheme, toggleDark: this.toggleDark, mainMenuFromNode }}
    >
-    <div style={currentThemeStyles}>
-     <Menu1 mainMenuPrismicStyles={mainMenuStyles} />
+    <div style={{ backgroundColor: globalSettingsFromNode[`${currentTheme}_background__color`] }}>
+     <Menu1 mainMenuStyles={mainMenuFromNode} />
      <main> {children} </main>
      <Footer />
     </div>

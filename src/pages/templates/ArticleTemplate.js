@@ -6,7 +6,7 @@ import { RichText } from 'prismic-reactjs'
 import { linkResolver } from "../../linkResolver";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
-import Layout from "../../components/Layout.js";
+import Layout from "../../components/Layout";
 
 const ArticleTemplate = ({ data, pageContext }) => {
  const headerImage    = getImage(data.prismicArticle.data.header_image.gatsbyImageData);

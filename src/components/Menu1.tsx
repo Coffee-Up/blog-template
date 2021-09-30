@@ -1,25 +1,43 @@
 import React from "react";
-import { Link  } from "gatsby";
+import styled from 'styled-components';
 import "../styles/Menu1.css";
 
+import { MainMenuUIPrismic, ThemeNames } from "../models/UI";
 import { ThemeToggleButton } from "./Buttons";
-import { MainMenuStyles } from "../models/MenuPrismicStyles";
+import { ThemeContext } from "./Layout";
+import { devices } from '../devices';
 
-interface Props {
-  mainMenuPrismicStyles: MainMenuStyles
+interface IProps {
+ mainMenuStyles: MainMenuUIPrismic
+};
+
+interface IHeaderProps {
+ mainMenuStyles: MainMenuUIPrismic,
+ currentTheme: ThemeNames
+};
+
+const Header= styled.header<IHeaderProps>`
+height: ${(props) => props.mainMenuStyles.container_height};
+background-color: ${(props) => props.mainMenuStyles[`${props.currentTheme}_container_background__color`]};
+// Media Queries
+@media ${devices.Laptop} {
+ height: ${(props) => `calc(${props.mainMenuStyles.container_height} * 0.7)`} ;
 }
+`;
 
-export default class Menu1 extends React.Component<Props> {
+export default class Menu1 extends React.Component<IProps> {
  render() {  
-const { mainMenuPrismicStyles } = this.props;
+  const { mainMenuStyles } = this.props;
+  const logoThemeSwitcherType = mainMenuStyles.logo_themes_switcher;
   return (
-   <header style={mainMenuPrismicStyles}>
-    <ThemeToggleButton />
-    <Link to='/'>Lien 1</Link>
-    <Link to='/'>Lien 2</Link>
-    <Link to='/'>Lien 3</Link>
-    <Link to='/'>Lien 4</Link>
-   </header>
+   <ThemeContext.Consumer>
+    { ({ currentTheme }) => {
+     return (
+     <Header currentTheme={currentTheme} mainMenuStyles={mainMenuStyles}>
+     <ThemeToggleButton logoThemeSwitcherType={logoThemeSwitcherType}/>
+     </Header>
+     )}}
+   </ThemeContext.Consumer>
   );
  }
 };

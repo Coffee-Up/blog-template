@@ -1,0 +1,16 @@
+{
+ "Main": {
+   "light_background__color": {
+     "type": "Color",
+     "config": {
+       "label": "Couleur de Fond Site Web (Light)"
+     }
+   },
+   "dark_background__color": {
+     "type": "Color",
+     "config": {
+       "label": "Couleur de Fond Site Web (Light)"
+     }
+   }
+ }
+}

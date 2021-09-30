@@ -1,6 +1,7 @@
 const path = require(`path`);
 
-let prismicThemes;
+let mainMenuSettingsPrismic;
+let globalSettingsPrismic;
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -14,39 +15,36 @@ exports.createPages = async ({ graphql, actions }) => {
        }
       }
      }
-     
-     prismicThemes {
+     prismicMainMenu {
+       data {
+        container_border__color
+        container_border__width
+        container_width
+        container_height
+
+        logo_themes_switch
+        light_container_background__color
+        dark_container_background__color
+       }
+     }
+     prismicGlobalSettings {
       data {
-       footer_nocssrule_transition
-
-       menu_container_height
-       menu_container_border__style
-       menu_container_border__width
-
-       dark_background_color
-       dark_main_color
-       dark_secondary_color
-       dark_menu_color
-
-       light_background_color
-       light_cards_color
-       light_main_color
-       light_secondary_color
-       light_menu_color
+       light_background__color
+       dark_background__color
       }
-     }    
+     }
     }
   `);
+  
+  mainMenuSettingsPrismic = result.data.prismicMainMenu.data; 
+  globalSettingsPrismic = result.data.prismicGlobalSettings.data; 
 
-  prismicThemes  = result.data.prismicThemes.data; 
- 
   result.data.allPrismicArticle.edges.forEach(({ node }) => {
    createPage({
     path: `/post/${node.uid}`,
     component: path.resolve(`./src/pages/templates/ArticleTemplate.js`),
     context: {
      uid: node.uid,
-     themes: prismicThemes
     }
    });
   });
@@ -55,13 +53,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
-
+// TODO (perf) We are doing unecessary operations, we need to create context ONLY
+// for Layout component
   deletePage(page)
   createPage({
     ...page,
     context: {
       ...page.context,
-      themes: prismicThemes
+      mainMenuFromNode: mainMenuSettingsPrismic,
+      globalSettingsFromNode: globalSettingsPrismic,
     },
   })
 }

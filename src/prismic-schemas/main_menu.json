@@ -1,0 +1,51 @@
+{
+  "Main": {
+    "container_border__width": {
+      "type": "Text",
+      "config": {
+        "label": "Largeur Bordure Principale"
+      }
+    },
+    "container_height": {
+      "type": "Text",
+      "config": {
+        "label": "Hauteur Totale"
+      }
+    },
+    "container_width": {
+      "type": "Text",
+      "config": {
+        "label": "Largeur Totale"
+      }
+    },
+    "container_border__color": {
+      "type": "Color",
+      "config": {
+        "label": "Couleur Bordure Principale"
+      }
+    },
+    "light_container_background__color": {
+      "type": "Color",
+      "config": {
+        "label": "Couleur de fond Principale (Light)"
+      }
+    },
+    "dark_container_background__color": {
+      "type": "Color",
+      "config": {
+        "label": "Couleur de fond Principale (Dark)"
+      }
+    },
+    "logo_themes_switcher": {
+      "type": "Select",
+      "config": {
+        "options": [
+          "Moon / Sun",
+          "Orange / Apple"
+        ],
+        "default_value": "Moon / Sun",
+        "label": "Theme Switch Logo"
+      }
+    }
+  }
+}

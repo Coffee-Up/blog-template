@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { ThemeContext } from "./Layout.js";
+import { ThemeContext } from "./Layout";
 
 const DumbCard = ({ children }  ) => {
  const contextValue = useContext(ThemeContext);

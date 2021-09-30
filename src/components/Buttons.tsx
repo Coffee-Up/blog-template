@@ -1,9 +1,14 @@
 import React from "react";
+import { LogoThemeSwitcher } from "../models/UI";
 import "../styles/Buttons.css";
 
-import { ThemeContext } from "./Layout.js";
+import { ThemeContext } from "./Layout";
 
-function ThemeToggleButton() {
+interface IProps {
+  logoThemeSwitcherType: LogoThemeSwitcher
+};
+
+function ThemeToggleButton({ logoThemeSwitcherType }: IProps) {
  return (
    <ThemeContext.Consumer>
     { ({toggleDark}) => (

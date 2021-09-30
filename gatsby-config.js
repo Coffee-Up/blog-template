@@ -12,10 +12,14 @@ module.exports = {
         repositoryName: "axel-blog",
         schemas: {
           article: require("./src/prismic-schemas/article.json"),
-          themes: require("./src/prismic-schemas/themes.json"),
+          main_menu: require("./src/prismic-schemas/main_menu.json"),
+          form: require("./src/prismic-schemas/form.json"),
+          form: require("./src/prismic-schemas/form.json"),
+          global_settings: require("./src/prismic-schemas/global_settings.json"),
+          themes: {},
           light_theme: {},
           dark_theme: {},
-          menu_principal: {}
+          menu_principal: {},
 
         },
       },
@@ -30,6 +34,12 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+     resolve: `gatsby-plugin-styled-components`,
+     options: {
+       // Add any options here
+     },
+   },
 
     {
       resolve: `gatsby-source-filesystem`,

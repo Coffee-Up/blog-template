@@ -1,7 +1,7 @@
 import * as React from "react";
 import "../styles/Footer.css";
 
-import Wave  from "../components/Wave";
+import Wave  from "./Wave";
 
 const Footer = () => {
   return (
