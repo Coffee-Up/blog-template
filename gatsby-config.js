@@ -16,6 +16,8 @@ module.exports = {
           form: require("./src/prismic-schemas/form.json"),
           form: require("./src/prismic-schemas/form.json"),
           global_settings: require("./src/prismic-schemas/global_settings.json"),
+          main_navigation: require("./src/prismic-schemas/main_navigation.json"),
+          mega_menu: require("./src/prismic-schemas/mega_menu.json"),
           themes: {},
           light_theme: {},
           dark_theme: {},

@@ -21,12 +21,28 @@ exports.createPages = async ({ graphql, actions }) => {
         container_border__width
         container_width
         container_height
+        container_padding
 
-        logo_themes_switch
+        logo_themes_switcher
+        theme_switcher_exist
+
+        light_logo_theme_switcher_color
         light_container_background__color
+        
+        dark_logo_theme_switcher_color
         dark_container_background__color
        }
      }
+     prismicMainNavigation {
+      data {
+        title
+        logo_main {
+          alt
+          copyright
+          gatsbyImageData
+        }
+      }
+    }
      prismicGlobalSettings {
       data {
        light_background__color
@@ -38,6 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
   
   mainMenuSettingsPrismic = result.data.prismicMainMenu.data; 
   globalSettingsPrismic = result.data.prismicGlobalSettings.data; 
+  mainNavigation = result.data.prismicMainNavigation.data; 
 
   result.data.allPrismicArticle.edges.forEach(({ node }) => {
    createPage({
@@ -62,6 +79,7 @@ exports.onCreatePage = ({ page, actions }) => {
       ...page.context,
       mainMenuFromNode: mainMenuSettingsPrismic,
       globalSettingsFromNode: globalSettingsPrismic,
+      mainNavigationFromNode: mainNavigation,
     },
   })
 }

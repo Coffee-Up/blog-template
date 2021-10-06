@@ -1,4 +1,4 @@
-import { ThemeNames } from "../components/Layout";
+import { ThemeNames } from "./UI";
 
 export interface LocalStorageWebsite {
  currentTheme: ThemeNames

@@ -2,40 +2,4 @@
 footer {
   position: relative;
   padding: 7em 2.2em 1em 2.2em;
-  background-color: var(--color-footer);
-}
-/*---------------------------------------------------------------------------*/
-/* COPYRIGHT TEXT*/
-footer > #footer-copyright-text {
-  margin-top: 3em;
-  text-align: right;
-  font-family: "Fira Code Variable";
-  font-weight: 200;
-  color: #d8d6f7;
-}
-/*---------------------------------------------------------------------------*/
-/* SECTIONS */
-footer > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: center;
-}
-
-footer > div > section {
-  display: flex;
-  flex-direction: column;
-  font-family: "Fira Code Variable";
-}
-
-footer > div > section > h2 {
-  color: white;
-  font-size: 1rem;
-  font-family: "Inter Variable";
-  font-weight: 400;
-}
-
-/*---------------------------------------------------------------------------*/
-/* MEDIA QUERIES */
-@media screen and (max-width: 600px) {
 }

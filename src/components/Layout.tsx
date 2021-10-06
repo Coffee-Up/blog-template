@@ -4,21 +4,26 @@ import "../styles/globals/reset.css";
 import Footer from "./Footer";
 import Menu1 from "./Menu1";
 
-import { GlobalSettingsPrismic, MainMenuUIPrismic, ThemeNames } from "../models/UI";
+import { GlobalSettingsPrismic, MainMenuUIPrismic, MainNavigation, ThemeNames } from "../models/UI";
 
 interface IProps {
  mainMenuFromNode: MainMenuUIPrismic,
  globalSettingsFromNode: GlobalSettingsPrismic
+ mainNavigationFromNode: MainNavigation
 };
 
-interface IState {
- currentTheme: ThemeNames
+interface IState {currentTheme: ThemeNames};
+
+interface ThemeContextType {
+ currentTheme:           ThemeNames,
+ toggleDark:             () => void,
+ mainMenuFromNode:       MainMenuUIPrismic,
 };
 
-const ThemeContext = React.createContext({
+const ThemeContext = React.createContext<ThemeContextType>({
  currentTheme: ThemeNames.Light,
  toggleDark: () => {},
- mainMenuFromNode: {},
+ mainMenuFromNode: new MainMenuUIPrismic(),
 });
 
 const supportsDarkMode = () => {
@@ -50,16 +55,20 @@ class Layout extends React.Component<IProps, IState> {
  };
 
  render() {
-  const { children, mainMenuFromNode, globalSettingsFromNode } = this.props;
+  const { children, mainMenuFromNode, globalSettingsFromNode, mainNavigationFromNode } = this.props;
   const { currentTheme } = this.state;
+  const globalStyles = {
+   backgroundColor: globalSettingsFromNode[`${currentTheme}_background__color`],
+   color: currentTheme === 'light' ? "black" : "white"
+  };
 
   return (
    <ThemeContext.Provider 
     value={{ currentTheme, toggleDark: this.toggleDark, mainMenuFromNode }}
    >
-    <div style={{ backgroundColor: globalSettingsFromNode[`${currentTheme}_background__color`] }}>
-     <Menu1 mainMenuStyles={mainMenuFromNode} />
-     <main> {children} </main>
+    <div style={globalStyles}>
+     <Menu1 mainNavigationFromNode={mainNavigationFromNode} mainMenuStyles={mainMenuFromNode} />
+     <main> {children}</main>
      <Footer />
     </div>
    </ThemeContext.Provider>

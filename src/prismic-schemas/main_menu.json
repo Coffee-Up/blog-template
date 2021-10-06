@@ -18,6 +18,13 @@
         "label": "Largeur Totale"
       }
     },
+    "container_padding": {
+      "type": "Text",
+      "config": {
+        "label": "Espacement Interne Menu Principal",
+        "placeholder": "Taille Bordure Interne du Menu Principal"
+      }
+    },
     "container_border__color": {
       "type": "Color",
       "config": {
@@ -36,6 +43,15 @@
         "label": "Couleur de fond Principale (Dark)"
       }
     },
+    "theme_switcher_exist": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Pas de Switch Theme Possible",
+        "placeholder_true": "Switch de Theme Possible",
+        "default_value": true,
+        "label": "Theme Switcher"
+      }
+    },
     "logo_themes_switcher": {
       "type": "Select",
       "config": {
@@ -43,8 +59,19 @@
           "Moon / Sun",
           "Orange / Apple"
         ],
-        "default_value": "Moon / Sun",
         "label": "Theme Switch Logo"
+      }
+    },
+    "dark_logo_theme_switcher_color": {
+      "type": "Color",
+      "config": {
+        "label": "Couleur Logo Theme Switcher Dark"
+      }
+    },
+    "light_logo_theme_switcher_color": {
+      "type": "Color",
+      "config": {
+        "label": "Couleur Logo Theme Switcher light"
       }
     }
   }

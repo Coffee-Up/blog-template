@@ -2,11 +2,12 @@ import React from "react";
 import { PageProps } from "gatsby";
 
 import Layout from "../components/Layout";
-import { GlobalSettingsPrismic, MainMenuUIPrismic } from "../models/UI";
+import { GlobalSettingsPrismic, MainMenuUIPrismic, MainNavigation } from "../models/UI";
 
 interface CustomPageContext {
  mainMenuFromNode: MainMenuUIPrismic,
- globalSettingsFromNode: GlobalSettingsPrismic
+ globalSettingsFromNode: GlobalSettingsPrismic,
+ mainNavigationFromNode: MainNavigation
 }
 
 export default function IndexPage (props: PageProps<{}, CustomPageContext, {}> ) {
@@ -14,7 +15,8 @@ export default function IndexPage (props: PageProps<{}, CustomPageContext, {}> )
   <>
    <Layout 
     globalSettingsFromNode={props.pageContext.globalSettingsFromNode}
-    mainMenuFromNode={props.pageContext.mainMenuFromNode}>
+    mainMenuFromNode={props.pageContext.mainMenuFromNode}
+    mainNavigationFromNode={props.pageContext.mainNavigationFromNode}>
     <h1>INDEX PAGE</h1>
    </Layout>
   </>

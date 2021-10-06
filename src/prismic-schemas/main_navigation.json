@@ -1,0 +1,76 @@
+{
+  "Main" : {
+    "title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Titre Menu Principal",
+        "placeholder" : "Le Titre du Menu Principal"
+      }
+    },
+    "logo_main" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : null,
+          "height" : null
+        },
+        "thumbnails" : [ ],
+        "label" : "Logo du Menu Principal"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : {
+          "tab" : [ ]
+        },
+        "choices" : {
+          "tab" : {
+            "type" : "Slice",
+            "fieldset" : "Tab",
+            "description" : "Level 1 navigation tab with optional Level 2 items",
+            "icon" : "tab",
+            "display" : "list",
+            "non-repeat" : {
+              "level_1_link_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Niveau 1 Label Lien",
+                  "placeholder" : "Label du Lien de Niveau 1"
+                }
+              }
+            },
+            "repeat" : {
+              "level_2_link_label" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Niveau 2 Label Lien",
+                  "placeholder" : "Label Du lien de Niveau 2"
+                }
+              },
+              "level_2_link" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "customtypes" : [ "category" ],
+                  "label" : "Lien Niveau 2",
+                  "placeholder" : "L'URL du Lien Niveau 2"
+                }
+              },
+              "mega_menu" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "customtypes" : [ "ecommerce_-_mega_menu" ],
+                  "label" : "Mega menu",
+                  "placeholder" : "Mega Menu a afficher quand on Hover une Tab"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

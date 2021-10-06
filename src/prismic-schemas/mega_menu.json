@@ -1,0 +1,86 @@
+{
+ "Main" : {
+   "display_name" : {
+     "type" : "StructuredText",
+     "config" : {
+       "single" : "heading1",
+       "label" : "Display name",
+       "placeholder" : "Display name"
+     }
+   },
+   "mega_menu_highlight" : {
+     "type" : "Image",
+     "config" : {
+       "constraint" : { },
+       "thumbnails" : [ ],
+       "label" : "Mega Menu Highlight"
+     }
+   },
+   "highlight_link_label" : {
+     "type" : "Text",
+     "config" : {
+       "label" : "Highlight link label",
+       "placeholder" : "Highlight link label"
+     }
+   },
+   "highlight_link" : {
+     "type" : "Link",
+     "config" : {
+       "select" : "document",
+       "label" : "Highlight link"
+     }
+   },
+   "body" : {
+     "type" : "Slices",
+     "fieldset" : "Slice zone",
+     "config" : {
+       "labels" : {
+         "group_of_links" : [ ]
+       },
+       "choices" : {
+         "group_of_links" : {
+           "type" : "Slice",
+           "fieldset" : "Group of links",
+           "description" : "Group of links",
+           "icon" : "insert_link",
+           "display" : "list",
+           "non-repeat" : {
+             "group_label" : {
+               "type" : "Text",
+               "config" : {
+                 "label" : "Group label",
+                 "placeholder" : "Group label"
+               }
+             },
+             "link" : {
+               "type" : "Link",
+               "config" : {
+                 "select" : "document",
+                 "label" : "Link",
+                 "placeholder" : "Link"
+               }
+             }
+           },
+           "repeat" : {
+             "category_link_label" : {
+               "type" : "Text",
+               "config" : {
+                 "label" : "Category link label",
+                 "placeholder" : "Category link label"
+               }
+             },
+             "category_link" : {
+               "type" : "Link",
+               "config" : {
+                 "select" : "document",
+                 "label" : "Category link",
+                 "placeholder" : "Category link"
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+ }
+}
