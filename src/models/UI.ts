@@ -16,13 +16,10 @@ export class MainMenuUIPrismic {
  container_width                        = "";
  container_height                       = "";
  container_padding                      = "";
-
  logo_themes_switcher                   = LogoThemeSwitcher.MoonSun;
  theme_switcher_exist                   = false;
-
  light_container_background__color      = "";
  light_logo_theme_switcher_color        = "";
-
  dark_logo_theme_switcher_color         = "";
  dark_container_background__color       = "";
 };
@@ -48,10 +45,17 @@ export interface GlobalSettingsPrismic {
 export interface MainNavigation {
  title                                  : string,
  logo_main                              : PrismicImage,
+ logo_height                            : "",
+ logo_width                             : "",
+
 };
 
 export interface PrismicImage {
  alt                                    : string,
  copyright                              : string,
  gatsbyImageData                        : ImageDataLike,
+}
+
+export interface MegaMenu {
+ 
 }

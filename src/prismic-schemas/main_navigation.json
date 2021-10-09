@@ -18,6 +18,18 @@
         "label" : "Logo du Menu Principal"
       }
     },
+    "logo_width" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Logo Largeur"
+      }
+    },
+    "logo_height" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Logo Hauteur"
+      }
+    },
     "body" : {
       "type" : "Slices",
       "fieldset" : "Slice zone",
@@ -62,7 +74,7 @@
                 "type" : "Link",
                 "config" : {
                   "select" : "document",
-                  "customtypes" : [ "ecommerce_-_mega_menu" ],
+                  "customtypes" : [ "ecommerce_-_mega_menu", "mega_menu" ],
                   "label" : "Mega menu",
                   "placeholder" : "Mega Menu a afficher quand on Hover une Tab"
                 }

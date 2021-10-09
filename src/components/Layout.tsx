@@ -4,12 +4,12 @@ import "../styles/globals/reset.css";
 import Footer from "./Footer";
 import Menu1 from "./Menu1";
 
-import { GlobalSettingsPrismic, MainMenuUIPrismic, MainNavigation, ThemeNames } from "../models/UI";
+import { GlobalSettingsPrismic, MainMenuUIPrismic, MainNavigation, MegaMenu, ThemeNames } from "../models/UI";
 
 interface IProps {
  mainMenuFromNode: MainMenuUIPrismic,
- globalSettingsFromNode: GlobalSettingsPrismic
- mainNavigationFromNode: MainNavigation
+ globalSettingsFromNode: GlobalSettingsPrismic,
+ mainNavigationFromNode: MainNavigation,
 };
 
 interface IState {currentTheme: ThemeNames};
@@ -55,7 +55,12 @@ class Layout extends React.Component<IProps, IState> {
  };
 
  render() {
-  const { children, mainMenuFromNode, globalSettingsFromNode, mainNavigationFromNode } = this.props;
+  const { 
+   children, 
+   mainMenuFromNode, 
+   globalSettingsFromNode, 
+   mainNavigationFromNode,
+ } = this.props;
   const { currentTheme } = this.state;
   const globalStyles = {
    backgroundColor: globalSettingsFromNode[`${currentTheme}_background__color`],
@@ -67,8 +72,11 @@ class Layout extends React.Component<IProps, IState> {
     value={{ currentTheme, toggleDark: this.toggleDark, mainMenuFromNode }}
    >
     <div style={globalStyles}>
-     <Menu1 mainNavigationFromNode={mainNavigationFromNode} mainMenuStyles={mainMenuFromNode} />
-     <main> {children}</main>
+     <Menu1 
+      mainNavigationFromNode={mainNavigationFromNode} 
+      mainMenuStyles={mainMenuFromNode} 
+     />
+     <main>{children}</main>
      <Footer />
     </div>
    </ThemeContext.Provider>

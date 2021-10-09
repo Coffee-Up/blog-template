@@ -25,31 +25,58 @@ exports.createPages = async ({ graphql, actions }) => {
 
         logo_themes_switcher
         theme_switcher_exist
-
+        
         light_logo_theme_switcher_color
         light_container_background__color
         
         dark_logo_theme_switcher_color
         dark_container_background__color
-       }
-     }
-     prismicMainNavigation {
-      data {
-        title
-        logo_main {
-          alt
-          copyright
-          gatsbyImageData
+      }
+    }
+    prismicMainNavigation {
+     data {
+      body {
+        ... on PrismicMainNavigationDataBodyTab {
+          id
+          items {
+            level_2_link_label
+            mega_menu {
+              slug
+              target
+              url
+              document {
+                ... on PrismicMegaMenu {
+                  data {
+                    mega_menu_highlight {
+                      gatsbyImageData
+                      alt
+                    }
+                    highlight_link_label
+                    display_name {
+                      raw
+                    }
+                    highlight_link {
+                      uid
+                    }
+                  }
+                }
+              }
+            }
+          }
+          primary {
+            level_1_link_label
+          }
         }
       }
     }
-     prismicGlobalSettings {
-      data {
-       light_background__color
-       dark_background__color
-      }
+    }
+    prismicGlobalSettings {
+     data {
+      light_background__color
+      dark_background__color
      }
     }
+   }
   `);
   
   mainMenuSettingsPrismic = result.data.prismicMainMenu.data; 
